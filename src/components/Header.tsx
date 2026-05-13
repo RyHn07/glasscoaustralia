@@ -21,7 +21,7 @@ export function Header() {
       <div className="border-b border-neutral-200 bg-white">
         <div
           className="mx-auto flex max-w-[1400px] items-center justify-end gap-8 px-6 py-2.5 text-neutral-700"
-          style={{ fontFamily: '"Rajdhani", sans-serif', fontSize: "12px" }}
+          style={{ fontFamily: '"Rajdhani", sans-serif', fontSize: "13px" }}
         >
           <a href="mailto:info@example.com" className="flex items-center gap-2 hover:text-black">
             <Mail className="h-3.5 w-3.5" style={{ color: "#009aaa" }} />

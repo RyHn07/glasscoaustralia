@@ -243,7 +243,7 @@ export function GlassTypes() {
                     {COLS.map((c) => (
                       <td
                         key={c.key}
-                        className="px-4 py-3 align-top text-neutral-700"
+                        className="px-5 py-5 align-top text-neutral-700"
                         style={{
                           fontSize: "13.5px",
                           lineHeight: 1.55,

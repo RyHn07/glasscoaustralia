@@ -1,3 +1,4 @@
+import { ArrowUpRight } from "lucide-react";
 import officeImg from "@/assets/project-office.jpg";
 import coastalImg from "@/assets/project-coastal.jpg";
 import retailImg from "@/assets/project-retail.jpg";
@@ -83,7 +84,19 @@ export function Projects() {
             </div>
           ))}
         </div>
-      </div>
+        </div>
+
+        {/* CTA */}
+        <div className="mt-12 flex justify-center">
+          <a
+            href="#"
+            className="inline-flex items-center gap-2 rounded-full bg-neutral-900 px-7 py-3.5 text-white transition-colors hover:bg-neutral-800"
+            style={{ fontFamily: "Poppins, sans-serif", fontSize: "14px", fontWeight: 600 }}
+          >
+            View All Projects
+            <ArrowUpRight className="h-4 w-4" />
+          </a>
+        </div>
     </section>
   );
 }

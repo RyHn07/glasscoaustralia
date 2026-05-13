@@ -113,7 +113,10 @@ export function Hero() {
           </div>
 
           {/* Address */}
-          <div className="mt-6 flex items-center gap-2 text-sm text-foreground/70">
+          <div
+            className="mt-6 flex items-center gap-2 text-sm text-foreground/70"
+            style={{ fontFamily: "Poppins, sans-serif", fontStyle: "normal", fontWeight: 400 }}
+          >
             <MapPin className="h-4 w-4 text-brand" />
             370-372 Hammond Rd, Dandenong South VIC 3175
           </div>

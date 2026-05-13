@@ -31,7 +31,7 @@ export function Header() {
             <Link
               key={item.label}
               to={item.to}
-              className="text-sm font-medium text-neutral-800 transition-colors hover:text-brand"
+              className="text-sm font-medium text-black/70 transition-colors hover:text-black"
             >
               {item.label}
             </Link>

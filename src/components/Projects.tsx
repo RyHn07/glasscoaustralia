@@ -7,12 +7,12 @@ import atriumImg from "@/assets/project-atrium.jpg";
 import curvedImg from "@/assets/project-curved.jpg";
 
 const images = [
-  { src: officeImg, alt: "Modern glass office complex", area: "a" },
-  { src: retailImg, alt: "Luxury retail glass storefront", area: "b" },
-  { src: coastalImg, alt: "Coastal luxury home with glass windows", area: "c" },
-  { src: atriumImg, alt: "Glass atrium interior", area: "d" },
-  { src: curvedImg, alt: "Curved glass facade", area: "e" },
-  { src: heritageImg, alt: "Heritage Victorian building restoration", area: "f" },
+  { src: officeImg, alt: "Modern angular glass facade at dusk", area: "a" },
+  { src: retailImg, alt: "Commercial glazing project under construction", area: "b" },
+  { src: coastalImg, alt: "Modern home with frameless glass balustrade", area: "c" },
+  { src: atriumImg, alt: "Outdoor patio with sliding glass doors", area: "d" },
+  { src: curvedImg, alt: "Reflective blue glass facade", area: "e" },
+  { src: heritageImg, alt: "Residential home with large glazed windows", area: "f" },
 ];
 
 export function Projects() {

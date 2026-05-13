@@ -20,7 +20,7 @@ function Index() {
   return (
     <main className="flex h-screen flex-col bg-white">
       <Header />
-      <div className="flex-1 min-h-0 px-4 pb-4">
+      <div className="flex-1 min-h-0 px-1.5 pb-1.5">
         <div className="h-full w-full overflow-hidden rounded-lg">
           <Hero />
         </div>

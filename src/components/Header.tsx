@@ -19,17 +19,20 @@ export function Header() {
     >
       {/* Top bar */}
       <div className="border-b border-neutral-200 bg-white">
-        <div className="mx-auto flex max-w-[1400px] items-center justify-end gap-8 px-6 py-2.5 text-sm text-neutral-700">
+        <div
+          className="mx-auto flex max-w-[1400px] items-center justify-end gap-8 px-6 py-2.5 text-neutral-700"
+          style={{ fontFamily: '"Rajdhani", sans-serif', fontSize: "12px" }}
+        >
           <a href="mailto:info@example.com" className="flex items-center gap-2 hover:text-black">
-            <Mail className="h-4 w-4" style={{ color: "#009aaa" }} />
+            <Mail className="h-3.5 w-3.5" style={{ color: "#009aaa" }} />
             info@example.com
           </a>
           <a href="tel:0397065506" className="flex items-center gap-2 hover:text-black">
-            <Phone className="h-4 w-4" style={{ color: "#009aaa" }} />
+            <Phone className="h-3.5 w-3.5" style={{ color: "#009aaa" }} />
             (03) 9706 5506
           </a>
           <span className="flex items-center gap-2">
-            <Clock className="h-4 w-4" style={{ color: "#009aaa" }} />
+            <Clock className="h-3.5 w-3.5" style={{ color: "#009aaa" }} />
             Mon - Fri: 8:00 AM - 5:00 PM
           </span>
         </div>

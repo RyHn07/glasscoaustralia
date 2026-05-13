@@ -12,7 +12,6 @@ const items = [
     category: "BASE PRODUCT",
     title: "Float & Annealed Glass",
     spec: "3–19 mm · Clear & Low-Iron · AS/NZS 4666",
-    desc: "High-clarity float glass cut to size for windows, shopfronts, joinery and further processing into toughened or laminated assemblies.",
     tags: ["Optically Clear", "Cut-to-Size", "Custom Edges"],
   },
   {
@@ -21,7 +20,6 @@ const items = [
     category: "SAFETY GLASS",
     title: "Toughened (Tempered) Glass",
     spec: "4–19 mm · AS/NZS 2208 Grade A",
-    desc: "Heat-treated for up to 5× the strength of annealed glass. Fragments into small, granular pieces — ideal for doors, balustrades, showers and facades.",
     tags: ["Impact Resistant", "Heat-Strengthened", "Certified"],
   },
   {
@@ -30,7 +28,6 @@ const items = [
     category: "SECURITY & ACOUSTIC",
     title: "Laminated Safety Glass",
     spec: "6.38–13.52 mm · PVB/SGP interlayer",
-    desc: "Two or more glass plies bonded by a tough interlayer. Holds together when broken, dampens sound, and blocks 99% of UV.",
     tags: ["Intruder Resistant", "Acoustic Control", "UV Block"],
   },
   {
@@ -39,7 +36,6 @@ const items = [
     category: "ENERGY EFFICIENT",
     title: "Low-E Glass",
     spec: "U-value from 1.6 W/m²K · SHGC tunable",
-    desc: "Microscopically thin metallic coating reflects radiant heat to keep interiors cooler in summer and warmer in winter — without sacrificing daylight.",
     tags: ["Thermal Control", "High VLT", "Lower Energy Bills"],
   },
   {
@@ -48,7 +44,6 @@ const items = [
     category: "DECORATIVE",
     title: "Mirrors & Decorative",
     spec: "3–6 mm · Silver, Bronze, Grey · Custom cut",
-    desc: "Premium silvered mirrors and tinted decorative panels — supplied to wardrobes, bathrooms, gyms and retail fit-outs across Victoria.",
     tags: ["Polished Edges", "Tinted Options", "Made to Order"],
   },
 ];

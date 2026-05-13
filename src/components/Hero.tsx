@@ -1,7 +1,17 @@
+import { useEffect, useState } from "react";
 import { MapPin, Diamond } from "lucide-react";
 import heroImage from "@/assets/hero-glass.jpg";
 
 const tags = ["MANUFACTURER", "SUPPLIER", "WHOLESALER", "PRECISION CUTTER", "IMPORTER"];
+
+const rotatingWords = [
+  "GLASS WHOLESALER",
+  "GLASS PRECISION CUTTER",
+  "GLASS MANUFACTURER",
+  "GLASS PRECISION CUTTER",
+  "GLASS SUPPLIER",
+  "GLASS SUPPLIER",
+];
 
 export function Hero() {
   return (

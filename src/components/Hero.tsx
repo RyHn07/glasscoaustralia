@@ -52,7 +52,7 @@ export function Hero() {
             />
             <span
               style={{
-                fontFamily: 'Geist, "Geist Fallback"',
+                fontFamily: 'Rajdhani, sans-serif',
                 fontSize: "14px",
                 lineHeight: "24px",
                 fontWeight: 700,
@@ -153,8 +153,8 @@ export function Hero() {
 
           {/* Address */}
           <div
-            className="mt-6 flex items-center gap-2 text-sm text-foreground/70"
-            style={{ fontFamily: "Poppins, sans-serif", fontStyle: "normal", fontWeight: 400 }}
+            className="mt-6 flex items-center gap-2 text-foreground/70"
+            style={{ fontFamily: "Poppins, sans-serif", fontStyle: "normal", fontWeight: 400, fontSize: "13px" }}
           >
             <MapPin className="h-4 w-4" style={{ color: "rgb(0, 154, 170)" }} />
             370-372 Hammond Rd, Dandenong South VIC 3175

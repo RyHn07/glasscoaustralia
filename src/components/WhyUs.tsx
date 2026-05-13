@@ -104,7 +104,7 @@ export function WhyUs() {
         </div>
 
         {/* Trust panel */}
-        <div className="mt-14 rounded-2xl px-8 py-12 text-center" style={{ backgroundColor: "#e6e4e4" }}>
+        <div className="mt-14 rounded-2xl border px-8 py-12 text-center" style={{ backgroundColor: "#e6e4e4", borderColor: "#a49c9e" }}>
           <h3
             style={{
               fontFamily: "Rajdhani, sans-serif",

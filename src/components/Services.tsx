@@ -76,11 +76,19 @@ export function Services() {
             size glass. Hire us and experience the difference!
           </p>
           <div
-            className="mt-6 flex items-center justify-center gap-2 italic text-neutral-800"
-            style={{ fontFamily: "Poppins, sans-serif", fontSize: "16px" }}
+            className="mt-6 flex items-center justify-center gap-2 italic text-neutral-900"
+            style={{ fontFamily: "Poppins, sans-serif", fontSize: "22px", fontWeight: 500 }}
           >
-            <Quote className="h-5 w-5" style={{ color: "#009AAA" }} />
-            A wide range of quality glass
+            <Quote className="h-6 w-6" style={{ color: "#009AAA" }} />
+            <span
+              style={{
+                backgroundImage:
+                  "linear-gradient(transparent 60%, rgba(0, 154, 170, 0.35) 60%, rgba(0, 154, 170, 0.35) 92%, transparent 92%)",
+                padding: "0 4px",
+              }}
+            >
+              A wide range of quality glass
+            </span>
           </div>
         </div>
 

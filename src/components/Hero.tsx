@@ -99,7 +99,10 @@ export function Hero() {
           <div className="mt-12 flex flex-wrap items-center gap-x-4 gap-y-3">
             {tags.map((tag, i) => (
               <div key={tag} className="flex items-center gap-4">
-                <span className="text-xs font-bold tracking-widest text-foreground/70">
+                <span
+                  className="text-xs tracking-widest text-foreground/70"
+                  style={{ fontFamily: "Poppins, sans-serif", fontStyle: "normal", fontWeight: 400 }}
+                >
                   {tag}
                 </span>
                 {i < tags.length - 1 && (

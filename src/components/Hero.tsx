@@ -76,7 +76,7 @@ export function Hero() {
           {/* Description */}
           <p
             className="mt-8 max-w-md text-base leading-relaxed text-foreground/80"
-            style={{ fontFamily: "Poppins, sans-serif" }}
+            style={{ fontFamily: "Poppins, sans-serif", fontWeight: 400 }}
           >
             We manufacture premium glass from source — supplying builders,
             architects & retailers across Australia.

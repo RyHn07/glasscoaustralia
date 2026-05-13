@@ -62,7 +62,7 @@ export function Contact() {
             </div>
 
             {/* Right buttons */}
-            <div className="flex flex-col gap-4 lg:min-w-[300px]">
+            <div className="flex flex-col gap-4 lg:w-[240px]">
               <button
                 className="inline-flex items-center justify-center gap-2 rounded-md bg-white px-6 py-3.5 text-sm font-semibold transition-opacity hover:opacity-90"
                 style={{ color: "#009AAA", fontFamily: "Rajdhani, sans-serif" }}

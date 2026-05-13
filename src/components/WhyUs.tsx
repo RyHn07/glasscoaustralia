@@ -41,7 +41,7 @@ const trustStats = [
 
 export function WhyUs() {
   return (
-    <section className="w-full bg-neutral-50 py-24">
+    <section className="w-full bg-white py-24">
       <div className="mx-auto max-w-[1280px] px-6">
         {/* Header */}
         <div className="text-center">

@@ -25,13 +25,15 @@ export function Hero() {
 
   return (
     <section className="relative h-full w-full overflow-hidden bg-background">
-      {/* Background image */}
+      {/* Background video */}
       <div className="absolute inset-0">
-        <img
-          src={heroImage}
-          alt="Glass manufacturing warehouse"
-          width={1920}
-          height={1080}
+        <video
+          src="/hero-bg.mov"
+          poster={heroImage}
+          autoPlay
+          muted
+          loop
+          playsInline
           className="h-full w-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-background via-background/70 to-background/30" />

@@ -30,7 +30,7 @@ export function WhoWeAre() {
             />
             {/* Stat badge */}
             <div
-              className="absolute -bottom-6 right-6 rounded-lg px-8 py-5 text-center text-white shadow-xl"
+              className="absolute -bottom-6 -right-6 rounded-lg px-8 py-5 text-center text-white shadow-xl"
               style={{ backgroundColor: "#009AAA", fontFamily: "Rajdhani, sans-serif" }}
             >
               <div className="text-4xl font-bold leading-none">27+</div>

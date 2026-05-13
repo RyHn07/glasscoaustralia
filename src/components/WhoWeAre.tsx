@@ -95,8 +95,8 @@ export function WhoWeAre() {
 
             {/* Quote */}
             <div
-              className="mt-8 border-l-2 pl-4 italic text-neutral-700"
-              style={{ borderColor: "#009AAA", fontFamily: "Poppins, sans-serif", fontSize: "15px" }}
+              className="mt-8 pl-4 italic text-neutral-700"
+              style={{ borderLeftWidth: "3px", borderLeftStyle: "solid", borderColor: "#009AAA", fontFamily: "Poppins, sans-serif", fontSize: "17px" }}
             >
               "Exceptional service and top-notch quality work — every time."
             </div>

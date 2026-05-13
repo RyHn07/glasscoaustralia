@@ -162,14 +162,6 @@ export function Hero() {
         </div>
       </div>
 
-      {/* Bottom hazard tape */}
-      <div
-        className="absolute bottom-32 left-0 right-0 h-6 opacity-90"
-        style={{
-          backgroundImage:
-            "repeating-linear-gradient(135deg, #1a1a1a 0 20px, #f5c518 20px 40px)",
-        }}
-      />
     </section>
   );
 }

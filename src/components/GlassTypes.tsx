@@ -219,9 +219,9 @@ export function GlassTypes() {
               <thead style={{ backgroundColor: "#009AAA" }}>
                 <tr>
                   {COLS.map((c) => (
-                    <th
+                      <th
                       key={c.key}
-                      className="whitespace-nowrap px-4 py-3 text-white"
+                      className="whitespace-nowrap px-5 py-5 text-white"
                       style={{
                         fontFamily: "Rajdhani, sans-serif",
                         fontSize: "13px",

@@ -14,6 +14,15 @@ const rotatingWords = [
 ];
 
 export function Hero() {
+  const [wordIndex, setWordIndex] = useState(0);
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      setWordIndex((i) => (i + 1) % rotatingWords.length);
+    }, 2200);
+    return () => clearInterval(id);
+  }, []);
+
   return (
     <section className="relative h-full w-full overflow-hidden bg-background">
       {/* Background image */}

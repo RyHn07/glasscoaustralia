@@ -56,10 +56,19 @@ export function Hero() {
           </div>
 
           {/* Heading */}
-          <h1 className="text-6xl font-extrabold leading-[1.05] tracking-tight text-foreground md:text-7xl lg:text-8xl">
+          <h1
+            style={{
+              fontFamily: "Rajdhani, sans-serif",
+              fontSize: "96px",
+              fontWeight: 700,
+              lineHeight: "100.8px",
+              color: "rgb(0, 154, 170)",
+              margin: 0,
+            }}
+          >
             Engineered
             <br />
-            <span className="text-brand">From Raw</span>
+            From Raw
             <br />
             Glass.
           </h1>

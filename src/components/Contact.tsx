@@ -76,7 +76,7 @@ export function Contact() {
                 style={{ fontFamily: "Rajdhani, sans-serif" }}
               >
                 <Phone className="h-4 w-4" />
-                (03) 9034 6146
+                (03) 9706 5506
               </button>
             </div>
           </div>
@@ -110,7 +110,7 @@ export function Contact() {
                     fontWeight: 700,
                   }}
                 >
-                  (03) 9034 6146
+                  (03) 9706 5506
                 </div>
               </div>
             </div>
@@ -138,7 +138,17 @@ export function Contact() {
                     fontWeight: 700,
                   }}
                 >
-                  info@glassco.com.au
+                  info@glasscoaustralia.com.au
+                </div>
+                <div
+                  className="text-white/90"
+                  style={{
+                    fontFamily: "Rajdhani, sans-serif",
+                    fontSize: "16px",
+                    fontWeight: 600,
+                  }}
+                >
+                  orders@glasscoaustralia.com.au
                 </div>
               </div>
             </div>

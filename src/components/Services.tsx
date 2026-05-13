@@ -1,4 +1,4 @@
-import { Home, Building2, Wind, Lock, Shield, Zap, Quote } from "lucide-react";
+import { Home, Building2, Wind, Lock, Shield, Quote } from "lucide-react";
 
 const services = [
   {
@@ -25,11 +25,6 @@ const services = [
     icon: Shield,
     title: "Glass Repairs",
     desc: "Professional repair and restoration services for damaged glass with quick turnaround times.",
-  },
-  {
-    icon: Zap,
-    title: "Smart Glass",
-    desc: "Enable on-demand privacy control with switchable smart glass technology — ideal for offices, bathrooms and facades.",
   },
 ];
 

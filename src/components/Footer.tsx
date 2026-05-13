@@ -6,8 +6,7 @@ const services = [
   "Residential Glass",
   "Commercial Solutions",
   "Safety Glass",
-  "Smart Glass",
-  "Glass Repairs",
+"Glass Repairs",
 ];
 
 export function Footer() {
@@ -138,7 +137,13 @@ export function Footer() {
                     className="mt-1 text-white/70"
                     style={{ fontFamily: "Poppins, sans-serif", fontSize: "14px" }}
                   >
-                    info@glassco.com.au
+                    info@glasscoaustralia.com.au
+                  </div>
+                  <div
+                    className="mt-1 text-white/70"
+                    style={{ fontFamily: "Poppins, sans-serif", fontSize: "14px" }}
+                  >
+                    orders@glasscoaustralia.com.au
                   </div>
                 </div>
               </li>

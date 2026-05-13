@@ -2,10 +2,10 @@ import { Calendar, Users, Award, MapPin } from "lucide-react";
 import buildingImg from "@/assets/about-building.jpg";
 
 const stats = [
-  { icon: Calendar, value: "27+", label: "Years Experience" },
-  { icon: Users, value: "1000+", label: "Happy Clients" },
-  { icon: Award, value: "50+", label: "Team Members" },
-  { icon: MapPin, value: "10+", label: "Locations" },
+  { icon: Calendar, value: "33+", label: "Years Experience" },
+  { icon: Users, value: "100+", label: "Happy Clients" },
+  { icon: Award, value: "25+", label: "Team Members" },
+  { icon: MapPin, value: "2+", label: "Locations" },
 ];
 
 export function WhoWeAre() {
@@ -33,7 +33,7 @@ export function WhoWeAre() {
               className="absolute -bottom-6 -right-6 rounded-lg px-8 py-5 text-center text-white shadow-xl"
               style={{ backgroundColor: "#009AAA", fontFamily: "Rajdhani, sans-serif" }}
             >
-              <div className="text-4xl font-bold leading-none">27+</div>
+              <div className="text-4xl font-bold leading-none">33+</div>
               <div className="mt-1 text-sm font-medium">Years in Glass</div>
             </div>
           </div>
@@ -86,10 +86,13 @@ export function WhoWeAre() {
                 and residential clients.
               </p>
               <p>
-                With over 27 years of experience in the glass industry, we pride ourselves on
+                With over 33 years of experience in the glass industry, we pride ourselves on
                 exceptional customer service and top-notch quality. Whether you need glass for
                 vehicles, shower screens, or commercial facades — our devoted team ensures we
                 have the right products to meet your expectations.
+              </p>
+              <p className="font-medium text-neutral-800">
+                Proudly serving Australia since 1993.
               </p>
             </div>
 

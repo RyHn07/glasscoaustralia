@@ -59,16 +59,16 @@ export function Hero() {
           <h1
             style={{
               fontFamily: "Rajdhani, sans-serif",
-              fontSize: "96px",
+              fontSize: "clamp(3rem, 7vw, 6rem)",
               fontWeight: 700,
-              lineHeight: "100.8px",
-              color: "rgb(0, 154, 170)",
+              lineHeight: 1.05,
+              color: "#ffffff",
               margin: 0,
             }}
           >
             Engineered
             <br />
-            From Raw
+            <span style={{ color: "rgb(0, 154, 170)" }}>From Raw</span>
             <br />
             Glass.
           </h1>

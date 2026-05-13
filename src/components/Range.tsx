@@ -147,12 +147,6 @@ export function Range() {
                   >
                     {it.spec}
                   </div>
-                  <p
-                    className="mt-2 text-white/80"
-                    style={{ fontFamily: "Poppins, sans-serif", fontSize: "13px", lineHeight: 1.55 }}
-                  >
-                    {it.desc}
-                  </p>
                   <div className="mt-3 flex flex-wrap gap-2">
                     {it.tags.map((tag) => (
                       <span

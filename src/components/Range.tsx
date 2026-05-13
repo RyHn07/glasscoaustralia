@@ -1,37 +1,55 @@
 import { ArrowUpRight } from "lucide-react";
-import glazingImg from "@/assets/range-glazing.jpg";
+import floatImg from "@/assets/range-float.jpg";
 import temperedImg from "@/assets/range-tempered.jpg";
 import laminatedImg from "@/assets/range-laminated.jpg";
-import smartImg from "@/assets/range-smart.jpg";
+import lowEImg from "@/assets/range-lowe.jpg";
+import mirrorsImg from "@/assets/range-mirrors.jpg";
 
 const items = [
   {
-    image: glazingImg,
-    alt: "Modern glass windows on a building",
-    category: "WINDOWS & DOORS",
-    title: "Premium Glazing",
-    tags: ["Soundproof", "Energy Efficient", "UV Protection"],
+    image: floatImg,
+    alt: "Stack of clear float glass sheets",
+    category: "BASE PRODUCT",
+    title: "Float & Annealed Glass",
+    spec: "3–19 mm · Clear & Low-Iron · AS/NZS 4666",
+    desc: "High-clarity float glass cut to size for windows, shopfronts, joinery and further processing into toughened or laminated assemblies.",
+    tags: ["Optically Clear", "Cut-to-Size", "Custom Edges"],
   },
   {
     image: temperedImg,
-    alt: "Tempered safety glass panel",
+    alt: "Toughened safety glass panels",
     category: "SAFETY GLASS",
-    title: "Tempered Glass",
-    tags: ["Shatter Resistant", "High Strength", "Certified"],
+    title: "Toughened (Tempered) Glass",
+    spec: "4–19 mm · AS/NZS 2208 Grade A",
+    desc: "Heat-treated for up to 5× the strength of annealed glass. Fragments into small, granular pieces — ideal for doors, balustrades, showers and facades.",
+    tags: ["Impact Resistant", "Heat-Strengthened", "Certified"],
   },
   {
     image: laminatedImg,
-    alt: "Laminated glass security installation",
-    category: "SECURITY",
-    title: "Laminated Glass",
-    tags: ["Impact Resistant", "Intruder Proof", "Fire Rated"],
+    alt: "Laminated safety glass cross-section",
+    category: "SECURITY & ACOUSTIC",
+    title: "Laminated Safety Glass",
+    spec: "6.38–13.52 mm · PVB/SGP interlayer",
+    desc: "Two or more glass plies bonded by a tough interlayer. Holds together when broken, dampens sound, and blocks 99% of UV.",
+    tags: ["Intruder Resistant", "Acoustic Control", "UV Block"],
   },
   {
-    image: smartImg,
-    alt: "Smart glass in modern office",
-    category: "INNOVATION",
-    title: "Smart Glass",
-    tags: ["Instant Privacy", "Smart Control", "Modern Design"],
+    image: lowEImg,
+    alt: "Low-E coated glass facade",
+    category: "ENERGY EFFICIENT",
+    title: "Low-E Glass",
+    spec: "U-value from 1.6 W/m²K · SHGC tunable",
+    desc: "Microscopically thin metallic coating reflects radiant heat to keep interiors cooler in summer and warmer in winter — without sacrificing daylight.",
+    tags: ["Thermal Control", "High VLT", "Lower Energy Bills"],
+  },
+  {
+    image: mirrorsImg,
+    alt: "Custom silvered mirror panels in interior",
+    category: "DECORATIVE",
+    title: "Mirrors & Decorative",
+    spec: "3–6 mm · Silver, Bronze, Grey · Custom cut",
+    desc: "Premium silvered mirrors and tinted decorative panels — supplied to wardrobes, bathrooms, gyms and retail fit-outs across Victoria.",
+    tags: ["Polished Edges", "Tinted Options", "Made to Order"],
   },
 ];
 
@@ -81,67 +99,83 @@ export function Range() {
           </p>
         </div>
 
-        {/* Grid */}
-        <div className="mt-14 grid grid-cols-1 gap-6 md:grid-cols-5">
-          {items.map((it, i) => (
-            <article
-              key={it.title}
-              className={`group relative h-[360px] overflow-hidden rounded-xl bg-neutral-200 ${
-                i === 0 || i === 3 ? "md:col-span-3" : "md:col-span-2"
-              }`}
-            >
-              <img
-                src={it.image}
-                alt={it.alt}
-                loading="lazy"
-                width={1024}
-                height={768}
-                className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-              />
-              {/* Gradient overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
-              {/* Content */}
-              <div className="absolute inset-0 flex flex-col justify-end p-7 text-white">
-                <span
-                  style={{
-                    fontFamily: "Rajdhani, sans-serif",
-                    fontSize: "12px",
-                    fontWeight: 700,
-                    letterSpacing: "0.2em",
-                    color: "#00DEF7",
-                  }}
-                >
-                  {it.category}
-                </span>
-                <h3
-                  className="mt-2"
-                  style={{
-                    fontFamily: "Rajdhani, sans-serif",
-                    fontSize: "28px",
-                    fontWeight: 700,
-                    lineHeight: 1.1,
-                  }}
-                >
-                  {it.title}
-                </h3>
-                <div className="mt-4 flex flex-wrap gap-2">
-                  {it.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs backdrop-blur"
-                      style={{ fontFamily: "Poppins, sans-serif" }}
-                    >
-                      {tag}
-                    </span>
-                  ))}
+        {/* Grid: 6-col layout — first row 2 wide cards, second row 3 cards */}
+        <div className="mt-14 grid grid-cols-1 gap-6 md:grid-cols-6">
+          {items.map((it, i) => {
+            // 2 + 3 layout: first two span 3, last three span 2
+            const span = i < 2 ? "md:col-span-3" : "md:col-span-2";
+            return (
+              <article
+                key={it.title}
+                className={`group relative h-[380px] overflow-hidden rounded-xl bg-neutral-200 ${span}`}
+              >
+                <img
+                  src={it.image}
+                  alt={it.alt}
+                  loading="lazy"
+                  width={1024}
+                  height={768}
+                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
+                <div className="absolute inset-0 flex flex-col justify-end p-7 text-white">
+                  <span
+                    style={{
+                      fontFamily: "Rajdhani, sans-serif",
+                      fontSize: "12px",
+                      fontWeight: 700,
+                      letterSpacing: "0.2em",
+                      color: "#00DEF7",
+                    }}
+                  >
+                    {it.category}
+                  </span>
+                  <h3
+                    className="mt-2"
+                    style={{
+                      fontFamily: "Rajdhani, sans-serif",
+                      fontSize: "26px",
+                      fontWeight: 700,
+                      lineHeight: 1.1,
+                    }}
+                  >
+                    {it.title}
+                  </h3>
+                  <div
+                    className="mt-2 text-white/85"
+                    style={{
+                      fontFamily: "Rajdhani, sans-serif",
+                      fontSize: "13px",
+                      fontWeight: 600,
+                      letterSpacing: "0.05em",
+                    }}
+                  >
+                    {it.spec}
+                  </div>
+                  <p
+                    className="mt-2 text-white/80"
+                    style={{ fontFamily: "Poppins, sans-serif", fontSize: "13px", lineHeight: 1.55 }}
+                  >
+                    {it.desc}
+                  </p>
+                  <div className="mt-3 flex flex-wrap gap-2">
+                    {it.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs backdrop-blur"
+                        style={{ fontFamily: "Poppins, sans-serif" }}
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
                 </div>
-              </div>
-              {/* Arrow */}
-              <div className="absolute bottom-6 right-6 flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white backdrop-blur transition-all group-hover:bg-white group-hover:text-black">
-                <ArrowUpRight className="h-5 w-5" />
-              </div>
-            </article>
-          ))}
+                <div className="absolute bottom-6 right-6 flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white backdrop-blur transition-all group-hover:bg-white group-hover:text-black">
+                  <ArrowUpRight className="h-5 w-5" />
+                </div>
+              </article>
+            );
+          })}
         </div>
       </div>
     </section>

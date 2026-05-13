@@ -57,20 +57,34 @@ export function Hero() {
                 letterSpacing: "normal",
                 color: "rgb(0, 154, 170)",
                 display: "inline-block",
+                position: "relative",
                 overflow: "hidden",
                 height: "24px",
                 verticalAlign: "bottom",
+                minWidth: "200px",
               }}
             >
-              <span
-                key={wordIndex}
-                style={{
-                  display: "inline-block",
-                  animation: "rotateUp 0.6s ease-out",
-                }}
-              >
-                {rotatingWords[wordIndex]}
-              </span>
+              {rotatingWords.map((word, i) => (
+                <span
+                  key={i}
+                  style={{
+                    position: i === wordIndex ? "relative" : "absolute",
+                    left: 0,
+                    top: 0,
+                    whiteSpace: "nowrap",
+                    display: "inline-block",
+                    animation:
+                      i === wordIndex
+                        ? "rotateInUp 0.6s ease-out forwards"
+                        : i === (wordIndex - 1 + rotatingWords.length) % rotatingWords.length
+                          ? "rotateOutUp 0.6s ease-out forwards"
+                          : "none",
+                    opacity: i === wordIndex || i === (wordIndex - 1 + rotatingWords.length) % rotatingWords.length ? 1 : 0,
+                  }}
+                >
+                  {word}
+                </span>
+              ))}
             </span>
           </div>
 

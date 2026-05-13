@@ -84,7 +84,10 @@ export function Hero() {
 
           {/* CTAs */}
           <div className="mt-10 flex flex-wrap gap-4">
-            <button className="rounded-md bg-brand px-7 py-4 text-sm font-semibold text-brand-foreground transition-opacity hover:opacity-90">
+            <button
+              className="rounded-md px-7 py-4 text-sm font-semibold text-white transition-opacity hover:opacity-90"
+              style={{ backgroundColor: "#009AAA", fontFamily: "Rajdhani, sans-serif" }}
+            >
               Get a Free Quote  ›
             </button>
             <button className="rounded-md border border-foreground/30 bg-background/40 px-7 py-4 text-sm font-semibold text-foreground backdrop-blur transition-colors hover:bg-background/60">

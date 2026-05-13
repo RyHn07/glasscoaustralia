@@ -86,7 +86,7 @@ export function Range() {
           {items.map((it, i) => (
             <article
               key={it.title}
-              className={`group relative aspect-[16/10] overflow-hidden rounded-xl bg-neutral-200 ${
+              className={`group relative h-[360px] overflow-hidden rounded-xl bg-neutral-200 ${
                 i === 0 || i === 3 ? "md:col-span-3" : "md:col-span-2"
               }`}
             >

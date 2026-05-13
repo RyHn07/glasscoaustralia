@@ -20,11 +20,9 @@ export function Header() {
       <div className="mx-auto flex max-w-[1400px] items-center justify-between px-6 py-4">
         {/* Logo */}
         <Link to="/" className="flex items-center">
-          <div className="relative flex h-14 w-20 rotate-45 items-center justify-center border-2 border-brand">
-            <span className="-rotate-45 text-xs font-bold tracking-wider text-brand">
-              GlassCo
-            </span>
-          </div>
+          <span className="text-2xl font-bold tracking-widest text-neutral-900">
+            LOGO
+          </span>
         </Link>
 
         {/* Nav */}

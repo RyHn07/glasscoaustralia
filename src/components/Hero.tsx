@@ -35,7 +35,7 @@ export function Hero() {
                 fontSize: "14px",
                 lineHeight: "24px",
                 fontWeight: 700,
-                letterSpacing: "0.2em",
+                letterSpacing: "normal",
                 color: "rgb(0, 154, 170)",
               }}
             >

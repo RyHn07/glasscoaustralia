@@ -44,14 +44,21 @@ export function Header() {
         <div className="flex items-center gap-6">
           <a
             href="tel:0397065506"
-            className="flex items-center gap-2 text-sm font-semibold text-brand"
+            className="flex items-center gap-2 text-sm font-semibold"
+            style={{ color: "#009aaa" }}
           >
-            <span className="flex h-8 w-8 items-center justify-center rounded-full bg-brand/10">
+            <span
+              className="flex h-8 w-8 items-center justify-center rounded-full"
+              style={{ backgroundColor: "rgba(0, 154, 170, 0.12)" }}
+            >
               <Phone className="h-4 w-4" />
             </span>
             (03) 9706 5506
           </a>
-          <button className="rounded-md bg-neutral-900 px-5 py-2.5 text-sm font-semibold text-white transition-opacity hover:opacity-90">
+          <button
+            className="rounded-md bg-neutral-900 px-5 py-2.5 text-sm font-semibold text-white transition-opacity hover:opacity-90"
+            style={{ fontFamily: '"Rajdhani", sans-serif' }}
+          >
             Get Quote
           </button>
         </div>

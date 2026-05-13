@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Mail, Phone, Clock } from "lucide-react";
+import logo from "@/assets/logo.svg";
 
 const navItems = [
   { label: "Home", to: "/" },
@@ -41,9 +42,7 @@ export function Header() {
       <div className="mx-auto flex max-w-[1400px] items-center justify-between px-6 py-4">
         {/* Logo */}
         <Link to="/" className="flex items-center">
-          <span className="text-2xl font-bold tracking-widest text-neutral-900">
-            LOGO
-          </span>
+          <img src={logo} alt="GlassCo" className="h-12 w-auto" />
         </Link>
 
         {/* Nav */}

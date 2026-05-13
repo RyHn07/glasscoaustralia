@@ -56,9 +56,21 @@ export function Hero() {
                 fontWeight: 700,
                 letterSpacing: "normal",
                 color: "rgb(0, 154, 170)",
+                display: "inline-block",
+                overflow: "hidden",
+                height: "24px",
+                verticalAlign: "bottom",
               }}
             >
-              GLASS IMPORTER
+              <span
+                key={wordIndex}
+                style={{
+                  display: "inline-block",
+                  animation: "rotateUp 0.6s ease-out",
+                }}
+              >
+                {rotatingWords[wordIndex]}
+              </span>
             </span>
           </div>
 

@@ -1,6 +1,4 @@
 import { Download, FileText } from "lucide-react";
-import { jsPDF } from "jspdf";
-import autoTable from "jspdf-autotable";
 
 type GlassRow = {
   product: string;
@@ -88,7 +86,12 @@ const COLS: { key: keyof GlassRow; label: string }[] = [
   { key: "notes", label: "Notes" },
 ];
 
-function downloadPdf() {
+async function downloadPdf() {
+  const [{ jsPDF }, autoTableModule] = await Promise.all([
+    import("jspdf"),
+    import("jspdf-autotable"),
+  ]);
+  const autoTable = autoTableModule.default;
   const doc = new jsPDF({ orientation: "landscape", unit: "pt", format: "a4" });
   const pageWidth = doc.internal.pageSize.getWidth();
 

@@ -67,12 +67,13 @@ export function Services() {
             className="mt-5 text-neutral-600"
             style={{ fontFamily: "Poppins, sans-serif", fontSize: "15px", lineHeight: 1.7 }}
           >
-            GlassCo Australia Pty provides a wide range of quality glass for individuals,
-            businesses and industries. We manufacture an extensive selection of glass products for
-            different sectors ranging from transportation and architectural companies to industrial
-            and technical sectors. As part of our professional services, we also offer decorative
-            glass for mirrors and windows and cut-to-size glass. Hire us and experience the
-            difference!
+            GlassCo Australia Pty provides a wide range of quality glass for individuals, businesses and industries. We manufacture an
+            <br />
+            extensive selection of glass products for different sectors ranging from transportation and architectural companies to industrial
+            <br />
+            and technical sectors. As part of our professional services, we also offer decorative glass for mirrors and windows and cut-to-
+            <br />
+            size glass. Hire us and experience the difference!
           </p>
           <div
             className="mt-6 flex items-center justify-center gap-2 italic text-neutral-800"

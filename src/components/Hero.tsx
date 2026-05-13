@@ -139,8 +139,8 @@ export function Hero() {
             {tags.map((tag, i) => (
               <div key={tag} className="flex items-center gap-4">
                 <span
-                  className="text-xs text-foreground/70"
-                  style={{ fontFamily: "Poppins, sans-serif", fontStyle: "normal", fontWeight: 400 }}
+                  className="text-foreground/70"
+                  style={{ fontFamily: "Poppins, sans-serif", fontStyle: "normal", fontWeight: 400, fontSize: "13px", letterSpacing: "0.05em" }}
                 >
                   {tag}
                 </span>

@@ -38,7 +38,7 @@ export function Services() {
     <section className="w-full bg-neutral-50 py-24">
       <div className="mx-auto max-w-[1280px] px-6">
         {/* Header */}
-        <div className="mx-auto max-w-3xl text-center">
+        <div className="text-center">
           <span
             style={{
               fontFamily: "Rajdhani, sans-serif",

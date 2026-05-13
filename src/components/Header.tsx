@@ -43,7 +43,7 @@ export function Header() {
           <a
             href="tel:0397065506"
             className="flex items-center gap-2 text-sm font-semibold"
-            style={{ color: "#009aaa" }}
+            style={{ color: "#009aaa", fontFamily: '"Rajdhani", sans-serif' }}
           >
             <span
               className="flex h-8 w-8 items-center justify-center rounded-full"

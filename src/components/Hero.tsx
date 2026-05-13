@@ -5,7 +5,7 @@ const tags = ["MANUFACTURER", "SUPPLIER", "WHOLESALER", "PRECISION CUTTER", "IMP
 
 export function Hero() {
   return (
-    <section className="relative min-h-screen w-full overflow-hidden bg-background">
+    <section className="relative h-full w-full overflow-hidden bg-background">
       {/* Background image */}
       <div className="absolute inset-0">
         <img
@@ -33,7 +33,7 @@ export function Hero() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 mx-auto flex min-h-screen max-w-[1400px] flex-col justify-center px-6 pt-16 pb-16">
+      <div className="relative z-10 mx-auto flex h-full max-w-[1400px] flex-col justify-center px-6 py-12">
         <div className="max-w-2xl">
           {/* Eyebrow */}
           <div className="mb-6 flex items-center gap-3">

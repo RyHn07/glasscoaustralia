@@ -9,7 +9,7 @@ import curvedImg from "@/assets/project-curved.jpg";
 const images = [
   { src: officeImg, alt: "Modern angular glass facade at dusk", area: "a" },
   { src: retailImg, alt: "Commercial glazing project under construction", area: "b" },
-  { src: coastalImg, alt: "Modern home with frameless glass balustrade", area: "c" },
+  { src: coastalImg, alt: "Glass facade reflecting cloudy sky", area: "c" },
   { src: atriumImg, alt: "Outdoor patio with sliding glass doors", area: "d" },
   { src: curvedImg, alt: "Reflective blue glass facade", area: "e" },
   { src: heritageImg, alt: "Residential home with large glazed windows", area: "f" },

@@ -82,11 +82,13 @@ export function Range() {
         </div>
 
         {/* Grid */}
-        <div className="mt-14 grid grid-cols-1 gap-6 md:grid-cols-2">
-          {items.map((it) => (
+        <div className="mt-14 grid grid-cols-1 gap-6 md:grid-cols-5">
+          {items.map((it, i) => (
             <article
               key={it.title}
-              className="group relative aspect-[16/10] overflow-hidden rounded-xl bg-neutral-200"
+              className={`group relative aspect-[16/10] overflow-hidden rounded-xl bg-neutral-200 ${
+                i === 0 || i === 3 ? "md:col-span-3" : "md:col-span-2"
+              }`}
             >
               <img
                 src={it.image}

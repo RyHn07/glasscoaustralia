@@ -86,7 +86,7 @@ export function Testimonials() {
           {testimonials.map((t) => (
             <article
               key={t.name}
-              className="rounded-2xl border border-neutral-200 bg-white p-8"
+              className="flex flex-col rounded-2xl border border-neutral-200 bg-white p-8"
             >
               {/* Stars */}
               <div className="flex items-center gap-1">
@@ -104,7 +104,7 @@ export function Testimonials() {
               </p>
 
               {/* Divider */}
-              <div className="my-10 h-px w-full bg-neutral-200" />
+              <div className="mb-10 mt-auto h-px w-full bg-neutral-200" style={{ marginTop: "auto" }} />
 
               {/* Author */}
               <div className="flex items-center gap-4">

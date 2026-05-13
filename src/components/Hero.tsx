@@ -1,9 +1,28 @@
+import { useEffect, useState } from "react";
 import { MapPin, Diamond } from "lucide-react";
 import heroImage from "@/assets/hero-glass.jpg";
 
 const tags = ["MANUFACTURER", "SUPPLIER", "WHOLESALER", "PRECISION CUTTER", "IMPORTER"];
 
+const rotatingWords = [
+  "GLASS WHOLESALER",
+  "GLASS PRECISION CUTTER",
+  "GLASS MANUFACTURER",
+  "GLASS PRECISION CUTTER",
+  "GLASS SUPPLIER",
+  "GLASS SUPPLIER",
+];
+
 export function Hero() {
+  const [wordIndex, setWordIndex] = useState(0);
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      setWordIndex((i) => (i + 1) % rotatingWords.length);
+    }, 2200);
+    return () => clearInterval(id);
+  }, []);
+
   return (
     <section className="relative h-full w-full overflow-hidden bg-background">
       {/* Background image */}
@@ -37,9 +56,21 @@ export function Hero() {
                 fontWeight: 700,
                 letterSpacing: "normal",
                 color: "rgb(0, 154, 170)",
+                display: "inline-block",
+                overflow: "hidden",
+                height: "24px",
+                verticalAlign: "bottom",
               }}
             >
-              GLASS IMPORTER
+              <span
+                key={wordIndex}
+                style={{
+                  display: "inline-block",
+                  animation: "rotateUp 0.6s ease-out",
+                }}
+              >
+                {rotatingWords[wordIndex]}
+              </span>
             </span>
           </div>
 

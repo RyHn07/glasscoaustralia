@@ -104,7 +104,7 @@ export function Testimonials() {
               </p>
 
               {/* Divider */}
-              <div className="my-6 h-px w-full bg-neutral-200" />
+              <div className="my-10 h-px w-full bg-neutral-200" />
 
               {/* Author */}
               <div className="flex items-center gap-4">

@@ -6,12 +6,12 @@ import atriumImg from "@/assets/project-atrium.jpg";
 import curvedImg from "@/assets/project-curved.jpg";
 
 const images = [
-  { src: officeImg, alt: "Modern glass office complex", w: 1024, h: 768 },
-  { src: coastalImg, alt: "Coastal luxury home with glass windows", w: 1024, h: 1280 },
-  { src: retailImg, alt: "Luxury retail glass storefront", w: 1024, h: 768 },
-  { src: heritageImg, alt: "Heritage Victorian building restoration", w: 1024, h: 1024 },
-  { src: atriumImg, alt: "Glass atrium interior", w: 1024, h: 768 },
-  { src: curvedImg, alt: "Curved glass facade", w: 1024, h: 1024 },
+  { src: officeImg, alt: "Modern glass office complex", span: 2 },
+  { src: coastalImg, alt: "Coastal luxury home with glass windows", span: 1 },
+  { src: retailImg, alt: "Luxury retail glass storefront", span: 1 },
+  { src: atriumImg, alt: "Glass atrium interior", span: 2 },
+  { src: curvedImg, alt: "Curved glass facade", span: 2 },
+  { src: heritageImg, alt: "Heritage Victorian building restoration", span: 1 },
 ];
 
 export function Projects() {
@@ -60,20 +60,20 @@ export function Projects() {
           </p>
         </div>
 
-        {/* Masonry gallery */}
-        <div className="mt-14 columns-1 gap-5 sm:columns-2 lg:columns-3 [&>*]:mb-5">
+        {/* Structured grid gallery */}
+        <div className="mt-14 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {images.map((img) => (
             <div
               key={img.alt}
-              className="group break-inside-avoid overflow-hidden rounded-xl bg-neutral-100"
+              className={`group relative aspect-[4/3] overflow-hidden rounded-xl bg-neutral-100 ${
+                img.span === 2 ? "lg:col-span-2" : "lg:col-span-1"
+              }`}
             >
               <img
                 src={img.src}
                 alt={img.alt}
                 loading="lazy"
-                width={img.w}
-                height={img.h}
-                className="block h-auto w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
             </div>
           ))}

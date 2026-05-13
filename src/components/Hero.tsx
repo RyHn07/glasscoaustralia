@@ -1,4 +1,4 @@
-import { Phone, Store, MapPin, Diamond } from "lucide-react";
+import { MapPin, Diamond } from "lucide-react";
 import heroImage from "@/assets/hero-glass.jpg";
 
 const tags = ["MANUFACTURER", "SUPPLIER", "WHOLESALER", "PRECISION CUTTER", "IMPORTER"];
@@ -18,19 +18,7 @@ export function Hero() {
         <div className="absolute inset-0 bg-gradient-to-r from-background via-background/70 to-background/30" />
       </div>
 
-      {/* Floating left phone tab */}
-      <div className="absolute left-0 top-8 z-10 flex items-center gap-2 rounded-r-md bg-background/90 px-4 py-3 backdrop-blur">
-        <Phone className="h-4 w-4 text-brand" />
-        <span className="text-sm font-semibold text-foreground">(03) 9034 6146</span>
-      </div>
 
-      {/* Floating right hours tab */}
-      <div className="absolute right-0 top-8 z-10 flex items-center gap-2 rounded-l-md bg-background/90 px-4 py-3 backdrop-blur">
-        <Store className="h-4 w-4 text-brand" />
-        <span className="text-sm font-semibold text-foreground">
-          Mon - Fri  8am - 5pm
-        </span>
-      </div>
 
       {/* Content */}
       <div className="relative z-10 mx-auto flex h-full max-w-[1400px] flex-col justify-center px-6 py-12">

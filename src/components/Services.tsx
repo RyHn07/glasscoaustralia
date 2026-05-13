@@ -1,4 +1,4 @@
-import { Home, Building2, Wind, Lock, Shield, Zap, Quote } from "lucide-react";
+import { Home, Building2, Wind, Lock, Shield, Quote } from "lucide-react";
 
 const services = [
   {

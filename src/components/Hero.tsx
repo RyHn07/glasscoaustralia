@@ -79,7 +79,10 @@ export function Hero() {
             >
               Get a Free Quote  ›
             </button>
-            <button className="rounded-md border border-foreground/30 bg-background/40 px-7 py-4 text-sm font-semibold text-foreground backdrop-blur transition-colors hover:bg-background/60">
+            <button
+              className="rounded-md border border-foreground/30 bg-background/40 px-7 py-4 text-sm font-semibold text-foreground backdrop-blur transition-colors hover:bg-background/60"
+              style={{ fontFamily: "Rajdhani, sans-serif" }}
+            >
               View Products
             </button>
           </div>

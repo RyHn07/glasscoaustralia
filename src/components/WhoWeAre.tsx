@@ -17,7 +17,7 @@ export function WhoWeAre() {
           <div className="relative">
             {/* Top-left corner bracket */}
             <div
-              className="absolute -left-4 -top-4 h-16 w-16 rounded-tl-2xl border-l-2 border-t-2"
+              className="absolute -left-4 -top-4 h-16 w-16 rounded-tl-lg border-l-2 border-t-2"
               style={{ borderColor: "#009AAA" }}
             />
             <img

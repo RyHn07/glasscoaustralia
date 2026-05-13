@@ -75,10 +75,11 @@ export function Hero() {
 
           {/* Description */}
           <p
-            className="mt-8 max-w-md text-base leading-relaxed text-foreground/80"
-            style={{ fontFamily: "Poppins, sans-serif", fontWeight: 400 }}
+            className="mt-8 text-base leading-relaxed text-foreground/80"
+            style={{ fontFamily: "Poppins, sans-serif", fontWeight: 400, maxWidth: "640px" }}
           >
             We manufacture premium glass from source — supplying builders,
+            <br />
             architects & retailers across Australia.
           </p>
 

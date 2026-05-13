@@ -97,14 +97,14 @@ export function Testimonials() {
 
               {/* Quote */}
               <p
-                className="mt-5 italic text-neutral-700"
+                className="mt-5 pb-10 italic text-neutral-700"
                 style={{ fontFamily: "Poppins, sans-serif", fontSize: "15px", lineHeight: 1.7 }}
               >
                 "{t.quote}"
               </p>
 
               {/* Divider */}
-              <div className="mb-10 mt-10 h-px w-full bg-neutral-200" style={{ marginTop: "max(2.5rem, auto)" }} />
+              <div className="mb-10 mt-auto h-px w-full bg-neutral-200" />
 
               {/* Author */}
               <div className="flex items-center gap-4">

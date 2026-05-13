@@ -1,3 +1,4 @@
+import { ArrowUpRight } from "lucide-react";
 import officeImg from "@/assets/project-office.jpg";
 import coastalImg from "@/assets/project-coastal.jpg";
 import retailImg from "@/assets/project-retail.jpg";
@@ -88,10 +89,11 @@ export function Projects() {
         {/* CTA */}
         <div className="mt-12 flex justify-center">
           <button
-            className="rounded-md px-7 py-4 text-sm font-semibold text-white transition-opacity hover:opacity-90"
-            style={{ backgroundColor: "#009AAA", fontFamily: "Rajdhani, sans-serif" }}
+            className="inline-flex items-center gap-2 rounded-md bg-neutral-900 px-7 py-4 text-sm font-semibold text-white transition-opacity hover:opacity-90"
+            style={{ fontFamily: "Rajdhani, sans-serif" }}
           >
-            View All Projects  ›
+            View All Projects
+            <ArrowUpRight className="h-4 w-4" />
           </button>
         </div>
     </section>

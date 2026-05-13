@@ -179,9 +179,6 @@ export function Footer() {
               <a href="#" className="transition-colors hover:text-white">
                 Terms of Service
               </a>
-              <a href="#" className="transition-colors hover:text-white">
-                Sitemap
-              </a>
             </div>
           </div>
         </div>

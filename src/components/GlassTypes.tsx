@@ -153,7 +153,7 @@ async function downloadPdf() {
 
 export function GlassTypes() {
   return (
-    <section className="w-full bg-white py-24">
+    <section className="w-full bg-neutral-50 py-24">
       <div className="mx-auto max-w-[1280px] px-6">
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:items-end">
           <div>

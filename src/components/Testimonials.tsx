@@ -104,7 +104,7 @@ export function Testimonials() {
               </p>
 
               {/* Divider */}
-              <div className="mb-10 mt-auto h-px w-full bg-neutral-200" style={{ marginTop: "auto" }} />
+              <div className="mb-10 mt-10 h-px w-full bg-neutral-200" style={{ marginTop: "max(2.5rem, auto)" }} />
 
               {/* Author */}
               <div className="flex items-center gap-4">

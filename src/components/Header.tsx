@@ -20,7 +20,7 @@ export function Header() {
       <div className="mx-auto flex max-w-[1400px] items-center justify-between px-6 py-2">
         {/* Logo */}
         <Link to="/" className="flex items-center">
-          <img src={logo} alt="GlassCo" className="h-16 w-auto" />
+          <img src={logo} alt="GlassCo" className="h-24 w-auto" />
         </Link>
 
         {/* Nav */}

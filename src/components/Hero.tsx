@@ -37,8 +37,11 @@ export function Hero() {
         <div className="max-w-2xl">
           {/* Eyebrow */}
           <div className="mb-6 flex items-center gap-3">
-            <span className="h-px w-10 bg-brand" />
-            <span className="text-sm font-bold tracking-[0.2em] text-brand">
+            <span className="block bg-brand" style={{ width: "32px", height: "1px" }} />
+            <span
+              className="text-sm font-bold tracking-[0.2em] text-brand"
+              style={{ fontFamily: '"Geist", "Geist Fallback", sans-serif' }}
+            >
               GLASS IMPORTER
             </span>
           </div>

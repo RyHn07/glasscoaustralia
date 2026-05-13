@@ -13,7 +13,7 @@ const navItems = [
 
 export function Header() {
   return (
-    <header className="absolute top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-sm">
+    <header className="relative z-50 w-full bg-white">
       <div className="mx-auto flex max-w-[1400px] items-center justify-between px-6 py-4">
         {/* Logo */}
         <Link to="/" className="flex items-center">
@@ -30,7 +30,7 @@ export function Header() {
             <Link
               key={item.label}
               to={item.to}
-              className="text-sm font-medium text-foreground/90 transition-colors hover:text-brand"
+              className="text-sm font-medium text-neutral-800 transition-colors hover:text-brand"
             >
               {item.label}
             </Link>
@@ -46,7 +46,7 @@ export function Header() {
             <Phone className="h-4 w-4" />
             (03) 9706 5506
           </a>
-          <button className="rounded-md bg-foreground px-5 py-2.5 text-sm font-semibold text-background transition-opacity hover:opacity-90">
+          <button className="rounded-md bg-neutral-900 px-5 py-2.5 text-sm font-semibold text-white transition-opacity hover:opacity-90">
             Get Quote
           </button>
         </div>

@@ -19,13 +19,13 @@ export function Hero() {
       </div>
 
       {/* Floating left phone tab */}
-      <div className="absolute left-0 top-24 z-10 flex items-center gap-2 rounded-r-md bg-background/90 px-4 py-3 backdrop-blur">
+      <div className="absolute left-0 top-8 z-10 flex items-center gap-2 rounded-r-md bg-background/90 px-4 py-3 backdrop-blur">
         <Phone className="h-4 w-4 text-brand" />
         <span className="text-sm font-semibold text-foreground">(03) 9034 6146</span>
       </div>
 
       {/* Floating right hours tab */}
-      <div className="absolute right-0 top-24 z-10 flex items-center gap-2 rounded-l-md bg-background/90 px-4 py-3 backdrop-blur">
+      <div className="absolute right-0 top-8 z-10 flex items-center gap-2 rounded-l-md bg-background/90 px-4 py-3 backdrop-blur">
         <Store className="h-4 w-4 text-brand" />
         <span className="text-sm font-semibold text-foreground">
           Mon - Fri  8am - 5pm
@@ -33,7 +33,7 @@ export function Hero() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 mx-auto flex min-h-screen max-w-[1400px] flex-col justify-center px-6 pt-32 pb-16">
+      <div className="relative z-10 mx-auto flex min-h-screen max-w-[1400px] flex-col justify-center px-6 pt-16 pb-16">
         <div className="max-w-2xl">
           {/* Eyebrow */}
           <div className="mb-6 flex items-center gap-3">

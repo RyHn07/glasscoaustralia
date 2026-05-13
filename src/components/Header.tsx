@@ -41,9 +41,11 @@ export function Header() {
         <div className="flex items-center gap-6">
           <a
             href="tel:0397065506"
-            className="hidden items-center gap-2 text-sm font-semibold text-brand md:flex"
+            className="flex items-center gap-2 text-sm font-semibold text-brand"
           >
-            <Phone className="h-4 w-4" />
+            <span className="flex h-8 w-8 items-center justify-center rounded-full bg-brand/10">
+              <Phone className="h-4 w-4" />
+            </span>
             (03) 9706 5506
           </a>
           <button className="rounded-md bg-neutral-900 px-5 py-2.5 text-sm font-semibold text-white transition-opacity hover:opacity-90">

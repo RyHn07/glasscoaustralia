@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { ShieldCheck, BadgeCheck, FlaskConical, Quote } from "lucide-react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import heroImg from "@/assets/about-hero.jpg";
@@ -302,58 +303,117 @@ function AboutPage() {
       </section>
 
       {/* COMMITMENT */}
-      <section className="w-full bg-neutral-50 py-24">
-        <div className="mx-auto max-w-3xl px-6 text-center">
-          <div className="flex justify-center">
-            <Eyebrow>OUR COMMITMENT</Eyebrow>
-          </div>
-          <div className="[&>h2]:text-center">
-            <SectionHeading>
-              Quality You <span style={{ color: ACCENT }}>Can</span>
-              <br />
-              Rely On
-            </SectionHeading>
+      <section className="relative w-full overflow-hidden bg-neutral-900 py-28 text-white">
+        {/* Decorative accent glow */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute -top-32 left-1/2 h-[420px] w-[420px] -translate-x-1/2 rounded-full opacity-20 blur-3xl"
+          style={{ background: ACCENT }}
+        />
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-x-0 top-0 h-px"
+          style={{ background: `linear-gradient(90deg, transparent, ${ACCENT}, transparent)` }}
+        />
+
+        <div className="relative mx-auto max-w-[1180px] px-6">
+          {/* Header */}
+          <div className="mx-auto max-w-2xl text-center">
+            <div className="flex justify-center">
+              <Eyebrow light>OUR COMMITMENT</Eyebrow>
+            </div>
+            <h2
+              style={{
+                fontFamily: HEAD_FONT,
+                fontSize: "clamp(2.25rem, 4vw, 3.5rem)",
+                fontWeight: 700,
+                lineHeight: 1.1,
+                color: "#ffffff",
+                margin: 0,
+              }}
+            >
+              Quality You <span style={{ color: ACCENT }}>Can</span> Rely On
+            </h2>
           </div>
 
-          <div
-            className="mx-auto mt-10 max-w-2xl italic text-neutral-700"
-            style={{
-              fontFamily: BODY_FONT,
-              fontSize: "20px",
-              fontWeight: 400,
-              lineHeight: 1.6,
-            }}
-          >
-            "GlassCo Australia is committed to delivering quality products that
-            customers can rely on with confidence."
+          {/* Quote panel */}
+          <div className="relative mx-auto mt-14 max-w-3xl">
+            <div
+              className="absolute -left-3 -top-3 flex h-12 w-12 items-center justify-center rounded-full shadow-lg"
+              style={{ background: ACCENT }}
+            >
+              <Quote className="h-5 w-5 text-white" />
+            </div>
+            <div
+              className="rounded-2xl border border-white/10 bg-white/[0.03] p-10 text-center backdrop-blur-sm"
+              style={{ fontFamily: BODY_FONT }}
+            >
+              <p
+                className="italic text-white/90"
+                style={{ fontSize: "clamp(1.25rem, 2.2vw, 1.75rem)", lineHeight: 1.5, fontWeight: 300 }}
+              >
+                "GlassCo Australia is committed to delivering quality products that
+                customers can rely on with confidence."
+              </p>
+              <div
+                className="mx-auto mt-6 h-[2px] w-12"
+                style={{ background: ACCENT }}
+              />
+            </div>
           </div>
-          <div
-            className="mx-auto mt-6 h-[2px] w-12"
-            style={{ background: ACCENT }}
-          />
+
+          {/* Three pillars */}
+          <div className="mt-14 grid gap-6 md:grid-cols-3">
+            {[
+              {
+                icon: BadgeCheck,
+                title: "Australian Standards",
+                body: "All products are manufactured and processed to meet relevant Australian Standards across our full range.",
+              },
+              {
+                icon: ShieldCheck,
+                title: "Quality Control",
+                body: "Stringent quality control procedures maintain consistency and performance from production through to delivery.",
+              },
+              {
+                icon: FlaskConical,
+                title: "R&D Investment",
+                body: "Ongoing research and development expands our offering with practical, innovative, high-performing glass solutions.",
+              },
+            ].map(({ icon: Icon, title, body }) => (
+              <div
+                key={title}
+                className="group rounded-xl border border-white/10 bg-white/[0.02] p-7 transition-all hover:border-white/20 hover:bg-white/[0.05]"
+              >
+                <div
+                  className="flex h-11 w-11 items-center justify-center rounded-lg"
+                  style={{ background: `${ACCENT}1A`, color: ACCENT }}
+                >
+                  <Icon className="h-5 w-5" />
+                </div>
+                <h3
+                  className="mt-5 text-xl font-semibold text-white"
+                  style={{ fontFamily: HEAD_FONT, letterSpacing: "0.01em" }}
+                >
+                  {title}
+                </h3>
+                <p
+                  className="mt-3 text-white/70"
+                  style={{ fontFamily: BODY_FONT, fontSize: "14px", lineHeight: 1.7 }}
+                >
+                  {body}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          {/* Closing line */}
           <p
-            className="mt-8 text-neutral-600"
+            className="mx-auto mt-14 max-w-2xl text-center text-white/60"
             style={{ fontFamily: BODY_FONT, fontSize: "15px", lineHeight: 1.7 }}
           >
-            All products are manufactured and processed to meet relevant
-            Australian Standards, with stringent quality control procedures in
-            place to maintain consistency and performance across our range.
-          </p>
-          <p
-            className="mt-4 text-neutral-600"
-            style={{ fontFamily: BODY_FONT, fontSize: "15px", lineHeight: 1.7 }}
-          >
-            Our ongoing investment in research and development allows us to
-            continually expand and improve our product offering, ensuring we
-            provide practical, innovative and high-performing glass solutions
-            for modern building requirements.
-          </p>
-          <p
-            className="mt-4 text-neutral-600"
-            style={{ fontFamily: BODY_FONT, fontSize: "15px", lineHeight: 1.7 }}
-          >
-            We appreciate you taking the time to learn more about GlassCo
-            Australia and welcome the opportunity to work with you.
+            We appreciate you taking the time to learn more about GlassCo Australia
+            and welcome the opportunity to work with you.
           </p>
         </div>
       </section>

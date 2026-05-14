@@ -91,8 +91,14 @@ function AboutPage() {
             Company Profile
           </p>
           <h1
-            className="text-5xl font-bold leading-[0.95] text-white sm:text-6xl lg:text-7xl"
-            style={{ fontFamily: HEAD_FONT }}
+            style={{
+              fontFamily: HEAD_FONT,
+              fontSize: "clamp(3rem, 7vw, 6rem)",
+              fontWeight: 700,
+              lineHeight: 1.05,
+              color: "#ffffff",
+              margin: 0,
+            }}
           >
             GlassCo
             <br />

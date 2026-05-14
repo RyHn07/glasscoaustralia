@@ -106,7 +106,7 @@ function AboutPage() {
       </section>
 
       {/* STATS STRIP */}
-      <section className="border-b border-neutral-200 bg-neutral-900 py-10 text-white">
+      <section className="border-b border-neutral-200 bg-white py-10">
         <div className="mx-auto grid max-w-[1200px] grid-cols-2 gap-8 px-6 md:grid-cols-4">
           {[
             { k: "Melbourne", v: "Headquartered in VIC" },

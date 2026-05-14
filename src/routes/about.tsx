@@ -303,11 +303,11 @@ function AboutPage() {
       </section>
 
       {/* COMMITMENT */}
-      <section className="relative w-full overflow-hidden bg-neutral-900 py-28 text-white">
+      <section className="relative w-full overflow-hidden bg-white py-28">
         {/* Decorative accent glow */}
         <div
           aria-hidden
-          className="pointer-events-none absolute -top-32 left-1/2 h-[420px] w-[420px] -translate-x-1/2 rounded-full opacity-20 blur-3xl"
+          className="pointer-events-none absolute -top-32 left-1/2 h-[420px] w-[420px] -translate-x-1/2 rounded-full opacity-10 blur-3xl"
           style={{ background: ACCENT }}
         />
         <div
@@ -320,7 +320,7 @@ function AboutPage() {
           {/* Header */}
           <div className="mx-auto max-w-2xl text-center">
             <div className="flex justify-center">
-              <Eyebrow light>OUR COMMITMENT</Eyebrow>
+              <Eyebrow>OUR COMMITMENT</Eyebrow>
             </div>
             <h2
               style={{
@@ -328,7 +328,7 @@ function AboutPage() {
                 fontSize: "clamp(2.25rem, 4vw, 3.5rem)",
                 fontWeight: 700,
                 lineHeight: 1.1,
-                color: "#ffffff",
+                color: "#0a0a0a",
                 margin: 0,
               }}
             >
@@ -345,12 +345,12 @@ function AboutPage() {
               <Quote className="h-5 w-5 text-white" />
             </div>
             <div
-              className="rounded-2xl border border-white/10 bg-white/[0.03] p-10 text-center backdrop-blur-sm"
+              className="rounded-2xl border border-neutral-200 bg-neutral-50 p-10 text-center shadow-sm"
               style={{ fontFamily: BODY_FONT }}
             >
               <p
-                className="italic text-white/90"
-                style={{ fontSize: "clamp(1.25rem, 2.2vw, 1.75rem)", lineHeight: 1.5, fontWeight: 300 }}
+                className="italic text-neutral-800"
+                style={{ fontSize: "clamp(1.25rem, 2.2vw, 1.75rem)", lineHeight: 1.5, fontWeight: 400 }}
               >
                 "GlassCo Australia is committed to delivering quality products that
                 customers can rely on with confidence."
@@ -383,7 +383,7 @@ function AboutPage() {
             ].map(({ icon: Icon, title, body }) => (
               <div
                 key={title}
-                className="group rounded-xl border border-white/10 bg-white/[0.02] p-7 transition-all hover:border-white/20 hover:bg-white/[0.05]"
+                className="group rounded-xl border border-neutral-200 bg-white p-7 transition-all hover:border-neutral-300 hover:shadow-lg"
               >
                 <div
                   className="flex h-11 w-11 items-center justify-center rounded-lg"
@@ -392,13 +392,13 @@ function AboutPage() {
                   <Icon className="h-5 w-5" />
                 </div>
                 <h3
-                  className="mt-5 text-xl font-semibold text-white"
+                  className="mt-5 text-xl font-semibold text-neutral-900"
                   style={{ fontFamily: HEAD_FONT, letterSpacing: "0.01em" }}
                 >
                   {title}
                 </h3>
                 <p
-                  className="mt-3 text-white/70"
+                  className="mt-3 text-neutral-600"
                   style={{ fontFamily: BODY_FONT, fontSize: "14px", lineHeight: 1.7 }}
                 >
                   {body}
@@ -409,7 +409,7 @@ function AboutPage() {
 
           {/* Closing line */}
           <p
-            className="mx-auto mt-14 max-w-2xl text-center text-white/60"
+            className="mx-auto mt-14 max-w-2xl text-center text-neutral-500"
             style={{ fontFamily: BODY_FONT, fontSize: "15px", lineHeight: 1.7 }}
           >
             We appreciate you taking the time to learn more about GlassCo Australia

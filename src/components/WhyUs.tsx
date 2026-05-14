@@ -34,9 +34,9 @@ const features = [
 ];
 
 const trustStats = [
-  { value: "1000+", label: "Happy Clients" },
-  { value: "50+", label: "Team Members" },
-  { value: "10+", label: "Locations" },
+  { value: "100+", label: "Happy Clients" },
+  { value: "25+", label: "Team Members" },
+  { value: "2+", label: "Locations" },
 ];
 
 export function WhyUs() {
@@ -114,7 +114,7 @@ export function WhyUs() {
               margin: 0,
             }}
           >
-            Trusted by Thousands
+            Trusted by Hundreds
           </h3>
           <p
             className="mx-auto mt-4 max-w-2xl text-neutral-600"

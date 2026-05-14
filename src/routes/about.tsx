@@ -121,7 +121,7 @@ function AboutPage() {
               >
                 {s.k}
               </div>
-              <div className="mt-1 text-sm text-white/70">{s.v}</div>
+              <div className="mt-1 text-sm text-neutral-600">{s.v}</div>
             </div>
           ))}
         </div>
@@ -153,7 +153,6 @@ function AboutPage() {
         image={printingImg}
         imageAlt="Detailed ceramic printed glass"
         reverse={true}
-        dark
       >
         <p>
           Industrial-grade Dip-Tech GP/GPi systems produce durable, high-resolution

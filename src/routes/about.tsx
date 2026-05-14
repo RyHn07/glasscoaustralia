@@ -259,7 +259,7 @@ function AboutPage() {
       </section>
 
       {/* ENVIRONMENTAL — split with image */}
-      <section className="relative overflow-hidden bg-neutral-900 text-white">
+      <section className="relative overflow-hidden border-t border-neutral-200 bg-neutral-50">
         <div className="mx-auto grid max-w-[1400px] gap-0 lg:grid-cols-2">
           <div className="relative h-[320px] lg:h-auto">
             <img
@@ -272,20 +272,20 @@ function AboutPage() {
             />
           </div>
           <div className="px-6 py-16 lg:px-14 lg:py-20">
-            <Eyebrow light>Environmental Policy</Eyebrow>
+            <Eyebrow>Environmental Policy</Eyebrow>
             <h2
-              className="mt-3 text-3xl font-bold sm:text-4xl"
+              className="mt-3 text-3xl font-bold text-neutral-900 sm:text-4xl"
               style={{ fontFamily: HEAD_FONT }}
             >
               Responsible by design
             </h2>
-            <p className="mt-5 max-w-xl text-white/75">
+            <p className="mt-5 max-w-xl text-neutral-600">
               Committed to sustainable resource management and minimising environmental
               impact through responsible operations and continuous improvement.
             </p>
             <ul className="mt-8 space-y-3">
               {environmental.map((item) => (
-                <li key={item} className="flex items-start gap-3 text-sm text-white/85">
+                <li key={item} className="flex items-start gap-3 text-sm text-neutral-700">
                   <span
                     className="mt-2 inline-block h-1.5 w-1.5 flex-shrink-0 rounded-full"
                     style={{ background: ACCENT }}

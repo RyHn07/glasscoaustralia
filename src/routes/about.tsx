@@ -308,7 +308,9 @@ function AboutPage() {
             <div className="lg:col-span-5">
               <Eyebrow>OUR COMMITMENT</Eyebrow>
               <SectionHeading>
-                Quality You <span style={{ color: ACCENT }}>Can</span> Rely On
+                Quality You <span style={{ color: ACCENT }}>Can</span>
+                <br />
+                Rely On
               </SectionHeading>
             </div>
             <div className="lg:col-span-7">

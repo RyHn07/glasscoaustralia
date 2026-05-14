@@ -103,11 +103,12 @@ function AboutPage() {
             <span style={{ color: ACCENT }}>Australia</span>
           </h1>
           <p
-            className="mt-6 max-w-xl text-base text-white/85 sm:text-lg"
+            className="mt-6 max-w-2xl text-base text-white/85 sm:text-lg"
             style={{ fontFamily: BODY_FONT }}
           >
-            Melbourne-based supplier of premium glass and value-added glass products,
-            servicing projects across Australia.
+            Trusted supplier of glass and value-added glass products based in
+            Melbourne, Victoria — servicing residential, commercial and architectural
+            projects across Australia.
           </p>
         </div>
       </section>

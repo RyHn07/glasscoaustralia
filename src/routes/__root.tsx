@@ -72,14 +72,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
+      { title: "GlassCo" },
+      { name: "description", content: "Website Twin creates an exact replica of a provided website screenshot, allowing users to generate custom web pages." },
       { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { property: "og:title", content: "GlassCo" },
+      { property: "og:description", content: "Website Twin creates an exact replica of a provided website screenshot, allowing users to generate custom web pages." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "GlassCo" },
+      { name: "twitter:description", content: "Website Twin creates an exact replica of a provided website screenshot, allowing users to generate custom web pages." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/d73e6645-7c9c-4fcb-bfd5-9154312b5a28/id-preview-9ee434f1--c63ae5eb-d89f-48c3-b084-04d330ac696d.lovable.app-1778717802595.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/d73e6645-7c9c-4fcb-bfd5-9154312b5a28/id-preview-9ee434f1--c63ae5eb-d89f-48c3-b084-04d330ac696d.lovable.app-1778717802595.png" },
     ],
     links: [
       {

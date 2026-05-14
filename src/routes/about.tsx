@@ -242,6 +242,14 @@ function AboutPage() {
               </li>
             ))}
           </ul>
+
+          <p
+            className="mt-10 text-neutral-700"
+            style={{ fontFamily: BODY_FONT, fontSize: "15px", lineHeight: 1.7, fontWeight: 500 }}
+          >
+            Above all, we are committed to supplying products that meet the highest
+            standards of quality, reliability and value.
+          </p>
         </div>
       </section>
 

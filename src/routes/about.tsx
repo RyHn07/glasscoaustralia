@@ -379,10 +379,24 @@ function AboutPage() {
                 className="mt-6 text-neutral-600"
                 style={{ fontFamily: BODY_FONT, fontSize: "15px", lineHeight: 1.7 }}
               >
-                Committed to sustainable resource management and minimising environmental
-                impact through responsible operations and continuous improvement.
+                GlassCo Australia is committed to environmentally responsible
+                business practices and sustainable resource management.
               </p>
-              <ul className="mt-8 space-y-3">
+              <p
+                className="mt-4 text-neutral-600"
+                style={{ fontFamily: BODY_FONT, fontSize: "15px", lineHeight: 1.7 }}
+              >
+                We aim to minimise environmental impact through responsible
+                operations, continuous improvement and compliance with applicable
+                environmental standards and regulations.
+              </p>
+              <h3
+                className="mt-8 text-lg font-semibold text-neutral-900"
+                style={{ fontFamily: HEAD_FONT, letterSpacing: "0.02em" }}
+              >
+                Our Environmental Commitment
+              </h3>
+              <ul className="mt-4 space-y-3">
                 {environmental.map((item) => (
                   <li
                     key={item}
@@ -397,6 +411,16 @@ function AboutPage() {
                   </li>
                 ))}
               </ul>
+              <p
+                className="mt-6 text-neutral-600"
+                style={{ fontFamily: BODY_FONT, fontSize: "14px", lineHeight: 1.7 }}
+              >
+                All GlassCo Australia personnel are expected to perform their work
+                responsibly and contribute to maintaining environmentally conscious
+                workplace practices. We remain committed to protecting the
+                environment while supporting the long-term sustainability of our
+                business, our customers and the wider community.
+              </p>
             </div>
           </div>
         </div>

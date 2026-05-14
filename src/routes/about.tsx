@@ -127,13 +127,23 @@ function AboutPage() {
         }
       >
         <p>
-          GlassCo Australia supports builders, glaziers, architects, fabricators and
-          property owners with reliable glass solutions and deep industry expertise.
+          GlassCo Australia is a trusted supplier of glass and value-added glass
+          products, supporting builders, glaziers, architects, fabricators and
+          property owners with reliable glass solutions and industry expertise.
         </p>
         <p>
-          As a progressive, growing company, we operate across manufacturing, importing
-          and wholesale distribution — sourcing and supplying high-quality glass at
+          As a growing and progressive company, we operate across multiple areas of
+          the glass industry including manufacturing, importing and wholesale
+          distribution. Our scale and industry relationships allow us to source,
+          process and supply a broad range of high-quality glass products at
           competitive prices.
+        </p>
+        <p>
+          We are highly experienced in supplying the commercial glazing sector and
+          understand the importance of compliance, consistency and dependable
+          supply. Our products are manufactured and processed to meet relevant
+          Australian Standards, giving customers confidence in both quality and
+          performance.
         </p>
       </SplitSection>
 

@@ -304,17 +304,7 @@ function AboutPage() {
 
       {/* COMMITMENT */}
       <section className="relative w-full overflow-hidden bg-white py-28">
-        {/* Decorative accent glow */}
-        <div
-          aria-hidden
-          className="pointer-events-none absolute -top-32 left-1/2 h-[420px] w-[420px] -translate-x-1/2 rounded-full opacity-10 blur-3xl"
-          style={{ background: ACCENT }}
-        />
-        <div
-          aria-hidden
-          className="pointer-events-none absolute inset-x-0 top-0 h-px"
-          style={{ background: `linear-gradient(90deg, transparent, ${ACCENT}, transparent)` }}
-        />
+
 
         <div className="relative mx-auto max-w-[1180px] px-6">
           {/* Header */}

@@ -114,7 +114,7 @@ export function WhyUs() {
               margin: 0,
             }}
           >
-            Trusted by Thousands
+            Trusted by Hundreds
           </h3>
           <p
             className="mx-auto mt-4 max-w-2xl text-neutral-600"

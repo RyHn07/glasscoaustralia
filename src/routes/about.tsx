@@ -361,7 +361,37 @@ function AboutPage() {
       {/* ENVIRONMENTAL */}
       <section className="w-full bg-white py-24">
         <div className="mx-auto max-w-[1280px] px-6">
-          <div className="grid grid-cols-1 gap-16 lg:grid-cols-2 lg:items-center">
+          {/* Top row: title left, intro right */}
+          <div className="grid gap-10 lg:grid-cols-12 lg:items-start">
+            <div className="lg:col-span-5">
+              <Eyebrow>ENVIRONMENTAL POLICY</Eyebrow>
+              <SectionHeading>
+                Responsible <span style={{ color: ACCENT }}>By</span>
+                <br />
+                Design
+              </SectionHeading>
+            </div>
+            <div className="lg:col-span-7">
+              <p
+                className="text-neutral-600"
+                style={{ fontFamily: BODY_FONT, fontSize: "15px", lineHeight: 1.7 }}
+              >
+                GlassCo Australia is committed to environmentally responsible
+                business practices and sustainable resource management.
+              </p>
+              <p
+                className="mt-4 text-neutral-600"
+                style={{ fontFamily: BODY_FONT, fontSize: "15px", lineHeight: 1.7 }}
+              >
+                We aim to minimise environmental impact through responsible
+                operations, continuous improvement and compliance with applicable
+                environmental standards and regulations.
+              </p>
+            </div>
+          </div>
+
+          {/* Middle row: image left, commitments right */}
+          <div className="mt-16 grid grid-cols-1 gap-16 lg:grid-cols-2 lg:items-center">
             <div className="relative">
               <div
                 className="absolute -left-4 -top-4 h-16 w-16 rounded-tl-lg border-l-2 border-t-2"
@@ -377,32 +407,13 @@ function AboutPage() {
               />
             </div>
             <div>
-              <Eyebrow>ENVIRONMENTAL POLICY</Eyebrow>
-              <SectionHeading>
-                Responsible <span style={{ color: ACCENT }}>By</span> Design
-              </SectionHeading>
-              <p
-                className="mt-6 text-neutral-600"
-                style={{ fontFamily: BODY_FONT, fontSize: "15px", lineHeight: 1.7 }}
-              >
-                GlassCo Australia is committed to environmentally responsible
-                business practices and sustainable resource management.
-              </p>
-              <p
-                className="mt-4 text-neutral-600"
-                style={{ fontFamily: BODY_FONT, fontSize: "15px", lineHeight: 1.7 }}
-              >
-                We aim to minimise environmental impact through responsible
-                operations, continuous improvement and compliance with applicable
-                environmental standards and regulations.
-              </p>
               <h3
-                className="mt-8 text-lg font-semibold text-neutral-900"
+                className="text-2xl font-semibold text-neutral-900"
                 style={{ fontFamily: HEAD_FONT, letterSpacing: "0.02em" }}
               >
                 Our Environmental Commitment
               </h3>
-              <ul className="mt-4 space-y-3">
+              <ul className="mt-6 space-y-3">
                 {environmental.map((item) => (
                   <li
                     key={item}
@@ -417,18 +428,20 @@ function AboutPage() {
                   </li>
                 ))}
               </ul>
-              <p
-                className="mt-6 text-neutral-600"
-                style={{ fontFamily: BODY_FONT, fontSize: "14px", lineHeight: 1.7 }}
-              >
-                All GlassCo Australia personnel are expected to perform their work
-                responsibly and contribute to maintaining environmentally conscious
-                workplace practices. We remain committed to protecting the
-                environment while supporting the long-term sustainability of our
-                business, our customers and the wider community.
-              </p>
             </div>
           </div>
+
+          {/* Bottom: full width closing paragraph */}
+          <p
+            className="mt-16 text-neutral-700"
+            style={{ fontFamily: BODY_FONT, fontSize: "15px", lineHeight: 1.7 }}
+          >
+            All GlassCo Australia personnel are expected to perform their work
+            responsibly and contribute to maintaining environmentally conscious
+            workplace practices. We remain committed to protecting the environment
+            while supporting the long-term sustainability of our business, our
+            customers and the wider community.
+          </p>
         </div>
       </section>
 

@@ -162,12 +162,15 @@ function AboutPage() {
         }
       >
         <p>
-          Industrial-grade Dip-Tech GP/GPi systems produce durable, high-resolution
-          ceramic printed glass for both interior and exterior environments.
+          Using industrial-grade Dip-Tech GP/GPi digital ceramic printing systems,
+          we produce durable, high-resolution ceramic printed glass solutions
+          suitable for both interior and exterior environments.
         </p>
         <p>
-          Large-format production and design flexibility let architects and designers
-          achieve customised glazing with outstanding visual impact.
+          Our digital printing capabilities combine precision engineering,
+          large-format production and exceptional design flexibility, allowing
+          architects, designers and builders to achieve customised glazing
+          solutions with outstanding durability and visual impact.
         </p>
       </SplitSection>
 

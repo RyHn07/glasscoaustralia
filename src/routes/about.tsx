@@ -176,7 +176,7 @@ function AboutPage() {
       </SplitSection>
 
       {/* MANUFACTURING CAPABILITY */}
-      <section className="w-full bg-neutral-50 py-24">
+      <section className="w-full bg-white py-24">
         <div className="mx-auto max-w-[1280px] px-6">
           <div className="grid gap-10 lg:grid-cols-12 lg:items-start">
             <div className="lg:col-span-5">
@@ -259,7 +259,7 @@ function AboutPage() {
       </section>
 
       {/* VISION & VALUES */}
-      <section className="w-full bg-white py-24">
+      <section className="w-full bg-neutral-50 py-24">
         <div className="mx-auto max-w-[1280px] px-6">
           <div className="max-w-2xl">
             <Eyebrow>OUR VISION & VALUES</Eyebrow>
@@ -419,7 +419,7 @@ function AboutPage() {
       </section>
 
       {/* ENVIRONMENTAL */}
-      <section className="w-full bg-white py-24">
+      <section className="w-full bg-neutral-50 py-24">
         <div className="mx-auto max-w-[1280px] px-6">
           {/* Top row: title left, intro right */}
           <div className="grid gap-10 lg:grid-cols-12 lg:items-start">

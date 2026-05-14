@@ -35,45 +35,39 @@ const equipment = [
   "Automatic Float Cutting Line",
   "CNC Machining Centres",
   "Water Jet Cutting Machines",
-  "NorthGlass Toughening Furnace",
-  "LISEC IGU Production Lines",
-  "Dip-Tech GP/GPi Ceramic Printing",
+  "Advanced NorthGlass Toughening Furnace",
+  "LISEC Insulated Glass Unit (IGU) Production Lines",
+  "Dip-Tech GP/GPi Digital Ceramic Printing Systems",
 ];
 
 const values = [
   {
     title: "Relationships",
-    accent: "Relationships",
-    rest: "",
-    body: "Long-term partnerships built on professionalism, honesty and mutual respect with our employees, customers and suppliers.",
+    body: "We value strong, respectful, and long-term relationships with our employees, customers, suppliers and stakeholders. We believe in professionalism, honesty and open communication, and we treat others with fairness, courtesy and respect at all times. We encourage collaboration and believe everyone deserves the opportunity to be heard in a constructive and supportive environment.",
   },
   {
     title: "People",
-    accent: "People",
-    rest: "",
-    body: "Our team is the heart of the business — supported, recognised, and given room to grow professionally.",
+    body: "Our people are at the center of our business. We encourage personal and professional growth by supporting learning, skill development and career progression. We recognise initiative, reward effort and provide opportunities for individuals to develop within a strong team environment.",
   },
   {
     title: "Innovation",
-    accent: "Innovation",
-    rest: "",
-    body: "Continuous investment in glass technology and manufacturing capability to deliver greater value.",
+    body: "Innovation is an important part of our continued growth. We are committed to improving our products, services and manufacturing capabilities to remain at the forefront of glass technology and deliver greater value to our customers.",
   },
   {
     title: "Future",
-    accent: "Future",
-    rest: "",
-    body: "Building a sustainable, reliable Australian glass supplier together with our customers and partners.",
+    body: "Together with our employees, customers and suppliers, we are building a strong and sustainable future. Our goal is to continue growing as a reliable and respected Australian glass supplier while maintaining our commitment to quality, service and long-term partnerships.",
   },
 ];
 
 const environmental = [
-  "ISO 14001 aligned environmental management",
-  "Continuous monitoring and improvement",
-  "Reduce, reuse and recycle wherever practical",
-  "Environmentally responsible products and processes",
-  "Ongoing employee training and awareness",
-  "Compliance with all environmental legislation",
+  "Comply with all relevant environmental legislation and applicable ISO 14001 environmental management requirements",
+  "Identify activities that may impact the environment",
+  "Implement appropriate control measures to minimise environmental impact",
+  "Establish meaningful environmental objectives and monitor performance for continuous improvement",
+  "Promote sustainable resource use through reducing, reusing and recycling wherever practical",
+  "Utilise environmentally responsible products and processes where possible",
+  "Provide employees with appropriate environmental training, awareness and instruction",
+  "Continuously improve our environmental management systems and operational practices",
 ];
 
 function AboutPage() {

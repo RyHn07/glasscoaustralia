@@ -303,58 +303,58 @@ function AboutPage() {
 
       {/* COMMITMENT */}
       <section className="w-full bg-neutral-50 py-24">
-        <div className="mx-auto max-w-[1280px] px-6">
-          <div className="grid gap-12 lg:grid-cols-12 lg:items-center">
-            <div className="lg:col-span-5">
-              <Eyebrow>OUR COMMITMENT</Eyebrow>
-              <SectionHeading>
-                Quality You <span style={{ color: ACCENT }}>Can</span>
-                <br />
-                Rely On
-              </SectionHeading>
-            </div>
-            <div className="lg:col-span-7">
-              <div
-                className="pl-6 italic text-neutral-700"
-                style={{
-                  borderLeftWidth: "3px",
-                  borderLeftStyle: "solid",
-                  borderColor: ACCENT,
-                  fontFamily: BODY_FONT,
-                  fontSize: "20px",
-                  fontWeight: 400,
-                  lineHeight: 1.6,
-                }}
-              >
-                "GlassCo Australia is committed to delivering quality products that
-                customers can rely on with confidence."
-              </div>
-              <p
-                className="mt-6 text-neutral-600"
-                style={{ fontFamily: BODY_FONT, fontSize: "15px", lineHeight: 1.7 }}
-              >
-                All products are manufactured and processed to meet relevant
-                Australian Standards, with stringent quality control procedures in
-                place to maintain consistency and performance across our range.
-              </p>
-              <p
-                className="mt-4 text-neutral-600"
-                style={{ fontFamily: BODY_FONT, fontSize: "15px", lineHeight: 1.7 }}
-              >
-                Our ongoing investment in research and development allows us to
-                continually expand and improve our product offering, ensuring we
-                provide practical, innovative and high-performing glass solutions for
-                modern building requirements.
-              </p>
-              <p
-                className="mt-4 text-neutral-600"
-                style={{ fontFamily: BODY_FONT, fontSize: "15px", lineHeight: 1.7 }}
-              >
-                We appreciate you taking the time to learn more about GlassCo
-                Australia and welcome the opportunity to work with you.
-              </p>
-            </div>
+        <div className="mx-auto max-w-3xl px-6 text-center">
+          <div className="flex justify-center">
+            <Eyebrow>OUR COMMITMENT</Eyebrow>
           </div>
+          <div className="[&>h2]:text-center">
+            <SectionHeading>
+              Quality You <span style={{ color: ACCENT }}>Can</span>
+              <br />
+              Rely On
+            </SectionHeading>
+          </div>
+
+          <div
+            className="mx-auto mt-10 max-w-2xl italic text-neutral-700"
+            style={{
+              fontFamily: BODY_FONT,
+              fontSize: "20px",
+              fontWeight: 400,
+              lineHeight: 1.6,
+            }}
+          >
+            "GlassCo Australia is committed to delivering quality products that
+            customers can rely on with confidence."
+          </div>
+          <div
+            className="mx-auto mt-6 h-[2px] w-12"
+            style={{ background: ACCENT }}
+          />
+          <p
+            className="mt-8 text-neutral-600"
+            style={{ fontFamily: BODY_FONT, fontSize: "15px", lineHeight: 1.7 }}
+          >
+            All products are manufactured and processed to meet relevant
+            Australian Standards, with stringent quality control procedures in
+            place to maintain consistency and performance across our range.
+          </p>
+          <p
+            className="mt-4 text-neutral-600"
+            style={{ fontFamily: BODY_FONT, fontSize: "15px", lineHeight: 1.7 }}
+          >
+            Our ongoing investment in research and development allows us to
+            continually expand and improve our product offering, ensuring we
+            provide practical, innovative and high-performing glass solutions
+            for modern building requirements.
+          </p>
+          <p
+            className="mt-4 text-neutral-600"
+            style={{ fontFamily: BODY_FONT, fontSize: "15px", lineHeight: 1.7 }}
+          >
+            We appreciate you taking the time to learn more about GlassCo
+            Australia and welcome the opportunity to work with you.
+          </p>
         </div>
       </section>
 

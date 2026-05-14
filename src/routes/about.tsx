@@ -35,45 +35,39 @@ const equipment = [
   "Automatic Float Cutting Line",
   "CNC Machining Centres",
   "Water Jet Cutting Machines",
-  "NorthGlass Toughening Furnace",
-  "LISEC IGU Production Lines",
-  "Dip-Tech GP/GPi Ceramic Printing",
+  "Advanced NorthGlass Toughening Furnace",
+  "LISEC Insulated Glass Unit (IGU) Production Lines",
+  "Dip-Tech GP/GPi Digital Ceramic Printing Systems",
 ];
 
 const values = [
   {
     title: "Relationships",
-    accent: "Relationships",
-    rest: "",
-    body: "Long-term partnerships built on professionalism, honesty and mutual respect with our employees, customers and suppliers.",
+    body: "We value strong, respectful, and long-term relationships with our employees, customers, suppliers and stakeholders. We believe in professionalism, honesty and open communication, and we treat others with fairness, courtesy and respect at all times. We encourage collaboration and believe everyone deserves the opportunity to be heard in a constructive and supportive environment.",
   },
   {
     title: "People",
-    accent: "People",
-    rest: "",
-    body: "Our team is the heart of the business — supported, recognised, and given room to grow professionally.",
+    body: "Our people are at the center of our business. We encourage personal and professional growth by supporting learning, skill development and career progression. We recognise initiative, reward effort and provide opportunities for individuals to develop within a strong team environment.",
   },
   {
     title: "Innovation",
-    accent: "Innovation",
-    rest: "",
-    body: "Continuous investment in glass technology and manufacturing capability to deliver greater value.",
+    body: "Innovation is an important part of our continued growth. We are committed to improving our products, services and manufacturing capabilities to remain at the forefront of glass technology and deliver greater value to our customers.",
   },
   {
     title: "Future",
-    accent: "Future",
-    rest: "",
-    body: "Building a sustainable, reliable Australian glass supplier together with our customers and partners.",
+    body: "Together with our employees, customers and suppliers, we are building a strong and sustainable future. Our goal is to continue growing as a reliable and respected Australian glass supplier while maintaining our commitment to quality, service and long-term partnerships.",
   },
 ];
 
 const environmental = [
-  "ISO 14001 aligned environmental management",
-  "Continuous monitoring and improvement",
-  "Reduce, reuse and recycle wherever practical",
-  "Environmentally responsible products and processes",
-  "Ongoing employee training and awareness",
-  "Compliance with all environmental legislation",
+  "Comply with all relevant environmental legislation and applicable ISO 14001 environmental management requirements",
+  "Identify activities that may impact the environment",
+  "Implement appropriate control measures to minimise environmental impact",
+  "Establish meaningful environmental objectives and monitor performance for continuous improvement",
+  "Promote sustainable resource use through reducing, reusing and recycling wherever practical",
+  "Utilise environmentally responsible products and processes where possible",
+  "Provide employees with appropriate environmental training, awareness and instruction",
+  "Continuously improve our environmental management systems and operational practices",
 ];
 
 function AboutPage() {
@@ -109,11 +103,12 @@ function AboutPage() {
             <span style={{ color: ACCENT }}>Australia</span>
           </h1>
           <p
-            className="mt-6 max-w-xl text-base text-white/85 sm:text-lg"
+            className="mt-6 max-w-2xl text-base text-white/85 sm:text-lg"
             style={{ fontFamily: BODY_FONT }}
           >
-            Melbourne-based supplier of premium glass and value-added glass products,
-            servicing projects across Australia.
+            Trusted supplier of glass and value-added glass products based in
+            Melbourne, Victoria — servicing residential, commercial and architectural
+            projects across Australia.
           </p>
         </div>
       </section>
@@ -132,13 +127,23 @@ function AboutPage() {
         }
       >
         <p>
-          GlassCo Australia supports builders, glaziers, architects, fabricators and
-          property owners with reliable glass solutions and deep industry expertise.
+          GlassCo Australia is a trusted supplier of glass and value-added glass
+          products, supporting builders, glaziers, architects, fabricators and
+          property owners with reliable glass solutions and industry expertise.
         </p>
         <p>
-          As a progressive, growing company, we operate across manufacturing, importing
-          and wholesale distribution — sourcing and supplying high-quality glass at
+          As a growing and progressive company, we operate across multiple areas of
+          the glass industry including manufacturing, importing and wholesale
+          distribution. Our scale and industry relationships allow us to source,
+          process and supply a broad range of high-quality glass products at
           competitive prices.
+        </p>
+        <p>
+          We are highly experienced in supplying the commercial glazing sector and
+          understand the importance of compliance, consistency and dependable
+          supply. Our products are manufactured and processed to meet relevant
+          Australian Standards, giving customers confidence in both quality and
+          performance.
         </p>
       </SplitSection>
 
@@ -157,12 +162,15 @@ function AboutPage() {
         }
       >
         <p>
-          Industrial-grade Dip-Tech GP/GPi systems produce durable, high-resolution
-          ceramic printed glass for both interior and exterior environments.
+          Using industrial-grade Dip-Tech GP/GPi digital ceramic printing systems,
+          we produce durable, high-resolution ceramic printed glass solutions
+          suitable for both interior and exterior environments.
         </p>
         <p>
-          Large-format production and design flexibility let architects and designers
-          achieve customised glazing with outstanding visual impact.
+          Our digital printing capabilities combine precision engineering,
+          large-format production and exceptional design flexibility, allowing
+          architects, designers and builders to achieve customised glazing
+          solutions with outstanding durability and visual impact.
         </p>
       </SplitSection>
 
@@ -180,8 +188,21 @@ function AboutPage() {
               className="mt-6 text-neutral-600"
               style={{ fontFamily: BODY_FONT, fontSize: "15px", lineHeight: 1.7 }}
             >
-              We invest in modern processing capabilities to stay ahead of industry
-              developments and deliver dependable, high-performing glass.
+              The glass industry continues to evolve through innovation, technology
+              and changing architectural requirements. At GlassCo Australia, we
+              believe it is essential to stay ahead of industry developments through
+              continuous research, product development and investment in modern
+              processing capabilities.
+            </p>
+            <p
+              className="mt-4 text-neutral-600"
+              style={{ fontFamily: BODY_FONT, fontSize: "15px", lineHeight: 1.7 }}
+            >
+              Our focus is to introduce customers to the latest advancements in
+              glass design, performance and technology while continuing to deliver
+              dependable service and practical glazing solutions. To support
+              precision manufacturing and efficient production, we utilise advanced
+              processing equipment including:
             </p>
           </div>
 
@@ -221,6 +242,14 @@ function AboutPage() {
               </li>
             ))}
           </ul>
+
+          <p
+            className="mt-10 text-neutral-700"
+            style={{ fontFamily: BODY_FONT, fontSize: "15px", lineHeight: 1.7, fontWeight: 500 }}
+          >
+            Above all, we are committed to supplying products that meet the highest
+            standards of quality, reliability and value.
+          </p>
         </div>
       </section>
 
@@ -291,16 +320,32 @@ function AboutPage() {
                   lineHeight: 1.6,
                 }}
               >
-                "Quality products our customers can rely on — manufactured to Australian
-                Standards, backed by stringent quality control and continuous R&D
-                investment."
+                "GlassCo Australia is committed to delivering quality products that
+                customers can rely on with confidence."
               </div>
               <p
                 className="mt-6 text-neutral-600"
                 style={{ fontFamily: BODY_FONT, fontSize: "15px", lineHeight: 1.7 }}
               >
-                We appreciate you taking the time to learn more about GlassCo Australia
-                and welcome the opportunity to work with you.
+                All products are manufactured and processed to meet relevant
+                Australian Standards, with stringent quality control procedures in
+                place to maintain consistency and performance across our range.
+              </p>
+              <p
+                className="mt-4 text-neutral-600"
+                style={{ fontFamily: BODY_FONT, fontSize: "15px", lineHeight: 1.7 }}
+              >
+                Our ongoing investment in research and development allows us to
+                continually expand and improve our product offering, ensuring we
+                provide practical, innovative and high-performing glass solutions for
+                modern building requirements.
+              </p>
+              <p
+                className="mt-4 text-neutral-600"
+                style={{ fontFamily: BODY_FONT, fontSize: "15px", lineHeight: 1.7 }}
+              >
+                We appreciate you taking the time to learn more about GlassCo
+                Australia and welcome the opportunity to work with you.
               </p>
             </div>
           </div>
@@ -334,10 +379,24 @@ function AboutPage() {
                 className="mt-6 text-neutral-600"
                 style={{ fontFamily: BODY_FONT, fontSize: "15px", lineHeight: 1.7 }}
               >
-                Committed to sustainable resource management and minimising environmental
-                impact through responsible operations and continuous improvement.
+                GlassCo Australia is committed to environmentally responsible
+                business practices and sustainable resource management.
               </p>
-              <ul className="mt-8 space-y-3">
+              <p
+                className="mt-4 text-neutral-600"
+                style={{ fontFamily: BODY_FONT, fontSize: "15px", lineHeight: 1.7 }}
+              >
+                We aim to minimise environmental impact through responsible
+                operations, continuous improvement and compliance with applicable
+                environmental standards and regulations.
+              </p>
+              <h3
+                className="mt-8 text-lg font-semibold text-neutral-900"
+                style={{ fontFamily: HEAD_FONT, letterSpacing: "0.02em" }}
+              >
+                Our Environmental Commitment
+              </h3>
+              <ul className="mt-4 space-y-3">
                 {environmental.map((item) => (
                   <li
                     key={item}
@@ -352,6 +411,16 @@ function AboutPage() {
                   </li>
                 ))}
               </ul>
+              <p
+                className="mt-6 text-neutral-600"
+                style={{ fontFamily: BODY_FONT, fontSize: "14px", lineHeight: 1.7 }}
+              >
+                All GlassCo Australia personnel are expected to perform their work
+                responsibly and contribute to maintaining environmentally conscious
+                workplace practices. We remain committed to protecting the
+                environment while supporting the long-term sustainability of our
+                business, our customers and the wider community.
+              </p>
             </div>
           </div>
         </div>

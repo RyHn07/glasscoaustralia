@@ -177,33 +177,37 @@ function AboutPage() {
       {/* MANUFACTURING CAPABILITY */}
       <section className="w-full bg-neutral-50 py-24">
         <div className="mx-auto max-w-[1280px] px-6">
-          <div className="max-w-2xl">
-            <Eyebrow>MANUFACTURING CAPABILITY</Eyebrow>
-            <SectionHeading>
-              Advanced <span style={{ color: ACCENT }}>Processing</span>
-              <br />
-              Equipment
-            </SectionHeading>
-            <p
-              className="mt-6 text-neutral-600"
-              style={{ fontFamily: BODY_FONT, fontSize: "15px", lineHeight: 1.7 }}
-            >
-              The glass industry continues to evolve through innovation, technology
-              and changing architectural requirements. At GlassCo Australia, we
-              believe it is essential to stay ahead of industry developments through
-              continuous research, product development and investment in modern
-              processing capabilities.
-            </p>
-            <p
-              className="mt-4 text-neutral-600"
-              style={{ fontFamily: BODY_FONT, fontSize: "15px", lineHeight: 1.7 }}
-            >
-              Our focus is to introduce customers to the latest advancements in
-              glass design, performance and technology while continuing to deliver
-              dependable service and practical glazing solutions. To support
-              precision manufacturing and efficient production, we utilise advanced
-              processing equipment including:
-            </p>
+          <div className="grid gap-10 lg:grid-cols-12 lg:items-start">
+            <div className="lg:col-span-5">
+              <Eyebrow>MANUFACTURING CAPABILITY</Eyebrow>
+              <SectionHeading>
+                Advanced <span style={{ color: ACCENT }}>Processing</span>
+                <br />
+                Equipment
+              </SectionHeading>
+            </div>
+            <div className="lg:col-span-7">
+              <p
+                className="text-neutral-600"
+                style={{ fontFamily: BODY_FONT, fontSize: "15px", lineHeight: 1.7 }}
+              >
+                The glass industry continues to evolve through innovation, technology
+                and changing architectural requirements. At GlassCo Australia, we
+                believe it is essential to stay ahead of industry developments through
+                continuous research, product development and investment in modern
+                processing capabilities.
+              </p>
+              <p
+                className="mt-4 text-neutral-600"
+                style={{ fontFamily: BODY_FONT, fontSize: "15px", lineHeight: 1.7 }}
+              >
+                Our focus is to introduce customers to the latest advancements in
+                glass design, performance and technology while continuing to deliver
+                dependable service and practical glazing solutions. To support
+                precision manufacturing and efficient production, we utilise advanced
+                processing equipment including:
+              </p>
+            </div>
           </div>
 
           <div className="relative mt-12">

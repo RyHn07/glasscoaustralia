@@ -34,9 +34,9 @@ const features = [
 ];
 
 const trustStats = [
-  { value: "1000+", label: "Happy Clients" },
-  { value: "50+", label: "Team Members" },
-  { value: "10+", label: "Locations" },
+  { value: "100+", label: "Happy Clients" },
+  { value: "25+", label: "Team Members" },
+  { value: "2+", label: "Locations" },
 ];
 
 export function WhyUs() {

@@ -101,11 +101,9 @@ export function Hero() {
               margin: 0,
             }}
           >
-            Engineered
+            GlassCo
             <br />
-            <span style={{ color: "rgb(0, 154, 170)" }}>From Raw</span>
-            <br />
-            Glass.
+            <span style={{ color: "rgb(0, 154, 170)" }}>Australia</span>
           </h1>
 
           {/* Description */}

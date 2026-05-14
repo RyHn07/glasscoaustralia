@@ -22,7 +22,7 @@ export function Footer() {
               style={{ fontFamily: "Poppins, sans-serif", fontSize: "14px", lineHeight: 1.7 }}
             >
               Australia's leading glass and glazing solutions provider, delivering excellence
-              since 1999.
+              since 1993.
             </p>
             <div className="mt-8 flex items-center gap-5 text-white/70">
               <a href="#" aria-label="Facebook" className="transition-colors hover:text-white">

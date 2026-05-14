@@ -3,7 +3,7 @@ import logo from "@/assets/logo.svg";
 
 const navItems = [
   { label: "Home", to: "/" },
-  { label: "About Us", to: "/" },
+  { label: "About Us", to: "/about" },
   { label: "Services", to: "/" },
   { label: "Products", to: "/" },
   { label: "Why Us", to: "/" },

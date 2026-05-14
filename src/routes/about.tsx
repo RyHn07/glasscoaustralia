@@ -320,16 +320,32 @@ function AboutPage() {
                   lineHeight: 1.6,
                 }}
               >
-                "Quality products our customers can rely on — manufactured to Australian
-                Standards, backed by stringent quality control and continuous R&D
-                investment."
+                "GlassCo Australia is committed to delivering quality products that
+                customers can rely on with confidence."
               </div>
               <p
                 className="mt-6 text-neutral-600"
                 style={{ fontFamily: BODY_FONT, fontSize: "15px", lineHeight: 1.7 }}
               >
-                We appreciate you taking the time to learn more about GlassCo Australia
-                and welcome the opportunity to work with you.
+                All products are manufactured and processed to meet relevant
+                Australian Standards, with stringent quality control procedures in
+                place to maintain consistency and performance across our range.
+              </p>
+              <p
+                className="mt-4 text-neutral-600"
+                style={{ fontFamily: BODY_FONT, fontSize: "15px", lineHeight: 1.7 }}
+              >
+                Our ongoing investment in research and development allows us to
+                continually expand and improve our product offering, ensuring we
+                provide practical, innovative and high-performing glass solutions for
+                modern building requirements.
+              </p>
+              <p
+                className="mt-4 text-neutral-600"
+                style={{ fontFamily: BODY_FONT, fontSize: "15px", lineHeight: 1.7 }}
+              >
+                We appreciate you taking the time to learn more about GlassCo
+                Australia and welcome the opportunity to work with you.
               </p>
             </div>
           </div>

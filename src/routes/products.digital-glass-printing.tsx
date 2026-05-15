@@ -489,6 +489,7 @@ function DigitalGlassPrintingPage() {
           </div>
         </div>
       </section>
-    </div>
+      <Footer />
+    </main>
   );
 }

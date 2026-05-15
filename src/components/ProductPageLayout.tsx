@@ -258,7 +258,6 @@ export function ProductPageLayout(props: ProductPageProps) {
                 <>
                   <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
                     <div className="order-2 lg:order-1">
-                      <Eyebrow>SECTION 0{idx + 1}</Eyebrow>
                       <SectionHeading>{s.heading}</SectionHeading>
                       {s.paragraphs && (
                         <div

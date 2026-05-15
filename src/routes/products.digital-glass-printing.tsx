@@ -190,6 +190,7 @@ function DigitalGlassPrintingPage() {
               </div>
             ))}
           </div>
+          </div>
         </div>
       </section>
 

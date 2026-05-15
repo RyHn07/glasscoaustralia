@@ -157,8 +157,9 @@ function DigitalGlassPrintingPage() {
       </section>
 
       {/* KEY BENEFITS */}
-      <section className="py-24 md:py-32 container mx-auto px-6 lg:px-12">
-        <div className="flex flex-col lg:flex-row gap-16 lg:gap-20">
+      <section className="w-full bg-white py-24">
+        <div className="mx-auto max-w-[1280px] px-6">
+          <div className="flex flex-col lg:flex-row gap-16 lg:gap-20">
           <div className="lg:w-1/3">
             <p
               className="text-sm font-bold tracking-widest uppercase mb-4"

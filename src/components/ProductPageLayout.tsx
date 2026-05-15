@@ -2,15 +2,29 @@ import { Link } from "@tanstack/react-router";
 import { Check } from "lucide-react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import sectionImg1 from "@/assets/about-manufacturing.jpg";
+import sectionImg2 from "@/assets/about-printing.jpg";
+import sectionImg3 from "@/assets/about-environment.jpg";
+import sectionImg4 from "@/assets/project-atrium.jpg";
+import sectionImg5 from "@/assets/project-office.jpg";
+import sectionImg6 from "@/assets/project-curved.jpg";
+import sectionImg7 from "@/assets/project-coastal.jpg";
+import sectionImg8 from "@/assets/project-retail.jpg";
 
 const ACCENT = "#009AAA";
 const HEAD_FONT = "Rajdhani, sans-serif";
 const BODY_FONT = "Poppins, sans-serif";
 
+const SECTION_IMAGES = [
+  sectionImg1, sectionImg2, sectionImg3, sectionImg4,
+  sectionImg5, sectionImg6, sectionImg7, sectionImg8,
+];
+
 export type ProductSection = {
   heading: string;
   paragraphs?: string[];
   bullets?: string[];
+  image?: string;
 };
 
 export type ProductFAQ = { q: string; a: string };
@@ -173,40 +187,58 @@ export function ProductPageLayout(props: ProductPageProps) {
         </div>
       </section>
 
-      {/* CONTENT SECTIONS — varied layouts, alternating bg */}
+      {/* CONTENT SECTIONS — image-rich varied layouts */}
       {sections.map((s, idx) => {
         const bg = idx % 2 === 0 ? "bg-neutral-50" : "bg-white";
-        const variant = idx % 3; // 0: split header, 1: numbered cards, 2: pillar cards
         const cardBg = idx % 2 === 0 ? "bg-white" : "bg-neutral-50";
+        const variant = idx % 3;
+        const img = s.image ?? SECTION_IMAGES[idx % SECTION_IMAGES.length];
+
         return (
           <section key={s.heading} className={`w-full py-24 ${bg}`}>
             <div className="mx-auto max-w-[1280px] px-6">
+
+              {/* VARIANT 0 — image left, content right (with corner bracket) */}
               {variant === 0 && (
                 <>
-                  <div className="grid gap-10 lg:grid-cols-12 lg:items-start">
-                    <div className="lg:col-span-5">
-                      <Eyebrow>0{idx + 1} — SECTION</Eyebrow>
-                      <SectionHeading>{s.heading}</SectionHeading>
+                  <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
+                    <div className="relative">
+                      <div
+                        className="absolute -left-4 -top-4 h-16 w-16 rounded-tl-lg border-l-2 border-t-2"
+                        style={{ borderColor: ACCENT }}
+                      />
+                      <img
+                        src={img}
+                        alt={s.heading}
+                        loading="lazy"
+                        className="h-[420px] w-full rounded-lg object-cover shadow-lg"
+                      />
+                      <div
+                        className="absolute -bottom-5 -right-5 rounded-lg px-5 py-3 text-white shadow-xl"
+                        style={{ background: ACCENT, fontFamily: HEAD_FONT }}
+                      >
+                        <span className="text-sm font-bold tracking-[0.15em]">0{idx + 1}</span>
+                      </div>
                     </div>
-                    <div className="lg:col-span-7">
+                    <div>
+                      <Eyebrow>SECTION 0{idx + 1}</Eyebrow>
+                      <SectionHeading>{s.heading}</SectionHeading>
                       {s.paragraphs && (
                         <div
-                          className="space-y-4 text-neutral-600"
+                          className="mt-6 space-y-4 text-neutral-600"
                           style={{ fontFamily: BODY_FONT, fontSize: "15px", lineHeight: 1.7 }}
                         >
-                          {s.paragraphs.map((p, i) => (
-                            <p key={i}>{p}</p>
-                          ))}
+                          {s.paragraphs.map((p, i) => (<p key={i}>{p}</p>))}
                         </div>
                       )}
                     </div>
                   </div>
                   {s.bullets && (
-                    <ul className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                    <ul className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
                       {s.bullets.map((b, i) => (
                         <li
                           key={b}
-                          className={`flex items-center gap-4 rounded-lg border border-neutral-200 ${cardBg} p-5`}
+                          className={`flex items-center gap-4 rounded-lg border border-neutral-200 ${cardBg} p-5 transition-all hover:-translate-y-0.5 hover:shadow-md`}
                         >
                           <span
                             className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full text-sm font-bold text-white"
@@ -214,12 +246,7 @@ export function ProductPageLayout(props: ProductPageProps) {
                           >
                             {String(i + 1).padStart(2, "0")}
                           </span>
-                          <span
-                            className="text-sm text-neutral-800"
-                            style={{ fontFamily: BODY_FONT, fontWeight: 500 }}
-                          >
-                            {b}
-                          </span>
+                          <span className="text-sm text-neutral-800" style={{ fontFamily: BODY_FONT, fontWeight: 500 }}>{b}</span>
                         </li>
                       ))}
                     </ul>
@@ -227,24 +254,35 @@ export function ProductPageLayout(props: ProductPageProps) {
                 </>
               )}
 
+              {/* VARIANT 1 — content left, image right (reversed) */}
               {variant === 1 && (
                 <>
-                  <div className="mx-auto max-w-2xl text-center">
-                    <div className="flex justify-center">
-                      <Eyebrow>0{idx + 1} — SECTION</Eyebrow>
+                  <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
+                    <div className="order-2 lg:order-1">
+                      <Eyebrow>SECTION 0{idx + 1}</Eyebrow>
+                      <SectionHeading>{s.heading}</SectionHeading>
+                      {s.paragraphs && (
+                        <div
+                          className="mt-6 space-y-4 text-neutral-600"
+                          style={{ fontFamily: BODY_FONT, fontSize: "15px", lineHeight: 1.7 }}
+                        >
+                          {s.paragraphs.map((p, i) => (<p key={i}>{p}</p>))}
+                        </div>
+                      )}
                     </div>
-                    <SectionHeading center>{s.heading}</SectionHeading>
+                    <div className="relative order-1 lg:order-2">
+                      <div
+                        className="absolute -right-4 -top-4 h-16 w-16 rounded-tr-lg border-r-2 border-t-2"
+                        style={{ borderColor: ACCENT }}
+                      />
+                      <img
+                        src={img}
+                        alt={s.heading}
+                        loading="lazy"
+                        className="h-[420px] w-full rounded-lg object-cover shadow-lg"
+                      />
+                    </div>
                   </div>
-                  {s.paragraphs && (
-                    <div
-                      className="mx-auto mt-8 max-w-3xl space-y-4 text-center text-neutral-600"
-                      style={{ fontFamily: BODY_FONT, fontSize: "15px", lineHeight: 1.8 }}
-                    >
-                      {s.paragraphs.map((p, i) => (
-                        <p key={i}>{p}</p>
-                      ))}
-                    </div>
-                  )}
                   {s.bullets && (
                     <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
                       {s.bullets.map((b, i) => (
@@ -252,22 +290,11 @@ export function ProductPageLayout(props: ProductPageProps) {
                           key={b}
                           className={`group rounded-lg border border-neutral-200 ${cardBg} p-7 transition-shadow hover:shadow-lg`}
                         >
-                          <div
-                            className="text-xs font-bold tracking-[0.2em]"
-                            style={{ fontFamily: HEAD_FONT, color: ACCENT }}
-                          >
+                          <div className="text-xs font-bold tracking-[0.2em]" style={{ fontFamily: HEAD_FONT, color: ACCENT }}>
                             {String(i + 1).padStart(2, "0")}
                           </div>
-                          <div
-                            className="mt-4 h-[2px] w-10 transition-all group-hover:w-16"
-                            style={{ background: ACCENT }}
-                          />
-                          <p
-                            className="mt-5 text-neutral-700"
-                            style={{ fontFamily: BODY_FONT, fontSize: "14px", lineHeight: 1.7, fontWeight: 500 }}
-                          >
-                            {b}
-                          </p>
+                          <div className="mt-4 h-[2px] w-10 transition-all group-hover:w-16" style={{ background: ACCENT }} />
+                          <p className="mt-5 text-neutral-700" style={{ fontFamily: BODY_FONT, fontSize: "14px", lineHeight: 1.7, fontWeight: 500 }}>{b}</p>
                         </div>
                       ))}
                     </div>
@@ -275,26 +302,31 @@ export function ProductPageLayout(props: ProductPageProps) {
                 </>
               )}
 
+              {/* VARIANT 2 — full-width hero image with overlay heading + content card */}
               {variant === 2 && (
                 <>
-                  <div className="grid gap-10 lg:grid-cols-12 lg:items-end">
-                    <div className="lg:col-span-7">
-                      <Eyebrow>0{idx + 1} — SECTION</Eyebrow>
-                      <SectionHeading>{s.heading}</SectionHeading>
-                    </div>
-                    <div className="lg:col-span-5">
-                      {s.paragraphs && (
-                        <div
-                          className="space-y-4 text-neutral-600"
-                          style={{ fontFamily: BODY_FONT, fontSize: "15px", lineHeight: 1.7 }}
-                        >
-                          {s.paragraphs.map((p, i) => (
-                            <p key={i}>{p}</p>
-                          ))}
-                        </div>
-                      )}
+                  <div className="relative h-[380px] w-full overflow-hidden rounded-lg shadow-lg">
+                    <img src={img} alt={s.heading} loading="lazy" className="absolute inset-0 h-full w-full object-cover" />
+                    <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/55 to-transparent" />
+                    <div className="relative z-10 flex h-full max-w-2xl flex-col justify-end p-10">
+                      <div className="mb-3 flex items-center gap-3">
+                        <span className="block" style={{ width: "32px", height: "1px", backgroundColor: ACCENT }} />
+                        <span style={{ fontFamily: HEAD_FONT, fontSize: "13px", fontWeight: 700, letterSpacing: "0.18em", color: "#7DD3DC" }}>
+                          SECTION 0{idx + 1}
+                        </span>
+                      </div>
+                      <h2 style={{ fontFamily: HEAD_FONT, fontSize: "clamp(1.75rem, 3.5vw, 2.75rem)", fontWeight: 700, lineHeight: 1.1, color: "#fff", margin: 0 }}>
+                        {s.heading}
+                      </h2>
                     </div>
                   </div>
+                  {s.paragraphs && (
+                    <div className={`relative z-10 mx-auto -mt-14 max-w-4xl rounded-lg border border-neutral-200 ${cardBg === "bg-white" ? "bg-white" : "bg-white"} p-10 shadow-lg`}>
+                      <div className="space-y-4 text-neutral-700" style={{ fontFamily: BODY_FONT, fontSize: "15px", lineHeight: 1.8 }}>
+                        {s.paragraphs.map((p, i) => (<p key={i}>{p}</p>))}
+                      </div>
+                    </div>
+                  )}
                   {s.bullets && (
                     <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
                       {s.bullets.map((b) => (
@@ -302,24 +334,17 @@ export function ProductPageLayout(props: ProductPageProps) {
                           key={b}
                           className={`group rounded-xl border border-neutral-200 ${cardBg} p-7 transition-all hover:-translate-y-1 hover:border-neutral-300 hover:shadow-lg`}
                         >
-                          <div
-                            className="flex h-11 w-11 items-center justify-center rounded-lg"
-                            style={{ background: `${ACCENT}1A` }}
-                          >
+                          <div className="flex h-11 w-11 items-center justify-center rounded-lg" style={{ background: `${ACCENT}1A` }}>
                             <Check className="h-5 w-5" style={{ color: ACCENT }} strokeWidth={3} />
                           </div>
-                          <p
-                            className="mt-5 text-neutral-700"
-                            style={{ fontFamily: BODY_FONT, fontSize: "14px", lineHeight: 1.7 }}
-                          >
-                            {b}
-                          </p>
+                          <p className="mt-5 text-neutral-700" style={{ fontFamily: BODY_FONT, fontSize: "14px", lineHeight: 1.7 }}>{b}</p>
                         </div>
                       ))}
                     </div>
                   )}
                 </>
               )}
+
             </div>
           </section>
         );

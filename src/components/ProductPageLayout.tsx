@@ -2,15 +2,29 @@ import { Link } from "@tanstack/react-router";
 import { Check } from "lucide-react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import sectionImg1 from "@/assets/about-manufacturing.jpg";
+import sectionImg2 from "@/assets/about-printing.jpg";
+import sectionImg3 from "@/assets/about-environment.jpg";
+import sectionImg4 from "@/assets/project-atrium.jpg";
+import sectionImg5 from "@/assets/project-office.jpg";
+import sectionImg6 from "@/assets/project-curved.jpg";
+import sectionImg7 from "@/assets/project-coastal.jpg";
+import sectionImg8 from "@/assets/project-retail.jpg";
 
 const ACCENT = "#009AAA";
 const HEAD_FONT = "Rajdhani, sans-serif";
 const BODY_FONT = "Poppins, sans-serif";
 
+const SECTION_IMAGES = [
+  sectionImg1, sectionImg2, sectionImg3, sectionImg4,
+  sectionImg5, sectionImg6, sectionImg7, sectionImg8,
+];
+
 export type ProductSection = {
   heading: string;
   paragraphs?: string[];
   bullets?: string[];
+  image?: string;
 };
 
 export type ProductFAQ = { q: string; a: string };

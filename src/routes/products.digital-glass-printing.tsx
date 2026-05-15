@@ -166,30 +166,56 @@ function DigitalGlassPrintingPage() {
         </div>
       </section>
 
-      {/* OVERVIEW — Editorial */}
-      <section className="bg-neutral-50 py-24 md:py-32 border-y border-neutral-100">
-        <div className="container mx-auto px-6 lg:px-12">
-          <div className="max-w-4xl mx-auto text-center">
+      {/* ABOUT THE MACHINE — About-page inspired */}
+      <section className="w-full bg-white py-24 border-y border-neutral-100">
+        <div className="mx-auto max-w-[1280px] px-6">
+          <div className="grid gap-10 lg:grid-cols-12 lg:items-start">
+            <div className="lg:col-span-5">
+              <p
+                className="text-xs font-bold tracking-[0.3em] uppercase mb-5"
+                style={{ color: ACCENT, fontFamily: HEAD_FONT }}
+              >
+                — The Technology
+              </p>
+              <h2
+                className="text-4xl md:text-5xl font-bold uppercase leading-[1.05] text-neutral-900"
+                style={{ fontFamily: HEAD_FONT }}
+              >
+                About <br />the Machine
+              </h2>
+              <div className="mt-6 h-1 w-16" style={{ background: ACCENT }} />
+            </div>
+            <div className="lg:col-span-7">
+              <p className="text-neutral-700 text-lg leading-relaxed">
+                We are proud to announce the installation of our latest{" "}
+                <span className="font-semibold text-neutral-900">
+                  CGI Digital Glass Printing Machine
+                </span>
+                , bringing world-class digital ceramic printing capabilities to Australia.
+              </p>
+              <p className="mt-5 text-neutral-600 leading-relaxed">
+                Designed for modern architectural and decorative glass applications, this advanced
+                printer enables us to produce high-definition graphics, patterns, textures,
+                gradients, and custom designs directly onto glass surfaces with exceptional accuracy
+                and durability.
+              </p>
+            </div>
+          </div>
+
+          <div className="relative mt-14">
             <span
-              className="inline-block px-4 py-1 border text-[10px] font-bold uppercase tracking-widest mb-10"
-              style={{ borderColor: ACCENT, color: ACCENT, fontFamily: HEAD_FONT }}
-            >
-              Overview
-            </span>
-            <p className="text-2xl md:text-3xl font-light leading-snug text-neutral-800 mb-10">
-              We are proud to announce the installation of our latest{" "}
-              <span className="font-semibold text-neutral-950">
-                CGI Digital Glass Printing Machine
-              </span>
-              , bringing world-class digital ceramic printing capabilities to Australia.
-            </p>
-            <p className="text-base md:text-lg text-neutral-500 font-light leading-relaxed max-w-3xl mx-auto">
-              Designed for modern architectural and decorative glass applications, this advanced
-              printer enables us to produce high-definition graphics, patterns, textures, gradients,
-              and custom designs directly onto glass surfaces with exceptional accuracy and
-              durability.
-            </p>
-            <div className="w-20 h-1 mx-auto mt-12" style={{ background: ACCENT }} />
+              className="absolute -left-4 -top-4 h-16 w-16 rounded-tl-lg border-l-2 border-t-2 hidden md:block"
+              style={{ borderColor: ACCENT }}
+            />
+            <span
+              className="absolute -right-4 -bottom-4 h-16 w-16 rounded-br-lg border-r-2 border-b-2 hidden md:block"
+              style={{ borderColor: ACCENT }}
+            />
+            <img
+              src={heroImage}
+              alt="CGI Digital Glass Printing Machine"
+              className="h-[360px] md:h-[420px] w-full rounded-lg object-cover shadow-lg"
+            />
           </div>
         </div>
       </section>

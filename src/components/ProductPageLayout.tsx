@@ -22,10 +22,7 @@ function FAQItem({ q, a, defaultOpen }: { q: string; a: string; defaultOpen?: bo
           style={{ color: "#009AAA", transform: open ? "rotate(45deg)" : "rotate(0deg)" }}
         />
       </button>
-      <div
-        className="grid transition-all duration-300 ease-in-out"
-        style={{ gridTemplateRows: open ? "1fr" : "0fr" }}
-      >
+      {open && (
         <div className="overflow-hidden">
           <p
             className="px-6 pb-6 text-neutral-700"
@@ -34,7 +31,7 @@ function FAQItem({ q, a, defaultOpen }: { q: string; a: string; defaultOpen?: bo
             {a}
           </p>
         </div>
-      </div>
+      )}
     </div>
   );
 }

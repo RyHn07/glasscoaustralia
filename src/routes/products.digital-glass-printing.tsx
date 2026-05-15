@@ -1,5 +1,28 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import heroImage from "@/assets/product-printing.jpg";
+import imgSplashback from "@/assets/range-mirrors.jpg";
+import imgShower from "@/assets/range-tempered.jpg";
+import imgFeatureWall from "@/assets/project-atrium.jpg";
+import imgPartition from "@/assets/project-office.jpg";
+import imgFacade from "@/assets/project-curved.jpg";
+import imgBalustrade from "@/assets/project-coastal.jpg";
+import imgShopfront from "@/assets/project-retail.jpg";
+import imgDecorative from "@/assets/range-laminated.jpg";
+import imgSignage from "@/assets/project-heritage.jpg";
+import imgInterior from "@/assets/range-float.jpg";
+
+const APP_IMAGES = [
+  imgSplashback,
+  imgShower,
+  imgFeatureWall,
+  imgPartition,
+  imgFacade,
+  imgBalustrade,
+  imgShopfront,
+  imgDecorative,
+  imgSignage,
+  imgInterior,
+];
 
 const ACCENT = "#009AAA";
 const HEAD_FONT = "Rajdhani, sans-serif";
@@ -220,9 +243,9 @@ function DigitalGlassPrintingPage() {
         </div>
       </section>
 
-      {/* IDEAL APPLICATIONS — Asymmetric tiles */}
-      <section className="py-24 md:py-32">
-        <div className="container mx-auto px-6 lg:px-12">
+      {/* IDEAL APPLICATIONS — Image cards */}
+      <section className="w-full bg-white py-24">
+        <div className="mx-auto max-w-[1280px] px-6">
           <div className="flex flex-col md:flex-row md:justify-between md:items-end mb-12 gap-6">
             <div>
               <p
@@ -244,65 +267,45 @@ function DigitalGlassPrintingPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-            {APPLICATIONS.slice(0, 8).map((label, i) => {
-              const dark = i % 2 === 0;
-              return (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            {APPLICATIONS.map((label, i) => (
+              <div
+                key={label}
+                className="group relative aspect-[4/5] overflow-hidden rounded-lg bg-neutral-900 cursor-pointer"
+              >
+                <img
+                  src={APP_IMAGES[i % APP_IMAGES.length]}
+                  alt={label}
+                  loading="lazy"
+                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/90 via-neutral-950/30 to-transparent transition-opacity duration-500" />
                 <div
-                  key={label}
-                  className={`aspect-[4/5] p-6 md:p-8 flex flex-col justify-between transition-colors duration-500 ${
-                    dark ? "bg-neutral-900 text-white" : "bg-neutral-100 text-neutral-900"
-                  } hover:!text-white`}
-                  style={{ ["--hover-bg" as string]: ACCENT }}
-                  onMouseEnter={(e) => (e.currentTarget.style.background = ACCENT)}
-                  onMouseLeave={(e) =>
-                    (e.currentTarget.style.background = dark ? "#171717" : "#f5f5f5")
-                  }
-                >
-                  <span className="text-xs opacity-50">
+                  className="absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-80 mix-blend-multiply"
+                  style={{ background: ACCENT }}
+                />
+                <div className="absolute inset-0 p-6 flex flex-col justify-between text-white">
+                  <span
+                    className="text-xs font-bold tracking-widest opacity-70"
+                    style={{ fontFamily: HEAD_FONT }}
+                  >
                     {String(i + 1).padStart(2, "0")}
                   </span>
-                  <h4
-                    className="text-lg md:text-xl font-bold uppercase leading-tight"
-                    style={{ fontFamily: HEAD_FONT }}
-                  >
-                    {label}
-                  </h4>
+                  <div>
+                    <h4
+                      className="text-lg md:text-xl font-bold uppercase leading-tight"
+                      style={{ fontFamily: HEAD_FONT }}
+                    >
+                      {label}
+                    </h4>
+                    <div
+                      className="mt-3 h-[2px] w-8 transition-all duration-500 group-hover:w-16 group-hover:bg-white"
+                      style={{ background: ACCENT }}
+                    />
+                  </div>
                 </div>
-              );
-            })}
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mt-3">
-            {APPLICATIONS.slice(8).map((label, i) => {
-              const dark = i % 2 === 1;
-              const baseBg = dark ? "#171717" : "#f5f5f5";
-              return (
-                <div
-                  key={label}
-                  className={`aspect-[2/1] p-8 flex flex-col justify-between transition-colors duration-500 ${
-                    dark ? "bg-neutral-900 text-white" : "bg-neutral-100 text-neutral-900"
-                  }`}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.background = ACCENT;
-                    e.currentTarget.style.color = "#fff";
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.background = baseBg;
-                    e.currentTarget.style.color = dark ? "#fff" : "#171717";
-                  }}
-                >
-                  <span className="text-xs opacity-50">
-                    {String(i + 9).padStart(2, "0")}
-                  </span>
-                  <h4
-                    className="text-2xl font-bold uppercase"
-                    style={{ fontFamily: HEAD_FONT }}
-                  >
-                    {label}
-                  </h4>
-                </div>
-              );
-            })}
+              </div>
+            ))}
           </div>
         </div>
       </section>

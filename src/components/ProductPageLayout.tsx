@@ -221,7 +221,6 @@ export function ProductPageLayout(props: ProductPageProps) {
                       </div>
                     </div>
                     <div>
-                      <Eyebrow>SECTION 0{idx + 1}</Eyebrow>
                       <SectionHeading>{s.heading}</SectionHeading>
                       {s.paragraphs && (
                         <div

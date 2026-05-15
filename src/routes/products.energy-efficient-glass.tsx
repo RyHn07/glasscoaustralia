@@ -451,6 +451,53 @@ function EnergyGlassPage() {
                     <p key={i}>{p}</p>
                   ))}
                 </div>
+
+                {active.details && active.details.length > 0 && (
+                  <div className="mt-8 space-y-6 border-t border-neutral-200 pt-8">
+                    {active.details.map((d) => (
+                      <div key={d.heading}>
+                        <h4
+                          className="text-neutral-900"
+                          style={{
+                            fontFamily: HEAD_FONT,
+                            fontSize: "17px",
+                            fontWeight: 700,
+                            letterSpacing: "0.01em",
+                          }}
+                        >
+                          {d.heading}
+                        </h4>
+                        {d.paragraphs && (
+                          <div
+                            className="mt-2 space-y-3 text-neutral-700"
+                            style={{ fontSize: "15px", lineHeight: 1.8 }}
+                          >
+                            {d.paragraphs.map((p, i) => (
+                              <p key={i}>{p}</p>
+                            ))}
+                          </div>
+                        )}
+                        {d.bullets && (
+                          <ul className="mt-3 space-y-2">
+                            {d.bullets.map((b) => (
+                              <li
+                                key={b}
+                                className="flex items-start gap-3 text-neutral-700"
+                                style={{ fontSize: "14px", lineHeight: 1.7 }}
+                              >
+                                <span
+                                  className="mt-2 inline-block h-1.5 w-1.5 flex-shrink-0 rounded-full"
+                                  style={{ background: ACCENT }}
+                                />
+                                <span>{b}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                )}
               </div>
 
               <div className="lg:col-span-5">

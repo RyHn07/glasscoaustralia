@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
-import { Check, Layers, Sparkles, Sun } from "lucide-react";
+import { Check, Layers, Plus, Sparkles, Sun } from "lucide-react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import heroImage from "@/assets/product-energy.jpg";
@@ -611,19 +611,9 @@ function EnergyGlassPage() {
               Frequently Asked <span style={{ color: ACCENT }}>Questions</span>
             </h2>
           </div>
-          <div className="mt-12 space-y-6">
-            {faqs.map((f) => (
-              <div key={f.q} className="rounded-lg border border-neutral-200 bg-white p-6">
-                <h3
-                  className="text-neutral-900"
-                  style={{ fontFamily: HEAD_FONT, fontSize: "18px", fontWeight: 600 }}
-                >
-                  {f.q}
-                </h3>
-                <p className="mt-2 text-neutral-700" style={{ fontSize: "14px", lineHeight: 1.7 }}>
-                  {f.a}
-                </p>
-              </div>
+          <div className="mt-12 space-y-4">
+            {faqs.map((f, i) => (
+              <FAQItem key={f.q} q={f.q} a={f.a} defaultOpen={i === 0} />
             ))}
           </div>
         </div>
@@ -715,5 +705,37 @@ function SectionHeading({ children }: { children: React.ReactNode }) {
     >
       {children}
     </h2>
+  );
+}
+
+function FAQItem({ q, a, defaultOpen }: { q: string; a: string; defaultOpen?: boolean }) {
+  const [open, setOpen] = useState(!!defaultOpen);
+  return (
+    <div className="overflow-hidden rounded-lg border border-neutral-200 bg-white">
+      <button
+        type="button"
+        onClick={() => setOpen((v) => !v)}
+        className="flex w-full items-center justify-between gap-4 p-6 text-left transition-colors hover:bg-neutral-50"
+      >
+        <span
+          className="text-neutral-900"
+          style={{ fontFamily: HEAD_FONT, fontSize: "18px", fontWeight: 600, letterSpacing: "0.01em" }}
+        >
+          {q}
+        </span>
+        <Plus
+          className="h-5 w-5 flex-shrink-0 transition-transform duration-300"
+          style={{ color: ACCENT, transform: open ? "rotate(45deg)" : "rotate(0deg)" }}
+        />
+      </button>
+      {open && (
+        <p
+          className="px-6 pb-6 text-neutral-700"
+          style={{ fontFamily: BODY_FONT, fontSize: "14px", lineHeight: 1.7 }}
+        >
+          {a}
+        </p>
+      )}
+    </div>
   );
 }

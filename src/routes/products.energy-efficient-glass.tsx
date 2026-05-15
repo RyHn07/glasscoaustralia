@@ -543,6 +543,11 @@ function EnergyGlassPage() {
                         </span>
                       ))}
                     </div>
+                    {active.applicationsNote && (
+                      <p className="mt-4 text-neutral-600" style={{ fontSize: "13px", lineHeight: 1.7 }}>
+                        {active.applicationsNote}
+                      </p>
+                    )}
                   </div>
                 )}
               </div>

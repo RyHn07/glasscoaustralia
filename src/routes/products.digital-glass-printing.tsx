@@ -456,7 +456,7 @@ function DigitalGlassPrintingPage() {
       {/* CTA */}
       <section className="py-32 md:py-40 bg-neutral-950 text-white relative overflow-hidden">
         <div className="absolute top-0 right-0 w-1/3 h-full border-l border-white/5" />
-        <div className="container mx-auto px-6 lg:px-12 relative z-10 text-center">
+        <div className="mx-auto max-w-[1280px] px-6 relative z-10 text-center">
           <p
             className="uppercase tracking-[0.4em] text-xs mb-8"
             style={{ color: ACCENT, fontFamily: HEAD_FONT }}

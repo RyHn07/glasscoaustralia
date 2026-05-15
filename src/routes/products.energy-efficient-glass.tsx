@@ -257,25 +257,23 @@ function EnergyGlassPage() {
       </section>
 
       {/* SUB-CATEGORIES — A / B / C */}
-      <section className="w-full bg-neutral-900 py-24 text-white">
+      <section className="w-full bg-neutral-50 py-24">
         <div className="mx-auto max-w-[1280px] px-6">
           <div className="mx-auto max-w-2xl text-center">
-            <Eyebrow centered light>
-              SUB‑CATEGORIES
-            </Eyebrow>
+            <Eyebrow centered>SUB‑CATEGORIES</Eyebrow>
             <h2
               style={{
                 fontFamily: HEAD_FONT,
                 fontSize: "clamp(2rem, 3.5vw, 3rem)",
                 fontWeight: 700,
                 lineHeight: 1.1,
-                color: "#ffffff",
+                color: "#0a0a0a",
                 margin: 0,
               }}
             >
               Three energy efficient <span style={{ color: ACCENT }}>glass families</span>
             </h2>
-            <p className="mx-auto mt-5 max-w-xl text-white/70" style={{ fontSize: "15px", lineHeight: 1.7 }}>
+            <p className="mx-auto mt-5 max-w-xl text-neutral-600" style={{ fontSize: "15px", lineHeight: 1.7 }}>
               Explore our three core energy efficient glass categories. Each is engineered for a
               different balance of insulation, solar control and aesthetics.
             </p>
@@ -293,16 +291,15 @@ function EnergyGlassPage() {
                   onClick={() => setActiveId(v.id)}
                   className={`group relative overflow-hidden rounded-xl border p-6 text-left transition-all ${
                     isActive
-                      ? "border-transparent bg-white text-neutral-900 shadow-2xl"
-                      : "border-white/15 bg-white/[0.04] text-white hover:border-white/30 hover:bg-white/[0.07]"
+                      ? "border-transparent bg-white text-neutral-900 shadow-xl ring-1 ring-neutral-200"
+                      : "border-neutral-200 bg-white text-neutral-900 hover:border-neutral-300 hover:shadow-md"
                   }`}
                 >
                   <div className="flex items-center gap-3">
                     <span
-                      className="flex h-10 w-10 items-center justify-center rounded-full text-sm font-bold"
+                      className="flex h-10 w-10 items-center justify-center rounded-full text-sm font-bold text-white"
                       style={{
-                        background: isActive ? ACCENT : "rgba(255,255,255,0.08)",
-                        color: isActive ? "#fff" : "#fff",
+                        background: isActive ? ACCENT : "#0a0a0a",
                         fontFamily: HEAD_FONT,
                       }}
                     >
@@ -310,7 +307,7 @@ function EnergyGlassPage() {
                     </span>
                     <Icon
                       className="h-5 w-5"
-                      style={{ color: isActive ? ACCENT : "rgba(255,255,255,0.6)" }}
+                      style={{ color: isActive ? ACCENT : "#9ca3af" }}
                     />
                   </div>
                   <div
@@ -319,10 +316,7 @@ function EnergyGlassPage() {
                   >
                     {v.name}
                   </div>
-                  <div
-                    className={`mt-2 text-sm ${isActive ? "text-neutral-600" : "text-white/60"}`}
-                    style={{ lineHeight: 1.5 }}
-                  >
+                  <div className="mt-2 text-sm text-neutral-600" style={{ lineHeight: 1.5 }}>
                     {v.tagline}
                   </div>
                   {isActive && (
@@ -337,7 +331,7 @@ function EnergyGlassPage() {
           </div>
 
           {/* Active variant detail */}
-          <div className="mt-10 rounded-2xl bg-white p-8 text-neutral-900 shadow-xl md:p-12">
+          <div className="mt-10 rounded-2xl border border-neutral-200 bg-white p-8 text-neutral-900 shadow-sm md:p-12">
             <div className="grid grid-cols-1 gap-12 lg:grid-cols-12">
               <div className="lg:col-span-7">
                 <div className="flex items-center gap-3">

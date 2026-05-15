@@ -55,17 +55,6 @@ function DecorativeGlassPage() {
             "Patterned glass can soften glare, create visual interest and maintain brightness — common in shower areas, offices, residential doors and decorative panels.",
           ],
         },
-        {
-          heading: "Range of decorative options",
-          bullets: [
-            "Patterned glass — textured surfaces for privacy and light diffusion",
-            "Printed ceramic glass — durable digitally printed designs",
-            "Mirror glass — for interiors, retail and hospitality",
-            "Ultra clear (low iron) glass — premium clarity for showcase applications",
-            "Coloured back-painted glass — for splashbacks and feature walls",
-            "Tinted and reflective glass — for facades and shopfronts",
-          ],
-        },
       ]}
       faqs={[
         {

@@ -272,11 +272,12 @@ function DigitalGlassPrintingPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            {APPLICATIONS.map((label, i) => (
+          {/* First row — 4-up portrait tiles */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+            {APPLICATIONS.slice(0, 8).map((label, i) => (
               <div
                 key={label}
-                className="group relative aspect-[4/5] overflow-hidden rounded-lg bg-neutral-900 cursor-pointer"
+                className="group relative aspect-[4/5] overflow-hidden cursor-pointer"
               >
                 <img
                   src={APP_IMAGES[i % APP_IMAGES.length]}
@@ -284,12 +285,12 @@ function DigitalGlassPrintingPage() {
                   loading="lazy"
                   className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/90 via-neutral-950/30 to-transparent transition-opacity duration-500" />
+                <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/85 via-neutral-950/30 to-neutral-950/10 transition-opacity duration-500 group-hover:opacity-60" />
                 <div
                   className="absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-80 mix-blend-multiply"
                   style={{ background: ACCENT }}
                 />
-                <div className="absolute inset-0 p-6 flex flex-col justify-between text-white">
+                <div className="absolute inset-0 p-6 md:p-8 flex flex-col justify-between text-white">
                   <span
                     className="text-xs font-bold tracking-widest opacity-70"
                     style={{ fontFamily: HEAD_FONT }}
@@ -298,13 +299,55 @@ function DigitalGlassPrintingPage() {
                   </span>
                   <div>
                     <h4
-                      className="text-lg md:text-xl font-bold uppercase leading-tight"
+                      className="text-lg md:text-xl font-bold uppercase leading-tight transition-transform duration-500 group-hover:-translate-y-1"
                       style={{ fontFamily: HEAD_FONT }}
                     >
                       {label}
                     </h4>
                     <div
-                      className="mt-3 h-[2px] w-8 transition-all duration-500 group-hover:w-16 group-hover:bg-white"
+                      className="mt-3 h-[2px] w-8 transition-all duration-500 group-hover:w-20 group-hover:bg-white"
+                      style={{ background: ACCENT }}
+                    />
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Second row — 2-up wide feature tiles */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mt-3">
+            {APPLICATIONS.slice(8).map((label, i) => (
+              <div
+                key={label}
+                className="group relative aspect-[2/1] overflow-hidden cursor-pointer"
+              >
+                <img
+                  src={APP_IMAGES[(i + 8) % APP_IMAGES.length]}
+                  alt={label}
+                  loading="lazy"
+                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/85 via-neutral-950/40 to-neutral-950/10 transition-opacity duration-500 group-hover:opacity-60" />
+                <div
+                  className="absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-80 mix-blend-multiply"
+                  style={{ background: ACCENT }}
+                />
+                <div className="absolute inset-0 p-8 flex flex-col justify-between text-white">
+                  <span
+                    className="text-xs font-bold tracking-widest opacity-70"
+                    style={{ fontFamily: HEAD_FONT }}
+                  >
+                    {String(i + 9).padStart(2, "0")}
+                  </span>
+                  <div>
+                    <h4
+                      className="text-2xl font-bold uppercase transition-transform duration-500 group-hover:-translate-y-1"
+                      style={{ fontFamily: HEAD_FONT }}
+                    >
+                      {label}
+                    </h4>
+                    <div
+                      className="mt-3 h-[2px] w-10 transition-all duration-500 group-hover:w-24 group-hover:bg-white"
                       style={{ background: ACCENT }}
                     />
                   </div>

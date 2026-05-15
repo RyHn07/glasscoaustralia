@@ -115,10 +115,11 @@ const SECTORS = [
 
 function DigitalGlassPrintingPage() {
   return (
-    <div
-      className="bg-white text-neutral-900 selection:text-white"
+    <main
+      className="flex min-h-screen flex-col bg-white text-neutral-900 selection:text-white"
       style={{ fontFamily: BODY_FONT }}
     >
+      <Header />
       {/* HERO — Split */}
       <section className="relative flex flex-col lg:flex-row min-h-[88vh] bg-neutral-950 overflow-hidden">
         <div className="w-full lg:w-7/12 h-[40vh] lg:h-auto relative order-1 lg:order-2">

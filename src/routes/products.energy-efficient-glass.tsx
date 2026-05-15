@@ -707,3 +707,35 @@ function SectionHeading({ children }: { children: React.ReactNode }) {
     </h2>
   );
 }
+
+function FAQItem({ q, a, defaultOpen }: { q: string; a: string; defaultOpen?: boolean }) {
+  const [open, setOpen] = useState(!!defaultOpen);
+  return (
+    <div className="overflow-hidden rounded-lg border border-neutral-200 bg-white">
+      <button
+        type="button"
+        onClick={() => setOpen((v) => !v)}
+        className="flex w-full items-center justify-between gap-4 p-6 text-left transition-colors hover:bg-neutral-50"
+      >
+        <span
+          className="text-neutral-900"
+          style={{ fontFamily: HEAD_FONT, fontSize: "18px", fontWeight: 600, letterSpacing: "0.01em" }}
+        >
+          {q}
+        </span>
+        <Plus
+          className="h-5 w-5 flex-shrink-0 transition-transform duration-300"
+          style={{ color: ACCENT, transform: open ? "rotate(45deg)" : "rotate(0deg)" }}
+        />
+      </button>
+      {open && (
+        <p
+          className="px-6 pb-6 text-neutral-700"
+          style={{ fontFamily: BODY_FONT, fontSize: "14px", lineHeight: 1.7 }}
+        >
+          {a}
+        </p>
+      )}
+    </div>
+  );
+}

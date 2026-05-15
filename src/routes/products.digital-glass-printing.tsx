@@ -1,5 +1,28 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import heroImage from "@/assets/product-printing.jpg";
+import imgSplashback from "@/assets/range-mirrors.jpg";
+import imgShower from "@/assets/range-tempered.jpg";
+import imgFeatureWall from "@/assets/project-atrium.jpg";
+import imgPartition from "@/assets/project-office.jpg";
+import imgFacade from "@/assets/project-curved.jpg";
+import imgBalustrade from "@/assets/project-coastal.jpg";
+import imgShopfront from "@/assets/project-retail.jpg";
+import imgDecorative from "@/assets/range-laminated.jpg";
+import imgSignage from "@/assets/project-heritage.jpg";
+import imgInterior from "@/assets/range-float.jpg";
+
+const APP_IMAGES = [
+  imgSplashback,
+  imgShower,
+  imgFeatureWall,
+  imgPartition,
+  imgFacade,
+  imgBalustrade,
+  imgShopfront,
+  imgDecorative,
+  imgSignage,
+  imgInterior,
+];
 
 const ACCENT = "#009AAA";
 const HEAD_FONT = "Rajdhani, sans-serif";

@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
-import { Check } from "lucide-react";
+import { Check, Plus } from "lucide-react";
+import { useState } from "react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import sectionImg1 from "@/assets/about-manufacturing.jpg";

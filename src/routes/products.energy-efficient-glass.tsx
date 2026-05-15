@@ -37,6 +37,12 @@ const keyBenefits = [
   "Toughened options for strength and compliance",
 ];
 
+type DetailSection = {
+  heading: string;
+  paragraphs?: string[];
+  bullets?: string[];
+};
+
 type Variant = {
   id: "lowe" | "evantage" | "luxeco";
   letter: "A" | "B" | "C";
@@ -46,6 +52,8 @@ type Variant = {
   intro: string[];
   highlights: string[];
   applications?: string[];
+  applicationsNote?: string;
+  details?: DetailSection[];
 };
 
 const variants: Variant[] = [
@@ -75,6 +83,27 @@ const variants: Variant[] = [
       "Insulated glass units (IGUs)",
       "Retrofit glazing upgrades",
     ],
+    details: [
+      {
+        heading: "Coating layers & insulation",
+        paragraphs: [
+          "Low‑E coatings consist of a sequence of almost invisible material layers applied to the glass surface. These layers reflect long‑wave heat (radiated from interior heating and from the sun) while still allowing visible light to transmit through.",
+          "By reducing radiative heat transfer through the window, Low‑E glass improves the thermal envelope of a building. The result is a lower U‑Value, which means less heat escaping in winter and less heat entering in summer.",
+        ],
+      },
+      {
+        heading: "Solar control performance",
+        paragraphs: [
+          "Low‑E glass reflects a significant portion of incoming solar energy, reducing solar heat gain on exposed elevations. This helps reduce reliance on air conditioning during summer and contributes to more stable indoor temperatures throughout the day.",
+        ],
+      },
+      {
+        heading: "Finish & format options",
+        paragraphs: [
+          "Low‑E glass is available in monolithic, laminated and toughened formats, and can be incorporated into insulated glass units (IGUs). Toughened options achieve Grade A safety glass compliance, and laminated options can also reduce UV transmission by up to 99%.",
+        ],
+      },
+    ],
   },
   {
     id: "evantage",
@@ -101,6 +130,25 @@ const variants: Variant[] = [
       "Healthcare & retirement facilities",
       "Institutional buildings & shopfronts",
     ],
+    details: [
+      {
+        heading: "Processing & fabrication",
+        bullets: [
+          "Annealed — for standard glazing applications",
+          "Toughened — for Grade A safety and increased strength",
+          "Laminated — for safety, security and acoustic performance",
+          "Insulated glass units (IGUs) — for higher thermal performance",
+          "Combined laminated/insulated configurations",
+        ],
+      },
+      {
+        heading: "Installation considerations",
+        paragraphs: [
+          "Evantage is a coated product and the coating face is important for performance and durability. The pyrolytic coating is typically installed on surface #2 (the inner face of the outer pane) in IGUs to maximise thermal benefit and protect the coating.",
+          "As with all coated reflective glass, attention must be paid to potential haze, thermal stress and edge conditions. Installation should follow manufacturer guidelines and any relevant council or building authority regulations regarding reflectivity on building facades.",
+        ],
+      },
+    ],
   },
   {
     id: "luxeco",
@@ -125,6 +173,46 @@ const variants: Variant[] = [
       "Large glazed residential designs",
       "Modern apartments",
       "Sustainable commercial projects",
+    ],
+    applicationsNote:
+      "Especially beneficial where large glazed areas, high daylight transmission and strong thermal performance are all required at the same time.",
+    details: [
+      {
+        heading: "Energy efficiency",
+        paragraphs: [
+          "Luxeco delivers strong thermal performance by combining a soft coat Low‑E coating with insulating glass unit construction. This reduces heat transfer through the glazing and lowers the building's heating and cooling demand year‑round.",
+        ],
+      },
+      {
+        heading: "High performance double & triple glazing",
+        paragraphs: [
+          "Luxeco is engineered for both double and triple glazed insulating glass units. Triple glazed configurations further improve thermal insulation, making Luxeco particularly suited to low energy and passive housing projects.",
+        ],
+      },
+      {
+        heading: "Excellent light transmission",
+        paragraphs: [
+          "Even in triple glazed configurations, Luxeco maintains approximately 74% visible light transmission — supporting bright, naturally lit interiors without compromising thermal performance.",
+        ],
+      },
+      {
+        heading: "Reduced reflection",
+        paragraphs: [
+          "Luxeco minimises disruptive interior and exterior reflections, helping the glazing read as a clear, neutral surface rather than a mirrored facade.",
+        ],
+      },
+      {
+        heading: "Year‑round comfort",
+        paragraphs: [
+          "By balancing solar control, thermal insulation and daylight transmission, Luxeco helps maintain stable, comfortable indoor temperatures across all seasons.",
+        ],
+      },
+      {
+        heading: "Supports modern design",
+        paragraphs: [
+          "Luxeco is designed to support contemporary architectural trends — larger glazed areas, expansive openings and open‑plan interiors — while still delivering the thermal performance modern buildings require.",
+        ],
+      },
     ],
   },
 ];

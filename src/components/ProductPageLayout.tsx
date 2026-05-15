@@ -309,12 +309,6 @@ export function ProductPageLayout(props: ProductPageProps) {
                     <img src={img} alt={s.heading} loading="lazy" className="absolute inset-0 h-full w-full object-cover" />
                     <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/55 to-transparent" />
                     <div className="relative z-10 flex h-full max-w-2xl flex-col justify-end p-10">
-                      <div className="mb-3 flex items-center gap-3">
-                        <span className="block" style={{ width: "32px", height: "1px", backgroundColor: ACCENT }} />
-                        <span style={{ fontFamily: HEAD_FONT, fontSize: "13px", fontWeight: 700, letterSpacing: "0.18em", color: "#7DD3DC" }}>
-                          SECTION 0{idx + 1}
-                        </span>
-                      </div>
                       <h2 style={{ fontFamily: HEAD_FONT, fontSize: "clamp(1.75rem, 3.5vw, 2.75rem)", fontWeight: 700, lineHeight: 1.1, color: "#fff", margin: 0 }}>
                         {s.heading}
                       </h2>

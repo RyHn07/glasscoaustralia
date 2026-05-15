@@ -611,19 +611,9 @@ function EnergyGlassPage() {
               Frequently Asked <span style={{ color: ACCENT }}>Questions</span>
             </h2>
           </div>
-          <div className="mt-12 space-y-6">
-            {faqs.map((f) => (
-              <div key={f.q} className="rounded-lg border border-neutral-200 bg-white p-6">
-                <h3
-                  className="text-neutral-900"
-                  style={{ fontFamily: HEAD_FONT, fontSize: "18px", fontWeight: 600 }}
-                >
-                  {f.q}
-                </h3>
-                <p className="mt-2 text-neutral-700" style={{ fontSize: "14px", lineHeight: 1.7 }}>
-                  {f.a}
-                </p>
-              </div>
+          <div className="mt-12 space-y-4">
+            {faqs.map((f, i) => (
+              <FAQItem key={f.q} q={f.q} a={f.a} defaultOpen={i === 0} />
             ))}
           </div>
         </div>

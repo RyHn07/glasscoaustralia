@@ -403,7 +403,7 @@ function DigitalGlassPrintingPage() {
 
       {/* WHY CHOOSE US + SECTORS — Two-column architectural */}
       <section className="py-24 md:py-32 bg-neutral-50">
-        <div className="container mx-auto px-6 lg:px-12">
+        <div className="mx-auto max-w-[1280px] px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
             <div>
               <h2

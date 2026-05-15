@@ -1,4 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { Header } from "@/components/Header";
+import { Footer } from "@/components/Footer";
 import heroImage from "@/assets/product-printing.jpg";
 import imgSplashback from "@/assets/range-mirrors.jpg";
 import imgShower from "@/assets/range-tempered.jpg";
@@ -113,10 +115,11 @@ const SECTORS = [
 
 function DigitalGlassPrintingPage() {
   return (
-    <div
-      className="bg-white text-neutral-900 selection:text-white"
+    <main
+      className="flex min-h-screen flex-col bg-white text-neutral-900 selection:text-white"
       style={{ fontFamily: BODY_FONT }}
     >
+      <Header />
       {/* HERO — Split */}
       <section className="relative flex flex-col lg:flex-row min-h-[88vh] bg-neutral-950 overflow-hidden">
         <div className="w-full lg:w-7/12 h-[40vh] lg:h-auto relative order-1 lg:order-2">
@@ -154,8 +157,9 @@ function DigitalGlassPrintingPage() {
       </section>
 
       {/* KEY BENEFITS */}
-      <section className="py-24 md:py-32 container mx-auto px-6 lg:px-12">
-        <div className="flex flex-col lg:flex-row gap-16 lg:gap-20">
+      <section className="w-full bg-white py-24">
+        <div className="mx-auto max-w-[1280px] px-6">
+          <div className="flex flex-col lg:flex-row gap-16 lg:gap-20">
           <div className="lg:w-1/3">
             <p
               className="text-sm font-bold tracking-widest uppercase mb-4"
@@ -185,6 +189,7 @@ function DigitalGlassPrintingPage() {
                 </h3>
               </div>
             ))}
+          </div>
           </div>
         </div>
       </section>
@@ -267,11 +272,12 @@ function DigitalGlassPrintingPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            {APPLICATIONS.map((label, i) => (
+          {/* First row — 4-up portrait tiles */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+            {APPLICATIONS.slice(0, 8).map((label, i) => (
               <div
                 key={label}
-                className="group relative aspect-[4/5] overflow-hidden rounded-lg bg-neutral-900 cursor-pointer"
+                className="group relative aspect-[4/5] overflow-hidden cursor-pointer"
               >
                 <img
                   src={APP_IMAGES[i % APP_IMAGES.length]}
@@ -279,12 +285,12 @@ function DigitalGlassPrintingPage() {
                   loading="lazy"
                   className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/90 via-neutral-950/30 to-transparent transition-opacity duration-500" />
+                <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/85 via-neutral-950/30 to-neutral-950/10 transition-opacity duration-500 group-hover:opacity-60" />
                 <div
                   className="absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-80 mix-blend-multiply"
                   style={{ background: ACCENT }}
                 />
-                <div className="absolute inset-0 p-6 flex flex-col justify-between text-white">
+                <div className="absolute inset-0 p-6 md:p-8 flex flex-col justify-between text-white">
                   <span
                     className="text-xs font-bold tracking-widest opacity-70"
                     style={{ fontFamily: HEAD_FONT }}
@@ -293,13 +299,55 @@ function DigitalGlassPrintingPage() {
                   </span>
                   <div>
                     <h4
-                      className="text-lg md:text-xl font-bold uppercase leading-tight"
+                      className="text-lg md:text-xl font-bold uppercase leading-tight transition-transform duration-500 group-hover:-translate-y-1"
                       style={{ fontFamily: HEAD_FONT }}
                     >
                       {label}
                     </h4>
                     <div
-                      className="mt-3 h-[2px] w-8 transition-all duration-500 group-hover:w-16 group-hover:bg-white"
+                      className="mt-3 h-[2px] w-8 transition-all duration-500 group-hover:w-20 group-hover:bg-white"
+                      style={{ background: ACCENT }}
+                    />
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Second row — 2-up wide feature tiles */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mt-3">
+            {APPLICATIONS.slice(8).map((label, i) => (
+              <div
+                key={label}
+                className="group relative aspect-[2/1] overflow-hidden cursor-pointer"
+              >
+                <img
+                  src={APP_IMAGES[(i + 8) % APP_IMAGES.length]}
+                  alt={label}
+                  loading="lazy"
+                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/85 via-neutral-950/40 to-neutral-950/10 transition-opacity duration-500 group-hover:opacity-60" />
+                <div
+                  className="absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-80 mix-blend-multiply"
+                  style={{ background: ACCENT }}
+                />
+                <div className="absolute inset-0 p-8 flex flex-col justify-between text-white">
+                  <span
+                    className="text-xs font-bold tracking-widest opacity-70"
+                    style={{ fontFamily: HEAD_FONT }}
+                  >
+                    {String(i + 9).padStart(2, "0")}
+                  </span>
+                  <div>
+                    <h4
+                      className="text-2xl font-bold uppercase transition-transform duration-500 group-hover:-translate-y-1"
+                      style={{ fontFamily: HEAD_FONT }}
+                    >
+                      {label}
+                    </h4>
+                    <div
+                      className="mt-3 h-[2px] w-10 transition-all duration-500 group-hover:w-24 group-hover:bg-white"
                       style={{ background: ACCENT }}
                     />
                   </div>
@@ -398,7 +446,7 @@ function DigitalGlassPrintingPage() {
 
       {/* WHY CHOOSE US + SECTORS — Two-column architectural */}
       <section className="py-24 md:py-32 bg-neutral-50">
-        <div className="container mx-auto px-6 lg:px-12">
+        <div className="mx-auto max-w-[1280px] px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
             <div>
               <h2
@@ -451,7 +499,7 @@ function DigitalGlassPrintingPage() {
       {/* CTA */}
       <section className="py-32 md:py-40 bg-neutral-950 text-white relative overflow-hidden">
         <div className="absolute top-0 right-0 w-1/3 h-full border-l border-white/5" />
-        <div className="container mx-auto px-6 lg:px-12 relative z-10 text-center">
+        <div className="mx-auto max-w-[1280px] px-6 relative z-10 text-center">
           <p
             className="uppercase tracking-[0.4em] text-xs mb-8"
             style={{ color: ACCENT, fontFamily: HEAD_FONT }}
@@ -486,6 +534,7 @@ function DigitalGlassPrintingPage() {
           </div>
         </div>
       </section>
-    </div>
+      <Footer />
+    </main>
   );
 }

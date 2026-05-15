@@ -134,73 +134,196 @@ export function ProductPageLayout(props: ProductPageProps) {
         </div>
       </section>
 
-      {/* INTRO */}
-      <section className="w-full bg-white py-20">
-        <div className="mx-auto max-w-[920px] px-6 text-center">
-          <Eyebrow centered>OVERVIEW</Eyebrow>
-          <div
-            className="mt-6 space-y-5 text-neutral-700"
-            style={{ fontFamily: BODY_FONT, fontSize: "16px", lineHeight: 1.8 }}
-          >
-            {intro.map((p, i) => (
-              <p key={i}>{p}</p>
-            ))}
+      {/* INTRO — quote-style centered overview */}
+      <section className="w-full bg-white py-24">
+        <div className="mx-auto max-w-[1280px] px-6">
+          <div className="mx-auto max-w-3xl text-center">
+            <Eyebrow centered>OVERVIEW</Eyebrow>
+            <SectionHeading center>
+              The <span style={{ color: ACCENT }}>essentials</span> at a glance
+            </SectionHeading>
+          </div>
+          <div className="relative mx-auto mt-12 max-w-3xl">
+            <div
+              className="absolute -left-3 -top-3 flex h-12 w-12 items-center justify-center rounded-full shadow-lg"
+              style={{ background: ACCENT }}
+            >
+              <span
+                className="text-white"
+                style={{ fontFamily: HEAD_FONT, fontWeight: 700, fontSize: "18px" }}
+              >
+                ✦
+              </span>
+            </div>
+            <div
+              className="rounded-2xl border border-neutral-200 bg-neutral-50 p-10 shadow-sm"
+              style={{ fontFamily: BODY_FONT }}
+            >
+              <div
+                className="space-y-5 text-neutral-700"
+                style={{ fontSize: "16px", lineHeight: 1.8 }}
+              >
+                {intro.map((p, i) => (
+                  <p key={i}>{p}</p>
+                ))}
+              </div>
+              <div className="mt-6 h-[2px] w-12" style={{ background: ACCENT }} />
+            </div>
           </div>
         </div>
       </section>
 
-      {/* CONTENT SECTIONS — alternating bg */}
-      {sections.map((s, idx) => (
-        <section
-          key={s.heading}
-          className={`w-full py-20 ${idx % 2 === 0 ? "bg-neutral-50" : "bg-white"}`}
-        >
-          <div className="mx-auto max-w-[1080px] px-6">
-            <div className="mb-6 flex items-center gap-4">
-              <span className="block h-px w-10" style={{ backgroundColor: ACCENT }} />
-              <h2
-                style={{
-                  fontFamily: HEAD_FONT,
-                  fontSize: "clamp(1.75rem, 3vw, 2.5rem)",
-                  fontWeight: 700,
-                  lineHeight: 1.15,
-                  color: "#0a0a0a",
-                  margin: 0,
-                }}
-              >
-                {s.heading}
-              </h2>
+      {/* CONTENT SECTIONS — varied layouts, alternating bg */}
+      {sections.map((s, idx) => {
+        const bg = idx % 2 === 0 ? "bg-neutral-50" : "bg-white";
+        const variant = idx % 3; // 0: split header, 1: numbered cards, 2: pillar cards
+        const cardBg = idx % 2 === 0 ? "bg-white" : "bg-neutral-50";
+        return (
+          <section key={s.heading} className={`w-full py-24 ${bg}`}>
+            <div className="mx-auto max-w-[1280px] px-6">
+              {variant === 0 && (
+                <>
+                  <div className="grid gap-10 lg:grid-cols-12 lg:items-start">
+                    <div className="lg:col-span-5">
+                      <Eyebrow>0{idx + 1} — SECTION</Eyebrow>
+                      <SectionHeading>{s.heading}</SectionHeading>
+                    </div>
+                    <div className="lg:col-span-7">
+                      {s.paragraphs && (
+                        <div
+                          className="space-y-4 text-neutral-600"
+                          style={{ fontFamily: BODY_FONT, fontSize: "15px", lineHeight: 1.7 }}
+                        >
+                          {s.paragraphs.map((p, i) => (
+                            <p key={i}>{p}</p>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                  {s.bullets && (
+                    <ul className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                      {s.bullets.map((b, i) => (
+                        <li
+                          key={b}
+                          className={`flex items-center gap-4 rounded-lg border border-neutral-200 ${cardBg} p-5`}
+                        >
+                          <span
+                            className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full text-sm font-bold text-white"
+                            style={{ background: ACCENT, fontFamily: HEAD_FONT }}
+                          >
+                            {String(i + 1).padStart(2, "0")}
+                          </span>
+                          <span
+                            className="text-sm text-neutral-800"
+                            style={{ fontFamily: BODY_FONT, fontWeight: 500 }}
+                          >
+                            {b}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </>
+              )}
+
+              {variant === 1 && (
+                <>
+                  <div className="mx-auto max-w-2xl text-center">
+                    <div className="flex justify-center">
+                      <Eyebrow>0{idx + 1} — SECTION</Eyebrow>
+                    </div>
+                    <SectionHeading center>{s.heading}</SectionHeading>
+                  </div>
+                  {s.paragraphs && (
+                    <div
+                      className="mx-auto mt-8 max-w-3xl space-y-4 text-center text-neutral-600"
+                      style={{ fontFamily: BODY_FONT, fontSize: "15px", lineHeight: 1.8 }}
+                    >
+                      {s.paragraphs.map((p, i) => (
+                        <p key={i}>{p}</p>
+                      ))}
+                    </div>
+                  )}
+                  {s.bullets && (
+                    <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+                      {s.bullets.map((b, i) => (
+                        <div
+                          key={b}
+                          className={`group rounded-lg border border-neutral-200 ${cardBg} p-7 transition-shadow hover:shadow-lg`}
+                        >
+                          <div
+                            className="text-xs font-bold tracking-[0.2em]"
+                            style={{ fontFamily: HEAD_FONT, color: ACCENT }}
+                          >
+                            {String(i + 1).padStart(2, "0")}
+                          </div>
+                          <div
+                            className="mt-4 h-[2px] w-10 transition-all group-hover:w-16"
+                            style={{ background: ACCENT }}
+                          />
+                          <p
+                            className="mt-5 text-neutral-700"
+                            style={{ fontFamily: BODY_FONT, fontSize: "14px", lineHeight: 1.7, fontWeight: 500 }}
+                          >
+                            {b}
+                          </p>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </>
+              )}
+
+              {variant === 2 && (
+                <>
+                  <div className="grid gap-10 lg:grid-cols-12 lg:items-end">
+                    <div className="lg:col-span-7">
+                      <Eyebrow>0{idx + 1} — SECTION</Eyebrow>
+                      <SectionHeading>{s.heading}</SectionHeading>
+                    </div>
+                    <div className="lg:col-span-5">
+                      {s.paragraphs && (
+                        <div
+                          className="space-y-4 text-neutral-600"
+                          style={{ fontFamily: BODY_FONT, fontSize: "15px", lineHeight: 1.7 }}
+                        >
+                          {s.paragraphs.map((p, i) => (
+                            <p key={i}>{p}</p>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                  {s.bullets && (
+                    <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                      {s.bullets.map((b) => (
+                        <div
+                          key={b}
+                          className={`group rounded-xl border border-neutral-200 ${cardBg} p-7 transition-all hover:-translate-y-1 hover:border-neutral-300 hover:shadow-lg`}
+                        >
+                          <div
+                            className="flex h-11 w-11 items-center justify-center rounded-lg"
+                            style={{ background: `${ACCENT}1A` }}
+                          >
+                            <Check className="h-5 w-5" style={{ color: ACCENT }} strokeWidth={3} />
+                          </div>
+                          <p
+                            className="mt-5 text-neutral-700"
+                            style={{ fontFamily: BODY_FONT, fontSize: "14px", lineHeight: 1.7 }}
+                          >
+                            {b}
+                          </p>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </>
+              )}
             </div>
-            {s.paragraphs && (
-              <div
-                className="space-y-4 text-neutral-700"
-                style={{ fontFamily: BODY_FONT, fontSize: "15px", lineHeight: 1.8 }}
-              >
-                {s.paragraphs.map((p, i) => (
-                  <p key={i}>{p}</p>
-                ))}
-              </div>
-            )}
-            {s.bullets && (
-              <ul className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2">
-                {s.bullets.map((b) => (
-                  <li
-                    key={b}
-                    className="flex items-start gap-3 text-neutral-700"
-                    style={{ fontFamily: BODY_FONT, fontSize: "14px", lineHeight: 1.7 }}
-                  >
-                    <span
-                      className="mt-2 inline-block h-1.5 w-1.5 flex-shrink-0 rounded-full"
-                      style={{ background: ACCENT }}
-                    />
-                    <span>{b}</span>
-                  </li>
-                ))}
-              </ul>
-            )}
-          </div>
-        </section>
-      ))}
+          </section>
+        );
+      })}
 
       {/* FAQs */}
       {faqs && faqs.length > 0 && (

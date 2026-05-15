@@ -1,5 +1,43 @@
 import { Link } from "@tanstack/react-router";
-import { Check } from "lucide-react";
+import { Check, Plus } from "lucide-react";
+import { useState } from "react";
+
+function FAQItem({ q, a, defaultOpen }: { q: string; a: string; defaultOpen?: boolean }) {
+  const [open, setOpen] = useState(!!defaultOpen);
+  return (
+    <div className="overflow-hidden rounded-lg border border-neutral-200 bg-neutral-50">
+      <button
+        type="button"
+        onClick={() => setOpen((v) => !v)}
+        className="flex w-full items-center justify-between gap-4 p-6 text-left transition-colors hover:bg-neutral-100"
+      >
+        <span
+          className="text-neutral-900"
+          style={{ fontFamily: "Rajdhani, sans-serif", fontSize: "18px", fontWeight: 600, letterSpacing: "0.01em" }}
+        >
+          {q}
+        </span>
+        <Plus
+          className="h-5 w-5 flex-shrink-0 transition-transform duration-300"
+          style={{ color: "#009AAA", transform: open ? "rotate(45deg)" : "rotate(0deg)" }}
+        />
+      </button>
+      <div
+        className="grid transition-all duration-300 ease-in-out"
+        style={{ gridTemplateRows: open ? "1fr" : "0fr" }}
+      >
+        <div className="overflow-hidden">
+          <p
+            className="px-6 pb-6 text-neutral-700"
+            style={{ fontFamily: "Poppins, sans-serif", fontSize: "14px", lineHeight: 1.7 }}
+          >
+            {a}
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+}
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import sectionImg1 from "@/assets/about-manufacturing.jpg";
@@ -352,22 +390,9 @@ export function ProductPageLayout(props: ProductPageProps) {
                 Frequently Asked <span style={{ color: ACCENT }}>Questions</span>
               </SectionHeading>
             </div>
-            <div className="mt-12 space-y-6">
-              {faqs.map((f) => (
-                <div key={f.q} className="rounded-lg border border-neutral-200 bg-neutral-50 p-6">
-                  <h3
-                    className="text-neutral-900"
-                    style={{ fontFamily: HEAD_FONT, fontSize: "18px", fontWeight: 600, letterSpacing: "0.01em" }}
-                  >
-                    {f.q}
-                  </h3>
-                  <p
-                    className="mt-2 text-neutral-700"
-                    style={{ fontFamily: BODY_FONT, fontSize: "14px", lineHeight: 1.7 }}
-                  >
-                    {f.a}
-                  </p>
-                </div>
+            <div className="mt-12 space-y-4">
+              {faqs.map((f, i) => (
+                <FAQItem key={f.q} q={f.q} a={f.a} defaultOpen={i === 0} />
               ))}
             </div>
           </div>

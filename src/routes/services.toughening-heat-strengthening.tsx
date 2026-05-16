@@ -298,8 +298,8 @@ function ToughingHeatStrengtheningPage() {
       {/* KEY FEATURES */}
       <section className="w-full bg-white py-24">
         <div className="mx-auto max-w-[1280px] px-6">
-          <div className="mx-auto max-w-2xl text-center">
-            <div className="inline-flex items-center gap-3">
+          <div className="max-w-2xl">
+            <div className="flex items-center gap-3">
               <span className="block" style={{ width: "32px", height: "1px", backgroundColor: ACCENT }} />
               <span
                 style={{
@@ -312,7 +312,6 @@ function ToughingHeatStrengtheningPage() {
               >
                 KEY FEATURES
               </span>
-              <span className="block" style={{ width: "32px", height: "1px", backgroundColor: ACCENT }} />
             </div>
             <h2
               className="mt-5"
@@ -442,6 +441,15 @@ function ToughingHeatStrengtheningPage() {
               >
                 Why choose <span style={{ color: ACCENT }}>toughened glass?</span>
               </h2>
+              <p
+                className="mt-5 text-neutral-600"
+                style={{ fontFamily: BODY_FONT, fontSize: "15px", lineHeight: 1.75 }}
+              >
+                Built to perform where ordinary glass can't — toughened glass combines superior
+                strength, thermal resistance and safety. When broken, it shatters into small,
+                blunt granules instead of sharp shards, drastically reducing the risk of injury
+                and meeting Australian safety standards for high-risk environments.
+              </p>
             </div>
             <div className="lg:col-span-7">
               <div

@@ -26,6 +26,24 @@ const productItems = [
   },
 ];
 
+const serviceItems = [
+  {
+    label: "Toughening & Heat Strengthening",
+    description: "NorthGlass horizontal toughening furnace",
+    to: "/services/toughening-heat-strengthening" as const,
+  },
+  {
+    label: "Service Two",
+    description: "Coming soon",
+    to: "/" as const,
+  },
+  {
+    label: "Service Three",
+    description: "Coming soon",
+    to: "/" as const,
+  },
+];
+
 const navItems = [
   { label: "Home", to: "/" as const },
   { label: "About Us", to: "/about" as const },
@@ -37,6 +55,7 @@ const navItems = [
 
 export function Header() {
   const [productsOpen, setProductsOpen] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
 
   return (
     <header
@@ -57,9 +76,43 @@ export function Header() {
           <Link to="/about" className="text-[15px] font-medium text-black/70 transition-colors hover:text-black">
             About Us
           </Link>
-          <Link to="/" className="text-[15px] font-medium text-black/70 transition-colors hover:text-black">
-            Services
-          </Link>
+          {/* Services dropdown */}
+          <div
+            className="relative"
+            onMouseEnter={() => setServicesOpen(true)}
+            onMouseLeave={() => setServicesOpen(false)}
+          >
+            <button
+              type="button"
+              onClick={() => setServicesOpen((v) => !v)}
+              className="flex items-center gap-1 text-[15px] font-medium text-black/70 transition-colors hover:text-black"
+              aria-expanded={servicesOpen}
+              aria-haspopup="true"
+            >
+              Services
+              <ChevronDown
+                className={`h-3.5 w-3.5 transition-transform ${servicesOpen ? "rotate-180" : ""}`}
+              />
+            </button>
+
+            {servicesOpen && (
+              <div className="absolute left-1/2 top-full z-50 -translate-x-1/2 pt-3">
+                <div className="w-[360px] rounded-lg border border-neutral-200 bg-white p-2 shadow-xl">
+                  {serviceItems.map((item) => (
+                    <Link
+                      key={item.label}
+                      to={item.to}
+                      onClick={() => setServicesOpen(false)}
+                      className="block rounded-md px-3 py-3 transition-colors hover:bg-neutral-50"
+                    >
+                      <div className="text-sm font-semibold text-neutral-900">{item.label}</div>
+                      <div className="mt-0.5 text-xs text-neutral-500">{item.description}</div>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
 
           {/* Products dropdown */}
           <div

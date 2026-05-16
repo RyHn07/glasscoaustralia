@@ -33,9 +33,9 @@ const serviceItems = [
     to: "/services/toughening-heat-strengthening" as const,
   },
   {
-    label: "Service Two",
-    description: "Coming soon",
-    to: "/" as const,
+    label: "Insulating Glass Units (IGU)",
+    description: "LISEC fully automated IGU line with Argon fill",
+    to: "/services/igu" as const,
   },
   {
     label: "Service Three",

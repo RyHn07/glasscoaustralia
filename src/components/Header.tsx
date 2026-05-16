@@ -30,8 +30,8 @@ const navItems = [
   { label: "Home", to: "/" as const },
   { label: "About Us", to: "/about" as const },
   { label: "Services", to: "/" as const },
-  { label: "Why Us", to: "/" as const },
-  { label: "Projects", to: "/" as const },
+  { label: "Gallery", to: "/" as const },
+  { label: "Our Certification", to: "/" as const },
   { label: "Contact", to: "/" as const },
 ];
 

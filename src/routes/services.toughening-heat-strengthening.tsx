@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Check } from "lucide-react";
+import { Check, Building2, Droplets, Sofa, Cpu, Fence, ShieldCheck } from "lucide-react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import heroImage from "@/assets/service-toughening.jpg";
@@ -345,6 +345,124 @@ function ToughingHeatStrengtheningPage() {
               </li>
             ))}
           </ul>
+        </div>
+      </section>
+
+      {/* APPLICATIONS */}
+      <section className="w-full bg-neutral-50 py-24">
+        <div className="mx-auto max-w-[1280px] px-6">
+          <div className="mx-auto max-w-2xl text-center">
+            <div className="inline-flex items-center gap-3">
+              <span className="block" style={{ width: "32px", height: "1px", backgroundColor: ACCENT }} />
+              <span
+                style={{
+                  fontFamily: HEAD_FONT,
+                  fontSize: "14px",
+                  fontWeight: 700,
+                  letterSpacing: "0.2em",
+                  color: ACCENT,
+                }}
+              >
+                APPLICATIONS
+              </span>
+              <span className="block" style={{ width: "32px", height: "1px", backgroundColor: ACCENT }} />
+            </div>
+            <h2
+              className="mt-5"
+              style={{
+                fontFamily: HEAD_FONT,
+                fontSize: "clamp(2rem, 3.5vw, 3rem)",
+                fontWeight: 700,
+                lineHeight: 1.1,
+                color: "#0a0a0a",
+                margin: 0,
+              }}
+            >
+              Where it's <span style={{ color: ACCENT }}>used</span>
+            </h2>
+          </div>
+          <div className="mt-12 grid grid-cols-2 gap-5 md:grid-cols-3 lg:grid-cols-5">
+            {[
+              { icon: Building2, label: "Architectural glass" },
+              { icon: Droplets, label: "Shower screens & partitions" },
+              { icon: Sofa, label: "Furniture glass" },
+              { icon: Cpu, label: "Appliance & automotive glass" },
+              { icon: Fence, label: "Balustrades & handrails" },
+            ].map(({ icon: Icon, label }) => (
+              <div
+                key={label}
+                className="flex flex-col items-center rounded-xl border border-neutral-200 bg-white p-6 text-center shadow-sm transition-shadow hover:shadow-md"
+              >
+                <span
+                  className="flex h-14 w-14 items-center justify-center rounded-full"
+                  style={{ background: `${ACCENT}15` }}
+                >
+                  <Icon className="h-7 w-7" style={{ color: ACCENT }} />
+                </span>
+                <span
+                  className="mt-4 text-neutral-800"
+                  style={{ fontFamily: BODY_FONT, fontSize: "14px", fontWeight: 500, lineHeight: 1.4 }}
+                >
+                  {label}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* WHY CHOOSE TOUGHENED GLASS */}
+      <section className="w-full bg-white py-24">
+        <div className="mx-auto max-w-[1080px] px-6">
+          <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:items-center">
+            <div className="lg:col-span-5">
+              <div className="mb-5 flex items-center gap-3">
+                <span className="block" style={{ width: "32px", height: "1px", backgroundColor: ACCENT }} />
+                <span
+                  style={{
+                    fontFamily: HEAD_FONT,
+                    fontSize: "14px",
+                    fontWeight: 700,
+                    letterSpacing: "0.2em",
+                    color: ACCENT,
+                  }}
+                >
+                  WHY CHOOSE
+                </span>
+              </div>
+              <h2
+                style={{
+                  fontFamily: HEAD_FONT,
+                  fontSize: "clamp(2rem, 3.5vw, 3rem)",
+                  fontWeight: 700,
+                  lineHeight: 1.1,
+                  color: "#0a0a0a",
+                  margin: 0,
+                }}
+              >
+                Why choose <span style={{ color: ACCENT }}>toughened glass?</span>
+              </h2>
+            </div>
+            <div className="lg:col-span-7">
+              <div
+                className="relative rounded-xl border border-neutral-200 bg-neutral-50 p-8 md:p-10"
+                style={{ borderLeftWidth: "4px", borderLeftColor: ACCENT, borderLeftStyle: "solid" }}
+              >
+                <ShieldCheck className="mb-5 h-10 w-10" style={{ color: ACCENT }} strokeWidth={1.5} />
+                <p
+                  className="text-neutral-700"
+                  style={{ fontFamily: BODY_FONT, fontSize: "17px", lineHeight: 1.75 }}
+                >
+                  Toughened safety glass is up to{" "}
+                  <span className="font-semibold" style={{ color: ACCENT }}>
+                    five times stronger
+                  </span>{" "}
+                  than standard annealed glass, making it ideal for commercial, residential, and
+                  industrial applications where safety and durability are critical.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 

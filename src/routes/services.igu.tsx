@@ -460,14 +460,21 @@ function IGUPage() {
           </div>
 
           {/* Long-form detail */}
-          <div className="mt-12 grid grid-cols-1 gap-10 lg:grid-cols-12 lg:items-start">
-            <div className="lg:col-span-5">
-              <ShieldCheck className="h-10 w-10" style={{ color: ACCENT }} strokeWidth={1.5} />
+          <div
+            className="mt-12 rounded-2xl border border-neutral-200 bg-white p-8 shadow-sm md:p-12"
+            style={{ borderLeftWidth: "4px", borderLeftColor: ACCENT, borderLeftStyle: "solid" }}
+          >
+            <div className="flex flex-col items-start gap-5 md:flex-row md:items-center">
+              <span
+                className="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-full"
+                style={{ background: `${ACCENT}15` }}
+              >
+                <ShieldCheck className="h-7 w-7" style={{ color: ACCENT }} strokeWidth={1.75} />
+              </span>
               <h3
-                className="mt-5"
                 style={{
                   fontFamily: HEAD_FONT,
-                  fontSize: "clamp(1.5rem, 2.5vw, 2rem)",
+                  fontSize: "clamp(1.75rem, 3vw, 2.25rem)",
                   fontWeight: 700,
                   lineHeight: 1.15,
                   color: "#0a0a0a",
@@ -477,8 +484,9 @@ function IGUPage() {
                 Year-round <span style={{ color: ACCENT }}>performance</span>
               </h3>
             </div>
+
             <div
-              className="space-y-4 text-neutral-700 lg:col-span-7"
+              className="mt-8 grid grid-cols-1 gap-x-10 gap-y-5 text-neutral-700 md:grid-cols-2"
               style={{ fontFamily: BODY_FONT, fontSize: "15px", lineHeight: 1.85 }}
             >
               <p>
@@ -491,7 +499,7 @@ function IGUPage() {
                 During cooler seasons, insulated products create warmer interior glass surfaces,
                 reducing frost and condensation from forming on the glass.
               </p>
-              <p>
+              <p className="md:col-span-2">
                 Many materials — carpet, curtains, upholstery, artwork and timber — fade upon
                 exposure to sunlight. Window glass selection influences the type and intensity of
                 ultraviolet (UV) rays reaching the interior, which is the primary cause of fading

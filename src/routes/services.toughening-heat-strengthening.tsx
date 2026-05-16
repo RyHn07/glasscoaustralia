@@ -3,6 +3,7 @@ import { Check } from "lucide-react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import heroImage from "@/assets/service-toughening.jpg";
+import furnaceImage from "@/assets/northglass-furnace.jpg";
 
 const ACCENT = "#009AAA";
 const HEAD_FONT = "Rajdhani, sans-serif";
@@ -101,59 +102,103 @@ function ToughingHeatStrengtheningPage() {
         </div>
       </section>
 
-      {/* OVERVIEW */}
+      {/* OVERVIEW — WhoWeAre style */}
       <section className="w-full bg-white py-24">
-        <div className="mx-auto max-w-[1080px] px-6">
-          <div className="text-center">
-            <div className="inline-flex items-center gap-3">
-              <span className="block" style={{ width: "32px", height: "1px", backgroundColor: ACCENT }} />
-              <span
+        <div className="mx-auto max-w-[1280px] px-6">
+          <div className="grid grid-cols-1 gap-16 lg:grid-cols-2 lg:items-center">
+            {/* Left: image */}
+            <div className="relative">
+              <div
+                className="absolute -left-4 -top-4 h-16 w-16 rounded-tl-lg border-l-2 border-t-2"
+                style={{ borderColor: ACCENT }}
+              />
+              <img
+                src={furnaceImage}
+                alt="NorthGlass horizontal toughening furnace at GlassCo Australia"
+                loading="lazy"
+                width={1280}
+                height={896}
+                className="h-auto w-full rounded-lg object-cover shadow-lg"
+              />
+              <div
+                className="absolute -bottom-6 -right-6 rounded-lg px-8 py-5 text-center text-white shadow-xl"
+                style={{ backgroundColor: ACCENT, fontFamily: HEAD_FONT }}
+              >
+                <div className="text-4xl font-bold leading-none">98%+</div>
+                <div className="mt-1 text-sm font-medium">Finished Rate</div>
+              </div>
+            </div>
+
+            {/* Right: content */}
+            <div>
+              <div className="mb-5 flex items-center gap-3">
+                <span className="block" style={{ width: "32px", height: "1px", backgroundColor: ACCENT }} />
+                <span
+                  style={{
+                    fontFamily: HEAD_FONT,
+                    fontSize: "14px",
+                    fontWeight: 700,
+                    letterSpacing: "0.15em",
+                    color: ACCENT,
+                  }}
+                >
+                  OVERVIEW
+                </span>
+              </div>
+              <h2
                 style={{
                   fontFamily: HEAD_FONT,
-                  fontSize: "14px",
+                  fontSize: "clamp(2.25rem, 4vw, 3.5rem)",
                   fontWeight: 700,
-                  letterSpacing: "0.2em",
-                  color: ACCENT,
+                  lineHeight: 1.1,
+                  color: "#0a0a0a",
+                  margin: 0,
                 }}
               >
-                OVERVIEW
-              </span>
-              <span className="block" style={{ width: "32px", height: "1px", backgroundColor: ACCENT }} />
+                Industry-leading
+                <br />
+                <span style={{ color: ACCENT }}>NorthGlass</span> furnace
+              </h2>
+              <div
+                className="mt-6 space-y-4 text-neutral-600"
+                style={{ fontFamily: BODY_FONT, fontSize: "15px", lineHeight: 1.7 }}
+              >
+                <p>
+                  At Glass Co Australia, we utilise an industry-leading NorthGlass horizontal
+                  glass toughening furnace, engineered to deliver premium-quality tempered safety
+                  glass with exceptional optical clarity, strength, flatness, and consistency.
+                </p>
+                <p>
+                  Designed for high-performance processing, the system enables precise and
+                  reliable tempering across a wide range of architectural and specialty glass
+                  applications while maintaining superior quality standards and production
+                  efficiency.
+                </p>
+              </div>
+              <div
+                className="mt-8 pl-4 italic text-neutral-700"
+                style={{
+                  borderLeftWidth: "3px",
+                  borderLeftStyle: "solid",
+                  borderColor: ACCENT,
+                  fontFamily: BODY_FONT,
+                  fontSize: "17px",
+                  fontWeight: 400,
+                }}
+              >
+                "Premium tempered safety glass — engineered for performance."
+              </div>
             </div>
-            <h2
-              className="mt-5"
-              style={{
-                fontFamily: HEAD_FONT,
-                fontSize: "clamp(2rem, 3.5vw, 3rem)",
-                fontWeight: 700,
-                lineHeight: 1.1,
-                color: "#0a0a0a",
-                margin: 0,
-              }}
-            >
-              Industry-leading <span style={{ color: ACCENT }}>NorthGlass</span> furnace
-            </h2>
           </div>
-          <p
-            className="mx-auto mt-8 max-w-3xl text-center text-neutral-700"
-            style={{ fontSize: "16px", lineHeight: 1.85 }}
-          >
-            At Glass Co Australia, we utilise an industry-leading NorthGlass horizontal glass
-            toughening furnace, engineered to deliver premium-quality tempered safety glass with
-            exceptional optical clarity, strength, flatness, and consistency. Designed for
-            high-performance processing, the system enables precise and reliable tempering across a
-            wide range of architectural and specialty glass applications while maintaining superior
-            quality standards and production efficiency.
-          </p>
         </div>
       </section>
 
-      {/* TECHNICAL DATA */}
+      {/* TECHNICAL DATA — GlassTypes style */}
       <section className="w-full bg-neutral-50 py-24">
         <div className="mx-auto max-w-[1280px] px-6">
-          <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:items-start">
-            <div className="lg:col-span-5">
-              <div className="flex items-center gap-3">
+          <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:items-end">
+            <div>
+              <div className="mb-5 flex items-center gap-3">
                 <span className="block" style={{ width: "32px", height: "1px", backgroundColor: ACCENT }} />
                 <span
                   style={{
@@ -168,81 +213,83 @@ function ToughingHeatStrengtheningPage() {
                 </span>
               </div>
               <h2
-                className="mt-5"
                 style={{
                   fontFamily: HEAD_FONT,
-                  fontSize: "clamp(2rem, 3.5vw, 2.75rem)",
+                  fontSize: "clamp(2.25rem, 5vw, 4rem)",
                   fontWeight: 700,
-                  lineHeight: 1.1,
+                  lineHeight: 1.05,
                   color: "#0a0a0a",
                   margin: 0,
                 }}
               >
                 Furnace <span style={{ color: ACCENT }}>specifications</span>
               </h2>
+            </div>
+            <div className="flex flex-col items-start gap-3 lg:items-end">
               <p
-                className="mt-5 text-neutral-600"
-                style={{ fontSize: "15px", lineHeight: 1.7 }}
+                className="text-neutral-600 lg:text-right"
+                style={{ fontFamily: BODY_FONT, fontSize: "15px", lineHeight: 1.7 }}
               >
-                Performance figures for our NorthGlass horizontal toughening line. All processing is
-                completed to international tempered safety glass standards.
+                Performance figures for our NorthGlass horizontal toughening line. All processing
+                is completed to international tempered safety glass standards.
               </p>
             </div>
-            <div className="lg:col-span-7">
-              <div className="overflow-hidden rounded-xl border border-neutral-800 bg-neutral-900 shadow-sm">
-                <table className="w-full text-left">
-                  <thead>
-                    <tr style={{ background: "#1a1a1a" }}>
-                      <th
-                        className="px-6 py-4 text-white"
+          </div>
+
+          {/* Table */}
+          <div className="mt-12 overflow-hidden rounded-xl border border-neutral-200 bg-white shadow-sm">
+            <div className="overflow-x-auto">
+              <table className="w-full text-left" style={{ fontFamily: BODY_FONT }}>
+                <thead style={{ backgroundColor: ACCENT }}>
+                  <tr>
+                    <th
+                      className="whitespace-nowrap px-5 py-5 text-white"
+                      style={{
+                        fontFamily: HEAD_FONT,
+                        fontSize: "13px",
+                        fontWeight: 700,
+                        letterSpacing: "0.08em",
+                      }}
+                    >
+                      GLASS PROCESSING SPECIFICATION
+                    </th>
+                    <th
+                      className="whitespace-nowrap px-5 py-5 text-white"
+                      style={{
+                        fontFamily: HEAD_FONT,
+                        fontSize: "13px",
+                        fontWeight: 700,
+                        letterSpacing: "0.08em",
+                      }}
+                    >
+                      DETAILS
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {technicalData.map((row, i) => (
+                    <tr key={row.label} className={i % 2 === 0 ? "bg-white" : "bg-neutral-50"}>
+                      <td
+                        className="px-5 py-5 align-top"
                         style={{
-                          fontFamily: HEAD_FONT,
-                          fontSize: "13px",
-                          fontWeight: 700,
-                          letterSpacing: "0.1em",
+                          fontSize: "13.5px",
+                          lineHeight: 1.55,
+                          fontWeight: 600,
+                          color: "#0a0a0a",
                         }}
                       >
-                        GLASS PROCESSING SPECIFICATION
-                      </th>
-                      <th
-                        className="px-6 py-4 text-white"
-                        style={{
-                          fontFamily: HEAD_FONT,
-                          fontSize: "13px",
-                          fontWeight: 700,
-                          letterSpacing: "0.1em",
-                        }}
+                        {row.label}
+                      </td>
+                      <td
+                        className="px-5 py-5 align-top text-neutral-700"
+                        style={{ fontSize: "13.5px", lineHeight: 1.55 }}
                       >
-                        DETAILS
-                      </th>
+                        {row.value}
+                      </td>
                     </tr>
-                  </thead>
-                  <tbody>
-                    {technicalData.map((row, i) => (
-                      <tr
-                        key={row.label}
-                        style={{
-                          background: i % 2 === 0 ? "#262626" : "#2d2d2d",
-                          borderTop: "1px solid #404040",
-                        }}
-                      >
-                        <td
-                          className="px-6 py-4 text-white"
-                          style={{ fontSize: "14px", fontWeight: 500 }}
-                        >
-                          {row.label}
-                        </td>
-                        <td
-                          className="px-6 py-4 text-neutral-200"
-                          style={{ fontSize: "14px" }}
-                        >
-                          {row.value}
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
+                  ))}
+                </tbody>
+              </table>
             </div>
           </div>
         </div>

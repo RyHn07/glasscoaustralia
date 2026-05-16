@@ -298,8 +298,8 @@ function ToughingHeatStrengtheningPage() {
       {/* KEY FEATURES */}
       <section className="w-full bg-white py-24">
         <div className="mx-auto max-w-[1280px] px-6">
-          <div className="mx-auto max-w-2xl text-center">
-            <div className="inline-flex items-center gap-3">
+          <div className="max-w-2xl">
+            <div className="flex items-center gap-3">
               <span className="block" style={{ width: "32px", height: "1px", backgroundColor: ACCENT }} />
               <span
                 style={{
@@ -312,7 +312,6 @@ function ToughingHeatStrengtheningPage() {
               >
                 KEY FEATURES
               </span>
-              <span className="block" style={{ width: "32px", height: "1px", backgroundColor: ACCENT }} />
             </div>
             <h2
               className="mt-5"

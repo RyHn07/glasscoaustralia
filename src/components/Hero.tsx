@@ -42,7 +42,7 @@ export function Hero() {
 
 
       {/* Content */}
-      <div className="relative z-10 mx-auto flex h-full max-w-[1280px] flex-col justify-end px-6 pt-12" style={{ paddingBottom: "34px" }}>
+      <div className="relative z-10 mx-auto flex h-full max-w-[1280px] flex-col justify-center px-6">
         <div className="max-w-2xl">
           {/* Eyebrow */}
           <div className="mb-6 flex items-center gap-3">

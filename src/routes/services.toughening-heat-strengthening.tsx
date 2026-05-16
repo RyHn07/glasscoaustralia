@@ -3,6 +3,7 @@ import { Check } from "lucide-react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import heroImage from "@/assets/service-toughening.jpg";
+import furnaceImage from "@/assets/northglass-furnace.jpg";
 
 const ACCENT = "#009AAA";
 const HEAD_FONT = "Rajdhani, sans-serif";

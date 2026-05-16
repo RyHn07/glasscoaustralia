@@ -51,13 +51,13 @@ export function Header() {
 
         {/* Nav */}
         <nav className="hidden items-center gap-8 lg:flex">
-          <Link to="/" className="text-sm font-medium text-black/70 transition-colors hover:text-black">
+          <Link to="/" className="text-[15px] font-medium text-black/70 transition-colors hover:text-black">
             Home
           </Link>
-          <Link to="/about" className="text-sm font-medium text-black/70 transition-colors hover:text-black">
+          <Link to="/about" className="text-[15px] font-medium text-black/70 transition-colors hover:text-black">
             About Us
           </Link>
-          <Link to="/" className="text-sm font-medium text-black/70 transition-colors hover:text-black">
+          <Link to="/" className="text-[15px] font-medium text-black/70 transition-colors hover:text-black">
             Services
           </Link>
 
@@ -70,7 +70,7 @@ export function Header() {
             <button
               type="button"
               onClick={() => setProductsOpen((v) => !v)}
-              className="flex items-center gap-1 text-sm font-medium text-black/70 transition-colors hover:text-black"
+              className="flex items-center gap-1 text-[15px] font-medium text-black/70 transition-colors hover:text-black"
               aria-expanded={productsOpen}
               aria-haspopup="true"
             >
@@ -105,7 +105,7 @@ export function Header() {
               <Link
                 key={item.label}
                 to={item.to}
-                className="text-sm font-medium text-black/70 transition-colors hover:text-black"
+                className="text-[15px] font-medium text-black/70 transition-colors hover:text-black"
               >
                 {item.label}
               </Link>

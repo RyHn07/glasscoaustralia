@@ -441,6 +441,15 @@ function ToughingHeatStrengtheningPage() {
               >
                 Why choose <span style={{ color: ACCENT }}>toughened glass?</span>
               </h2>
+              <p
+                className="mt-5 text-neutral-600"
+                style={{ fontFamily: BODY_FONT, fontSize: "15px", lineHeight: 1.75 }}
+              >
+                Built to perform where ordinary glass can't — toughened glass combines superior
+                strength, thermal resistance and safety. When broken, it shatters into small,
+                blunt granules instead of sharp shards, drastically reducing the risk of injury
+                and meeting Australian safety standards for high-risk environments.
+              </p>
             </div>
             <div className="lg:col-span-7">
               <div

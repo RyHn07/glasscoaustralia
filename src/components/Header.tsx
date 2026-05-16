@@ -41,7 +41,7 @@ export function Header() {
   return (
     <header
       className="relative z-50 w-full bg-white"
-      style={{ fontFamily: '"Geist", "Geist Fallback", sans-serif', fontSize: "14px", fontWeight: 500 }}
+      style={{ fontFamily: '"Geist", "Geist Fallback", sans-serif', fontSize: "15px", fontWeight: 500 }}
     >
       <div className="mx-auto flex max-w-[1400px] items-center justify-between px-6 py-2">
         {/* Logo */}

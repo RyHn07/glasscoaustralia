@@ -470,20 +470,20 @@ function ContactPage() {
             </div>
 
             {/* Socials */}
-            <div className="rounded-2xl border border-neutral-200 bg-[#0b1f24] p-8 text-white">
+            <div className="rounded-2xl border border-white/10 bg-[#009AAA] p-8 text-white">
               <div
                 style={{
                   fontFamily: "Rajdhani, sans-serif",
                   fontSize: 13,
                   fontWeight: 700,
                   letterSpacing: "0.2em",
-                  color: "#00DEF7",
+                  color: "#ffffff",
                 }}
               >
                 FOLLOW US
               </div>
               <p
-                className="mt-3 text-white/70"
+                className="mt-3 text-white/85"
                 style={{ fontFamily: "Poppins, sans-serif", fontSize: 13, lineHeight: 1.65 }}
               >
                 See our latest projects, products and facility updates.

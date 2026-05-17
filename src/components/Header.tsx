@@ -247,8 +247,8 @@ export function Header() {
         <div className="flex items-center gap-4">
           <a
             href="tel:+61397065506"
-            className="hidden items-center gap-2 text-sm font-semibold text-neutral-900 transition-opacity hover:opacity-80 md:inline-flex"
-            style={{ fontFamily: '"Rajdhani", sans-serif' }}
+            className="hidden items-center gap-2 text-sm font-semibold transition-opacity hover:opacity-80 md:inline-flex"
+            style={{ fontFamily: '"Rajdhani", sans-serif', color: "#009AAA" }}
           >
             <Phone className="h-4 w-4" />
             (03) 9706 5506

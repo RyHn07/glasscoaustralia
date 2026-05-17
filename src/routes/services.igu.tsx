@@ -460,10 +460,7 @@ function IGUPage() {
           </div>
 
           {/* Long-form detail */}
-          <div
-            className="mt-12 rounded-2xl border border-neutral-200 bg-white p-8 shadow-sm md:p-12"
-            style={{ borderLeftWidth: "4px", borderLeftColor: ACCENT, borderLeftStyle: "solid" }}
-          >
+          <div className="mt-12 rounded-xl border border-neutral-200 bg-white p-8 shadow-sm transition-shadow hover:shadow-md md:p-12">
             <div className="flex flex-col items-start gap-5 md:flex-row md:items-center">
               <span
                 className="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-full"

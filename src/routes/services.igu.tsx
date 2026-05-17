@@ -507,7 +507,7 @@ function IGUPage() {
       </section>
 
       {/* CTA */}
-      <section className="w-full bg-neutral-900 py-20 text-white">
+      <section className="w-full py-20 text-white" style={{ background: ACCENT }}>
         <div className="mx-auto max-w-[1080px] px-6 text-center">
           <h2
             style={{
@@ -522,7 +522,7 @@ function IGUPage() {
             Need insulated glass units for your project?
           </h2>
           <p
-            className="mx-auto mt-5 max-w-xl text-white/75"
+            className="mx-auto mt-5 max-w-xl text-white/85"
             style={{ fontSize: "16px", lineHeight: 1.7 }}
           >
             Talk to our processing team about IGUs tailored to your thermal, acoustic and
@@ -531,14 +531,14 @@ function IGUPage() {
           <div className="mt-8 flex flex-wrap justify-center gap-4">
             <Link
               to="/"
-              className="rounded-md px-7 py-3 text-sm font-semibold text-white transition-opacity hover:opacity-90"
-              style={{ background: ACCENT, fontFamily: HEAD_FONT, letterSpacing: "0.05em" }}
+              className="rounded-md bg-white px-7 py-3 text-sm font-semibold transition-opacity hover:opacity-90"
+              style={{ color: ACCENT, fontFamily: HEAD_FONT, letterSpacing: "0.05em" }}
             >
               GET A QUOTE
             </Link>
             <Link
               to="/about"
-              className="rounded-md border border-white/30 px-7 py-3 text-sm font-semibold text-white transition-colors hover:bg-white/10"
+              className="rounded-md border border-white/60 px-7 py-3 text-sm font-semibold text-white transition-colors hover:bg-white/10"
               style={{ fontFamily: HEAD_FONT, letterSpacing: "0.05em" }}
             >
               ABOUT GLASSCO

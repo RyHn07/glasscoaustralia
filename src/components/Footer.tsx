@@ -1,4 +1,5 @@
 import { Phone, Mail, Clock, Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 import logo from "@/assets/logo.svg";
 
 const quickLinks = ["Home", "Services", "Products", "Projects", "About Us"];

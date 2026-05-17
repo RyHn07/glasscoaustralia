@@ -155,12 +155,12 @@ export function Header() {
                         className="group/item block rounded-lg px-3 py-2.5 transition-all hover:bg-[#009AAA]/5"
                       >
                         <div className="flex items-center justify-between">
-                          <div className="text-sm font-semibold text-neutral-900 transition-colors group-hover/item:text-[#009AAA]">
+                          <div className="text-base font-semibold text-neutral-900 transition-colors group-hover/item:text-[#009AAA]">
                             {item.label}
                           </div>
-                          <span className="text-[#009AAA] opacity-0 transition-all -translate-x-1 group-hover/item:opacity-100 group-hover/item:translate-x-0 text-sm">→</span>
+                          <span className="text-[#009AAA] opacity-0 transition-all -translate-x-1 group-hover/item:opacity-100 group-hover/item:translate-x-0 text-base">→</span>
                         </div>
-                        <div className="mt-0.5 text-xs leading-relaxed text-neutral-500">{item.description}</div>
+                        <div className="mt-1 text-sm leading-relaxed text-neutral-500">{item.description}</div>
                       </Link>
                       {item.children && (
                         <div className="ml-4 mb-1 mt-0.5 border-l-2 border-[#009AAA]/20 pl-2">
@@ -170,7 +170,7 @@ export function Header() {
                               to={item.to}
                               hash={c.hash}
                               onClick={() => setServicesOpen(false)}
-                              className="block rounded-md px-2.5 py-1.5 text-xs font-medium text-neutral-600 transition-colors hover:bg-[#009AAA]/5 hover:text-[#009AAA]"
+                              className="block rounded-md px-2.5 py-2 text-sm font-medium text-neutral-600 transition-colors hover:bg-[#009AAA]/5 hover:text-[#009AAA]"
                             >
                               {c.label}
                             </Link>
@@ -217,12 +217,12 @@ export function Header() {
                         className="group/item block rounded-lg px-3 py-2.5 transition-all hover:bg-[#009AAA]/5"
                       >
                         <div className="flex items-center justify-between">
-                          <div className="text-sm font-semibold text-neutral-900 transition-colors group-hover/item:text-[#009AAA]">
+                          <div className="text-base font-semibold text-neutral-900 transition-colors group-hover/item:text-[#009AAA]">
                             {item.label}
                           </div>
-                          <span className="text-[#009AAA] opacity-0 transition-all -translate-x-1 group-hover/item:opacity-100 group-hover/item:translate-x-0 text-sm">→</span>
+                          <span className="text-[#009AAA] opacity-0 transition-all -translate-x-1 group-hover/item:opacity-100 group-hover/item:translate-x-0 text-base">→</span>
                         </div>
-                        <div className="mt-0.5 text-xs leading-relaxed text-neutral-500">{item.description}</div>
+                        <div className="mt-1 text-sm leading-relaxed text-neutral-500">{item.description}</div>
                       </Link>
                       {item.children && (
                         <div className="ml-4 mb-1 mt-0.5 border-l-2 border-[#009AAA]/20 pl-2">
@@ -232,7 +232,7 @@ export function Header() {
                               to={item.to}
                               hash={c.hash}
                               onClick={() => setProductsOpen(false)}
-                              className="block rounded-md px-2.5 py-1.5 text-xs font-medium text-neutral-600 transition-colors hover:bg-[#009AAA]/5 hover:text-[#009AAA]"
+                              className="block rounded-md px-2.5 py-2 text-sm font-medium text-neutral-600 transition-colors hover:bg-[#009AAA]/5 hover:text-[#009AAA]"
                             >
                               {c.label}
                             </Link>

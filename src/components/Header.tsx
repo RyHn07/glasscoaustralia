@@ -143,28 +143,36 @@ export function Header() {
 
             {servicesOpen && (
               <div className="absolute left-1/2 top-full z-50 -translate-x-1/2 pt-3">
-                <div className="w-[380px] rounded-lg border border-neutral-200 bg-white p-2 shadow-xl">
-                  {serviceItems.map((item) => (
+                <div
+                  className="w-[400px] overflow-hidden rounded-xl border border-neutral-200/80 bg-white p-2 shadow-[0_20px_50px_-12px_rgba(0,0,0,0.18)] ring-1 ring-black/5 animate-in fade-in-0 zoom-in-95 slide-in-from-top-2 duration-150"
+                >
+                  {serviceItems.map((item, idx) => (
                     <div key={item.label}>
+                      {idx > 0 && <div className="my-1 h-px bg-neutral-100" />}
                       <Link
                         to={item.to}
                         onClick={() => setServicesOpen(false)}
-                        className="block rounded-md px-3 py-3 transition-colors hover:bg-neutral-50"
+                        className="group/item block rounded-lg px-3 py-2.5 transition-all hover:bg-[#009AAA]/5"
                       >
-                        <div className="text-sm font-semibold text-neutral-900">{item.label}</div>
-                        <div className="mt-0.5 text-xs text-neutral-500">{item.description}</div>
+                        <div className="flex items-center justify-between">
+                          <div className="text-sm font-semibold text-neutral-900 transition-colors group-hover/item:text-[#009AAA]">
+                            {item.label}
+                          </div>
+                          <span className="text-[#009AAA] opacity-0 transition-all -translate-x-1 group-hover/item:opacity-100 group-hover/item:translate-x-0 text-sm">→</span>
+                        </div>
+                        <div className="mt-0.5 text-xs leading-relaxed text-neutral-500">{item.description}</div>
                       </Link>
                       {item.children && (
-                        <div className="ml-3 mb-1 border-l border-neutral-200 pl-3">
+                        <div className="ml-4 mb-1 mt-0.5 border-l-2 border-[#009AAA]/20 pl-2">
                           {item.children.map((c) => (
                             <Link
                               key={c.hash}
                               to={item.to}
                               hash={c.hash}
                               onClick={() => setServicesOpen(false)}
-                              className="block rounded-md px-2 py-1.5 text-xs text-neutral-600 transition-colors hover:bg-neutral-50 hover:text-neutral-900"
+                              className="block rounded-md px-2.5 py-1.5 text-xs font-medium text-neutral-600 transition-colors hover:bg-[#009AAA]/5 hover:text-[#009AAA]"
                             >
-                              › {c.label}
+                              {c.label}
                             </Link>
                           ))}
                         </div>
@@ -197,28 +205,36 @@ export function Header() {
 
             {productsOpen && (
               <div className="absolute left-1/2 top-full z-50 -translate-x-1/2 pt-3">
-                <div className="w-[340px] rounded-lg border border-neutral-200 bg-white p-2 shadow-xl">
-                  {productItems.map((item) => (
+                <div
+                  className="w-[360px] overflow-hidden rounded-xl border border-neutral-200/80 bg-white p-2 shadow-[0_20px_50px_-12px_rgba(0,0,0,0.18)] ring-1 ring-black/5 animate-in fade-in-0 zoom-in-95 slide-in-from-top-2 duration-150"
+                >
+                  {productItems.map((item, idx) => (
                     <div key={item.to}>
+                      {idx > 0 && <div className="my-1 h-px bg-neutral-100" />}
                       <Link
                         to={item.to}
                         onClick={() => setProductsOpen(false)}
-                        className="block rounded-md px-3 py-3 transition-colors hover:bg-neutral-50"
+                        className="group/item block rounded-lg px-3 py-2.5 transition-all hover:bg-[#009AAA]/5"
                       >
-                        <div className="text-sm font-semibold text-neutral-900">{item.label}</div>
-                        <div className="mt-0.5 text-xs text-neutral-500">{item.description}</div>
+                        <div className="flex items-center justify-between">
+                          <div className="text-sm font-semibold text-neutral-900 transition-colors group-hover/item:text-[#009AAA]">
+                            {item.label}
+                          </div>
+                          <span className="text-[#009AAA] opacity-0 transition-all -translate-x-1 group-hover/item:opacity-100 group-hover/item:translate-x-0 text-sm">→</span>
+                        </div>
+                        <div className="mt-0.5 text-xs leading-relaxed text-neutral-500">{item.description}</div>
                       </Link>
                       {item.children && (
-                        <div className="ml-3 mb-1 border-l border-neutral-200 pl-3">
+                        <div className="ml-4 mb-1 mt-0.5 border-l-2 border-[#009AAA]/20 pl-2">
                           {item.children.map((c) => (
                             <Link
                               key={c.hash}
                               to={item.to}
                               hash={c.hash}
                               onClick={() => setProductsOpen(false)}
-                              className="block rounded-md px-2 py-1.5 text-xs text-neutral-600 transition-colors hover:bg-neutral-50 hover:text-neutral-900"
+                              className="block rounded-md px-2.5 py-1.5 text-xs font-medium text-neutral-600 transition-colors hover:bg-[#009AAA]/5 hover:text-[#009AAA]"
                             >
-                              › {c.label}
+                              {c.label}
                             </Link>
                           ))}
                         </div>

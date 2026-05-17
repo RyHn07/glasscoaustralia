@@ -460,27 +460,26 @@ function IGUPage() {
           </div>
 
           {/* Long-form detail */}
-          <div className="mt-12 rounded-xl border border-neutral-200 bg-white p-8 shadow-sm transition-shadow hover:shadow-md md:p-12">
-            <div className="flex flex-col items-start gap-5 md:flex-row md:items-center">
-              <span
-                className="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-full"
-                style={{ background: `${ACCENT}15` }}
-              >
-                <ShieldCheck className="h-7 w-7" style={{ color: ACCENT }} strokeWidth={1.75} />
-              </span>
-              <h3
-                style={{
-                  fontFamily: HEAD_FONT,
-                  fontSize: "clamp(1.75rem, 3vw, 2.25rem)",
-                  fontWeight: 700,
-                  lineHeight: 1.15,
-                  color: "#0a0a0a",
-                  margin: 0,
-                }}
-              >
-                Year-round <span style={{ color: ACCENT }}>performance</span>
-              </h3>
-            </div>
+          <div className="mt-6 rounded-xl border border-neutral-200 bg-white p-7 shadow-sm transition-shadow hover:shadow-md">
+            <span
+              className="flex h-12 w-12 items-center justify-center rounded-full"
+              style={{ background: `${ACCENT}15` }}
+            >
+              <ShieldCheck className="h-6 w-6" style={{ color: ACCENT }} strokeWidth={1.75} />
+            </span>
+            <h3
+              className="mt-5"
+              style={{
+                fontFamily: HEAD_FONT,
+                fontSize: "22px",
+                fontWeight: 700,
+                lineHeight: 1.15,
+                color: "#0a0a0a",
+                margin: 0,
+              }}
+            >
+              Year-round <span style={{ color: ACCENT }}>performance</span>
+            </h3>
 
             <div
               className="mt-8 grid grid-cols-1 gap-x-10 gap-y-5 text-neutral-700 md:grid-cols-2"

@@ -482,8 +482,8 @@ function IGUPage() {
             </h3>
 
             <div
-              className="mt-8 grid grid-cols-1 gap-x-10 gap-y-5 text-neutral-700 md:grid-cols-2"
-              style={{ fontFamily: BODY_FONT, fontSize: "15px", lineHeight: 1.85 }}
+              className="mt-5 grid grid-cols-1 gap-x-10 gap-y-4 text-neutral-600 md:grid-cols-2"
+              style={{ fontFamily: BODY_FONT, fontSize: "14.5px", lineHeight: 1.7 }}
             >
               <p>
                 In summer, heat is transmitted through standard glass and absorbed by walls,

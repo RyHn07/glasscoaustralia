@@ -26,21 +26,34 @@ const productItems = [
   },
 ];
 
-const serviceItems = [
+type ServiceItem = {
+  label: string;
+  description: string;
+  to: "/services/toughening-heat-strengthening" | "/services/igu" | "/services/glass-processing";
+  hash?: string;
+  children?: { label: string; hash: string }[];
+};
+
+const serviceItems: ServiceItem[] = [
   {
     label: "Toughening & Heat Strengthening",
     description: "NorthGlass horizontal toughening furnace",
-    to: "/services/toughening-heat-strengthening" as const,
+    to: "/services/toughening-heat-strengthening",
   },
   {
     label: "Insulating Glass Units (IGU)",
     description: "LISEC fully automated IGU line with Argon fill",
-    to: "/services/igu" as const,
+    to: "/services/igu",
   },
   {
-    label: "Service Three",
-    description: "Coming soon",
-    to: "/" as const,
+    label: "Glass Processing",
+    description: "CNC, waterjet & precision edge processing",
+    to: "/services/glass-processing",
+    children: [
+      { label: "CNC Line — SKILL E-D", hash: "cnc-line" },
+      { label: "TECHNI Intec Waterjet", hash: "waterjet" },
+      { label: "Bimatech Techno Edge", hash: "bimatech" },
+    ],
   },
 ];
 

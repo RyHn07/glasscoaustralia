@@ -470,20 +470,20 @@ function ContactPage() {
             </div>
 
             {/* Socials */}
-            <div className="rounded-2xl border border-neutral-200 bg-[#0b1f24] p-8 text-white">
+            <div className="rounded-2xl border border-white/10 bg-[#009AAA] p-8 text-white">
               <div
                 style={{
                   fontFamily: "Rajdhani, sans-serif",
                   fontSize: 13,
                   fontWeight: 700,
                   letterSpacing: "0.2em",
-                  color: "#00DEF7",
+                  color: "#ffffff",
                 }}
               >
                 FOLLOW US
               </div>
               <p
-                className="mt-3 text-white/70"
+                className="mt-3 text-white/85"
                 style={{ fontFamily: "Poppins, sans-serif", fontSize: 13, lineHeight: 1.65 }}
               >
                 See our latest projects, products and facility updates.
@@ -493,7 +493,7 @@ function ContactPage() {
                   <a
                     key={i}
                     href="#"
-                    className="flex h-10 w-10 items-center justify-center rounded-lg border border-white/15 text-white transition-colors hover:border-[#00DEF7] hover:text-[#00DEF7]"
+                    className="flex h-10 w-10 items-center justify-center rounded-lg border border-white/30 bg-white/10 text-white transition-colors hover:bg-white hover:text-[#009AAA]"
                   >
                     <Icon className="h-4 w-4" />
                   </a>

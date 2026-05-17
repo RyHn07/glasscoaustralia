@@ -77,7 +77,7 @@ const navItems = [
   { label: "Home", to: "/" as const },
   { label: "About Us", to: "/about" as const },
   { label: "Services", to: "/" as const },
-  { label: "Gallery", to: "/" as const },
+  { label: "Gallery", to: "/gallery" as const },
   { label: "Our Certification", to: "/" as const },
   { label: "Contact", to: "/" as const },
 ];

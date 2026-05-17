@@ -9,6 +9,7 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as GalleryRouteImport } from './routes/gallery'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ServicesTougheningHeatStrengtheningRouteImport } from './routes/services.toughening-heat-strengthening'
@@ -19,6 +20,11 @@ import { Route as ProductsDigitalGlassPrintingRouteImport } from './routes/produ
 import { Route as ProductsDecorativeGlassRouteImport } from './routes/products.decorative-glass'
 import { Route as ProductsAcousticGlassRouteImport } from './routes/products.acoustic-glass'
 
+const GalleryRoute = GalleryRouteImport.update({
+  id: '/gallery',
+  path: '/gallery',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AboutRoute = AboutRouteImport.update({
   id: '/about',
   path: '/about',
@@ -71,6 +77,7 @@ const ProductsAcousticGlassRoute = ProductsAcousticGlassRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/gallery': typeof GalleryRoute
   '/products/acoustic-glass': typeof ProductsAcousticGlassRoute
   '/products/decorative-glass': typeof ProductsDecorativeGlassRoute
   '/products/digital-glass-printing': typeof ProductsDigitalGlassPrintingRoute
@@ -82,6 +89,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/gallery': typeof GalleryRoute
   '/products/acoustic-glass': typeof ProductsAcousticGlassRoute
   '/products/decorative-glass': typeof ProductsDecorativeGlassRoute
   '/products/digital-glass-printing': typeof ProductsDigitalGlassPrintingRoute
@@ -94,6 +102,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/gallery': typeof GalleryRoute
   '/products/acoustic-glass': typeof ProductsAcousticGlassRoute
   '/products/decorative-glass': typeof ProductsDecorativeGlassRoute
   '/products/digital-glass-printing': typeof ProductsDigitalGlassPrintingRoute
@@ -107,6 +116,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/about'
+    | '/gallery'
     | '/products/acoustic-glass'
     | '/products/decorative-glass'
     | '/products/digital-glass-printing'
@@ -118,6 +128,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/about'
+    | '/gallery'
     | '/products/acoustic-glass'
     | '/products/decorative-glass'
     | '/products/digital-glass-printing'
@@ -129,6 +140,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/about'
+    | '/gallery'
     | '/products/acoustic-glass'
     | '/products/decorative-glass'
     | '/products/digital-glass-printing'
@@ -141,6 +153,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  GalleryRoute: typeof GalleryRoute
   ProductsAcousticGlassRoute: typeof ProductsAcousticGlassRoute
   ProductsDecorativeGlassRoute: typeof ProductsDecorativeGlassRoute
   ProductsDigitalGlassPrintingRoute: typeof ProductsDigitalGlassPrintingRoute
@@ -152,6 +165,13 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/gallery': {
+      id: '/gallery'
+      path: '/gallery'
+      fullPath: '/gallery'
+      preLoaderRoute: typeof GalleryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/about': {
       id: '/about'
       path: '/about'
@@ -221,6 +241,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  GalleryRoute: GalleryRoute,
   ProductsAcousticGlassRoute: ProductsAcousticGlassRoute,
   ProductsDecorativeGlassRoute: ProductsDecorativeGlassRoute,
   ProductsDigitalGlassPrintingRoute: ProductsDigitalGlassPrintingRoute,

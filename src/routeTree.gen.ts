@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as GalleryRouteImport } from './routes/gallery'
+import { Route as ContactRouteImport } from './routes/contact'
 import { Route as CertificationsRouteImport } from './routes/certifications'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
@@ -24,6 +25,11 @@ import { Route as ProductsAcousticGlassRouteImport } from './routes/products.aco
 const GalleryRoute = GalleryRouteImport.update({
   id: '/gallery',
   path: '/gallery',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CertificationsRoute = CertificationsRouteImport.update({
@@ -84,6 +90,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/certifications': typeof CertificationsRoute
+  '/contact': typeof ContactRoute
   '/gallery': typeof GalleryRoute
   '/products/acoustic-glass': typeof ProductsAcousticGlassRoute
   '/products/decorative-glass': typeof ProductsDecorativeGlassRoute
@@ -97,6 +104,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/certifications': typeof CertificationsRoute
+  '/contact': typeof ContactRoute
   '/gallery': typeof GalleryRoute
   '/products/acoustic-glass': typeof ProductsAcousticGlassRoute
   '/products/decorative-glass': typeof ProductsDecorativeGlassRoute
@@ -111,6 +119,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/certifications': typeof CertificationsRoute
+  '/contact': typeof ContactRoute
   '/gallery': typeof GalleryRoute
   '/products/acoustic-glass': typeof ProductsAcousticGlassRoute
   '/products/decorative-glass': typeof ProductsDecorativeGlassRoute
@@ -126,6 +135,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/certifications'
+    | '/contact'
     | '/gallery'
     | '/products/acoustic-glass'
     | '/products/decorative-glass'
@@ -139,6 +149,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/certifications'
+    | '/contact'
     | '/gallery'
     | '/products/acoustic-glass'
     | '/products/decorative-glass'
@@ -152,6 +163,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/certifications'
+    | '/contact'
     | '/gallery'
     | '/products/acoustic-glass'
     | '/products/decorative-glass'
@@ -166,6 +178,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   CertificationsRoute: typeof CertificationsRoute
+  ContactRoute: typeof ContactRoute
   GalleryRoute: typeof GalleryRoute
   ProductsAcousticGlassRoute: typeof ProductsAcousticGlassRoute
   ProductsDecorativeGlassRoute: typeof ProductsDecorativeGlassRoute
@@ -183,6 +196,13 @@ declare module '@tanstack/react-router' {
       path: '/gallery'
       fullPath: '/gallery'
       preLoaderRoute: typeof GalleryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/certifications': {
@@ -262,6 +282,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   CertificationsRoute: CertificationsRoute,
+  ContactRoute: ContactRoute,
   GalleryRoute: GalleryRoute,
   ProductsAcousticGlassRoute: ProductsAcousticGlassRoute,
   ProductsDecorativeGlassRoute: ProductsDecorativeGlassRoute,

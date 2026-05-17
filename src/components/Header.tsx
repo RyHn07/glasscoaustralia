@@ -79,7 +79,7 @@ const navItems = [
   { label: "Services", to: "/" as const },
   { label: "Gallery", to: "/gallery" as const },
   { label: "Our Certification", to: "/certifications" as const },
-  { label: "Contact", to: "/" as const },
+  { label: "Contact", to: "/contact" as const },
 ];
 
 export function Header() {

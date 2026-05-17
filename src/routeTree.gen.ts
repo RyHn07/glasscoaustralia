@@ -9,6 +9,7 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as TermsRouteImport } from './routes/terms'
 import { Route as GalleryRouteImport } from './routes/gallery'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as CertificationsRouteImport } from './routes/certifications'
@@ -22,6 +23,11 @@ import { Route as ProductsDigitalGlassPrintingRouteImport } from './routes/produ
 import { Route as ProductsDecorativeGlassRouteImport } from './routes/products.decorative-glass'
 import { Route as ProductsAcousticGlassRouteImport } from './routes/products.acoustic-glass'
 
+const TermsRoute = TermsRouteImport.update({
+  id: '/terms',
+  path: '/terms',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const GalleryRoute = GalleryRouteImport.update({
   id: '/gallery',
   path: '/gallery',
@@ -92,6 +98,7 @@ export interface FileRoutesByFullPath {
   '/certifications': typeof CertificationsRoute
   '/contact': typeof ContactRoute
   '/gallery': typeof GalleryRoute
+  '/terms': typeof TermsRoute
   '/products/acoustic-glass': typeof ProductsAcousticGlassRoute
   '/products/decorative-glass': typeof ProductsDecorativeGlassRoute
   '/products/digital-glass-printing': typeof ProductsDigitalGlassPrintingRoute
@@ -106,6 +113,7 @@ export interface FileRoutesByTo {
   '/certifications': typeof CertificationsRoute
   '/contact': typeof ContactRoute
   '/gallery': typeof GalleryRoute
+  '/terms': typeof TermsRoute
   '/products/acoustic-glass': typeof ProductsAcousticGlassRoute
   '/products/decorative-glass': typeof ProductsDecorativeGlassRoute
   '/products/digital-glass-printing': typeof ProductsDigitalGlassPrintingRoute
@@ -121,6 +129,7 @@ export interface FileRoutesById {
   '/certifications': typeof CertificationsRoute
   '/contact': typeof ContactRoute
   '/gallery': typeof GalleryRoute
+  '/terms': typeof TermsRoute
   '/products/acoustic-glass': typeof ProductsAcousticGlassRoute
   '/products/decorative-glass': typeof ProductsDecorativeGlassRoute
   '/products/digital-glass-printing': typeof ProductsDigitalGlassPrintingRoute
@@ -137,6 +146,7 @@ export interface FileRouteTypes {
     | '/certifications'
     | '/contact'
     | '/gallery'
+    | '/terms'
     | '/products/acoustic-glass'
     | '/products/decorative-glass'
     | '/products/digital-glass-printing'
@@ -151,6 +161,7 @@ export interface FileRouteTypes {
     | '/certifications'
     | '/contact'
     | '/gallery'
+    | '/terms'
     | '/products/acoustic-glass'
     | '/products/decorative-glass'
     | '/products/digital-glass-printing'
@@ -165,6 +176,7 @@ export interface FileRouteTypes {
     | '/certifications'
     | '/contact'
     | '/gallery'
+    | '/terms'
     | '/products/acoustic-glass'
     | '/products/decorative-glass'
     | '/products/digital-glass-printing'
@@ -180,6 +192,7 @@ export interface RootRouteChildren {
   CertificationsRoute: typeof CertificationsRoute
   ContactRoute: typeof ContactRoute
   GalleryRoute: typeof GalleryRoute
+  TermsRoute: typeof TermsRoute
   ProductsAcousticGlassRoute: typeof ProductsAcousticGlassRoute
   ProductsDecorativeGlassRoute: typeof ProductsDecorativeGlassRoute
   ProductsDigitalGlassPrintingRoute: typeof ProductsDigitalGlassPrintingRoute
@@ -191,6 +204,13 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/terms': {
+      id: '/terms'
+      path: '/terms'
+      fullPath: '/terms'
+      preLoaderRoute: typeof TermsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/gallery': {
       id: '/gallery'
       path: '/gallery'
@@ -284,6 +304,7 @@ const rootRouteChildren: RootRouteChildren = {
   CertificationsRoute: CertificationsRoute,
   ContactRoute: ContactRoute,
   GalleryRoute: GalleryRoute,
+  TermsRoute: TermsRoute,
   ProductsAcousticGlassRoute: ProductsAcousticGlassRoute,
   ProductsDecorativeGlassRoute: ProductsDecorativeGlassRoute,
   ProductsDigitalGlassPrintingRoute: ProductsDigitalGlassPrintingRoute,

@@ -1,4 +1,5 @@
 import { Phone, Mail, Clock, Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 import logo from "@/assets/logo.svg";
 
 const quickLinks = ["Home", "Services", "Products", "Projects", "About Us"];
@@ -181,9 +182,9 @@ export function Footer() {
               <a href="#" className="transition-colors hover:text-white">
                 Privacy Policy
               </a>
-              <a href="#" className="transition-colors hover:text-white">
+              <Link to="/terms" className="transition-colors hover:text-white">
                 Terms of Service
-              </a>
+              </Link>
             </div>
           </div>
         </div>

@@ -13,6 +13,7 @@ import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ServicesTougheningHeatStrengtheningRouteImport } from './routes/services.toughening-heat-strengthening'
 import { Route as ServicesIguRouteImport } from './routes/services.igu'
+import { Route as ServicesGlassProcessingRouteImport } from './routes/services.glass-processing'
 import { Route as ProductsEnergyEfficientGlassRouteImport } from './routes/products.energy-efficient-glass'
 import { Route as ProductsDigitalGlassPrintingRouteImport } from './routes/products.digital-glass-printing'
 import { Route as ProductsDecorativeGlassRouteImport } from './routes/products.decorative-glass'
@@ -37,6 +38,11 @@ const ServicesTougheningHeatStrengtheningRoute =
 const ServicesIguRoute = ServicesIguRouteImport.update({
   id: '/services/igu',
   path: '/services/igu',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesGlassProcessingRoute = ServicesGlassProcessingRouteImport.update({
+  id: '/services/glass-processing',
+  path: '/services/glass-processing',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ProductsEnergyEfficientGlassRoute =
@@ -69,6 +75,7 @@ export interface FileRoutesByFullPath {
   '/products/decorative-glass': typeof ProductsDecorativeGlassRoute
   '/products/digital-glass-printing': typeof ProductsDigitalGlassPrintingRoute
   '/products/energy-efficient-glass': typeof ProductsEnergyEfficientGlassRoute
+  '/services/glass-processing': typeof ServicesGlassProcessingRoute
   '/services/igu': typeof ServicesIguRoute
   '/services/toughening-heat-strengthening': typeof ServicesTougheningHeatStrengtheningRoute
 }
@@ -79,6 +86,7 @@ export interface FileRoutesByTo {
   '/products/decorative-glass': typeof ProductsDecorativeGlassRoute
   '/products/digital-glass-printing': typeof ProductsDigitalGlassPrintingRoute
   '/products/energy-efficient-glass': typeof ProductsEnergyEfficientGlassRoute
+  '/services/glass-processing': typeof ServicesGlassProcessingRoute
   '/services/igu': typeof ServicesIguRoute
   '/services/toughening-heat-strengthening': typeof ServicesTougheningHeatStrengtheningRoute
 }
@@ -90,6 +98,7 @@ export interface FileRoutesById {
   '/products/decorative-glass': typeof ProductsDecorativeGlassRoute
   '/products/digital-glass-printing': typeof ProductsDigitalGlassPrintingRoute
   '/products/energy-efficient-glass': typeof ProductsEnergyEfficientGlassRoute
+  '/services/glass-processing': typeof ServicesGlassProcessingRoute
   '/services/igu': typeof ServicesIguRoute
   '/services/toughening-heat-strengthening': typeof ServicesTougheningHeatStrengtheningRoute
 }
@@ -102,6 +111,7 @@ export interface FileRouteTypes {
     | '/products/decorative-glass'
     | '/products/digital-glass-printing'
     | '/products/energy-efficient-glass'
+    | '/services/glass-processing'
     | '/services/igu'
     | '/services/toughening-heat-strengthening'
   fileRoutesByTo: FileRoutesByTo
@@ -112,6 +122,7 @@ export interface FileRouteTypes {
     | '/products/decorative-glass'
     | '/products/digital-glass-printing'
     | '/products/energy-efficient-glass'
+    | '/services/glass-processing'
     | '/services/igu'
     | '/services/toughening-heat-strengthening'
   id:
@@ -122,6 +133,7 @@ export interface FileRouteTypes {
     | '/products/decorative-glass'
     | '/products/digital-glass-printing'
     | '/products/energy-efficient-glass'
+    | '/services/glass-processing'
     | '/services/igu'
     | '/services/toughening-heat-strengthening'
   fileRoutesById: FileRoutesById
@@ -133,6 +145,7 @@ export interface RootRouteChildren {
   ProductsDecorativeGlassRoute: typeof ProductsDecorativeGlassRoute
   ProductsDigitalGlassPrintingRoute: typeof ProductsDigitalGlassPrintingRoute
   ProductsEnergyEfficientGlassRoute: typeof ProductsEnergyEfficientGlassRoute
+  ServicesGlassProcessingRoute: typeof ServicesGlassProcessingRoute
   ServicesIguRoute: typeof ServicesIguRoute
   ServicesTougheningHeatStrengtheningRoute: typeof ServicesTougheningHeatStrengtheningRoute
 }
@@ -165,6 +178,13 @@ declare module '@tanstack/react-router' {
       path: '/services/igu'
       fullPath: '/services/igu'
       preLoaderRoute: typeof ServicesIguRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/glass-processing': {
+      id: '/services/glass-processing'
+      path: '/services/glass-processing'
+      fullPath: '/services/glass-processing'
+      preLoaderRoute: typeof ServicesGlassProcessingRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/products/energy-efficient-glass': {
@@ -205,6 +225,7 @@ const rootRouteChildren: RootRouteChildren = {
   ProductsDecorativeGlassRoute: ProductsDecorativeGlassRoute,
   ProductsDigitalGlassPrintingRoute: ProductsDigitalGlassPrintingRoute,
   ProductsEnergyEfficientGlassRoute: ProductsEnergyEfficientGlassRoute,
+  ServicesGlassProcessingRoute: ServicesGlassProcessingRoute,
   ServicesIguRoute: ServicesIguRoute,
   ServicesTougheningHeatStrengtheningRoute:
     ServicesTougheningHeatStrengtheningRoute,

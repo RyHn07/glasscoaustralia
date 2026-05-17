@@ -244,7 +244,15 @@ export function Header() {
         </nav>
 
         {/* Right side */}
-        <div className="flex items-center gap-6">
+        <div className="flex items-center gap-4">
+          <a
+            href="tel:+61397065506"
+            className="hidden items-center gap-2 text-sm font-semibold text-neutral-900 transition-opacity hover:opacity-80 md:inline-flex"
+            style={{ fontFamily: '"Rajdhani", sans-serif' }}
+          >
+            <Phone className="h-4 w-4" />
+            (03) 9706 5506
+          </a>
           <button
             className="rounded-md bg-neutral-900 px-5 py-2.5 text-sm font-semibold text-white transition-opacity hover:opacity-90"
             style={{ fontFamily: '"Rajdhani", sans-serif' }}

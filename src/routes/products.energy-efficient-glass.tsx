@@ -1,5 +1,5 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
-import { useState } from "react";
+import { createFileRoute, Link, useLocation } from "@tanstack/react-router";
+import { useEffect, useState } from "react";
 import { Check, Layers, Plus, Sparkles, Sun } from "lucide-react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
@@ -252,6 +252,19 @@ const faqs = [
 function EnergyGlassPage() {
   const [activeId, setActiveId] = useState<Variant["id"]>("lowe");
   const active = variants.find((v) => v.id === activeId)!;
+  const location = useLocation();
+
+  useEffect(() => {
+    const hash = location.hash?.replace(/^#/, "");
+    if (!hash) return;
+    if (variants.some((v) => v.id === hash)) {
+      setActiveId(hash as Variant["id"]);
+    }
+    const el = document.getElementById("sub-categories");
+    if (el) {
+      requestAnimationFrame(() => el.scrollIntoView({ behavior: "smooth", block: "start" }));
+    }
+  }, [location.hash]);
 
   return (
     <main className="flex min-h-screen flex-col bg-white" style={{ fontFamily: BODY_FONT }}>
@@ -345,7 +358,7 @@ function EnergyGlassPage() {
       </section>
 
       {/* SUB-CATEGORIES — A / B / C */}
-      <section className="w-full bg-neutral-50 py-24">
+      <section id="sub-categories" className="w-full bg-neutral-50 py-24 scroll-mt-24">
         <div className="mx-auto max-w-[1280px] px-6">
           <div className="mx-auto max-w-2xl text-center">
             <Eyebrow centered>SUB‑CATEGORIES</Eyebrow>

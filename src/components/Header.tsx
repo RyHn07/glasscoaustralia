@@ -3,26 +3,42 @@ import { Link } from "@tanstack/react-router";
 import { ChevronDown } from "lucide-react";
 import logo from "@/assets/logo.svg";
 
-const productItems = [
+type ProductItem = {
+  label: string;
+  description: string;
+  to:
+    | "/products/acoustic-glass"
+    | "/products/decorative-glass"
+    | "/products/energy-efficient-glass"
+    | "/products/digital-glass-printing";
+  children?: { label: string; hash: string }[];
+};
+
+const productItems: ProductItem[] = [
   {
     label: "Acoustic Glass",
     description: "Noise reduction for quieter interiors",
-    to: "/products/acoustic-glass" as const,
+    to: "/products/acoustic-glass",
   },
   {
     label: "Decorative Glass",
     description: "Patterned, printed, mirror & ultra clear",
-    to: "/products/decorative-glass" as const,
+    to: "/products/decorative-glass",
   },
   {
     label: "Energy Efficient Glass",
     description: "Low‑E, IGUs and solar control glazing",
-    to: "/products/energy-efficient-glass" as const,
+    to: "/products/energy-efficient-glass",
+    children: [
+      { label: "Low‑E (Hard Coated)", hash: "lowe" },
+      { label: "Evantage — Reflective Low‑E", hash: "evantage" },
+      { label: "Luxeco (Soft Coat Low‑E)", hash: "luxeco" },
+    ],
   },
   {
     label: "Digital Glass Printing",
     description: "High-resolution ceramic printing on glass",
-    to: "/products/digital-glass-printing" as const,
+    to: "/products/digital-glass-printing",
   },
 ];
 
@@ -183,15 +199,31 @@ export function Header() {
               <div className="absolute left-1/2 top-full z-50 -translate-x-1/2 pt-3">
                 <div className="w-[340px] rounded-lg border border-neutral-200 bg-white p-2 shadow-xl">
                   {productItems.map((item) => (
-                    <Link
-                      key={item.to}
-                      to={item.to}
-                      onClick={() => setProductsOpen(false)}
-                      className="block rounded-md px-3 py-3 transition-colors hover:bg-neutral-50"
-                    >
-                      <div className="text-sm font-semibold text-neutral-900">{item.label}</div>
-                      <div className="mt-0.5 text-xs text-neutral-500">{item.description}</div>
-                    </Link>
+                    <div key={item.to}>
+                      <Link
+                        to={item.to}
+                        onClick={() => setProductsOpen(false)}
+                        className="block rounded-md px-3 py-3 transition-colors hover:bg-neutral-50"
+                      >
+                        <div className="text-sm font-semibold text-neutral-900">{item.label}</div>
+                        <div className="mt-0.5 text-xs text-neutral-500">{item.description}</div>
+                      </Link>
+                      {item.children && (
+                        <div className="ml-3 mb-1 border-l border-neutral-200 pl-3">
+                          {item.children.map((c) => (
+                            <Link
+                              key={c.hash}
+                              to={item.to}
+                              hash={c.hash}
+                              onClick={() => setProductsOpen(false)}
+                              className="block rounded-md px-2 py-1.5 text-xs text-neutral-600 transition-colors hover:bg-neutral-50 hover:text-neutral-900"
+                            >
+                              › {c.label}
+                            </Link>
+                          ))}
+                        </div>
+                      )}
+                    </div>
                   ))}
                 </div>
               </div>

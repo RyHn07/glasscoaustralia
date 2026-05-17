@@ -14,23 +14,25 @@ export function WhoWeAre() {
       <div className="mx-auto max-w-[1280px] px-6">
         <div className="grid grid-cols-1 gap-16 lg:grid-cols-2 lg:items-center">
           {/* Left: image */}
-          <div className="relative">
+          <div className="group relative">
             {/* Top-left corner bracket */}
             <div
-              className="absolute -left-4 -top-4 h-16 w-16 rounded-tl-lg border-l-2 border-t-2"
+              className="absolute -left-4 -top-4 h-16 w-16 rounded-tl-lg border-l-2 border-t-2 transition-all duration-500 group-hover:-left-5 group-hover:-top-5 group-hover:h-20 group-hover:w-20"
               style={{ borderColor: "#009AAA" }}
             />
-            <img
-              src={buildingImg}
-              alt="GlassCo Australia facility"
-              loading="lazy"
-              width={1280}
-              height={896}
-              className="h-auto w-full rounded-lg object-cover shadow-lg"
-            />
+            <div className="overflow-hidden rounded-lg shadow-lg transition-shadow duration-500 group-hover:shadow-2xl">
+              <img
+                src={buildingImg}
+                alt="GlassCo Australia facility"
+                loading="lazy"
+                width={1280}
+                height={896}
+                className="h-auto w-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+              />
+            </div>
             {/* Stat badge */}
             <div
-              className="absolute -bottom-6 -right-6 rounded-lg px-8 py-5 text-center text-white shadow-xl"
+              className="absolute -bottom-6 -right-6 rounded-lg px-8 py-5 text-center text-white shadow-xl transition-transform duration-500 group-hover:-translate-y-1 group-hover:scale-105"
               style={{ backgroundColor: "#009AAA", fontFamily: "Rajdhani, sans-serif" }}
             >
               <div className="text-4xl font-bold leading-none">33+</div>

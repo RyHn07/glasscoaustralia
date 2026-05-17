@@ -493,7 +493,7 @@ function ContactPage() {
                   <a
                     key={i}
                     href="#"
-                    className="flex h-10 w-10 items-center justify-center rounded-lg border border-white/15 text-white transition-colors hover:border-[#00DEF7] hover:text-[#00DEF7]"
+                    className="flex h-10 w-10 items-center justify-center rounded-lg border border-white/30 bg-white/10 text-white transition-colors hover:bg-white hover:text-[#009AAA]"
                   >
                     <Icon className="h-4 w-4" />
                   </a>

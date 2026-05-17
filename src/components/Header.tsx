@@ -69,16 +69,33 @@ const navItems = [
 export function Header() {
   const [productsOpen, setProductsOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 40);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
     <header
-      className="relative z-50 w-full bg-white"
-      style={{ fontFamily: '"Geist", "Geist Fallback", sans-serif', fontSize: "15px", fontWeight: 500 }}
+      className="sticky top-0 z-50 w-full bg-white/95 backdrop-blur transition-shadow"
+      style={{
+        fontFamily: '"Geist", "Geist Fallback", sans-serif',
+        fontSize: "15px",
+        fontWeight: 500,
+        boxShadow: scrolled ? "0 2px 12px rgba(0,0,0,0.08)" : "none",
+      }}
     >
       <div className="mx-auto flex max-w-[1400px] items-center justify-between px-6 py-2">
         {/* Logo */}
         <Link to="/" className="flex items-center">
-          <img src={logo} alt="GlassCo" className="h-24 w-auto" />
+          <img
+            src={logo}
+            alt="GlassCo"
+            className={`w-auto transition-all duration-300 ${scrolled ? "h-14" : "h-24"}`}
+          />
         </Link>
 
         {/* Nav */}

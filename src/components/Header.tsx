@@ -110,17 +110,33 @@ export function Header() {
 
             {servicesOpen && (
               <div className="absolute left-1/2 top-full z-50 -translate-x-1/2 pt-3">
-                <div className="w-[360px] rounded-lg border border-neutral-200 bg-white p-2 shadow-xl">
+                <div className="w-[380px] rounded-lg border border-neutral-200 bg-white p-2 shadow-xl">
                   {serviceItems.map((item) => (
-                    <Link
-                      key={item.label}
-                      to={item.to}
-                      onClick={() => setServicesOpen(false)}
-                      className="block rounded-md px-3 py-3 transition-colors hover:bg-neutral-50"
-                    >
-                      <div className="text-sm font-semibold text-neutral-900">{item.label}</div>
-                      <div className="mt-0.5 text-xs text-neutral-500">{item.description}</div>
-                    </Link>
+                    <div key={item.label}>
+                      <Link
+                        to={item.to}
+                        onClick={() => setServicesOpen(false)}
+                        className="block rounded-md px-3 py-3 transition-colors hover:bg-neutral-50"
+                      >
+                        <div className="text-sm font-semibold text-neutral-900">{item.label}</div>
+                        <div className="mt-0.5 text-xs text-neutral-500">{item.description}</div>
+                      </Link>
+                      {item.children && (
+                        <div className="ml-3 mb-1 border-l border-neutral-200 pl-3">
+                          {item.children.map((c) => (
+                            <Link
+                              key={c.hash}
+                              to={item.to}
+                              hash={c.hash}
+                              onClick={() => setServicesOpen(false)}
+                              className="block rounded-md px-2 py-1.5 text-xs text-neutral-600 transition-colors hover:bg-neutral-50 hover:text-neutral-900"
+                            >
+                              › {c.label}
+                            </Link>
+                          ))}
+                        </div>
+                      )}
+                    </div>
                   ))}
                 </div>
               </div>

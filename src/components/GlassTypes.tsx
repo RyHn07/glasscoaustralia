@@ -238,7 +238,7 @@ export function GlassTypes() {
                 {glassTypes.map((row, i) => (
                   <tr
                     key={row.product}
-                    className={i % 2 === 0 ? "bg-white" : "bg-neutral-50"}
+                    className={`${i % 2 === 0 ? "bg-white" : "bg-neutral-50"} group cursor-pointer transition-colors duration-200 hover:bg-[#009AAA]/10`}
                   >
                     {COLS.map((c) => (
                       <td

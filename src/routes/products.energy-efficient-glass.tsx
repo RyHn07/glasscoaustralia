@@ -339,8 +339,11 @@ function EnergyGlassPage() {
 
       {/* OVERVIEW */}
       <section className="w-full bg-white py-20">
-        <div className="mx-auto max-w-[920px] px-6 text-center">
-          <Eyebrow centered>OVERVIEW</Eyebrow>
+        <div className="mx-auto max-w-[1280px] px-6">
+          <Eyebrow>OVERVIEW</Eyebrow>
+          <SectionHeading>
+            Smarter glazing for <span style={{ color: ACCENT }}>modern buildings</span>
+          </SectionHeading>
           <div className="mt-6 space-y-5 text-neutral-700" style={{ fontSize: "16px", lineHeight: 1.8 }}>
             <p>
               Energy efficient glass helps Australian homes and commercial buildings stay more

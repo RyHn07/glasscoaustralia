@@ -413,7 +413,7 @@ function ToughingHeatStrengtheningPage() {
       {/* WHY CHOOSE TOUGHENED GLASS */}
       <section className="w-full bg-white py-24">
         <div className="mx-auto max-w-[1280px] px-6">
-          <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:items-stretch">
+          <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:items-end">
             <div className="flex flex-col justify-center lg:col-span-5">
               <div className="mb-5 flex items-center gap-3">
                 <span className="block" style={{ width: "32px", height: "1px", backgroundColor: ACCENT }} />
@@ -453,7 +453,7 @@ function ToughingHeatStrengtheningPage() {
             </div>
             <div className="lg:col-span-7">
               <div
-                className="group relative flex h-full flex-col justify-center overflow-hidden rounded-xl border border-neutral-200 bg-neutral-50 p-8 transition-all duration-500 ease-out hover:-translate-y-1 hover:border-[color:var(--accent-color)] hover:shadow-2xl md:p-10 animate-in fade-in slide-in-from-right-6 duration-700"
+                className="group relative flex flex-col justify-center overflow-hidden rounded-xl border border-neutral-200 bg-neutral-50 p-8 transition-all duration-500 ease-out hover:-translate-y-1 hover:border-[color:var(--accent-color)] hover:shadow-2xl md:p-10 animate-in fade-in slide-in-from-right-6 duration-700"
                 style={{
                   borderLeftWidth: "4px",
                   borderLeftColor: ACCENT,

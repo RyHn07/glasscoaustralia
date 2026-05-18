@@ -1,6 +1,6 @@
 import { createFileRoute, Link, useLocation } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import { Check, Layers, Plus, Sparkles, Sun } from "lucide-react";
+import { Check, Layers, Plus, Sparkles, Sun, Home, Building2, Store, GraduationCap, Hotel, Leaf } from "lucide-react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import heroImage from "@/assets/product-energy.jpg";
@@ -218,12 +218,12 @@ const variants: Variant[] = [
 ];
 
 const bestApplications = [
-  "Residential homes and sliding doors",
-  "Apartment developments",
-  "Commercial facades and shopfronts",
-  "Office buildings and schools",
-  "Healthcare facilities and hotels",
-  "Sustainable building and retrofit projects",
+  { label: "Residential homes and sliding doors", icon: Home },
+  { label: "Apartment developments", icon: Building2 },
+  { label: "Commercial facades and shopfronts", icon: Store },
+  { label: "Office buildings and schools", icon: GraduationCap },
+  { label: "Healthcare facilities and hotels", icon: Hotel },
+  { label: "Sustainable building and retrofit projects", icon: Leaf },
 ];
 
 const faqs = [
@@ -574,39 +574,52 @@ function EnergyGlassPage() {
 
       {/* BEST APPLICATIONS */}
       <section className="w-full bg-white py-20">
-        <div className="mx-auto max-w-[1080px] px-6">
-          <div className="mb-6 flex items-center gap-4">
-            <span className="block h-px w-10" style={{ backgroundColor: ACCENT }} />
-            <h2
-              style={{
-                fontFamily: HEAD_FONT,
-                fontSize: "clamp(1.75rem, 3vw, 2.5rem)",
-                fontWeight: 700,
-                lineHeight: 1.15,
-                color: "#0a0a0a",
-                margin: 0,
-              }}
-            >
-              Best applications for energy efficient glass
-            </h2>
+        <div className="mx-auto max-w-[1280px] px-6">
+          <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:items-start">
+            <div className="lg:col-span-4">
+              <Eyebrow>APPLICATIONS</Eyebrow>
+              <SectionHeading>
+                Best <span style={{ color: ACCENT }}>applications</span>
+              </SectionHeading>
+              <p className="mt-5 text-neutral-600" style={{ fontSize: "15px", lineHeight: 1.7 }}>
+                Where energy efficient glass delivers the strongest comfort, savings and
+                sustainability outcomes.
+              </p>
+            </div>
+            <div className="lg:col-span-8">
+              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                {bestApplications.map((b) => {
+                  const Icon = b.icon;
+                  return (
+                    <div
+                      key={b.label}
+                      className="group relative overflow-hidden rounded-2xl border border-neutral-200 bg-white p-6 transition-all duration-300 hover:-translate-y-1 hover:border-neutral-300 hover:shadow-xl"
+                    >
+                      <span
+                        className="absolute inset-x-0 top-0 h-1 origin-left scale-x-0 transition-transform duration-300 group-hover:scale-x-100"
+                        style={{ background: ACCENT }}
+                      />
+                      <span
+                        className="flex h-12 w-12 items-center justify-center rounded-xl transition-colors duration-300"
+                        style={{ background: `${ACCENT}15` }}
+                      >
+                        <Icon className="h-6 w-6" style={{ color: ACCENT }} strokeWidth={2} />
+                      </span>
+                      <h3
+                        className="mt-5 text-neutral-900"
+                        style={{ fontFamily: HEAD_FONT, fontSize: "1.05rem", fontWeight: 600, lineHeight: 1.35 }}
+                      >
+                        {b.label}
+                      </h3>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
           </div>
-          <ul className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2">
-            {bestApplications.map((b) => (
-              <li
-                key={b}
-                className="flex items-start gap-3 text-neutral-700"
-                style={{ fontSize: "14px", lineHeight: 1.7 }}
-              >
-                <span
-                  className="mt-2 inline-block h-1.5 w-1.5 flex-shrink-0 rounded-full"
-                  style={{ background: ACCENT }}
-                />
-                <span>{b}</span>
-              </li>
-            ))}
-          </ul>
         </div>
       </section>
+
 
       {/* FAQs */}
       <section className="w-full bg-neutral-50 py-20">

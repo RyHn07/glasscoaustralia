@@ -206,7 +206,7 @@ function QuotePage() {
 
       {/* Hero */}
       <section
-        className="relative overflow-hidden px-6 py-20 text-white"
+        className="relative flex h-[52vh] min-h-[380px] items-center overflow-hidden px-6 text-white"
         style={{
           background:
             "linear-gradient(135deg,#0b1f24 0%,#0d2a31 50%,#0a3640 100%)",
@@ -229,7 +229,7 @@ function QuotePage() {
           className="pointer-events-none absolute -bottom-40 -left-20 h-96 w-96 rounded-full opacity-20 blur-3xl"
           style={{ background: "#00DEF7" }}
         />
-        <div className="relative mx-auto max-w-[1200px]">
+        <div className="relative mx-auto w-full max-w-[1200px] py-16">
           <span
             className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs font-semibold tracking-[0.18em] text-[#00DEF7]"
             style={{ fontFamily: '"Rajdhani", sans-serif' }}
@@ -249,45 +249,36 @@ function QuotePage() {
             Tell us what you need and we'll come back with pricing, lead time and
             spec recommendations within one business day.
           </p>
+        </div>
+      </section>
 
-          <div className="mt-10 grid gap-4 sm:grid-cols-3">
-            {[
-              {
-                icon: Clock,
-                title: "1 business day",
-                desc: "Typical response time",
-              },
-              {
-                icon: ShieldCheck,
-                title: "AS/NZS certified",
-                desc: "Australian standards compliant",
-              },
-              {
-                icon: Truck,
-                title: "VIC-wide delivery",
-                desc: "From our Dandenong South facility",
-              },
-            ].map((b) => (
+      {/* Trust strip */}
+      <section className="border-b border-neutral-200 bg-[#0b1f24] px-6 py-10 text-white">
+        <div className="mx-auto grid max-w-[1200px] gap-4 sm:grid-cols-3">
+          {[
+            { icon: Clock, title: "1 business day", desc: "Typical response time" },
+            { icon: ShieldCheck, title: "AS/NZS certified", desc: "Australian standards compliant" },
+            { icon: Truck, title: "VIC-wide delivery", desc: "From our Dandenong South facility" },
+          ].map((b) => (
+            <div
+              key={b.title}
+              className="rounded-xl border border-white/10 bg-white/[0.04] p-4 backdrop-blur"
+            >
+              <b.icon className="h-5 w-5 text-[#00DEF7]" />
               <div
-                key={b.title}
-                className="rounded-xl border border-white/10 bg-white/[0.04] p-4 backdrop-blur"
+                className="mt-2 text-base font-semibold"
+                style={{ fontFamily: '"Rajdhani", sans-serif' }}
               >
-                <b.icon className="h-5 w-5 text-[#00DEF7]" />
-                <div
-                  className="mt-2 text-base font-semibold"
-                  style={{ fontFamily: '"Rajdhani", sans-serif' }}
-                >
-                  {b.title}
-                </div>
-                <div
-                  className="text-sm text-white/65"
-                  style={{ fontFamily: '"Poppins", sans-serif' }}
-                >
-                  {b.desc}
-                </div>
+                {b.title}
               </div>
-            ))}
-          </div>
+              <div
+                className="text-sm text-white/65"
+                style={{ fontFamily: '"Poppins", sans-serif' }}
+              >
+                {b.desc}
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 

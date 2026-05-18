@@ -98,7 +98,16 @@ function ContactPage() {
       <Header />
 
       {/* HERO */}
-      <section className="relative overflow-hidden border-b border-neutral-200 bg-gradient-to-b from-[#0b1f24] via-[#0d2a31] to-[#0b1f24] text-white">
+      <section className="relative overflow-hidden border-b border-neutral-200 bg-[#0b1f24] text-white">
+        <img
+          src={heroBg}
+          alt=""
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-40"
+          width={1920}
+          height={1080}
+        />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-[#0b1f24]/85 via-[#0b1f24]/75 to-[#0b1f24]/95" />
         <div
           className="pointer-events-none absolute inset-0 opacity-30"
           style={{

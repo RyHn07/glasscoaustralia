@@ -413,8 +413,8 @@ function ToughingHeatStrengtheningPage() {
       {/* WHY CHOOSE TOUGHENED GLASS */}
       <section className="w-full bg-white py-24">
         <div className="mx-auto max-w-[1280px] px-6">
-          <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:items-center">
-            <div className="lg:col-span-5">
+          <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:items-stretch">
+            <div className="flex flex-col justify-center lg:col-span-5">
               <div className="mb-5 flex items-center gap-3">
                 <span className="block" style={{ width: "32px", height: "1px", backgroundColor: ACCENT }} />
                 <span
@@ -453,10 +453,24 @@ function ToughingHeatStrengtheningPage() {
             </div>
             <div className="lg:col-span-7">
               <div
-                className="relative rounded-xl border border-neutral-200 bg-neutral-50 p-8 md:p-10"
-                style={{ borderLeftWidth: "4px", borderLeftColor: ACCENT, borderLeftStyle: "solid" }}
+                className="group relative flex h-full flex-col justify-center overflow-hidden rounded-xl border border-neutral-200 bg-neutral-50 p-8 transition-all duration-500 ease-out hover:-translate-y-1 hover:border-[color:var(--accent-color)] hover:shadow-2xl md:p-10 animate-in fade-in slide-in-from-right-6 duration-700"
+                style={{
+                  borderLeftWidth: "4px",
+                  borderLeftColor: ACCENT,
+                  borderLeftStyle: "solid",
+                  ["--accent-color" as never]: ACCENT,
+                }}
               >
-                <ShieldCheck className="mb-5 h-10 w-10" style={{ color: ACCENT }} strokeWidth={1.5} />
+                <span
+                  aria-hidden
+                  className="pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full opacity-0 blur-3xl transition-opacity duration-500 group-hover:opacity-30"
+                  style={{ backgroundColor: ACCENT }}
+                />
+                <ShieldCheck
+                  className="mb-5 h-10 w-10 transition-transform duration-500 group-hover:scale-110 group-hover:rotate-[-6deg]"
+                  style={{ color: ACCENT }}
+                  strokeWidth={1.5}
+                />
                 <p
                   className="text-neutral-700"
                   style={{ fontFamily: BODY_FONT, fontSize: "17px", lineHeight: 1.75 }}

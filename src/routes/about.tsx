@@ -355,7 +355,7 @@ function AboutPage() {
           </div>
 
           {/* Three pillars */}
-          <div className="mx-auto mt-14 grid max-w-3xl gap-6 md:grid-cols-3">
+          <div className="mt-14 grid gap-6 md:grid-cols-3">
             {[
               {
                 icon: BadgeCheck,

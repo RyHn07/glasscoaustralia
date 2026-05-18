@@ -25,12 +25,18 @@ const socials = [
 import { Link } from "@tanstack/react-router";
 import logo from "@/assets/logo.svg";
 
-const quickLinks = ["Home", "Services", "Products", "Projects", "About Us"];
-const services = [
-  "Residential Glass",
-  "Commercial Solutions",
-  "Safety Glass",
-"Glass Repairs",
+const quickLinks: { label: string; to: string }[] = [
+  { label: "Home", to: "/" },
+  { label: "Services", to: "/services/glass-processing" },
+  { label: "Products", to: "/products/energy-efficient-glass" },
+  { label: "Projects", to: "/gallery" },
+  { label: "About Us", to: "/about" },
+];
+const services: { label: string; to: string }[] = [
+  { label: "Glass Processing", to: "/services/glass-processing" },
+  { label: "IGU Manufacturing", to: "/services/igu" },
+  { label: "Toughening & Heat Strengthening", to: "/services/toughening-heat-strengthening" },
+  { label: "Digital Glass Printing", to: "/products/digital-glass-printing" },
 ];
 
 export function Footer() {

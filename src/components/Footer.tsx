@@ -116,14 +116,14 @@ export function Footer() {
             </h3>
             <ul className="space-y-3">
               {services.map((s) => (
-                <li key={s}>
-                  <a
-                    href="#"
+                <li key={s.to}>
+                  <Link
+                    to={s.to}
                     className="text-white/70 transition-colors hover:text-white"
                     style={{ fontFamily: "Poppins, sans-serif", fontSize: "14px" }}
                   >
-                    {s}
-                  </a>
+                    {s.label}
+                  </Link>
                 </li>
               ))}
             </ul>

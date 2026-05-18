@@ -453,7 +453,7 @@ function ToughingHeatStrengtheningPage() {
             </div>
             <div className="lg:col-span-7">
               <div
-                className="group relative flex h-full flex-col justify-center overflow-hidden rounded-xl border border-neutral-200 bg-neutral-50 p-8 transition-all duration-500 ease-out hover:-translate-y-1 hover:border-[color:var(--accent-color)] hover:shadow-2xl md:p-10 animate-in fade-in slide-in-from-right-6 duration-700"
+                className="group relative flex flex-col justify-center overflow-hidden rounded-xl border border-neutral-200 bg-neutral-50 p-8 transition-all duration-500 ease-out hover:-translate-y-1 hover:border-[color:var(--accent-color)] hover:shadow-2xl md:p-10 animate-in fade-in slide-in-from-right-6 duration-700"
                 style={{
                   borderLeftWidth: "4px",
                   borderLeftColor: ACCENT,

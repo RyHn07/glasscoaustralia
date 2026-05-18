@@ -212,6 +212,15 @@ function QuotePage() {
             "linear-gradient(135deg,#0b1f24 0%,#0d2a31 50%,#0a3640 100%)",
         }}
       >
+        <img
+          src={heroBg}
+          alt=""
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-35"
+          width={1920}
+          height={1080}
+        />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-[#0b1f24]/80 via-[#0b1f24]/70 to-[#0a3640]/90" />
         <div
           className="pointer-events-none absolute -right-32 -top-32 h-96 w-96 rounded-full opacity-30 blur-3xl"
           style={{ background: "#009AAA" }}

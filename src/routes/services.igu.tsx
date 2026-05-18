@@ -357,7 +357,10 @@ function IGUPage() {
                 </thead>
                 <tbody>
                   {technicalData.map((row, i) => (
-                    <tr key={row.label} className={i % 2 === 0 ? "bg-white" : "bg-neutral-50"}>
+                    <tr
+                      key={row.label}
+                      className={`${i % 2 === 0 ? "bg-white" : "bg-neutral-50"} group cursor-pointer transition-colors duration-200 hover:bg-[#009AAA]/10`}
+                    >
                       <td
                         className="px-5 py-5 align-top"
                         style={{

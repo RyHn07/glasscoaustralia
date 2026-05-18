@@ -35,7 +35,6 @@ const services: { label: string; to: string }[] = [
   { label: "Glass Processing", to: "/services/glass-processing" },
   { label: "IGU Manufacturing", to: "/services/igu" },
   { label: "Toughening & Heat Strengthening", to: "/services/toughening-heat-strengthening" },
-  { label: "Digital Glass Printing", to: "/products/digital-glass-printing" },
 ];
 
 export function Footer() {

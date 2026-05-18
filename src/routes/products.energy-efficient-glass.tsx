@@ -280,7 +280,7 @@ function EnergyGlassPage() {
           className="absolute inset-0 h-full w-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/85 via-black/75 to-black/90" />
-        <div className="relative z-10 mx-auto flex h-full max-w-[1280px] flex-col justify-end px-6 pb-12">
+        <div className="relative z-10 mx-auto flex h-full max-w-[1280px] flex-col justify-center px-6 py-12">
           <Eyebrow light>PRODUCT — ENERGY EFFICIENCY</Eyebrow>
           <h1
             className="mt-2"

@@ -101,7 +101,7 @@ function IGUPage() {
           className="absolute inset-0 h-full w-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/85 via-black/70 to-black/90" />
-        <div className="relative z-10 mx-auto flex h-full max-w-[1280px] flex-col justify-end px-6 pb-12">
+        <div className="relative z-10 mx-auto flex h-full max-w-[1280px] flex-col justify-center px-6 py-12">
           <div className="mb-5 flex items-center gap-3">
             <span className="block" style={{ width: "32px", height: "1px", backgroundColor: ACCENT }} />
             <span

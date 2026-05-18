@@ -260,7 +260,7 @@ function AboutPage() {
 
       {/* VISION & VALUES */}
       <section className="w-full bg-neutral-50 py-24">
-        <div className="mx-auto max-w-[1280px] px-6">
+        <div className="mx-auto max-w-[1180px] px-6">
           <div className="max-w-2xl">
             <Eyebrow>OUR VISION & VALUES</Eyebrow>
             <SectionHeading>

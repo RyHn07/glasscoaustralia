@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { Award, ShieldCheck, FileCheck2, Download, ExternalLink, X, Filter } from "lucide-react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import heroBg from "@/assets/hero-certifications.jpg";
 
 export const Route = createFileRoute("/certifications")({
   head: () => ({

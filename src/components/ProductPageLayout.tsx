@@ -272,7 +272,7 @@ export function ProductPageLayout(props: ProductPageProps) {
                       {s.bullets.map((b, i) => (
                         <li
                           key={b}
-                          className={`flex items-center gap-4 rounded-lg border border-neutral-200 ${cardBg} p-5 transition-all hover:-translate-y-0.5 hover:shadow-md`}
+                          className={`flex items-center gap-4 rounded-lg border border-neutral-200 ${cardBg} p-5 transition-all duration-300 hover:-translate-y-1 hover:border-neutral-300 hover:shadow-lg`}
                         >
                           <span
                             className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full text-sm font-bold text-white"

@@ -153,7 +153,7 @@ function IGUPage() {
                 loading="lazy"
                 width={1280}
                 height={896}
-                className="h-auto w-full rounded-lg object-contain shadow-lg transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl"
+                className="h-auto w-full rounded-lg object-contain shadow-lg transition-transform duration-700 ease-out hover:scale-105"
                 style={{ background: "#f5f5f5" }}
               />
               <div

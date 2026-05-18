@@ -331,7 +331,7 @@ function ToughingHeatStrengtheningPage() {
             {keyFeatures.map((f) => (
               <li
                 key={f}
-                className="flex items-start gap-3 rounded-lg border border-neutral-200 bg-neutral-50 p-5"
+                className="flex items-start gap-3 rounded-lg border border-neutral-200 bg-neutral-50 p-5 transition-all duration-300 hover:-translate-y-1 hover:border-neutral-300 hover:shadow-lg"
                 style={{ fontSize: "14px", lineHeight: 1.65 }}
               >
                 <span

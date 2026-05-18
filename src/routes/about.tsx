@@ -260,15 +260,17 @@ function AboutPage() {
 
       {/* VISION & VALUES */}
       <section className="w-full bg-neutral-50 py-24">
-        <div className="mx-auto max-w-[1180px] px-6">
-          <div className="max-w-2xl">
-            <Eyebrow>OUR VISION & VALUES</Eyebrow>
+        <div className="mx-auto max-w-3xl px-6">
+          <div className="text-center">
+            <div className="flex justify-center">
+              <Eyebrow>OUR VISION & VALUES</Eyebrow>
+            </div>
             <SectionHeading>
               What We <span style={{ color: ACCENT }}>Stand</span> For
             </SectionHeading>
           </div>
 
-          <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {values.map((v, i) => (
               <div
                 key={v.title}

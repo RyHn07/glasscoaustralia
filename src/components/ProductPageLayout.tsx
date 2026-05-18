@@ -246,7 +246,7 @@ export function ProductPageLayout(props: ProductPageProps) {
                         src={img}
                         alt={s.heading}
                         loading="lazy"
-                        className="h-[420px] w-full rounded-lg object-cover shadow-lg"
+                        className="h-[420px] w-full rounded-lg object-cover shadow-lg transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl"
                       />
                       <div
                         className="absolute -bottom-5 -right-5 rounded-lg px-5 py-3 text-white shadow-xl"
@@ -312,7 +312,7 @@ export function ProductPageLayout(props: ProductPageProps) {
                         src={img}
                         alt={s.heading}
                         loading="lazy"
-                        className="h-[420px] w-full rounded-lg object-cover shadow-lg"
+                        className="h-[420px] w-full rounded-lg object-cover shadow-lg transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl"
                       />
                     </div>
                   </div>

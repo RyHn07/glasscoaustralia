@@ -35,11 +35,6 @@ const productItems: ProductItem[] = [
       { label: "Luxeco (Soft Coat Low‑E)", hash: "luxeco" },
     ],
   },
-  {
-    label: "Digital Glass Printing",
-    description: "High-resolution ceramic printing on glass",
-    to: "/products/digital-glass-printing",
-  },
 ];
 
 type ServiceItem = {

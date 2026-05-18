@@ -197,7 +197,7 @@ function CertificationsPage() {
       <Header />
 
       {/* HERO */}
-      <section className="relative overflow-hidden border-b border-neutral-200 bg-[#0b1f24] text-white">
+      <section className="relative flex h-[52vh] min-h-[380px] items-center overflow-hidden border-b border-neutral-200 bg-[#0b1f24] text-white">
         <img
           src={heroBg}
           alt=""

@@ -515,7 +515,8 @@ function GlassProcessingPage() {
                 {waterjetIdealFor.map((i) => (
                   <span
                     key={i}
-                    className="rounded-full border border-neutral-200 bg-neutral-50 px-4 py-1.5 text-sm text-neutral-700"
+                    className="rounded-full border border-neutral-200 bg-neutral-50 px-4 py-1.5 text-sm text-neutral-700 transition-all duration-300 hover:-translate-y-0.5 hover:border-[color:var(--accent-color,#009AAA)] hover:bg-white hover:text-neutral-900 hover:shadow-md"
+                    style={{ ["--accent-color" as any]: ACCENT }}
                   >
                     {i}
                   </span>

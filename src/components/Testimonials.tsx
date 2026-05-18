@@ -86,7 +86,7 @@ export function Testimonials() {
           {testimonials.map((t) => (
             <article
               key={t.name}
-              className="flex flex-col rounded-2xl border border-neutral-200 bg-white p-8"
+              className="testimonial-card group flex flex-col rounded-2xl border border-neutral-200 bg-white p-8"
             >
               {/* Stars */}
               <div className="flex items-center gap-1">
@@ -114,7 +114,7 @@ export function Testimonials() {
                   loading="lazy"
                   width={48}
                   height={48}
-                  className="h-12 w-12 rounded-full object-cover"
+                  className="h-12 w-12 rounded-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
                 <div>
                   <div

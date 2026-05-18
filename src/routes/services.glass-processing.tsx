@@ -684,7 +684,7 @@ function GlassProcessingPage() {
               </ul>
             </div>
 
-            <div className="rounded-xl border border-neutral-200 bg-white p-7 shadow-sm">
+            <div className="group animate-fade-in rounded-xl border border-neutral-200 bg-white p-7 shadow-sm transition-all duration-500 hover:-translate-y-2 hover:border-[color:var(--accent-color,#009AAA)] hover:shadow-2xl" style={{ ["--accent-color" as any]: ACCENT, animationDelay: "120ms" }}>
               <h3
                 style={{
                   fontFamily: HEAD_FONT,

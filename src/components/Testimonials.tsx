@@ -1,6 +1,3 @@
-import { useCallback, useEffect, useState } from "react";
-import useEmblaCarousel from "embla-carousel-react";
-import Autoplay from "embla-carousel-autoplay";
 import { Star } from "lucide-react";
 import sarahImg from "@/assets/avatar-sarah.jpg";
 import jamesImg from "@/assets/avatar-james.jpg";
@@ -38,24 +35,64 @@ const testimonials = [
   },
 ];
 
-export function Testimonials() {
-  const [emblaRef, emblaApi] = useEmblaCarousel(
-    { loop: true, align: "center", containScroll: false },
-    [Autoplay({ delay: 3500, stopOnInteraction: false, stopOnMouseEnter: true })],
+function Card({ t }: { t: (typeof testimonials)[number] }) {
+  return (
+    <article
+      className="flex shrink-0 flex-col rounded-2xl border border-neutral-200 bg-white p-8"
+      style={{ width: 380, minHeight: 360 }}
+    >
+      <div className="flex items-center gap-1">
+        {Array.from({ length: 5 }).map((_, idx) => (
+          <Star key={idx} className="h-4 w-4" fill="#009AAA" stroke="#009AAA" />
+        ))}
+      </div>
+      <p
+        className="mt-5 pb-10 italic text-neutral-700"
+        style={{ fontFamily: "Poppins, sans-serif", fontSize: "15px", lineHeight: 1.7 }}
+      >
+        "{t.quote}"
+      </p>
+      <div className="mb-8 mt-auto h-px w-full bg-neutral-200" />
+      <div className="flex items-center gap-4">
+        <img
+          src={t.avatar}
+          alt={t.name}
+          loading="lazy"
+          width={48}
+          height={48}
+          className="h-12 w-12 rounded-full object-cover"
+        />
+        <div>
+          <div
+            style={{
+              fontFamily: "Rajdhani, sans-serif",
+              fontSize: "16px",
+              fontWeight: 700,
+              color: "#0a0a0a",
+            }}
+          >
+            {t.name}
+          </div>
+          <div
+            style={{
+              fontFamily: "Rajdhani, sans-serif",
+              fontSize: "12px",
+              fontWeight: 600,
+              letterSpacing: "0.15em",
+              color: "#737373",
+            }}
+          >
+            {t.role}
+          </div>
+        </div>
+      </div>
+    </article>
   );
-  const [selected, setSelected] = useState(0);
+}
 
-  const onSelect = useCallback(() => {
-    if (!emblaApi) return;
-    setSelected(emblaApi.selectedScrollSnap());
-  }, [emblaApi]);
-
-  useEffect(() => {
-    if (!emblaApi) return;
-    onSelect();
-    emblaApi.on("select", onSelect);
-    emblaApi.on("reInit", onSelect);
-  }, [emblaApi, onSelect]);
+export function Testimonials() {
+  // Duplicate the list so the translate -50% animation loops seamlessly.
+  const loop = [...testimonials, ...testimonials];
 
   return (
     <section className="w-full py-24" style={{ backgroundColor: "#F7F8FA" }}>
@@ -101,99 +138,28 @@ export function Testimonials() {
             promise, every time.
           </p>
         </div>
+      </div>
 
-        {/* Carousel */}
-        <div className="mt-14 overflow-hidden" ref={emblaRef}>
-          <div className="flex items-center">
-            {testimonials.map((t, i) => {
-              const isActive = i === selected;
-              return (
-                <div
-                  key={t.name}
-                  onClick={() => !isActive && emblaApi?.scrollTo(i)}
-                  className="min-w-0 shrink-0 grow-0 basis-full px-3 transition-all duration-500 md:basis-1/2 lg:basis-1/3"
-                  style={{
-                    transform: isActive ? "scale(1)" : "scale(0.88)",
-                    opacity: isActive ? 1 : 0.55,
-                    cursor: isActive ? "default" : "pointer",
-                  }}
-                >
-                  <article
-                    className="flex flex-col rounded-2xl border border-neutral-200 bg-white p-8"
-                    style={{ minHeight: 360 }}
-                  >
-                    <div className="flex items-center gap-1">
-                      {Array.from({ length: 5 }).map((_, idx) => (
-                        <Star key={idx} className="h-4 w-4" fill="#009AAA" stroke="#009AAA" />
-                      ))}
-                    </div>
-                    <p
-                      className="mt-5 pb-10 italic text-neutral-700"
-                      style={{
-                        fontFamily: "Poppins, sans-serif",
-                        fontSize: "15px",
-                        lineHeight: 1.7,
-                      }}
-                    >
-                      "{t.quote}"
-                    </p>
-                    <div className="mb-8 mt-auto h-px w-full bg-neutral-200" />
-                    <div className="flex items-center gap-4">
-                      <img
-                        src={t.avatar}
-                        alt={t.name}
-                        loading="lazy"
-                        width={48}
-                        height={48}
-                        className="h-12 w-12 rounded-full object-cover"
-                      />
-                      <div>
-                        <div
-                          style={{
-                            fontFamily: "Rajdhani, sans-serif",
-                            fontSize: "16px",
-                            fontWeight: 700,
-                            color: "#0a0a0a",
-                          }}
-                        >
-                          {t.name}
-                        </div>
-                        <div
-                          style={{
-                            fontFamily: "Rajdhani, sans-serif",
-                            fontSize: "12px",
-                            fontWeight: 600,
-                            letterSpacing: "0.15em",
-                            color: "#737373",
-                          }}
-                        >
-                          {t.role}
-                        </div>
-                      </div>
-                    </div>
-                  </article>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-
-        {/* Dots */}
-        <div className="mt-8 flex items-center justify-center gap-2">
-          {testimonials.map((_, i) => (
-            <button
-              key={i}
-              aria-label={`Go to slide ${i + 1}`}
-              onClick={() => emblaApi?.scrollTo(i)}
-              className="h-2 rounded-full transition-all duration-300"
-              style={{
-                width: i === selected ? 24 : 8,
-                backgroundColor: i === selected ? "#009AAA" : "#d4d4d4",
-              }}
-            />
+      {/* Infinite marquee — full-bleed so the loop seam stays off-screen */}
+      <div className="marquee mt-14 w-full overflow-hidden">
+        <div className="marquee-track flex w-max gap-6">
+          {loop.map((t, i) => (
+            <Card key={`${t.name}-${i}`} t={t} />
           ))}
         </div>
       </div>
+
+      <style>{`
+        @keyframes testimonials-marquee {
+          from { transform: translateX(0); }
+          to   { transform: translateX(-50%); }
+        }
+        .marquee-track {
+          animation: testimonials-marquee 40s linear infinite;
+          will-change: transform;
+        }
+        .marquee:hover .marquee-track { animation-play-state: paused; }
+      `}</style>
     </section>
   );
 }

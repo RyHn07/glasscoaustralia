@@ -260,7 +260,7 @@ function AboutPage() {
 
       {/* VISION & VALUES */}
       <section className="w-full bg-neutral-50 py-24">
-        <div className="mx-auto max-w-3xl px-6">
+        <div className="mx-auto max-w-[1280px] px-6">
           <div className="text-center">
             <div className="flex justify-center">
               <Eyebrow>OUR VISION & VALUES</Eyebrow>
@@ -308,7 +308,7 @@ function AboutPage() {
       <section className="relative w-full overflow-hidden bg-white py-28">
 
 
-        <div className="relative mx-auto max-w-[1180px] px-6">
+        <div className="relative mx-auto max-w-[1280px] px-6">
           {/* Header */}
           <div className="mx-auto max-w-2xl text-center">
             <div className="flex justify-center">

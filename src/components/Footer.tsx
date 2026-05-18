@@ -1,8 +1,9 @@
+import type { ReactNode } from "react";
 import { Phone, Mail, Clock, MapPin } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import logo from "@/assets/logo.svg";
 
-const socials: { label: string; href: string; icon: JSX.Element }[] = [
+const socials: { label: string; href: string; icon: ReactNode }[] = [
   {
     label: "Facebook",
     href: "#",

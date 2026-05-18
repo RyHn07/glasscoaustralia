@@ -1,4 +1,5 @@
 import { ArrowUpRight } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 import officeImg from "@/assets/project-office.jpg";
 import coastalImg from "@/assets/project-coastal.jpg";
 import retailImg from "@/assets/project-retail.jpg";
@@ -88,13 +89,14 @@ export function Projects() {
 
         {/* CTA */}
         <div className="mt-12 flex justify-center">
-          <button
+          <Link
+            to="/gallery"
             className="btn-animate inline-flex items-center gap-2 rounded-md bg-neutral-900 px-7 py-4 text-sm font-semibold text-white hover:opacity-95"
             style={{ fontFamily: "Rajdhani, sans-serif" }}
           >
             View All Projects
             <ArrowUpRight className="h-4 w-4" />
-          </button>
+          </Link>
         </div>
     </section>
   );

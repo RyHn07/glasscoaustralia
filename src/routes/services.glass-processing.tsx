@@ -460,7 +460,7 @@ function GlassProcessingPage() {
             <div className="group animate-fade-in rounded-xl border border-neutral-200 bg-white p-7 shadow-sm transition-all duration-500 hover:-translate-y-2 hover:border-[color:var(--accent-color,#009AAA)] hover:shadow-2xl" style={{ ["--accent-color" as any]: ACCENT }}>
               <div className="flex items-center gap-3">
                 <span
-                  className="flex h-10 w-10 items-center justify-center rounded-full"
+                  className="flex h-10 w-10 items-center justify-center rounded-full transition-transform duration-500 group-hover:scale-110 group-hover:rotate-[-8deg]"
                   style={{ background: `${ACCENT}15` }}
                 >
                   <Zap className="h-5 w-5" style={{ color: ACCENT }} />

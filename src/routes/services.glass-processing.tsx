@@ -238,7 +238,7 @@ function GlassProcessingPage() {
                   <a
                     key={s.id}
                     href={`#${s.id}`}
-                    className="group rounded-xl border border-neutral-200 bg-white p-5 shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md"
+                    className="group rounded-xl border border-neutral-200 bg-white p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-neutral-300 hover:shadow-lg"
                   >
                     <div
                       className="text-xs font-bold"

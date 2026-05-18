@@ -1,4 +1,6 @@
-import { Phone, Mail, Clock } from "lucide-react";
+import { Phone, Mail, Clock, MapPin } from "lucide-react";
+import { Link } from "@tanstack/react-router";
+import logo from "@/assets/logo.svg";
 
 const socials = [
   {
@@ -22,36 +24,47 @@ const socials = [
     path: "M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z",
   },
 ];
-import { Link } from "@tanstack/react-router";
-import logo from "@/assets/logo.svg";
 
-const quickLinks: { label: string; to: string }[] = [
-  { label: "Home", to: "/" },
-  { label: "Products", to: "/products/energy-efficient-glass" },
-  { label: "Projects", to: "/gallery" },
-  { label: "About Us", to: "/about" },
-];
-const services: { label: string; to: string }[] = [
-  { label: "Glass Processing", to: "/services/glass-processing" },
-  { label: "IGU Manufacturing", to: "/services/igu" },
-  { label: "Toughening & Heat Strengthening", to: "/services/toughening-heat-strengthening" },
+const contactItems = [
+  {
+    Icon: Phone,
+    label: "Call Us",
+    lines: ["(03) 9706 5506"],
+  },
+  {
+    Icon: Mail,
+    label: "Email",
+    lines: ["info@glasscoaustralia.com.au", "orders@glasscoaustralia.com.au"],
+  },
+  {
+    Icon: MapPin,
+    label: "Visit",
+    lines: ["Melbourne, Victoria, Australia"],
+  },
+  {
+    Icon: Clock,
+    label: "Hours",
+    lines: ["Mon - Fri: 8AM - 6PM"],
+  },
 ];
 
 export function Footer() {
   return (
     <footer className="w-full bg-[#1a1a1a] text-white">
       <div className="mx-auto max-w-[1280px] px-6 py-20">
-        <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4">
+        {/* Top: Brand + Contact grid */}
+        <div className="grid grid-cols-1 gap-14 lg:grid-cols-[1.1fr_1.4fr] lg:gap-20">
           {/* Brand */}
           <div>
             <img src={logo} alt="GlassCo Australia" className="h-16 w-auto" />
             <p
-              className="mt-6 text-white/70"
-              style={{ fontFamily: "Poppins, sans-serif", fontSize: "14px", lineHeight: 1.7 }}
+              className="mt-6 max-w-md text-white/70"
+              style={{ fontFamily: "Poppins, sans-serif", fontSize: "15px", lineHeight: 1.8 }}
             >
               Australia's leading glass and glazing solutions provider, delivering excellence
-              since 1993.
+              since 1993. Trusted by builders, architects and homeowners across the country.
             </p>
+
             <div className="mt-8 flex items-center gap-3">
               {socials.map((s) => (
                 <a
@@ -60,7 +73,12 @@ export function Footer() {
                   aria-label={s.label}
                   className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white/80 transition-all hover:-translate-y-0.5 hover:bg-[#009AAA] hover:text-white"
                 >
-                  <svg className="h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <svg
+                    className="h-4 w-4"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
                     <path d={s.path} />
                   </svg>
                 </a>
@@ -68,131 +86,66 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Quick Links */}
+          {/* Contact grid */}
           <div>
-            <h3
-              className="mb-6"
-              style={{
-                fontFamily: "Rajdhani, sans-serif",
-                fontSize: "18px",
-                fontWeight: 700,
-              }}
-            >
-              Quick Links
-            </h3>
-            <ul className="space-y-3">
-              {quickLinks.map((l) => (
-                <li key={l.to}>
-                  <Link
-                    to={l.to}
-                    className="text-white/70 transition-colors hover:text-white"
-                    style={{ fontFamily: "Poppins, sans-serif", fontSize: "14px" }}
-                  >
-                    {l.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+            <div className="mb-8 flex items-center gap-3">
+              <span
+                className="block"
+                style={{ width: "32px", height: "1px", backgroundColor: "#009AAA" }}
+              />
+              <span
+                style={{
+                  fontFamily: "Rajdhani, sans-serif",
+                  fontSize: "13px",
+                  fontWeight: 700,
+                  letterSpacing: "0.2em",
+                  color: "#009AAA",
+                }}
+              >
+                GET IN TOUCH
+              </span>
+            </div>
 
-          {/* Services */}
-          <div>
-            <h3
-              className="mb-6"
-              style={{
-                fontFamily: "Rajdhani, sans-serif",
-                fontSize: "18px",
-                fontWeight: 700,
-              }}
-            >
-              Services
-            </h3>
-            <ul className="space-y-3">
-              {services.map((s) => (
-                <li key={s.to}>
-                  <Link
-                    to={s.to}
-                    className="text-white/70 transition-colors hover:text-white"
-                    style={{ fontFamily: "Poppins, sans-serif", fontSize: "14px" }}
-                  >
-                    {s.label}
-                  </Link>
-                </li>
+            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+              {contactItems.map(({ Icon, label, lines }) => (
+                <div
+                  key={label}
+                  className="flex items-start gap-4 rounded-xl border border-white/10 bg-white/[0.03] p-5 transition-colors hover:border-[#009AAA]/40 hover:bg-white/[0.05]"
+                >
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[#009AAA]/15 text-[#009AAA]">
+                    <Icon className="h-5 w-5" />
+                  </span>
+                  <div className="min-w-0">
+                    <div
+                      style={{
+                        fontFamily: "Rajdhani, sans-serif",
+                        fontSize: "12px",
+                        fontWeight: 700,
+                        letterSpacing: "0.18em",
+                        color: "rgba(255,255,255,0.55)",
+                      }}
+                    >
+                      {label.toUpperCase()}
+                    </div>
+                    <div className="mt-1.5 space-y-0.5">
+                      {lines.map((line) => (
+                        <div
+                          key={line}
+                          className="break-words text-white"
+                          style={{
+                            fontFamily: "Poppins, sans-serif",
+                            fontSize: "14px",
+                            lineHeight: 1.55,
+                          }}
+                        >
+                          {line}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
               ))}
-            </ul>
-          </div>
-
-          {/* Contact */}
-          <div>
-            <h3
-              className="mb-6"
-              style={{
-                fontFamily: "Rajdhani, sans-serif",
-                fontSize: "18px",
-                fontWeight: 700,
-              }}
-            >
-              Contact
-            </h3>
-            <ul className="space-y-5">
-              <li className="flex items-start gap-3">
-                <Phone className="mt-0.5 h-4 w-4 text-white/70" />
-                <div>
-                  <div
-                    className="text-white"
-                    style={{ fontFamily: "Poppins, sans-serif", fontSize: "14px", fontWeight: 500 }}
-                  >
-                    Call Us
-                  </div>
-                  <div
-                    className="mt-1 text-white/70"
-                    style={{ fontFamily: "Poppins, sans-serif", fontSize: "14px" }}
-                  >
-                    (03) 9706 5506
-                  </div>
-                </div>
-              </li>
-              <li className="flex items-start gap-3">
-                <Mail className="mt-0.5 h-4 w-4 text-white/70" />
-                <div>
-                  <div
-                    className="text-white"
-                    style={{ fontFamily: "Poppins, sans-serif", fontSize: "14px", fontWeight: 500 }}
-                  >
-                    Email
-                  </div>
-                  <div
-                    className="mt-1 text-white/70"
-                    style={{ fontFamily: "Poppins, sans-serif", fontSize: "14px" }}
-                  >
-                    info@glasscoaustralia.com.au
-                  </div>
-                  <div
-                    className="mt-1 text-white/70"
-                    style={{ fontFamily: "Poppins, sans-serif", fontSize: "14px" }}
-                  >
-                    orders@glasscoaustralia.com.au
-                  </div>
-                </div>
-              </li>
-              <li className="flex items-start gap-3">
-                <Clock className="mt-0.5 h-4 w-4 text-white/70" />
-                <div>
-                  <div
-                    className="text-white"
-                    style={{ fontFamily: "Poppins, sans-serif", fontSize: "14px", fontWeight: 500 }}
-                  >
-                    Hours
-                  </div>
-                  <div
-                    className="mt-1 text-white/70"
-                    style={{ fontFamily: "Poppins, sans-serif", fontSize: "14px" }}
-                  >
-                    Mon - Fri: 8AM - 6PM
-                  </div>
-                </div>
-              </li>
-            </ul>
+            </div>
           </div>
         </div>
 

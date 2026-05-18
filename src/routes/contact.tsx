@@ -521,13 +521,16 @@ function ContactPage() {
                 See our latest projects, products and facility updates.
               </p>
               <div className="mt-5 flex items-center gap-3">
-                {[Facebook, Instagram, Linkedin].map((Icon, i) => (
+                {socialIcons.map((s) => (
                   <a
-                    key={i}
+                    key={s.label}
                     href="#"
+                    aria-label={s.label}
                     className="flex h-10 w-10 items-center justify-center rounded-lg border border-white/30 bg-white/10 text-white transition-colors hover:bg-white hover:text-[#009AAA]"
                   >
-                    <Icon className="h-4 w-4" />
+                    <svg className="h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                      {s.icon}
+                    </svg>
                   </a>
                 ))}
               </div>

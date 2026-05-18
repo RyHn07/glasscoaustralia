@@ -1,6 +1,6 @@
 import { createFileRoute, Link, useLocation } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import { Check, Layers, Plus, Sparkles, Sun } from "lucide-react";
+import { Check, Layers, Plus, Sparkles, Sun, Home, Building2, Store, GraduationCap, Hotel, Leaf } from "lucide-react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import heroImage from "@/assets/product-energy.jpg";

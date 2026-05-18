@@ -269,12 +269,13 @@ export function Header() {
             <Phone className="h-4 w-4" />
             (03) 9706 5506
           </a>
-          <button
+          <Link
+            to="/quote"
             className="rounded-md bg-neutral-900 px-5 py-2.5 text-sm font-semibold text-white transition-opacity hover:opacity-90"
             style={{ fontFamily: '"Rajdhani", sans-serif' }}
           >
             Get Quote
-          </button>
+          </Link>
         </div>
       </div>
     </header>

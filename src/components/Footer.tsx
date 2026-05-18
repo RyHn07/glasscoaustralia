@@ -85,7 +85,7 @@ export function Footer() {
                     fill="currentColor"
                     aria-hidden="true"
                   >
-                    <path d={s.path} />
+                    {s.icon}
                   </svg>
                 </a>
               ))}

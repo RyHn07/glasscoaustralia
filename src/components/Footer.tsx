@@ -59,7 +59,7 @@ export function Footer() {
     <footer className="w-full bg-[#1a1a1a] text-white">
       <div className="mx-auto max-w-[1280px] px-6 py-20">
         {/* Top: Brand + Contact grid */}
-        <div className="grid grid-cols-1 gap-14 lg:grid-cols-[1.1fr_1.4fr] lg:gap-20">
+        <div className="grid grid-cols-1 gap-14 lg:grid-cols-[1.6fr_1.4fr] lg:gap-20">
           {/* Brand */}
           <div>
             <img src={logo} alt="GlassCo Australia" className="h-16 w-auto" />

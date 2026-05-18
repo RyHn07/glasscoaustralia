@@ -165,7 +165,7 @@ export function ProductPageLayout(props: ProductPageProps) {
                 {keyBenefits.map((b) => (
                   <li
                     key={b}
-                    className="flex items-start gap-3 rounded-lg border border-neutral-200 bg-white p-4"
+                    className="flex items-start gap-3 rounded-lg border border-neutral-200 bg-white p-4 transition-all duration-300 hover:-translate-y-1 hover:border-neutral-300 hover:shadow-lg"
                     style={{ fontFamily: BODY_FONT, fontSize: "14px", lineHeight: 1.6 }}
                   >
                     <span

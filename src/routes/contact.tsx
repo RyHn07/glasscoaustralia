@@ -17,6 +17,7 @@ import {
 import { z } from "zod";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import heroBg from "@/assets/hero-contact.jpg";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({

@@ -214,7 +214,7 @@ function CertificationsPage() {
               "radial-gradient(60% 60% at 80% 10%, rgba(0,222,247,0.25), transparent 60%), radial-gradient(40% 40% at 10% 90%, rgba(0,154,170,0.35), transparent 60%)",
           }}
         />
-        <div className="relative mx-auto max-w-[1280px] px-6 py-24 md:py-32">
+        <div className="relative mx-auto w-full max-w-[1280px] px-6 py-16">
           <div
             className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-4 py-1.5 backdrop-blur"
             style={{ fontFamily: "Poppins, sans-serif", fontSize: 12, letterSpacing: "0.2em" }}

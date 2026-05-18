@@ -453,7 +453,7 @@ function AboutPage() {
                 width={1280}
                 height={896}
                 loading="lazy"
-                className="h-auto w-full rounded-lg object-cover shadow-lg"
+                className="h-auto w-full rounded-lg object-cover shadow-lg transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl"
               />
             </div>
             <div>

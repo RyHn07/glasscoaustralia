@@ -263,7 +263,7 @@ function IGUPage() {
             {components.map(({ icon: Icon, label }) => (
               <div
                 key={label}
-                className="flex flex-col items-center rounded-xl border border-neutral-200 bg-white p-6 text-center shadow-sm transition-shadow hover:shadow-md"
+                className="flex flex-col items-center rounded-xl border border-neutral-200 bg-white p-6 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-neutral-300 hover:shadow-lg"
               >
                 <span
                   className="flex h-14 w-14 items-center justify-center rounded-full"

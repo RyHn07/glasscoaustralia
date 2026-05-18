@@ -633,7 +633,7 @@ function EnergyGlassPage() {
       </section>
 
       {/* CTA */}
-      <section className="w-full bg-neutral-900 py-20 text-white">
+      <section className="w-full py-20 text-white" style={{ backgroundColor: ACCENT }}>
         <div className="mx-auto max-w-[1080px] px-6 text-center">
           <h2
             style={{
@@ -653,8 +653,8 @@ function EnergyGlassPage() {
           <div className="mt-8 flex flex-wrap justify-center gap-4">
             <Link
               to="/"
-              className="rounded-md px-7 py-3 text-sm font-semibold text-white transition-opacity hover:opacity-90"
-              style={{ background: ACCENT, fontFamily: HEAD_FONT, letterSpacing: "0.05em" }}
+              className="rounded-md px-7 py-3 text-sm font-semibold transition-opacity hover:opacity-90"
+              style={{ background: "#ffffff", color: ACCENT, fontFamily: HEAD_FONT, letterSpacing: "0.05em" }}
             >
               GET A QUOTE
             </Link>

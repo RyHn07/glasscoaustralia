@@ -308,7 +308,7 @@ function AboutPage() {
       <section className="relative w-full overflow-hidden bg-white py-28">
 
 
-        <div className="relative mx-auto max-w-[1180px] px-6">
+        <div className="relative mx-auto max-w-[1280px] px-6">
           {/* Header */}
           <div className="mx-auto max-w-2xl text-center">
             <div className="flex justify-center">

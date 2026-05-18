@@ -92,7 +92,7 @@ export function Services() {
           {services.map(({ icon: Icon, title, desc }) => (
             <div
               key={title}
-              className="w-full rounded-xl border border-neutral-200 bg-white p-7 transition-all hover:-translate-y-1 hover:shadow-lg sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]"
+              className="w-full rounded-xl border border-neutral-200 bg-white p-7 transition-all duration-300 hover:-translate-y-1 hover:border-neutral-300 hover:shadow-lg sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]"
             >
               <div
                 className="flex h-11 w-11 items-center justify-center rounded-lg"

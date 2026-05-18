@@ -272,7 +272,7 @@ function AboutPage() {
             {values.map((v, i) => (
               <div
                 key={v.title}
-                className="group rounded-lg border border-neutral-200 bg-white p-7 transition-shadow hover:shadow-lg"
+                className="group rounded-lg border border-neutral-200 bg-white p-7 transition-all duration-300 hover:-translate-y-1 hover:border-neutral-300 hover:shadow-lg"
               >
                 <div
                   className="text-xs font-bold tracking-[0.2em]"
@@ -373,7 +373,7 @@ function AboutPage() {
             ].map(({ icon: Icon, title, body }) => (
               <div
                 key={title}
-                className="group rounded-xl border border-neutral-200 bg-white p-7 transition-all hover:border-neutral-300 hover:shadow-lg"
+                className="group rounded-xl border border-neutral-200 bg-white p-7 transition-all duration-300 hover:-translate-y-1 hover:border-neutral-300 hover:shadow-lg"
               >
                 <div
                   className="flex h-11 w-11 items-center justify-center rounded-lg"

@@ -82,7 +82,7 @@ export function WhyUs() {
           {features.map(({ icon: Icon, title, desc }) => (
             <div
               key={title}
-              className="flex gap-4 rounded-xl border border-neutral-200 bg-white p-6 transition-all hover:-translate-y-1 hover:shadow-md"
+              className="flex gap-4 rounded-xl border border-neutral-200 bg-white p-6 transition-all duration-300 hover:-translate-y-1 hover:border-neutral-300 hover:shadow-lg"
             >
               <Icon className="mt-0.5 h-6 w-6 flex-shrink-0" style={{ color: "#009AAA" }} />
               <div>

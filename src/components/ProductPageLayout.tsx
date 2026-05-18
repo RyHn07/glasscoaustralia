@@ -186,13 +186,13 @@ export function ProductPageLayout(props: ProductPageProps) {
       {/* INTRO — quote-style centered overview */}
       <section className="w-full bg-white py-24">
         <div className="mx-auto max-w-[1280px] px-6">
-          <div className="mx-auto max-w-3xl text-center">
-            <Eyebrow centered>OVERVIEW</Eyebrow>
-            <SectionHeading center>
+          <div>
+            <Eyebrow>OVERVIEW</Eyebrow>
+            <SectionHeading>
               The <span style={{ color: ACCENT }}>essentials</span> at a glance
             </SectionHeading>
           </div>
-          <div className="relative mx-auto mt-12 max-w-3xl">
+          <div className="relative mt-12">
             <div
               className="absolute -left-3 -top-3 flex h-12 w-12 items-center justify-center rounded-full shadow-lg"
               style={{ background: ACCENT }}

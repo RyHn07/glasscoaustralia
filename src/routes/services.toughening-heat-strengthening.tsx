@@ -475,7 +475,7 @@ function ToughingHeatStrengtheningPage() {
       </section>
 
       {/* CTA */}
-      <section className="w-full bg-neutral-900 py-20 text-white">
+      <section className="w-full py-20 text-white" style={{ backgroundColor: ACCENT }}>
         <div className="mx-auto max-w-[1080px] px-6 text-center">
           <h2
             style={{
@@ -490,7 +490,7 @@ function ToughingHeatStrengtheningPage() {
             Need toughened glass for your project?
           </h2>
           <p
-            className="mx-auto mt-5 max-w-xl text-white/75"
+            className="mx-auto mt-5 max-w-xl text-white/85"
             style={{ fontSize: "16px", lineHeight: 1.7 }}
           >
             Talk to our processing team about tempered safety glass tailored to your specification.
@@ -498,8 +498,8 @@ function ToughingHeatStrengtheningPage() {
           <div className="mt-8 flex flex-wrap justify-center gap-4">
             <Link
               to="/"
-              className="rounded-md px-7 py-3 text-sm font-semibold text-white transition-opacity hover:opacity-90"
-              style={{ background: ACCENT, fontFamily: HEAD_FONT, letterSpacing: "0.05em" }}
+              className="rounded-md bg-white px-7 py-3 text-sm font-semibold transition-opacity hover:opacity-90"
+              style={{ color: ACCENT, fontFamily: HEAD_FONT, letterSpacing: "0.05em" }}
             >
               GET A QUOTE
             </Link>

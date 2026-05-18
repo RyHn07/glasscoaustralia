@@ -168,3 +168,40 @@
     opacity: 0;
   }
 }
+
+/* Homepage button animation */
+.btn-animate {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+.btn-animate:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px -8px rgba(0, 154, 170, 0.45);
+}
+.btn-animate:active {
+  transform: translateY(0);
+}
+.btn-animate::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+  transform: skewX(-20deg);
+  transition: left 0.7s ease;
+  pointer-events: none;
+}
+.btn-animate:hover::before {
+  left: 130%;
+}
+.btn-animate > * {
+  position: relative;
+  z-index: 1;
+  transition: transform 0.3s ease;
+}
+.btn-animate:hover svg {
+  transform: translateX(4px);
+}

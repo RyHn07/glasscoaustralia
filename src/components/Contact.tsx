@@ -64,7 +64,7 @@ export function Contact() {
             {/* Right buttons */}
             <div className="flex flex-col gap-4 lg:w-[240px]">
               <button
-                className="inline-flex items-center justify-center gap-2 rounded-md bg-white px-6 py-3.5 text-sm font-semibold transition-opacity hover:opacity-90"
+                className="btn-animate inline-flex items-center justify-center gap-2 rounded-md bg-white px-6 py-3.5 text-sm font-semibold hover:opacity-95"
                 style={{ color: "#009AAA", fontFamily: "Rajdhani, sans-serif" }}
               >
                 <MessageSquare className="h-4 w-4" />
@@ -72,7 +72,7 @@ export function Contact() {
                 <ChevronRight className="h-4 w-4" />
               </button>
               <button
-                className="inline-flex items-center justify-center gap-2 rounded-md border border-white/40 px-6 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-white/10"
+                className="btn-animate inline-flex items-center justify-center gap-2 rounded-md border border-white/40 px-6 py-3.5 text-sm font-semibold text-white hover:bg-white/10"
                 style={{ fontFamily: "Rajdhani, sans-serif" }}
               >
                 <Phone className="h-4 w-4" />

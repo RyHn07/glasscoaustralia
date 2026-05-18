@@ -119,13 +119,13 @@ export function Hero() {
           {/* CTAs */}
           <div className="mt-10 flex flex-wrap gap-4">
             <button
-              className="rounded-md px-7 py-4 text-sm font-semibold text-white transition-opacity hover:opacity-90"
+              className="btn-animate rounded-md px-7 py-4 text-sm font-semibold text-white hover:opacity-95"
               style={{ backgroundColor: "#009AAA", fontFamily: "Rajdhani, sans-serif" }}
             >
               Get a Free Quote  ›
             </button>
             <button
-              className="rounded-md border border-foreground/30 bg-background/40 px-7 py-4 text-sm font-semibold text-foreground backdrop-blur transition-colors hover:bg-background/60"
+              className="btn-animate rounded-md border border-foreground/30 bg-background/40 px-7 py-4 text-sm font-semibold text-foreground backdrop-blur hover:bg-background/60"
               style={{ fontFamily: "Rajdhani, sans-serif" }}
             >
               View Products

@@ -89,14 +89,14 @@ export function Footer() {
             </h3>
             <ul className="space-y-3">
               {quickLinks.map((l) => (
-                <li key={l}>
-                  <a
-                    href="#"
+                <li key={l.to}>
+                  <Link
+                    to={l.to}
                     className="text-white/70 transition-colors hover:text-white"
                     style={{ fontFamily: "Poppins, sans-serif", fontSize: "14px" }}
                   >
-                    {l}
-                  </a>
+                    {l.label}
+                  </Link>
                 </li>
               ))}
             </ul>

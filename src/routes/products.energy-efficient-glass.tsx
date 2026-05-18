@@ -218,12 +218,12 @@ const variants: Variant[] = [
 ];
 
 const bestApplications = [
-  "Residential homes and sliding doors",
-  "Apartment developments",
-  "Commercial facades and shopfronts",
-  "Office buildings and schools",
-  "Healthcare facilities and hotels",
-  "Sustainable building and retrofit projects",
+  { label: "Residential homes and sliding doors", icon: Home },
+  { label: "Apartment developments", icon: Building2 },
+  { label: "Commercial facades and shopfronts", icon: Store },
+  { label: "Office buildings and schools", icon: GraduationCap },
+  { label: "Healthcare facilities and hotels", icon: Hotel },
+  { label: "Sustainable building and retrofit projects", icon: Leaf },
 ];
 
 const faqs = [

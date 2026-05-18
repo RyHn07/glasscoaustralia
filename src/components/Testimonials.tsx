@@ -84,63 +84,110 @@ export function Testimonials() {
         {/* Cards */}
         <div className="mt-14 grid grid-cols-1 gap-6 md:grid-cols-2">
           {testimonials.map((t) => (
-            <article
-              key={t.name}
-              className="testimonial-card group flex flex-col rounded-2xl border border-neutral-200 bg-white p-8"
-            >
-              {/* Stars */}
-              <div className="flex items-center gap-1">
-                {Array.from({ length: 5 }).map((_, i) => (
-                  <Star key={i} className="h-4 w-4" fill="#009AAA" stroke="#009AAA" />
-                ))}
-              </div>
-
-              {/* Quote */}
-              <p
-                className="mt-5 pb-10 italic text-neutral-700"
-                style={{ fontFamily: "Poppins, sans-serif", fontSize: "15px", lineHeight: 1.7 }}
-              >
-                "{t.quote}"
-              </p>
-
-              {/* Divider */}
-              <div className="mb-10 mt-auto h-px w-full bg-neutral-200" />
-
-              {/* Author */}
-              <div className="flex items-center gap-4">
-                <img
-                  src={t.avatar}
-                  alt={t.name}
-                  loading="lazy"
-                  width={48}
-                  height={48}
-                  className="h-12 w-12 rounded-full object-cover transition-transform duration-500 group-hover:scale-110"
-                />
-                <div>
-                  <div
-                    style={{
-                      fontFamily: "Rajdhani, sans-serif",
-                      fontSize: "16px",
-                      fontWeight: 700,
-                      color: "#0a0a0a",
-                    }}
-                  >
-                    {t.name}
+            <div key={t.name} className="testimonial-card" style={{ minHeight: 360 }}>
+              <div className="testimonial-card-inner" style={{ minHeight: 360 }}>
+                {/* Front */}
+                <article className="testimonial-face flex flex-col rounded-2xl border border-neutral-200 bg-white p-8">
+                  <div className="flex items-center gap-1">
+                    {Array.from({ length: 5 }).map((_, i) => (
+                      <Star key={i} className="h-4 w-4" fill="#009AAA" stroke="#009AAA" />
+                    ))}
                   </div>
-                  <div
-                    style={{
-                      fontFamily: "Rajdhani, sans-serif",
-                      fontSize: "12px",
-                      fontWeight: 600,
-                      letterSpacing: "0.15em",
-                      color: "#737373",
-                    }}
+                  <p
+                    className="mt-5 pb-10 italic text-neutral-700"
+                    style={{ fontFamily: "Poppins, sans-serif", fontSize: "15px", lineHeight: 1.7 }}
                   >
-                    {t.role}
+                    "{t.quote}"
+                  </p>
+                  <div className="mb-10 mt-auto h-px w-full bg-neutral-200" />
+                  <div className="flex items-center gap-4">
+                    <img
+                      src={t.avatar}
+                      alt={t.name}
+                      loading="lazy"
+                      width={48}
+                      height={48}
+                      className="h-12 w-12 rounded-full object-cover"
+                    />
+                    <div>
+                      <div
+                        style={{
+                          fontFamily: "Rajdhani, sans-serif",
+                          fontSize: "16px",
+                          fontWeight: 700,
+                          color: "#0a0a0a",
+                        }}
+                      >
+                        {t.name}
+                      </div>
+                      <div
+                        style={{
+                          fontFamily: "Rajdhani, sans-serif",
+                          fontSize: "12px",
+                          fontWeight: 600,
+                          letterSpacing: "0.15em",
+                          color: "#737373",
+                        }}
+                      >
+                        {t.role}
+                      </div>
+                    </div>
                   </div>
-                </div>
+                </article>
+
+                {/* Back */}
+                <article
+                  className="testimonial-face testimonial-face-back flex flex-col justify-between rounded-2xl p-8 text-white"
+                  style={{ background: "linear-gradient(135deg, #009AAA 0%, #00747F 100%)" }}
+                >
+                  <div>
+                    <div className="flex items-center gap-1">
+                      {Array.from({ length: 5 }).map((_, i) => (
+                        <Star key={i} className="h-4 w-4" fill="#ffffff" stroke="#ffffff" />
+                      ))}
+                    </div>
+                    <p
+                      className="mt-5 italic"
+                      style={{ fontFamily: "Poppins, sans-serif", fontSize: "16px", lineHeight: 1.7 }}
+                    >
+                      "{t.quote}"
+                    </p>
+                  </div>
+                  <div className="flex items-center gap-4">
+                    <img
+                      src={t.avatar}
+                      alt={t.name}
+                      loading="lazy"
+                      width={56}
+                      height={56}
+                      className="h-14 w-14 rounded-full object-cover ring-2 ring-white/60"
+                    />
+                    <div>
+                      <div
+                        style={{
+                          fontFamily: "Rajdhani, sans-serif",
+                          fontSize: "18px",
+                          fontWeight: 700,
+                        }}
+                      >
+                        {t.name}
+                      </div>
+                      <div
+                        style={{
+                          fontFamily: "Rajdhani, sans-serif",
+                          fontSize: "12px",
+                          fontWeight: 600,
+                          letterSpacing: "0.15em",
+                          color: "rgba(255,255,255,0.85)",
+                        }}
+                      >
+                        {t.role}
+                      </div>
+                    </div>
+                  </div>
+                </article>
               </div>
-            </article>
+            </div>
           ))}
         </div>
       </div>

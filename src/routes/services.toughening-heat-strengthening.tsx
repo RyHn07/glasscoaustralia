@@ -412,7 +412,7 @@ function ToughingHeatStrengtheningPage() {
 
       {/* WHY CHOOSE TOUGHENED GLASS */}
       <section className="w-full bg-white py-24">
-        <div className="mx-auto max-w-[1080px] px-6">
+        <div className="mx-auto max-w-[1280px] px-6">
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:items-center">
             <div className="lg:col-span-5">
               <div className="mb-5 flex items-center gap-3">

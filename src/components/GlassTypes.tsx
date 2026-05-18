@@ -197,7 +197,7 @@ export function GlassTypes() {
             </p>
             <button
               onClick={downloadPdf}
-              className="inline-flex items-center gap-2 rounded-md px-5 py-3 text-white transition-opacity hover:opacity-90"
+              className="btn-animate inline-flex items-center gap-2 rounded-md px-5 py-3 text-white hover:opacity-95"
               style={{
                 backgroundColor: "#009AAA",
                 fontFamily: "Rajdhani, sans-serif",

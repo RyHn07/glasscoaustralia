@@ -89,7 +89,7 @@ export function Projects() {
         {/* CTA */}
         <div className="mt-12 flex justify-center">
           <button
-            className="inline-flex items-center gap-2 rounded-md bg-neutral-900 px-7 py-4 text-sm font-semibold text-white transition-opacity hover:opacity-90"
+            className="btn-animate inline-flex items-center gap-2 rounded-md bg-neutral-900 px-7 py-4 text-sm font-semibold text-white hover:opacity-95"
             style={{ fontFamily: "Rajdhani, sans-serif" }}
           >
             View All Projects

@@ -463,7 +463,7 @@ function IGUPage() {
           </div>
 
           {/* Long-form detail */}
-          <div className="mt-6 rounded-xl border border-neutral-200 bg-white p-7 shadow-sm transition-shadow hover:shadow-md">
+          <div className="mt-6 rounded-xl border border-neutral-200 bg-white p-7 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-neutral-300 hover:shadow-lg">
             <span
               className="flex h-12 w-12 items-center justify-center rounded-full"
               style={{ background: `${ACCENT}15` }}

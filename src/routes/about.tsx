@@ -230,7 +230,7 @@ function AboutPage() {
             {equipment.map((item, i) => (
               <li
                 key={item}
-                className="flex items-center gap-4 rounded-lg border border-neutral-200 bg-neutral-50 p-5"
+                className="flex items-center gap-4 rounded-lg border border-neutral-200 bg-neutral-50 p-5 transition-all duration-300 hover:-translate-y-1 hover:border-neutral-300 hover:shadow-lg"
               >
                 <span
                   className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full text-sm font-bold text-white"

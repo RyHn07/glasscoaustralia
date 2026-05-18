@@ -27,7 +27,6 @@ import logo from "@/assets/logo.svg";
 
 const quickLinks: { label: string; to: string }[] = [
   { label: "Home", to: "/" },
-  { label: "Services", to: "/services/glass-processing" },
   { label: "Products", to: "/products/energy-efficient-glass" },
   { label: "Projects", to: "/gallery" },
   { label: "About Us", to: "/about" },

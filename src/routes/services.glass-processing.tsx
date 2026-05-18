@@ -601,7 +601,7 @@ function GlassProcessingPage() {
                 loading="lazy"
                 width={1280}
                 height={896}
-                className="h-auto w-full rounded-lg object-cover shadow-lg"
+                className="h-auto w-full rounded-lg object-cover shadow-lg transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl"
               />
               <div
                 className="absolute -bottom-6 -right-6 rounded-lg px-7 py-5 text-center text-white shadow-xl"

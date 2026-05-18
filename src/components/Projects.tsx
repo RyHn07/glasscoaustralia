@@ -1,4 +1,5 @@
 import { ArrowUpRight } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 import officeImg from "@/assets/project-office.jpg";
 import coastalImg from "@/assets/project-coastal.jpg";
 import retailImg from "@/assets/project-retail.jpg";

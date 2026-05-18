@@ -110,10 +110,12 @@ export function Testimonials() {
               return (
                 <div
                   key={t.name}
+                  onClick={() => !isActive && emblaApi?.scrollTo(i)}
                   className="min-w-0 shrink-0 grow-0 basis-full px-3 transition-all duration-500 md:basis-1/2 lg:basis-1/3"
                   style={{
                     transform: isActive ? "scale(1)" : "scale(0.88)",
                     opacity: isActive ? 1 : 0.55,
+                    cursor: isActive ? "default" : "pointer",
                   }}
                 >
                   <article

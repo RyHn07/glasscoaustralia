@@ -48,19 +48,24 @@ export function Footer() {
               Australia's leading glass and glazing solutions provider, delivering excellence
               since 1993.
             </p>
-            <div className="mt-8 flex items-center gap-5 text-white/70">
-              <a href="#" aria-label="Facebook" className="transition-colors hover:text-white">
-                <Facebook className="h-4 w-4" />
-              </a>
-              <a href="#" aria-label="Instagram" className="transition-colors hover:text-white">
-                <Instagram className="h-4 w-4" />
-              </a>
-              <a href="#" aria-label="LinkedIn" className="transition-colors hover:text-white">
-                <Linkedin className="h-4 w-4" />
-              </a>
-              <a href="#" aria-label="Twitter" className="transition-colors hover:text-white">
-                <Twitter className="h-4 w-4" />
-              </a>
+            <div className="mt-8 flex items-center gap-3">
+              {socials.map((s) => (
+                <a
+                  key={s.label}
+                  href={s.href}
+                  aria-label={s.label}
+                  className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white/80 transition-all hover:-translate-y-0.5 hover:bg-[#009AAA] hover:text-white"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    className="h-[18px] w-[18px]"
+                    aria-hidden="true"
+                  >
+                    <path d={s.path} />
+                  </svg>
+                </a>
+              ))}
             </div>
           </div>
 

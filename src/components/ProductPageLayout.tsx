@@ -397,7 +397,7 @@ export function ProductPageLayout(props: ProductPageProps) {
       )}
 
       {/* CTA */}
-      <section className="w-full bg-neutral-900 py-20 text-white">
+      <section className="w-full py-20 text-white" style={{ backgroundColor: ACCENT }}>
         <div className="mx-auto max-w-[1080px] px-6 text-center">
           <h2
             style={{

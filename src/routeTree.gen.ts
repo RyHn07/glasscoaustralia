@@ -16,12 +16,17 @@ import { Route as ContactRouteImport } from './routes/contact'
 import { Route as CertificationsRouteImport } from './routes/certifications'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ProductsIndexRouteImport } from './routes/products.index'
 import { Route as ServicesTougheningHeatStrengtheningRouteImport } from './routes/services.toughening-heat-strengthening'
 import { Route as ServicesIguRouteImport } from './routes/services.igu'
 import { Route as ServicesGlassProcessingRouteImport } from './routes/services.glass-processing'
 import { Route as ServicesDigitalGlassPrintingRouteImport } from './routes/services.digital-glass-printing'
+import { Route as ProductsSecurityGlassAssaultShieldRouteImport } from './routes/products.security-glass-assault-shield'
+import { Route as ProductsLowIronGlassRouteImport } from './routes/products.low-iron-glass'
 import { Route as ProductsEnergyEfficientGlassRouteImport } from './routes/products.energy-efficient-glass'
 import { Route as ProductsDecorativeGlassRouteImport } from './routes/products.decorative-glass'
+import { Route as ProductsClearLaminatedGlassRouteImport } from './routes/products.clear-laminated-glass'
+import { Route as ProductsClearFloatGlassRouteImport } from './routes/products.clear-float-glass'
 import { Route as ProductsAutomotiveGlassRouteImport } from './routes/products.automotive-glass'
 import { Route as ProductsAcousticGlassRouteImport } from './routes/products.acoustic-glass'
 
@@ -60,6 +65,11 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ProductsIndexRoute = ProductsIndexRouteImport.update({
+  id: '/products/',
+  path: '/products/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ServicesTougheningHeatStrengtheningRoute =
   ServicesTougheningHeatStrengtheningRouteImport.update({
     id: '/services/toughening-heat-strengthening',
@@ -82,6 +92,17 @@ const ServicesDigitalGlassPrintingRoute =
     path: '/services/digital-glass-printing',
     getParentRoute: () => rootRouteImport,
   } as any)
+const ProductsSecurityGlassAssaultShieldRoute =
+  ProductsSecurityGlassAssaultShieldRouteImport.update({
+    id: '/products/security-glass-assault-shield',
+    path: '/products/security-glass-assault-shield',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ProductsLowIronGlassRoute = ProductsLowIronGlassRouteImport.update({
+  id: '/products/low-iron-glass',
+  path: '/products/low-iron-glass',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ProductsEnergyEfficientGlassRoute =
   ProductsEnergyEfficientGlassRouteImport.update({
     id: '/products/energy-efficient-glass',
@@ -91,6 +112,17 @@ const ProductsEnergyEfficientGlassRoute =
 const ProductsDecorativeGlassRoute = ProductsDecorativeGlassRouteImport.update({
   id: '/products/decorative-glass',
   path: '/products/decorative-glass',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProductsClearLaminatedGlassRoute =
+  ProductsClearLaminatedGlassRouteImport.update({
+    id: '/products/clear-laminated-glass',
+    path: '/products/clear-laminated-glass',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ProductsClearFloatGlassRoute = ProductsClearFloatGlassRouteImport.update({
+  id: '/products/clear-float-glass',
+  path: '/products/clear-float-glass',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ProductsAutomotiveGlassRoute = ProductsAutomotiveGlassRouteImport.update({
@@ -114,12 +146,17 @@ export interface FileRoutesByFullPath {
   '/terms': typeof TermsRoute
   '/products/acoustic-glass': typeof ProductsAcousticGlassRoute
   '/products/automotive-glass': typeof ProductsAutomotiveGlassRoute
+  '/products/clear-float-glass': typeof ProductsClearFloatGlassRoute
+  '/products/clear-laminated-glass': typeof ProductsClearLaminatedGlassRoute
   '/products/decorative-glass': typeof ProductsDecorativeGlassRoute
   '/products/energy-efficient-glass': typeof ProductsEnergyEfficientGlassRoute
+  '/products/low-iron-glass': typeof ProductsLowIronGlassRoute
+  '/products/security-glass-assault-shield': typeof ProductsSecurityGlassAssaultShieldRoute
   '/services/digital-glass-printing': typeof ServicesDigitalGlassPrintingRoute
   '/services/glass-processing': typeof ServicesGlassProcessingRoute
   '/services/igu': typeof ServicesIguRoute
   '/services/toughening-heat-strengthening': typeof ServicesTougheningHeatStrengtheningRoute
+  '/products/': typeof ProductsIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -131,12 +168,17 @@ export interface FileRoutesByTo {
   '/terms': typeof TermsRoute
   '/products/acoustic-glass': typeof ProductsAcousticGlassRoute
   '/products/automotive-glass': typeof ProductsAutomotiveGlassRoute
+  '/products/clear-float-glass': typeof ProductsClearFloatGlassRoute
+  '/products/clear-laminated-glass': typeof ProductsClearLaminatedGlassRoute
   '/products/decorative-glass': typeof ProductsDecorativeGlassRoute
   '/products/energy-efficient-glass': typeof ProductsEnergyEfficientGlassRoute
+  '/products/low-iron-glass': typeof ProductsLowIronGlassRoute
+  '/products/security-glass-assault-shield': typeof ProductsSecurityGlassAssaultShieldRoute
   '/services/digital-glass-printing': typeof ServicesDigitalGlassPrintingRoute
   '/services/glass-processing': typeof ServicesGlassProcessingRoute
   '/services/igu': typeof ServicesIguRoute
   '/services/toughening-heat-strengthening': typeof ServicesTougheningHeatStrengtheningRoute
+  '/products': typeof ProductsIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -149,12 +191,17 @@ export interface FileRoutesById {
   '/terms': typeof TermsRoute
   '/products/acoustic-glass': typeof ProductsAcousticGlassRoute
   '/products/automotive-glass': typeof ProductsAutomotiveGlassRoute
+  '/products/clear-float-glass': typeof ProductsClearFloatGlassRoute
+  '/products/clear-laminated-glass': typeof ProductsClearLaminatedGlassRoute
   '/products/decorative-glass': typeof ProductsDecorativeGlassRoute
   '/products/energy-efficient-glass': typeof ProductsEnergyEfficientGlassRoute
+  '/products/low-iron-glass': typeof ProductsLowIronGlassRoute
+  '/products/security-glass-assault-shield': typeof ProductsSecurityGlassAssaultShieldRoute
   '/services/digital-glass-printing': typeof ServicesDigitalGlassPrintingRoute
   '/services/glass-processing': typeof ServicesGlassProcessingRoute
   '/services/igu': typeof ServicesIguRoute
   '/services/toughening-heat-strengthening': typeof ServicesTougheningHeatStrengtheningRoute
+  '/products/': typeof ProductsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -168,12 +215,17 @@ export interface FileRouteTypes {
     | '/terms'
     | '/products/acoustic-glass'
     | '/products/automotive-glass'
+    | '/products/clear-float-glass'
+    | '/products/clear-laminated-glass'
     | '/products/decorative-glass'
     | '/products/energy-efficient-glass'
+    | '/products/low-iron-glass'
+    | '/products/security-glass-assault-shield'
     | '/services/digital-glass-printing'
     | '/services/glass-processing'
     | '/services/igu'
     | '/services/toughening-heat-strengthening'
+    | '/products/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -185,12 +237,17 @@ export interface FileRouteTypes {
     | '/terms'
     | '/products/acoustic-glass'
     | '/products/automotive-glass'
+    | '/products/clear-float-glass'
+    | '/products/clear-laminated-glass'
     | '/products/decorative-glass'
     | '/products/energy-efficient-glass'
+    | '/products/low-iron-glass'
+    | '/products/security-glass-assault-shield'
     | '/services/digital-glass-printing'
     | '/services/glass-processing'
     | '/services/igu'
     | '/services/toughening-heat-strengthening'
+    | '/products'
   id:
     | '__root__'
     | '/'
@@ -202,12 +259,17 @@ export interface FileRouteTypes {
     | '/terms'
     | '/products/acoustic-glass'
     | '/products/automotive-glass'
+    | '/products/clear-float-glass'
+    | '/products/clear-laminated-glass'
     | '/products/decorative-glass'
     | '/products/energy-efficient-glass'
+    | '/products/low-iron-glass'
+    | '/products/security-glass-assault-shield'
     | '/services/digital-glass-printing'
     | '/services/glass-processing'
     | '/services/igu'
     | '/services/toughening-heat-strengthening'
+    | '/products/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -220,12 +282,17 @@ export interface RootRouteChildren {
   TermsRoute: typeof TermsRoute
   ProductsAcousticGlassRoute: typeof ProductsAcousticGlassRoute
   ProductsAutomotiveGlassRoute: typeof ProductsAutomotiveGlassRoute
+  ProductsClearFloatGlassRoute: typeof ProductsClearFloatGlassRoute
+  ProductsClearLaminatedGlassRoute: typeof ProductsClearLaminatedGlassRoute
   ProductsDecorativeGlassRoute: typeof ProductsDecorativeGlassRoute
   ProductsEnergyEfficientGlassRoute: typeof ProductsEnergyEfficientGlassRoute
+  ProductsLowIronGlassRoute: typeof ProductsLowIronGlassRoute
+  ProductsSecurityGlassAssaultShieldRoute: typeof ProductsSecurityGlassAssaultShieldRoute
   ServicesDigitalGlassPrintingRoute: typeof ServicesDigitalGlassPrintingRoute
   ServicesGlassProcessingRoute: typeof ServicesGlassProcessingRoute
   ServicesIguRoute: typeof ServicesIguRoute
   ServicesTougheningHeatStrengtheningRoute: typeof ServicesTougheningHeatStrengtheningRoute
+  ProductsIndexRoute: typeof ProductsIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -279,6 +346,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/products/': {
+      id: '/products/'
+      path: '/products'
+      fullPath: '/products/'
+      preLoaderRoute: typeof ProductsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/services/toughening-heat-strengthening': {
       id: '/services/toughening-heat-strengthening'
       path: '/services/toughening-heat-strengthening'
@@ -307,6 +381,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ServicesDigitalGlassPrintingRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/products/security-glass-assault-shield': {
+      id: '/products/security-glass-assault-shield'
+      path: '/products/security-glass-assault-shield'
+      fullPath: '/products/security-glass-assault-shield'
+      preLoaderRoute: typeof ProductsSecurityGlassAssaultShieldRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/products/low-iron-glass': {
+      id: '/products/low-iron-glass'
+      path: '/products/low-iron-glass'
+      fullPath: '/products/low-iron-glass'
+      preLoaderRoute: typeof ProductsLowIronGlassRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/products/energy-efficient-glass': {
       id: '/products/energy-efficient-glass'
       path: '/products/energy-efficient-glass'
@@ -319,6 +407,20 @@ declare module '@tanstack/react-router' {
       path: '/products/decorative-glass'
       fullPath: '/products/decorative-glass'
       preLoaderRoute: typeof ProductsDecorativeGlassRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/products/clear-laminated-glass': {
+      id: '/products/clear-laminated-glass'
+      path: '/products/clear-laminated-glass'
+      fullPath: '/products/clear-laminated-glass'
+      preLoaderRoute: typeof ProductsClearLaminatedGlassRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/products/clear-float-glass': {
+      id: '/products/clear-float-glass'
+      path: '/products/clear-float-glass'
+      fullPath: '/products/clear-float-glass'
+      preLoaderRoute: typeof ProductsClearFloatGlassRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/products/automotive-glass': {
@@ -348,13 +450,19 @@ const rootRouteChildren: RootRouteChildren = {
   TermsRoute: TermsRoute,
   ProductsAcousticGlassRoute: ProductsAcousticGlassRoute,
   ProductsAutomotiveGlassRoute: ProductsAutomotiveGlassRoute,
+  ProductsClearFloatGlassRoute: ProductsClearFloatGlassRoute,
+  ProductsClearLaminatedGlassRoute: ProductsClearLaminatedGlassRoute,
   ProductsDecorativeGlassRoute: ProductsDecorativeGlassRoute,
   ProductsEnergyEfficientGlassRoute: ProductsEnergyEfficientGlassRoute,
+  ProductsLowIronGlassRoute: ProductsLowIronGlassRoute,
+  ProductsSecurityGlassAssaultShieldRoute:
+    ProductsSecurityGlassAssaultShieldRoute,
   ServicesDigitalGlassPrintingRoute: ServicesDigitalGlassPrintingRoute,
   ServicesGlassProcessingRoute: ServicesGlassProcessingRoute,
   ServicesIguRoute: ServicesIguRoute,
   ServicesTougheningHeatStrengtheningRoute:
     ServicesTougheningHeatStrengtheningRoute,
+  ProductsIndexRoute: ProductsIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

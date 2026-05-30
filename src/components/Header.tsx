@@ -7,6 +7,10 @@ type ProductItem = {
   label: string;
   description: string;
   to:
+    | "/products/clear-float-glass"
+    | "/products/clear-laminated-glass"
+    | "/products/low-iron-glass"
+    | "/products/security-glass-assault-shield"
     | "/products/acoustic-glass"
     | "/products/decorative-glass"
     | "/products/energy-efficient-glass"
@@ -15,6 +19,26 @@ type ProductItem = {
 };
 
 const productItems: ProductItem[] = [
+  {
+    label: "Clear Float Glass",
+    description: "Premium architectural float glass",
+    to: "/products/clear-float-glass",
+  },
+  {
+    label: "Clear Laminated Glass",
+    description: "PVB-laminated safety glass",
+    to: "/products/clear-laminated-glass",
+  },
+  {
+    label: "Low Iron Glass",
+    description: "Ultra clear, true-colour glass",
+    to: "/products/low-iron-glass",
+  },
+  {
+    label: "Security Glass — Assault Shield 14.25 SGP",
+    description: "Forced-entry resistant SGP laminated glass",
+    to: "/products/security-glass-assault-shield",
+  },
   {
     label: "Acoustic Glass",
     description: "Noise reduction for quieter interiors",
@@ -216,6 +240,14 @@ export function Header() {
                 <div
                   className="w-[360px] overflow-hidden rounded-xl border border-neutral-200/80 bg-white p-2 shadow-[0_20px_50px_-12px_rgba(0,0,0,0.18)] ring-1 ring-black/5 animate-in fade-in-0 zoom-in-95 slide-in-from-top-2 duration-150"
                 >
+                  <Link
+                    to="/products"
+                    onClick={() => setProductsOpen(false)}
+                    className="mb-1 block rounded-lg bg-[#009AAA]/5 px-3 py-2.5 text-sm font-semibold text-[#009AAA] transition-all hover:bg-[#009AAA]/10"
+                  >
+                    View all products →
+                  </Link>
+                  <div className="my-1 h-px bg-neutral-100" />
                   {productItems.map((item, idx) => (
                     <div key={item.to}>
                       {idx > 0 && <div className="my-1 h-px bg-neutral-100" />}

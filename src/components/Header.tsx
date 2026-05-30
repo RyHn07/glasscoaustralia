@@ -9,7 +9,8 @@ type ProductItem = {
   to:
     | "/products/acoustic-glass"
     | "/products/decorative-glass"
-    | "/products/energy-efficient-glass";
+    | "/products/energy-efficient-glass"
+    | "/products/automotive-glass";
   children?: { label: string; hash: string }[];
 };
 
@@ -33,6 +34,11 @@ const productItems: ProductItem[] = [
       { label: "Evantage — Reflective Low‑E", hash: "evantage" },
       { label: "Luxeco (Soft Coat Low‑E)", hash: "luxeco" },
     ],
+  },
+  {
+    label: "Automotive Glass",
+    description: "Laminated safety & toughened printed automotive glass",
+    to: "/products/automotive-glass",
   },
 ];
 

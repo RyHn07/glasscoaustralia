@@ -22,6 +22,7 @@ import { Route as ServicesGlassProcessingRouteImport } from './routes/services.g
 import { Route as ServicesDigitalGlassPrintingRouteImport } from './routes/services.digital-glass-printing'
 import { Route as ProductsEnergyEfficientGlassRouteImport } from './routes/products.energy-efficient-glass'
 import { Route as ProductsDecorativeGlassRouteImport } from './routes/products.decorative-glass'
+import { Route as ProductsAutomotiveGlassRouteImport } from './routes/products.automotive-glass'
 import { Route as ProductsAcousticGlassRouteImport } from './routes/products.acoustic-glass'
 
 const TermsRoute = TermsRouteImport.update({
@@ -92,6 +93,11 @@ const ProductsDecorativeGlassRoute = ProductsDecorativeGlassRouteImport.update({
   path: '/products/decorative-glass',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ProductsAutomotiveGlassRoute = ProductsAutomotiveGlassRouteImport.update({
+  id: '/products/automotive-glass',
+  path: '/products/automotive-glass',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ProductsAcousticGlassRoute = ProductsAcousticGlassRouteImport.update({
   id: '/products/acoustic-glass',
   path: '/products/acoustic-glass',
@@ -107,6 +113,7 @@ export interface FileRoutesByFullPath {
   '/quote': typeof QuoteRoute
   '/terms': typeof TermsRoute
   '/products/acoustic-glass': typeof ProductsAcousticGlassRoute
+  '/products/automotive-glass': typeof ProductsAutomotiveGlassRoute
   '/products/decorative-glass': typeof ProductsDecorativeGlassRoute
   '/products/energy-efficient-glass': typeof ProductsEnergyEfficientGlassRoute
   '/services/digital-glass-printing': typeof ServicesDigitalGlassPrintingRoute
@@ -123,6 +130,7 @@ export interface FileRoutesByTo {
   '/quote': typeof QuoteRoute
   '/terms': typeof TermsRoute
   '/products/acoustic-glass': typeof ProductsAcousticGlassRoute
+  '/products/automotive-glass': typeof ProductsAutomotiveGlassRoute
   '/products/decorative-glass': typeof ProductsDecorativeGlassRoute
   '/products/energy-efficient-glass': typeof ProductsEnergyEfficientGlassRoute
   '/services/digital-glass-printing': typeof ServicesDigitalGlassPrintingRoute
@@ -140,6 +148,7 @@ export interface FileRoutesById {
   '/quote': typeof QuoteRoute
   '/terms': typeof TermsRoute
   '/products/acoustic-glass': typeof ProductsAcousticGlassRoute
+  '/products/automotive-glass': typeof ProductsAutomotiveGlassRoute
   '/products/decorative-glass': typeof ProductsDecorativeGlassRoute
   '/products/energy-efficient-glass': typeof ProductsEnergyEfficientGlassRoute
   '/services/digital-glass-printing': typeof ServicesDigitalGlassPrintingRoute
@@ -158,6 +167,7 @@ export interface FileRouteTypes {
     | '/quote'
     | '/terms'
     | '/products/acoustic-glass'
+    | '/products/automotive-glass'
     | '/products/decorative-glass'
     | '/products/energy-efficient-glass'
     | '/services/digital-glass-printing'
@@ -174,6 +184,7 @@ export interface FileRouteTypes {
     | '/quote'
     | '/terms'
     | '/products/acoustic-glass'
+    | '/products/automotive-glass'
     | '/products/decorative-glass'
     | '/products/energy-efficient-glass'
     | '/services/digital-glass-printing'
@@ -190,6 +201,7 @@ export interface FileRouteTypes {
     | '/quote'
     | '/terms'
     | '/products/acoustic-glass'
+    | '/products/automotive-glass'
     | '/products/decorative-glass'
     | '/products/energy-efficient-glass'
     | '/services/digital-glass-printing'
@@ -207,6 +219,7 @@ export interface RootRouteChildren {
   QuoteRoute: typeof QuoteRoute
   TermsRoute: typeof TermsRoute
   ProductsAcousticGlassRoute: typeof ProductsAcousticGlassRoute
+  ProductsAutomotiveGlassRoute: typeof ProductsAutomotiveGlassRoute
   ProductsDecorativeGlassRoute: typeof ProductsDecorativeGlassRoute
   ProductsEnergyEfficientGlassRoute: typeof ProductsEnergyEfficientGlassRoute
   ServicesDigitalGlassPrintingRoute: typeof ServicesDigitalGlassPrintingRoute
@@ -308,6 +321,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProductsDecorativeGlassRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/products/automotive-glass': {
+      id: '/products/automotive-glass'
+      path: '/products/automotive-glass'
+      fullPath: '/products/automotive-glass'
+      preLoaderRoute: typeof ProductsAutomotiveGlassRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/products/acoustic-glass': {
       id: '/products/acoustic-glass'
       path: '/products/acoustic-glass'
@@ -327,6 +347,7 @@ const rootRouteChildren: RootRouteChildren = {
   QuoteRoute: QuoteRoute,
   TermsRoute: TermsRoute,
   ProductsAcousticGlassRoute: ProductsAcousticGlassRoute,
+  ProductsAutomotiveGlassRoute: ProductsAutomotiveGlassRoute,
   ProductsDecorativeGlassRoute: ProductsDecorativeGlassRoute,
   ProductsEnergyEfficientGlassRoute: ProductsEnergyEfficientGlassRoute,
   ServicesDigitalGlassPrintingRoute: ServicesDigitalGlassPrintingRoute,

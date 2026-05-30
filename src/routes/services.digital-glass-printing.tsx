@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { ProductPageLayout } from "@/components/ProductPageLayout";
 import heroImage from "@/assets/product-printing.jpg";
 
-export const Route = createFileRoute("/products/digital-glass-printing")({
+export const Route = createFileRoute("/services/digital-glass-printing")({
   head: () => ({
     meta: [
       { title: "Digital Glass Printing — Dip-Tech GPi Ceramic Printer | GlassCo Australia" },

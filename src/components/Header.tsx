@@ -9,8 +9,7 @@ type ProductItem = {
   to:
     | "/products/acoustic-glass"
     | "/products/decorative-glass"
-    | "/products/energy-efficient-glass"
-    | "/products/digital-glass-printing";
+    | "/products/energy-efficient-glass";
   children?: { label: string; hash: string }[];
 };
 
@@ -35,17 +34,16 @@ const productItems: ProductItem[] = [
       { label: "Luxeco (Soft Coat Low‑E)", hash: "luxeco" },
     ],
   },
-  {
-    label: "Digital Glass Printing",
-    description: "Ceramic frit printed glass for design & facades",
-    to: "/products/digital-glass-printing",
-  },
 ];
 
 type ServiceItem = {
   label: string;
   description: string;
-  to: "/services/toughening-heat-strengthening" | "/services/igu" | "/services/glass-processing";
+  to:
+    | "/services/toughening-heat-strengthening"
+    | "/services/igu"
+    | "/services/glass-processing"
+    | "/services/digital-glass-printing";
   hash?: string;
   children?: { label: string; hash: string }[];
 };
@@ -70,6 +68,11 @@ const serviceItems: ServiceItem[] = [
       { label: "TECHNI Intec Waterjet", hash: "waterjet" },
       { label: "Bimatech Techno Edge", hash: "bimatech" },
     ],
+  },
+  {
+    label: "Digital Glass Printing",
+    description: "Ceramic frit printed glass for design & facades",
+    to: "/services/digital-glass-printing",
   },
 ];
 

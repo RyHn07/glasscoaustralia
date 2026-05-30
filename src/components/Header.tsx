@@ -35,6 +35,11 @@ const productItems: ProductItem[] = [
       { label: "Luxeco (Soft Coat Low‑E)", hash: "luxeco" },
     ],
   },
+  {
+    label: "Digital Glass Printing",
+    description: "Ceramic frit printed glass for design & facades",
+    to: "/products/digital-glass-printing",
+  },
 ];
 
 type ServiceItem = {

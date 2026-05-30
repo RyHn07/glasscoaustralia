@@ -7,6 +7,10 @@ type ProductItem = {
   label: string;
   description: string;
   to:
+    | "/products/clear-float-glass"
+    | "/products/clear-laminated-glass"
+    | "/products/low-iron-glass"
+    | "/products/security-glass-assault-shield"
     | "/products/acoustic-glass"
     | "/products/decorative-glass"
     | "/products/energy-efficient-glass"
@@ -15,6 +19,26 @@ type ProductItem = {
 };
 
 const productItems: ProductItem[] = [
+  {
+    label: "Clear Float Glass",
+    description: "Premium architectural float glass",
+    to: "/products/clear-float-glass",
+  },
+  {
+    label: "Clear Laminated Glass",
+    description: "PVB-laminated safety glass",
+    to: "/products/clear-laminated-glass",
+  },
+  {
+    label: "Low Iron Glass",
+    description: "Ultra clear, true-colour glass",
+    to: "/products/low-iron-glass",
+  },
+  {
+    label: "Security Glass — Assault Shield 14.25 SGP",
+    description: "Forced-entry resistant SGP laminated glass",
+    to: "/products/security-glass-assault-shield",
+  },
   {
     label: "Acoustic Glass",
     description: "Noise reduction for quieter interiors",

@@ -155,7 +155,6 @@ export function Header() {
                           </div>
                           <span className="text-[#009AAA] opacity-0 transition-all -translate-x-1 group-hover/item:opacity-100 group-hover/item:translate-x-0 text-base">→</span>
                         </div>
-                        <div className="mt-1 text-sm leading-relaxed text-neutral-500">{item.description}</div>
                       </Link>
                       {item.children && (
                         <div className="ml-4 mb-1 mt-0.5 border-l-2 border-[#009AAA]/20 pl-2">

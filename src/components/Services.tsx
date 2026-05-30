@@ -21,11 +21,6 @@ const services = [
     title: "Safety Glass",
     desc: "Certified toughened and laminated glass solutions for maximum safety and code compliance in any application.",
   },
-  {
-    icon: Shield,
-    title: "Glass Repairs",
-    desc: "Professional repair and restoration services for damaged glass with quick turnaround times.",
-  },
 ];
 
 export function Services() {

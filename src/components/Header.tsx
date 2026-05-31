@@ -19,26 +19,7 @@ type ProductItem = {
 };
 
 const productItems: ProductItem[] = [
-  {
-    label: "Clear Float Glass",
-    description: "Premium architectural float glass",
-    to: "/products/clear-float-glass",
-  },
-  {
-    label: "Clear Laminated Glass",
-    description: "PVB-laminated safety glass",
-    to: "/products/clear-laminated-glass",
-  },
-  {
-    label: "Low Iron Glass",
-    description: "Ultra clear, true-colour glass",
-    to: "/products/low-iron-glass",
-  },
-  {
-    label: "Security Glass — Assault Shield 14.25 SGP",
-    description: "Forced-entry resistant SGP laminated glass",
-    to: "/products/security-glass-assault-shield",
-  },
+
   {
     label: "Acoustic Glass",
     description: "Noise reduction for quieter interiors",
@@ -222,9 +203,8 @@ export function Header() {
             onMouseEnter={() => setProductsOpen(true)}
             onMouseLeave={() => setProductsOpen(false)}
           >
-            <button
-              type="button"
-              onClick={() => setProductsOpen((v) => !v)}
+            <Link
+              to="/products"
               className="flex items-center gap-1 text-[15px] font-medium text-black/70 transition-colors hover:text-black"
               aria-expanded={productsOpen}
               aria-haspopup="true"
@@ -233,7 +213,8 @@ export function Header() {
               <ChevronDown
                 className={`h-3.5 w-3.5 transition-transform ${productsOpen ? "rotate-180" : ""}`}
               />
-            </button>
+            </Link>
+
 
             {productsOpen && (
               <div className="absolute left-1/2 top-full z-50 -translate-x-1/2 pt-3">

@@ -221,14 +221,6 @@ export function Header() {
                 <div
                   className="w-[360px] overflow-hidden rounded-xl border border-neutral-200/80 bg-white p-2 shadow-[0_20px_50px_-12px_rgba(0,0,0,0.18)] ring-1 ring-black/5 animate-in fade-in-0 zoom-in-95 slide-in-from-top-2 duration-150"
                 >
-                  <Link
-                    to="/products"
-                    onClick={() => setProductsOpen(false)}
-                    className="mb-1 block rounded-lg bg-[#009AAA]/5 px-3 py-2.5 text-sm font-semibold text-[#009AAA] transition-all hover:bg-[#009AAA]/10"
-                  >
-                    View all products →
-                  </Link>
-                  <div className="my-1 h-px bg-neutral-100" />
                   {productItems.map((item, idx) => (
                     <div key={item.to}>
                       {idx > 0 && <div className="my-1 h-px bg-neutral-100" />}
@@ -262,6 +254,15 @@ export function Header() {
                       )}
                     </div>
                   ))}
+                  <div className="my-1 h-px bg-neutral-100" />
+                  <Link
+                    to="/products"
+                    onClick={() => setProductsOpen(false)}
+                    className="mt-1 block rounded-lg bg-[#009AAA]/5 px-3 py-2.5 text-sm font-semibold text-[#009AAA] transition-all hover:bg-[#009AAA]/10"
+                  >
+                    View all products →
+                  </Link>
+
                 </div>
               </div>
             )}

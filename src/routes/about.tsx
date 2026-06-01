@@ -4,7 +4,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import heroImg from "@/assets/about-hero.jpg";
 import manufacturingImg from "@/assets/about-manufacturing.jpg";
-import teamImg from "@/assets/about-team.jpg";
+import companyImg from "@/assets/about-company.jpg";
 import printingImg from "@/assets/about-printing.jpg";
 import environmentImg from "@/assets/about-environment.jpg";
 

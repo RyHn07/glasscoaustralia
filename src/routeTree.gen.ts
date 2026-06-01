@@ -16,6 +16,7 @@ import { Route as ContactRouteImport } from './routes/contact'
 import { Route as CertificationsRouteImport } from './routes/certifications'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ServicesIndexRouteImport } from './routes/services.index'
 import { Route as ProductsIndexRouteImport } from './routes/products.index'
 import { Route as ServicesTougheningHeatStrengtheningRouteImport } from './routes/services.toughening-heat-strengthening'
 import { Route as ServicesIguRouteImport } from './routes/services.igu'
@@ -63,6 +64,11 @@ const AboutRoute = AboutRouteImport.update({
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesIndexRoute = ServicesIndexRouteImport.update({
+  id: '/services/',
+  path: '/services/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ProductsIndexRoute = ProductsIndexRouteImport.update({
@@ -157,6 +163,7 @@ export interface FileRoutesByFullPath {
   '/services/igu': typeof ServicesIguRoute
   '/services/toughening-heat-strengthening': typeof ServicesTougheningHeatStrengtheningRoute
   '/products/': typeof ProductsIndexRoute
+  '/services/': typeof ServicesIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -179,6 +186,7 @@ export interface FileRoutesByTo {
   '/services/igu': typeof ServicesIguRoute
   '/services/toughening-heat-strengthening': typeof ServicesTougheningHeatStrengtheningRoute
   '/products': typeof ProductsIndexRoute
+  '/services': typeof ServicesIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -202,6 +210,7 @@ export interface FileRoutesById {
   '/services/igu': typeof ServicesIguRoute
   '/services/toughening-heat-strengthening': typeof ServicesTougheningHeatStrengtheningRoute
   '/products/': typeof ProductsIndexRoute
+  '/services/': typeof ServicesIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -226,6 +235,7 @@ export interface FileRouteTypes {
     | '/services/igu'
     | '/services/toughening-heat-strengthening'
     | '/products/'
+    | '/services/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -248,6 +258,7 @@ export interface FileRouteTypes {
     | '/services/igu'
     | '/services/toughening-heat-strengthening'
     | '/products'
+    | '/services'
   id:
     | '__root__'
     | '/'
@@ -270,6 +281,7 @@ export interface FileRouteTypes {
     | '/services/igu'
     | '/services/toughening-heat-strengthening'
     | '/products/'
+    | '/services/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -293,6 +305,7 @@ export interface RootRouteChildren {
   ServicesIguRoute: typeof ServicesIguRoute
   ServicesTougheningHeatStrengtheningRoute: typeof ServicesTougheningHeatStrengtheningRoute
   ProductsIndexRoute: typeof ProductsIndexRoute
+  ServicesIndexRoute: typeof ServicesIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -344,6 +357,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/': {
+      id: '/services/'
+      path: '/services'
+      fullPath: '/services/'
+      preLoaderRoute: typeof ServicesIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/products/': {
@@ -463,6 +483,7 @@ const rootRouteChildren: RootRouteChildren = {
   ServicesTougheningHeatStrengtheningRoute:
     ServicesTougheningHeatStrengtheningRoute,
   ProductsIndexRoute: ProductsIndexRoute,
+  ServicesIndexRoute: ServicesIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

@@ -102,8 +102,16 @@ function ToughingHeatStrengtheningPage() {
         </div>
       </section>
 
-      {/* OVERVIEW — WhoWeAre style */}
-      <section className="w-full bg-white py-24">
+      {/* OVERVIEW — TOUGHENING (Part 01) */}
+      <section id="toughening" className="w-full bg-white py-24 scroll-mt-24">
+        <div className="mx-auto max-w-[1280px] px-6">
+          <div className="mb-10 flex items-center gap-3">
+            <span className="block" style={{ width: "32px", height: "1px", backgroundColor: ACCENT }} />
+            <span style={{ fontFamily: HEAD_FONT, fontSize: "14px", fontWeight: 700, letterSpacing: "0.2em", color: ACCENT }}>
+              PART 01 — TOUGHENING
+            </span>
+          </div>
+        </div>
         <div className="mx-auto max-w-[1280px] px-6">
           <div className="grid grid-cols-1 gap-16 lg:grid-cols-2 lg:items-center">
             {/* Left: image */}
@@ -488,7 +496,133 @@ function ToughingHeatStrengtheningPage() {
         </div>
       </section>
 
-      {/* CTA */}
+      {/* HEAT STRENGTHENING — clearly separated section */}
+      <section id="heat-strengthening" className="w-full bg-neutral-50 py-24 scroll-mt-24">
+        <div className="mx-auto max-w-[1280px] px-6">
+          <div className="mx-auto max-w-3xl text-center">
+            <div className="inline-flex items-center gap-3">
+              <span className="block" style={{ width: "32px", height: "1px", backgroundColor: ACCENT }} />
+              <span
+                style={{
+                  fontFamily: HEAD_FONT,
+                  fontSize: "14px",
+                  fontWeight: 700,
+                  letterSpacing: "0.2em",
+                  color: ACCENT,
+                }}
+              >
+                PART 02 — HEAT STRENGTHENING
+              </span>
+              <span className="block" style={{ width: "32px", height: "1px", backgroundColor: ACCENT }} />
+            </div>
+            <h2
+              className="mt-5"
+              style={{
+                fontFamily: HEAD_FONT,
+                fontSize: "clamp(2rem, 4vw, 3.5rem)",
+                fontWeight: 700,
+                lineHeight: 1.1,
+                color: "#0a0a0a",
+                margin: 0,
+              }}
+            >
+              Heat <span style={{ color: ACCENT }}>Strengthening</span>
+            </h2>
+            <p
+              className="mx-auto mt-6 max-w-2xl text-neutral-600"
+              style={{ fontFamily: BODY_FONT, fontSize: "15px", lineHeight: 1.75 }}
+            >
+              Heat-strengthened glass is processed on the same NorthGlass line as our toughened
+              glass, but cooled at a slower, controlled rate. The result is a glass that is roughly
+              twice as strong as standard annealed glass — without the spontaneous-breakage risk
+              that can come with fully tempered glass, and with superior optical flatness for
+              facade and spandrel applications.
+            </p>
+          </div>
+
+          <div className="mt-14 grid grid-cols-1 gap-6 md:grid-cols-3">
+            {[
+              {
+                title: "2× stronger than annealed",
+                body: "Improved resistance to thermal stress and wind load without the full safety classification of toughened glass.",
+              },
+              {
+                title: "Superior optical flatness",
+                body: "Slower cooling produces less roller wave distortion — ideal for high-spec facades and overhead glazing.",
+              },
+              {
+                title: "Breaks in larger fragments",
+                body: "Fractures into larger pieces that tend to remain in the frame — preferred for laminated spandrel and facade panels.",
+              },
+              {
+                title: "Lower NiS breakage risk",
+                body: "Significantly reduced risk of spontaneous nickel sulphide inclusion failure compared to fully toughened glass.",
+              },
+              {
+                title: "Compatible with coatings",
+                body: "Processed for Low-E, solar control and reflective coatings without compromising performance.",
+              },
+              {
+                title: "Best for facades & spandrels",
+                body: "Ideal where strength and flatness matter more than full safety glazing — curtain walls, spandrel panels, skylights.",
+              },
+            ].map((c) => (
+              <div
+                key={c.title}
+                className="rounded-xl border border-neutral-200 bg-white p-7 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-neutral-300 hover:shadow-lg"
+              >
+                <h3
+                  style={{
+                    fontFamily: HEAD_FONT,
+                    fontSize: "18px",
+                    fontWeight: 700,
+                    color: "#0a0a0a",
+                    margin: 0,
+                  }}
+                >
+                  {c.title}
+                </h3>
+                <p
+                  className="mt-3 text-neutral-700"
+                  style={{ fontFamily: BODY_FONT, fontSize: "14px", lineHeight: 1.7 }}
+                >
+                  {c.body}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-12 overflow-hidden rounded-xl border border-neutral-200 bg-white shadow-sm">
+            <div className="overflow-x-auto">
+              <table className="w-full text-left" style={{ fontFamily: BODY_FONT }}>
+                <thead style={{ backgroundColor: ACCENT }}>
+                  <tr>
+                    <th className="px-5 py-4 text-white" style={{ fontFamily: HEAD_FONT, fontSize: 13, fontWeight: 700, letterSpacing: "0.08em" }}>PROPERTY</th>
+                    <th className="px-5 py-4 text-white" style={{ fontFamily: HEAD_FONT, fontSize: 13, fontWeight: 700, letterSpacing: "0.08em" }}>TOUGHENED</th>
+                    <th className="px-5 py-4 text-white" style={{ fontFamily: HEAD_FONT, fontSize: 13, fontWeight: 700, letterSpacing: "0.08em" }}>HEAT STRENGTHENED</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    ["Surface compression", "≥ 69 MPa", "24–52 MPa"],
+                    ["Strength vs annealed", "~4–5× stronger", "~2× stronger"],
+                    ["Break pattern", "Small blunt granules", "Larger pieces, stays in frame"],
+                    ["Safety classification", "Yes (Grade A)", "No — not a safety glass"],
+                    ["Optical flatness", "Standard", "Superior (low roller wave)"],
+                    ["Best for", "Doors, balustrades, shower screens", "Facades, spandrels, skylights"],
+                  ].map((row, i) => (
+                    <tr key={row[0]} className={i % 2 === 0 ? "bg-white" : "bg-neutral-50"}>
+                      <td className="px-5 py-4 align-top" style={{ fontSize: 13.5, fontWeight: 600, color: "#0a0a0a" }}>{row[0]}</td>
+                      <td className="px-5 py-4 align-top text-neutral-700" style={{ fontSize: 13.5 }}>{row[1]}</td>
+                      <td className="px-5 py-4 align-top text-neutral-700" style={{ fontSize: 13.5 }}>{row[2]}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
       <section className="w-full py-20 text-white" style={{ backgroundColor: ACCENT }}>
         <div className="mx-auto max-w-[1080px] px-6 text-center">
           <h2

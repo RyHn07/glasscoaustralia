@@ -1,21 +1,19 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useMemo, useState } from "react";
+import { useRef, useState } from "react";
 import { z } from "zod";
 import {
   ArrowRight,
   Building2,
   CheckCircle2,
-  ClipboardList,
   Clock,
   FileUp,
   Mail,
   Phone,
-  Plus,
-  Ruler,
   ShieldCheck,
   Sparkles,
   Trash2,
   Truck,
+  Upload,
   User,
 } from "lucide-react";
 import { Header } from "@/components/Header";

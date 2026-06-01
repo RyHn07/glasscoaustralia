@@ -117,8 +117,8 @@ function AboutPage() {
       {/* OUR COMPANY */}
       <SplitSection
         eyebrow="OUR COMPANY"
-        image={teamImg}
-        imageAlt="GlassCo team collaborating"
+        image={companyImg}
+        imageAlt="GlassCo facility and operations"
         heading={
           <>
             Trusted Glass <span style={{ color: ACCENT }}>Partner</span>

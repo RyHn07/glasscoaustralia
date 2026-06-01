@@ -128,6 +128,7 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
+      <ScrollReveal />
       <Outlet />
     </QueryClientProvider>
   );

@@ -36,7 +36,7 @@ export function Hero() {
           playsInline
           className="h-full w-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/70 to-black/30" />
+        <div className="absolute inset-0 bg-gradient-to-r from-white via-white/85 to-white/40" />
       </div>
 
 

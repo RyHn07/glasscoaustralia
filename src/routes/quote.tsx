@@ -168,7 +168,7 @@ function QuotePage() {
               style={{ fontFamily: '"Poppins", sans-serif' }}
             >
               Thanks {form.name.split(" ")[0]}. Our estimating team will review your
-              specs and respond within 1 business day at{" "}
+              request{files.length > 0 ? ` and ${files.length} attached file${files.length > 1 ? "s" : ""}` : ""} and respond within 1 business day at{" "}
               <span className="font-semibold text-neutral-900">{form.email}</span>.
             </p>
             <button

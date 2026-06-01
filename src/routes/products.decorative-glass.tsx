@@ -11,6 +11,10 @@ import pMillennium from "@/assets/patterns/millennium.png.asset.json";
 import pNarrowReed from "@/assets/patterns/narrow-reed.png.asset.json";
 import pRain from "@/assets/patterns/rain.png.asset.json";
 import pReticulate from "@/assets/patterns/reticulate.png.asset.json";
+import pDrop from "@/assets/patterns/drop.png.asset.json";
+import pSatinlite from "@/assets/patterns/satinlite.png.asset.json";
+import pSpotswood from "@/assets/patterns/spotswood.png.asset.json";
+
 
 export const Route = createFileRoute("/products/decorative-glass")({
   head: () => ({
@@ -53,6 +57,9 @@ const PATTERNS: Pattern[] = [
   { name: "Narrow Reed / Moru", image: pNarrowReed.url, thickness: ["5mm", "6mm"], size: "2440 × 2100" },
   { name: "Rain / Seadrift", image: pRain.url, thickness: ["5mm"], size: "2440 × 1830" },
   { name: "Reticulate", image: pReticulate.url, thickness: ["5mm"], size: "2440 × 1830" },
+  { name: "Drop", image: pDrop.url, thickness: ["5mm"], size: "2440 × 1830" },
+  { name: "Satinlite", image: pSatinlite.url, thickness: ["4mm", "5mm"], size: "2440 × 1830" },
+  { name: "Spotswood", image: pSpotswood.url, thickness: ["5mm"], size: "2440 × 1830" },
 ];
 
 

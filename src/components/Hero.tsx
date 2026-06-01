@@ -57,7 +57,7 @@ export function Hero() {
                 lineHeight: "24px",
                 fontWeight: 700,
                 letterSpacing: "normal",
-                color: "#00DEF7",
+                color: "#007A87",
                 display: "inline-block",
                 position: "relative",
                 overflow: "hidden",

@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
@@ -46,31 +46,43 @@ export const Route = createFileRoute("/gallery")({
   component: GalleryPage,
 });
 
-const images: { src: string; alt: string }[] = [
-  { src: atriumImg, alt: "Glass atrium ceiling installation" },
-  { src: coastalImg, alt: "Coastal residence with large glass facade" },
-  { src: curvedImg, alt: "Curved glass facade" },
-  { src: heritageImg, alt: "Heritage building glass restoration" },
-  { src: officeImg, alt: "Modern office glass partitions" },
-  { src: retailImg, alt: "Retail storefront glazing" },
-  { src: floatImg, alt: "Stack of clear float glass sheets" },
-  { src: temperedImg, alt: "Toughened safety glass panels" },
-  { src: laminatedImg, alt: "Laminated safety glass cross-section" },
-  { src: lowEImg, alt: "Low-E coated glass facade" },
-  { src: mirrorsImg, alt: "Custom silvered mirror panels" },
-  { src: acousticImg, alt: "Acoustic glass interior" },
-  { src: decorativeImg, alt: "Decorative patterned glass" },
-  { src: energyImg, alt: "Energy efficient glazing" },
-  { src: printingImg, alt: "Digital ceramic printed glass" },
-  { src: furnaceImg, alt: "NorthGlass toughening furnace" },
-  { src: bimatechImg, alt: "Bimatech Techno edge processing" },
-  { src: aboutManu, alt: "Manufacturing facility floor" },
-  { src: aboutBuilding, alt: "GlassCo headquarters building" },
+type GalleryImage = { src: string; alt: string; category: "projects" | "products" };
+
+const allImages: GalleryImage[] = [
+  // Projects
+  { src: atriumImg, alt: "Glass atrium ceiling installation", category: "projects" },
+  { src: coastalImg, alt: "Coastal residence with large glass facade", category: "projects" },
+  { src: curvedImg, alt: "Curved glass facade", category: "projects" },
+  { src: heritageImg, alt: "Heritage building glass restoration", category: "projects" },
+  { src: officeImg, alt: "Modern office glass partitions", category: "projects" },
+  { src: retailImg, alt: "Retail storefront glazing", category: "projects" },
+  // Products & Machinery
+  { src: floatImg, alt: "Stack of clear float glass sheets", category: "products" },
+  { src: temperedImg, alt: "Toughened safety glass panels", category: "products" },
+  { src: laminatedImg, alt: "Laminated safety glass cross-section", category: "products" },
+  { src: lowEImg, alt: "Low-E coated glass facade", category: "products" },
+  { src: mirrorsImg, alt: "Custom silvered mirror panels", category: "products" },
+  { src: acousticImg, alt: "Acoustic glass interior", category: "products" },
+  { src: decorativeImg, alt: "Decorative patterned glass", category: "products" },
+  { src: energyImg, alt: "Energy efficient glazing", category: "products" },
+  { src: printingImg, alt: "Digital ceramic printed glass", category: "products" },
+  { src: furnaceImg, alt: "NorthGlass toughening furnace", category: "products" },
+  { src: bimatechImg, alt: "Bimatech Techno edge processing", category: "products" },
+  { src: aboutManu, alt: "Manufacturing facility floor", category: "products" },
+  { src: aboutBuilding, alt: "GlassCo headquarters building", category: "products" },
 ];
 
+type Tab = "projects" | "products";
+
 function GalleryPage() {
+  const [tab, setTab] = useState<Tab>("projects");
+  const images = useMemo(() => allImages.filter((i) => i.category === tab), [tab]);
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const isOpen = activeIndex !== null;
+
+  useEffect(() => {
+    setActiveIndex(null);
+  }, [tab]);
 
   useEffect(() => {
     if (!isOpen) return;
@@ -89,7 +101,7 @@ function GalleryPage() {
       window.removeEventListener("keydown", onKey);
       document.body.style.overflow = "";
     };
-  }, [isOpen]);
+  }, [isOpen, images.length]);
 
   const next = () =>
     setActiveIndex((i) => (i === null ? i : (i + 1) % images.length));
@@ -97,6 +109,7 @@ function GalleryPage() {
     setActiveIndex((i) =>
       i === null ? i : (i - 1 + images.length) % images.length,
     );
+
 
   return (
     <div className="min-h-screen bg-white">
@@ -134,7 +147,7 @@ function GalleryPage() {
                   margin: 0,
                 }}
               >
-                Projects, <span style={{ color: "#009AAA" }}>Products</span> & Facility
+                {tab === "projects" ? <>Our <span style={{ color: "#009AAA" }}>Projects</span></> : <><span style={{ color: "#009AAA" }}>Products</span> & Machinery</>}
               </h1>
             </div>
             <p
@@ -145,8 +158,30 @@ function GalleryPage() {
             </p>
           </div>
 
+          {/* Tab switcher */}
+          <div className="mt-10 flex flex-wrap gap-2">
+            {([
+              { id: "projects" as Tab, label: "Projects" },
+              { id: "products" as Tab, label: "Products & Machinery" },
+            ]).map((t) => (
+              <button
+                key={t.id}
+                type="button"
+                onClick={() => setTab(t.id)}
+                className={`rounded-full border px-5 py-2 text-sm font-semibold transition-all ${
+                  tab === t.id
+                    ? "border-[#009AAA] bg-[#009AAA] text-white shadow-[0_6px_16px_-6px_rgba(0,154,170,0.6)]"
+                    : "border-neutral-200 bg-white text-neutral-700 hover:border-[#009AAA]/50 hover:text-[#009AAA]"
+                }`}
+                style={{ fontFamily: "Rajdhani, sans-serif", letterSpacing: "0.04em" }}
+              >
+                {t.label}
+              </button>
+            ))}
+          </div>
+
           {/* Image grid: 2 + 3 repeating */}
-          <div className="mt-14 grid grid-cols-1 gap-6 md:grid-cols-6">
+          <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-6">
             {images.map((it, i) => {
               const posInGroup = i % 5;
               const span = posInGroup < 2 ? "md:col-span-3" : "md:col-span-2";

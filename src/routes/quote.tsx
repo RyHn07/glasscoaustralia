@@ -1,21 +1,19 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useMemo, useState } from "react";
+import { useRef, useState } from "react";
 import { z } from "zod";
 import {
   ArrowRight,
   Building2,
   CheckCircle2,
-  ClipboardList,
   Clock,
   FileUp,
   Mail,
   Phone,
-  Plus,
-  Ruler,
   ShieldCheck,
   Sparkles,
   Trash2,
   Truck,
+  Upload,
   User,
 } from "lucide-react";
 import { Header } from "@/components/Header";
@@ -42,17 +40,6 @@ export const Route = createFileRoute("/quote")({
   component: QuotePage,
 });
 
-const PRODUCTS = [
-  "Toughened / Heat-Strengthened",
-  "Insulated Glass Units (IGU)",
-  "Low-E / Energy Efficient",
-  "Acoustic Glass",
-  "Decorative / Printed Glass",
-  "Mirror",
-  "Laminated Safety Glass",
-  "Custom Processing (CNC / Waterjet)",
-] as const;
-
 const PROJECT_TYPES = [
   "Residential",
   "Commercial",
@@ -64,34 +51,10 @@ const PROJECT_TYPES = [
 
 const TIMELINES = ["ASAP", "2–4 weeks", "1–3 months", "Planning stage"] as const;
 
-type LineItem = {
-  id: string;
-  product: string;
-  width: string;
-  height: string;
-  thickness: string;
-  qty: string;
-  notes: string;
-};
-
-const newLine = (): LineItem => ({
-  id: Math.random().toString(36).slice(2),
-  product: PRODUCTS[0],
-  width: "",
-  height: "",
-  thickness: "",
-  qty: "1",
-  notes: "",
-});
-
-const itemSchema = z.object({
-  product: z.string().min(1),
-  width: z.string().regex(/^\d+(\.\d+)?$/, "Enter mm"),
-  height: z.string().regex(/^\d+(\.\d+)?$/, "Enter mm"),
-  thickness: z.string().min(1, "Required"),
-  qty: z.string().regex(/^\d+$/, "Whole #"),
-  notes: z.string().max(300).optional(),
-});
+const MAX_FILES = 5;
+const MAX_FILE_BYTES = 10 * 1024 * 1024; // 10MB
+const ACCEPTED_EXT = [".pdf", ".dwg", ".dxf", ".jpg", ".jpeg", ".png", ".doc", ".docx"];
+const ACCEPT_ATTR = ACCEPTED_EXT.join(",");
 
 const schema = z.object({
   name: z.string().trim().min(2, "Enter your name").max(100),
@@ -103,11 +66,19 @@ const schema = z.object({
   suburb: z.string().trim().max(120).optional(),
   delivery: z.boolean(),
   message: z.string().trim().max(1500).optional(),
-  items: z.array(itemSchema).min(1, "Add at least one item"),
 });
 
+function formatBytes(n: number) {
+  if (n < 1024) return `${n} B`;
+  if (n < 1024 * 1024) return `${(n / 1024).toFixed(1)} KB`;
+  return `${(n / (1024 * 1024)).toFixed(2)} MB`;
+}
+
 function QuotePage() {
-  const [items, setItems] = useState<LineItem[]>([newLine()]);
+  const [files, setFiles] = useState<File[]>([]);
+  const [fileError, setFileError] = useState<string>("");
+  const fileInputRef = useRef<HTMLInputElement>(null);
+  const [dragOver, setDragOver] = useState(false);
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -125,17 +96,44 @@ function QuotePage() {
   const update = <K extends keyof typeof form>(k: K, v: (typeof form)[K]) =>
     setForm((s) => ({ ...s, [k]: v }));
 
-  const updateItem = (id: string, patch: Partial<LineItem>) =>
-    setItems((arr) => arr.map((i) => (i.id === id ? { ...i, ...patch } : i)));
+  const addFiles = (incoming: FileList | File[]) => {
+    const list = Array.from(incoming);
+    const errs: string[] = [];
+    const accepted: File[] = [];
+    for (const f of list) {
+      const ext = "." + (f.name.split(".").pop() || "").toLowerCase();
+      if (!ACCEPTED_EXT.includes(ext)) {
+        errs.push(`${f.name}: unsupported file type`);
+        continue;
+      }
+      if (f.size > MAX_FILE_BYTES) {
+        errs.push(`${f.name}: exceeds 10MB limit`);
+        continue;
+      }
+      accepted.push(f);
+    }
+    setFiles((prev) => {
+      const merged = [...prev];
+      for (const f of accepted) {
+        if (merged.length >= MAX_FILES) {
+          errs.push(`Max ${MAX_FILES} files allowed`);
+          break;
+        }
+        if (!merged.some((x) => x.name === f.name && x.size === f.size)) {
+          merged.push(f);
+        }
+      }
+      return merged;
+    });
+    setFileError(errs.join(" · "));
+  };
 
-  const totalQty = useMemo(
-    () => items.reduce((s, i) => s + (parseInt(i.qty || "0", 10) || 0), 0),
-    [items],
-  );
+  const removeFile = (idx: number) =>
+    setFiles((arr) => arr.filter((_, i) => i !== idx));
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const parsed = schema.safeParse({ ...form, items });
+    const parsed = schema.safeParse(form);
     if (!parsed.success) {
       const errs: Record<string, string> = {};
       for (const issue of parsed.error.issues) {
@@ -148,6 +146,7 @@ function QuotePage() {
     setSubmitted(true);
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
+
 
   if (submitted) {
     return (
@@ -169,13 +168,14 @@ function QuotePage() {
               style={{ fontFamily: '"Poppins", sans-serif' }}
             >
               Thanks {form.name.split(" ")[0]}. Our estimating team will review your
-              specs and respond within 1 business day at{" "}
+              request{files.length > 0 ? ` and ${files.length} attached file${files.length > 1 ? "s" : ""}` : ""} and respond within 1 business day at{" "}
               <span className="font-semibold text-neutral-900">{form.email}</span>.
             </p>
             <button
               onClick={() => {
                 setSubmitted(false);
-                setItems([newLine()]);
+                setFiles([]);
+                setFileError("");
                 setForm({
                   name: "",
                   email: "",
@@ -392,163 +392,122 @@ function QuotePage() {
               </div>
             </Card>
 
-            {/* Items */}
+            {/* File upload */}
             <Card
-              icon={Ruler}
-              title="Glass specifications"
-              subtitle="Add a line for each glass type and size"
+              icon={FileUp}
+              title="Drawings & specifications"
+              subtitle="Upload PDFs, drawings (DWG/DXF), or photos — we'll quote from your files"
               right={
-                <span className="rounded-full bg-[#009AAA]/10 px-3 py-1 text-xs font-semibold text-[#009AAA]">
-                  {items.length} item{items.length > 1 ? "s" : ""} · {totalQty} pcs
-                </span>
+                files.length > 0 ? (
+                  <span className="rounded-full bg-[#009AAA]/10 px-3 py-1 text-xs font-semibold text-[#009AAA]">
+                    {files.length}/{MAX_FILES} file{files.length > 1 ? "s" : ""}
+                  </span>
+                ) : undefined
               }
             >
               <div className="space-y-4">
-                {items.map((it, idx) => (
-                  <div
-                    key={it.id}
-                    className="rounded-xl border border-neutral-200 bg-white p-4"
+                <div
+                  onDragOver={(e) => {
+                    e.preventDefault();
+                    setDragOver(true);
+                  }}
+                  onDragLeave={() => setDragOver(false)}
+                  onDrop={(e) => {
+                    e.preventDefault();
+                    setDragOver(false);
+                    if (e.dataTransfer.files?.length) addFiles(e.dataTransfer.files);
+                  }}
+                  onClick={() => fileInputRef.current?.click()}
+                  role="button"
+                  tabIndex={0}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" || e.key === " ") {
+                      e.preventDefault();
+                      fileInputRef.current?.click();
+                    }
+                  }}
+                  className={`flex cursor-pointer flex-col items-center justify-center rounded-xl border-2 border-dashed px-6 py-10 text-center transition-colors ${
+                    dragOver
+                      ? "border-[#009AAA] bg-[#009AAA]/5"
+                      : "border-neutral-300 bg-neutral-50 hover:border-[#009AAA]/60 hover:bg-[#009AAA]/[0.03]"
+                  }`}
+                >
+                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#009AAA]/10 text-[#009AAA]">
+                    <Upload className="h-6 w-6" />
+                  </div>
+                  <p
+                    className="mt-3 text-base font-semibold text-neutral-800"
+                    style={{ fontFamily: '"Rajdhani", sans-serif' }}
                   >
-                    <div className="mb-3 flex items-center justify-between">
-                      <span
-                        className="text-sm font-semibold text-neutral-700"
-                        style={{ fontFamily: '"Rajdhani", sans-serif' }}
+                    Drag & drop files here, or click to browse
+                  </p>
+                  <p className="mt-1 text-xs text-neutral-500">
+                    PDF, DWG, DXF, JPG, PNG, DOC · up to 10MB each · max {MAX_FILES} files
+                  </p>
+                  <input
+                    ref={fileInputRef}
+                    type="file"
+                    multiple
+                    accept={ACCEPT_ATTR}
+                    className="hidden"
+                    onChange={(e) => {
+                      if (e.target.files?.length) addFiles(e.target.files);
+                      e.target.value = "";
+                    }}
+                  />
+                </div>
+
+                {fileError && (
+                  <p className="text-xs font-medium text-red-600">{fileError}</p>
+                )}
+
+                {files.length > 0 && (
+                  <ul className="space-y-2">
+                    {files.map((f, i) => (
+                      <li
+                        key={`${f.name}-${i}`}
+                        className="flex items-center justify-between gap-3 rounded-lg border border-neutral-200 bg-white px-3 py-2"
                       >
-                        ITEM {idx + 1}
-                      </span>
-                      {items.length > 1 && (
+                        <div className="flex min-w-0 items-center gap-3">
+                          <FileUp className="h-4 w-4 shrink-0 text-[#009AAA]" />
+                          <div className="min-w-0">
+                            <div className="truncate text-sm font-medium text-neutral-800">
+                              {f.name}
+                            </div>
+                            <div className="text-xs text-neutral-500">
+                              {formatBytes(f.size)}
+                            </div>
+                          </div>
+                        </div>
                         <button
                           type="button"
-                          onClick={() =>
-                            setItems((arr) => arr.filter((x) => x.id !== it.id))
-                          }
+                          onClick={() => removeFile(i)}
                           className="inline-flex items-center gap-1 rounded-md px-2 py-1 text-xs font-medium text-red-600 transition-colors hover:bg-red-50"
+                          aria-label={`Remove ${f.name}`}
                         >
                           <Trash2 className="h-3.5 w-3.5" /> Remove
                         </button>
-                      )}
-                    </div>
-                    <div className="grid gap-3 md:grid-cols-12">
-                      <div className="md:col-span-5">
-                        <Label small>Product</Label>
-                        <select
-                          value={it.product}
-                          onChange={(e) =>
-                            updateItem(it.id, { product: e.target.value })
-                          }
-                          className={`${inputCls} mt-1`}
-                        >
-                          {PRODUCTS.map((p) => (
-                            <option key={p}>{p}</option>
-                          ))}
-                        </select>
-                      </div>
-                      <div className="md:col-span-2">
-                        <Label small>Width (mm)</Label>
-                        <input
-                          value={it.width}
-                          onChange={(e) =>
-                            updateItem(it.id, { width: e.target.value })
-                          }
-                          className={`${inputCls} mt-1`}
-                          placeholder="1200"
-                        />
-                      </div>
-                      <div className="md:col-span-2">
-                        <Label small>Height (mm)</Label>
-                        <input
-                          value={it.height}
-                          onChange={(e) =>
-                            updateItem(it.id, { height: e.target.value })
-                          }
-                          className={`${inputCls} mt-1`}
-                          placeholder="2400"
-                        />
-                      </div>
-                      <div className="md:col-span-2">
-                        <Label small>Thickness</Label>
-                        <input
-                          value={it.thickness}
-                          onChange={(e) =>
-                            updateItem(it.id, { thickness: e.target.value })
-                          }
-                          className={`${inputCls} mt-1`}
-                          placeholder="6.38mm"
-                        />
-                      </div>
-                      <div className="md:col-span-1">
-                        <Label small>Qty</Label>
-                        <input
-                          value={it.qty}
-                          onChange={(e) =>
-                            updateItem(it.id, { qty: e.target.value })
-                          }
-                          className={`${inputCls} mt-1`}
-                        />
-                      </div>
-                      <div className="md:col-span-12">
-                        <Label small>Notes (edgework, cutouts, finish)</Label>
-                        <input
-                          value={it.notes}
-                          onChange={(e) =>
-                            updateItem(it.id, { notes: e.target.value })
-                          }
-                          className={`${inputCls} mt-1`}
-                          placeholder="e.g. polished edges, 25mm corner radius"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                ))}
-                {errors.items && (
-                  <p className="text-xs font-medium text-red-600">{errors.items}</p>
+                      </li>
+                    ))}
+                  </ul>
                 )}
-                <button
-                  type="button"
-                  onClick={() => setItems((arr) => [...arr, newLine()])}
-                  className="inline-flex items-center gap-2 rounded-md border border-dashed border-[#009AAA]/50 px-4 py-2.5 text-sm font-semibold text-[#009AAA] transition-colors hover:bg-[#009AAA]/5"
-                >
-                  <Plus className="h-4 w-4" /> Add another item
-                </button>
+
+                <Field label="Additional notes (optional)">
+                  <textarea
+                    value={form.message}
+                    onChange={(e) => update("message", e.target.value)}
+                    rows={4}
+                    maxLength={1500}
+                    className={`${inputCls} h-auto py-3`}
+                    placeholder="Anything else we should know — install timing, site access, finishes..."
+                  />
+                  <div className="mt-1 text-right text-xs text-neutral-400">
+                    {form.message.length}/1500
+                  </div>
+                </Field>
               </div>
             </Card>
 
-            {/* Notes */}
-            <Card
-              icon={ClipboardList}
-              title="Additional details"
-              subtitle="Drawings, references, or anything else"
-            >
-              <Field>
-                <textarea
-                  value={form.message}
-                  onChange={(e) => update("message", e.target.value)}
-                  rows={5}
-                  maxLength={1500}
-                  className={`${inputCls} h-auto py-3`}
-                  placeholder="Share any context — install timing, drawings link, site access, special finishes..."
-                />
-                <div className="mt-1 text-right text-xs text-neutral-400">
-                  {form.message.length}/1500
-                </div>
-              </Field>
-              <div className="rounded-lg border border-dashed border-neutral-300 bg-neutral-50 p-4 text-sm text-neutral-600">
-                <div className="flex items-center gap-2 font-semibold text-neutral-700">
-                  <FileUp className="h-4 w-4 text-[#009AAA]" />
-                  Have drawings or specs?
-                </div>
-                <p className="mt-1">
-                  Email files to{" "}
-                  <a
-                    className="font-semibold text-[#009AAA] hover:underline"
-                    href="mailto:quotes@glassco.com.au"
-                  >
-                    quotes@glassco.com.au
-                  </a>{" "}
-                  referencing your name — we'll match them to your request.
-                </p>
-              </div>
-            </Card>
 
             <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
               <p className="text-xs text-neutral-500">

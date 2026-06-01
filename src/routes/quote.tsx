@@ -40,17 +40,6 @@ export const Route = createFileRoute("/quote")({
   component: QuotePage,
 });
 
-const PRODUCTS = [
-  "Toughened / Heat-Strengthened",
-  "Insulated Glass Units (IGU)",
-  "Low-E / Energy Efficient",
-  "Acoustic Glass",
-  "Decorative / Printed Glass",
-  "Mirror",
-  "Laminated Safety Glass",
-  "Custom Processing (CNC / Waterjet)",
-] as const;
-
 const PROJECT_TYPES = [
   "Residential",
   "Commercial",
@@ -62,34 +51,10 @@ const PROJECT_TYPES = [
 
 const TIMELINES = ["ASAP", "2–4 weeks", "1–3 months", "Planning stage"] as const;
 
-type LineItem = {
-  id: string;
-  product: string;
-  width: string;
-  height: string;
-  thickness: string;
-  qty: string;
-  notes: string;
-};
-
-const newLine = (): LineItem => ({
-  id: Math.random().toString(36).slice(2),
-  product: PRODUCTS[0],
-  width: "",
-  height: "",
-  thickness: "",
-  qty: "1",
-  notes: "",
-});
-
-const itemSchema = z.object({
-  product: z.string().min(1),
-  width: z.string().regex(/^\d+(\.\d+)?$/, "Enter mm"),
-  height: z.string().regex(/^\d+(\.\d+)?$/, "Enter mm"),
-  thickness: z.string().min(1, "Required"),
-  qty: z.string().regex(/^\d+$/, "Whole #"),
-  notes: z.string().max(300).optional(),
-});
+const MAX_FILES = 5;
+const MAX_FILE_BYTES = 10 * 1024 * 1024; // 10MB
+const ACCEPTED_EXT = [".pdf", ".dwg", ".dxf", ".jpg", ".jpeg", ".png", ".doc", ".docx"];
+const ACCEPT_ATTR = ACCEPTED_EXT.join(",");
 
 const schema = z.object({
   name: z.string().trim().min(2, "Enter your name").max(100),
@@ -101,11 +66,19 @@ const schema = z.object({
   suburb: z.string().trim().max(120).optional(),
   delivery: z.boolean(),
   message: z.string().trim().max(1500).optional(),
-  items: z.array(itemSchema).min(1, "Add at least one item"),
 });
 
+function formatBytes(n: number) {
+  if (n < 1024) return `${n} B`;
+  if (n < 1024 * 1024) return `${(n / 1024).toFixed(1)} KB`;
+  return `${(n / (1024 * 1024)).toFixed(2)} MB`;
+}
+
 function QuotePage() {
-  const [items, setItems] = useState<LineItem[]>([newLine()]);
+  const [files, setFiles] = useState<File[]>([]);
+  const [fileError, setFileError] = useState<string>("");
+  const fileInputRef = useRef<HTMLInputElement>(null);
+  const [dragOver, setDragOver] = useState(false);
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -123,17 +96,44 @@ function QuotePage() {
   const update = <K extends keyof typeof form>(k: K, v: (typeof form)[K]) =>
     setForm((s) => ({ ...s, [k]: v }));
 
-  const updateItem = (id: string, patch: Partial<LineItem>) =>
-    setItems((arr) => arr.map((i) => (i.id === id ? { ...i, ...patch } : i)));
+  const addFiles = (incoming: FileList | File[]) => {
+    const list = Array.from(incoming);
+    const errs: string[] = [];
+    const accepted: File[] = [];
+    for (const f of list) {
+      const ext = "." + (f.name.split(".").pop() || "").toLowerCase();
+      if (!ACCEPTED_EXT.includes(ext)) {
+        errs.push(`${f.name}: unsupported file type`);
+        continue;
+      }
+      if (f.size > MAX_FILE_BYTES) {
+        errs.push(`${f.name}: exceeds 10MB limit`);
+        continue;
+      }
+      accepted.push(f);
+    }
+    setFiles((prev) => {
+      const merged = [...prev];
+      for (const f of accepted) {
+        if (merged.length >= MAX_FILES) {
+          errs.push(`Max ${MAX_FILES} files allowed`);
+          break;
+        }
+        if (!merged.some((x) => x.name === f.name && x.size === f.size)) {
+          merged.push(f);
+        }
+      }
+      return merged;
+    });
+    setFileError(errs.join(" · "));
+  };
 
-  const totalQty = useMemo(
-    () => items.reduce((s, i) => s + (parseInt(i.qty || "0", 10) || 0), 0),
-    [items],
-  );
+  const removeFile = (idx: number) =>
+    setFiles((arr) => arr.filter((_, i) => i !== idx));
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const parsed = schema.safeParse({ ...form, items });
+    const parsed = schema.safeParse(form);
     if (!parsed.success) {
       const errs: Record<string, string> = {};
       for (const issue of parsed.error.issues) {
@@ -146,6 +146,7 @@ function QuotePage() {
     setSubmitted(true);
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
+
 
   if (submitted) {
     return (

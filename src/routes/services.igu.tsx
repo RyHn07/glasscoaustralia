@@ -18,6 +18,13 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import heroImage from "@/assets/service-igu.jpg";
 import lisecLine from "@/assets/lisec-igu-line.png";
+import imgWashing from "@/assets/igu-washing-machine.jpg";
+import imgInspecting from "@/assets/igu-inspecting-station.jpg";
+import imgSpacer from "@/assets/igu-spacer-bending.jpg";
+import imgDesiccant from "@/assets/igu-desiccant-filling.jpg";
+import imgFrame from "@/assets/igu-frame-mounting.jpg";
+import imgGasPress from "@/assets/igu-gas-filling-press.jpg";
+import imgSealing from "@/assets/igu-sealing-machine.jpg";
 
 const ACCENT = "#009AAA";
 const HEAD_FONT = "Rajdhani, sans-serif";

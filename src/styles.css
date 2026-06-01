@@ -278,6 +278,24 @@ section .reveal:nth-child(6) { transition-delay: 0.25s; }
   .reveal { opacity: 1; transform: none; transition: none; }
 }
 
+/* Typewriter caret for headings while typing */
+.typewriter-active {
+  position: relative;
+}
+.typewriter-active::after {
+  content: "";
+  display: inline-block;
+  width: 0.08em;
+  height: 0.95em;
+  margin-left: 0.05em;
+  vertical-align: -0.12em;
+  background-color: #009AAA;
+  animation: typewriter-caret 0.8s steps(1) infinite;
+}
+@keyframes typewriter-caret {
+  50% { opacity: 0; }
+}
+
 /* ============================================================
    Global text hover effects
    Applies a subtle teal lift + color shift to every interactive

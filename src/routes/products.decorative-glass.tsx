@@ -1,6 +1,18 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ProductPageLayout } from "@/components/ProductPageLayout";
 import heroImage from "@/assets/product-decorative.jpg";
+import pAfricana from "@/assets/pattern-africana.jpg";
+import pCathedral from "@/assets/pattern-cathedral-aqualite.jpg";
+import pChinchilla from "@/assets/pattern-chinchilla.jpg";
+import pDrop from "@/assets/pattern-drop.jpg";
+import pFlor from "@/assets/pattern-flor.jpg";
+import pKasumi from "@/assets/pattern-kasumi.jpg";
+import pMillennium from "@/assets/pattern-millennium.jpg";
+import pMatelux from "@/assets/pattern-matelux.jpg";
+import pNarrowReed from "@/assets/pattern-narrow-reed.jpg";
+import pReticulate from "@/assets/pattern-reticulate.jpg";
+import pSatinlite from "@/assets/pattern-satinlite.jpg";
+import pSpotswood from "@/assets/pattern-spotswood.jpg";
 
 export const Route = createFileRoute("/products/decorative-glass")({
   head: () => ({
@@ -20,6 +32,133 @@ export const Route = createFileRoute("/products/decorative-glass")({
   }),
   component: DecorativeGlassPage,
 });
+
+const ACCENT = "#009AAA";
+const HEAD_FONT = "Rajdhani, sans-serif";
+const BODY_FONT = "Poppins, sans-serif";
+
+type Pattern = {
+  name: string;
+  image: string;
+  thickness: string[];
+  size: string;
+};
+
+const PATTERNS: Pattern[] = [
+  { name: "Africana Flame Flash", image: pAfricana, thickness: ["5mm"], size: "2440 × 1830" },
+  { name: "Cathedral Aqualite", image: pCathedral, thickness: ["4mm", "5mm"], size: "2440 × 1830" },
+  { name: "Chinchilla", image: pChinchilla, thickness: ["5mm"], size: "2440 × 1830" },
+  { name: "Drop", image: pDrop, thickness: ["5mm"], size: "2440 × 1830" },
+  { name: "Flor", image: pFlor, thickness: ["5mm"], size: "2440 × 1830" },
+  { name: "Kasumi", image: pKasumi, thickness: ["5mm"], size: "2440 × 1830" },
+  { name: "Millennium", image: pMillennium, thickness: ["5mm"], size: "2440 × 1830" },
+  { name: "Matelux Decor Satin", image: pMatelux, thickness: ["4mm", "6mm"], size: "3660 × 2440" },
+  { name: "Narrow Reed (Clear & Low Iron)", image: pNarrowReed, thickness: ["5mm", "6mm"], size: "2440 × 2100" },
+  { name: "Reticulate", image: pReticulate, thickness: ["5mm"], size: "2440 × 1830" },
+  { name: "Satinlite", image: pSatinlite, thickness: ["4mm", "5mm"], size: "2440 × 1830" },
+  { name: "Spotswood", image: pSpotswood, thickness: ["5mm"], size: "2440 × 1830" },
+];
+
+function PatternsCatalogue() {
+  return (
+    <section className="w-full bg-neutral-50 py-24">
+      <div className="mx-auto max-w-[1280px] px-6">
+        <div className="max-w-2xl">
+          <div className="mb-5 flex items-center gap-3">
+            <span className="block" style={{ width: "32px", height: "1px", backgroundColor: ACCENT }} />
+            <span
+              style={{
+                fontFamily: HEAD_FONT,
+                fontSize: "14px",
+                fontWeight: 700,
+                letterSpacing: "0.15em",
+                color: ACCENT,
+              }}
+            >
+              PATTERNS CATALOGUE
+            </span>
+          </div>
+          <h2
+            style={{
+              fontFamily: HEAD_FONT,
+              fontSize: "clamp(2rem, 3.5vw, 3rem)",
+              fontWeight: 700,
+              lineHeight: 1.1,
+              color: "#0a0a0a",
+              margin: 0,
+            }}
+          >
+            Patterned glass <span style={{ color: ACCENT }}>range</span>
+          </h2>
+          <p
+            className="mt-4 text-neutral-600"
+            style={{ fontFamily: BODY_FONT, fontSize: "15px", lineHeight: 1.7 }}
+          >
+            A selection of textured and decorative patterned glass available in standard thicknesses
+            and sheet sizes. Contact us for stock availability and bespoke processing options.
+          </p>
+        </div>
+
+        <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+          {PATTERNS.map((p) => (
+            <article
+              key={p.name}
+              className="group overflow-hidden rounded-lg border border-neutral-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+            >
+              <div className="aspect-square w-full overflow-hidden bg-neutral-100">
+                <img
+                  src={p.image}
+                  alt={p.name}
+                  loading="lazy"
+                  width={768}
+                  height={768}
+                  className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                />
+              </div>
+              <div className="p-5">
+                <h3
+                  style={{
+                    fontFamily: HEAD_FONT,
+                    fontSize: "18px",
+                    fontWeight: 700,
+                    color: "#0a0a0a",
+                    margin: 0,
+                    lineHeight: 1.25,
+                  }}
+                >
+                  {p.name}
+                </h3>
+                <div className="mt-3 flex flex-wrap gap-2">
+                  {p.thickness.map((t) => (
+                    <span
+                      key={t}
+                      className="rounded-full px-2.5 py-1 text-xs font-semibold"
+                      style={{
+                        fontFamily: HEAD_FONT,
+                        color: ACCENT,
+                        background: `${ACCENT}1A`,
+                        letterSpacing: "0.05em",
+                      }}
+                    >
+                      {t}
+                    </span>
+                  ))}
+                </div>
+                <div
+                  className="mt-3 flex items-center gap-2 text-neutral-600"
+                  style={{ fontFamily: BODY_FONT, fontSize: "13px" }}
+                >
+                  <span style={{ color: ACCENT, fontWeight: 700 }}>SIZE</span>
+                  <span>{p.size} mm</span>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
 
 function DecorativeGlassPage() {
   return (
@@ -66,6 +205,8 @@ function DecorativeGlassPage() {
           a: "It is commonly used in bathrooms, doors, partitions and privacy-focused interiors.",
         },
       ]}
-    />
+    >
+      <PatternsCatalogue />
+    </ProductPageLayout>
   );
 }

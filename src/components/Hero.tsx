@@ -36,7 +36,7 @@ export function Hero() {
           playsInline
           className="h-full w-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/70 to-black/30" />
+        <div className="absolute inset-0 bg-gradient-to-r from-white via-white/85 to-white/40" />
       </div>
 
 
@@ -97,7 +97,7 @@ export function Hero() {
               fontSize: "clamp(3rem, 7vw, 6rem)",
               fontWeight: 700,
               lineHeight: 1.05,
-              color: "#ffffff",
+              color: "#0a0a0a",
               margin: 0,
             }}
           >
@@ -108,8 +108,8 @@ export function Hero() {
 
           {/* Description */}
           <p
-            className="mt-8 text-base leading-relaxed text-foreground/80"
-            style={{ fontFamily: "Poppins, sans-serif", fontStyle: "normal", fontWeight: 400, maxWidth: "640px" }}
+            className="mt-8 text-base leading-relaxed"
+            style={{ fontFamily: "Poppins, sans-serif", fontStyle: "normal", fontWeight: 400, maxWidth: "640px", color: "#262626" }}
           >
             We manufacture premium glass from source — supplying builders,
             <br />
@@ -125,8 +125,8 @@ export function Hero() {
               Get a Free Quote  ›
             </button>
             <button
-              className="btn-animate rounded-md border border-foreground/30 bg-background/40 px-7 py-4 text-sm font-semibold text-foreground backdrop-blur hover:bg-background/60"
-              style={{ fontFamily: "Rajdhani, sans-serif" }}
+              className="btn-animate rounded-md border px-7 py-4 text-sm font-semibold backdrop-blur hover:bg-white"
+              style={{ fontFamily: "Rajdhani, sans-serif", borderColor: "rgba(10,10,10,0.3)", backgroundColor: "rgba(255,255,255,0.6)", color: "#0a0a0a" }}
             >
               View Products
             </button>
@@ -137,8 +137,7 @@ export function Hero() {
             {tags.map((tag, i) => (
               <div key={tag} className="flex items-center gap-4">
                 <span
-                  className="text-foreground/70"
-                  style={{ fontFamily: "Poppins, sans-serif", fontStyle: "normal", fontWeight: 400, fontSize: "13px", letterSpacing: "0.05em" }}
+                  style={{ fontFamily: "Poppins, sans-serif", fontStyle: "normal", fontWeight: 500, fontSize: "13px", letterSpacing: "0.05em", color: "#404040" }}
                 >
                   {tag}
                 </span>
@@ -151,8 +150,8 @@ export function Hero() {
 
           {/* Address */}
           <div
-            className="mt-6 flex items-center gap-2 text-foreground/70"
-            style={{ fontFamily: "Poppins, sans-serif", fontStyle: "normal", fontWeight: 400, fontSize: "13px" }}
+            className="mt-6 flex items-center gap-2"
+            style={{ fontFamily: "Poppins, sans-serif", fontStyle: "normal", fontWeight: 400, fontSize: "13px", color: "#404040" }}
           >
             <MapPin className="h-4 w-4" style={{ color: "rgb(0, 154, 170)" }} />
             370-372 Hammond Rd, Dandenong South VIC 3175

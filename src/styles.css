@@ -277,3 +277,95 @@ section .reveal:nth-child(6) { transition-delay: 0.25s; }
 @media (prefers-reduced-motion: reduce) {
   .reveal { opacity: 1; transform: none; transition: none; }
 }
+
+/* ============================================================
+   Global text hover effects
+   Applies a subtle teal lift + color shift to every interactive
+   or focal piece of text site-wide. Opt-out: data-no-hover.
+   ============================================================ */
+
+/* Headings — gentle lift + brand tint */
+h1:not([data-no-hover]),
+h2:not([data-no-hover]),
+h3:not([data-no-hover]),
+h4:not([data-no-hover]),
+h5:not([data-no-hover]),
+h6:not([data-no-hover]) {
+  transition:
+    color 0.35s ease,
+    transform 0.35s ease,
+    text-shadow 0.35s ease;
+}
+h1:not([data-no-hover]):hover,
+h2:not([data-no-hover]):hover,
+h3:not([data-no-hover]):hover,
+h4:not([data-no-hover]):hover,
+h5:not([data-no-hover]):hover,
+h6:not([data-no-hover]):hover {
+  color: #009AAA;
+  text-shadow: 0 6px 18px rgba(0, 154, 170, 0.18);
+}
+
+/* Anchors — animated underline + tint */
+a:not([data-no-hover]) {
+  position: relative;
+  transition: color 0.3s ease, opacity 0.3s ease;
+}
+a:not([data-no-hover])::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 1px;
+  background-color: currentColor;
+  transform: scaleX(0);
+  transform-origin: right center;
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  pointer-events: none;
+}
+a:not([data-no-hover]):hover {
+  color: #009AAA;
+}
+a:not([data-no-hover]):hover::after {
+  transform: scaleX(1);
+  transform-origin: left center;
+  background-color: #009AAA;
+}
+
+/* Don't draw underline beneath block / image-only / icon-only / wrapper links */
+a:has(img):not([data-no-hover])::after,
+a:has(svg):not([data-no-hover])::after,
+a:has(article):not([data-no-hover])::after,
+a:has(section):not([data-no-hover])::after,
+a:has(.card):not([data-no-hover])::after,
+a:has(button):not([data-no-hover])::after,
+a.btn-animate::after,
+a[role="button"]::after {
+  display: none;
+}
+
+/* Paragraphs & spans — soft brand tint on hover */
+p:not([data-no-hover]),
+li:not([data-no-hover]),
+span:not([data-no-hover]):not(.sr-only) {
+  transition: color 0.3s ease;
+}
+p:not([data-no-hover]):hover {
+  color: #009AAA;
+}
+
+/* Buttons (non-styled) — pointer feedback */
+button:not([data-no-hover]):not(.btn-animate) {
+  transition: color 0.3s ease, transform 0.3s ease, opacity 0.3s ease;
+}
+button:not([data-no-hover]):not(.btn-animate):hover {
+  transform: translateY(-1px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  h1, h2, h3, h4, h5, h6, a, p, li, span, button {
+    transition: none !important;
+  }
+  a::after { transition: none !important; }
+}

@@ -1,27 +1,11 @@
-## Add Patterned Glass Catalogue
+## Goal
+Glass Processing page (`/services/glass-processing`) er "CNC Line / SKILL E-D" section a currently AI-generated image dekhacche. Apnar uploaded asol machine photo (red conveyor rollers + striped machining centre) diye replace korbo.
 
-Add a new "Patterns Catalogue" section to `src/routes/products.decorative-glass.tsx` listing all 12 client-specified patterns with image, name, thickness, and sheet size.
+## Steps
+1. Apnar uploaded image (`/mnt/user-uploads/image-65.png`) k Lovable Assets a upload korbo notun pointer hisebe: `src/assets/machine-cnc-real.jpg.asset.json`.
+2. `src/routes/services.glass-processing.tsx` a CNC Line section er import ta notun asset file a switch korbo.
+3. Purono `src/assets/machine-cnc-line.jpg.asset.json` (AI-generated) delete korbo CDN theke.
+4. Preview a verify korbo je notun real photo render hocche.
 
-### Patterns to include
-1. Africana Flame Flash — 5mm — 2440 × 1830
-2. Cathedral Aqualite — 4mm & 5mm — 2440 × 1830
-3. Chinchilla — 5mm — 2440 × 1830
-4. Drop — 5mm — 2440 × 1830
-5. Flor — 5mm — 2440 × 1830
-6. Kasumi — 5mm — 2440 × 1830
-7. Millennium — 5mm — 2440 × 1830
-8. Matelux Decor Satin — 4mm & 6mm — 3660 × 2440
-9. Narrow Reed (Clear & Low Iron) — 5mm & 6mm — 2440 × 2100
-10. Reticulate — 5mm — 2440 × 1830
-11. Satinlite — 4mm & 5mm — 2440 × 1830
-12. Spotswood — 5mm — 2440 × 1830
-
-### Implementation
-- Generate 12 AI textured-glass swatch images (fast model, 768×768, parallel) into `src/assets/pattern-*.jpg`.
-- Add a new `<section>` after existing content in `products.decorative-glass.tsx` titled "Patterns Catalogue" using existing Eyebrow/SectionHeading styling and ACCENT color.
-- Render a responsive grid (1 / 2 / 3 / 4 columns) of cards: image on top, pattern name, thickness chip(s), sheet size line.
-- Keep current page sections, FAQs, hero, and CTA untouched.
-
-### Notes
-- Images will be AI-rendered representations of each pattern texture — client can replace later with real product photos.
-- No new route created; everything lives on the existing Decorative Glass page since patterned glass is a Decorative subcategory.
+## Scope
+Sudhu CNC Line section er image. Onno kichu change korbo na.

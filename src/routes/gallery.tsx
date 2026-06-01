@@ -63,8 +63,6 @@ const images: { src: string; alt: string }[] = [
   { src: energyImg, alt: "Energy efficient glazing" },
   { src: printingImg, alt: "Digital ceramic printed glass" },
   { src: furnaceImg, alt: "NorthGlass toughening furnace" },
-  { src: cncImg, alt: "CNC glass processing line" },
-  { src: waterjetImg, alt: "TECHNI Intec waterjet cutter" },
   { src: bimatechImg, alt: "Bimatech Techno edge processing" },
   { src: aboutManu, alt: "Manufacturing facility floor" },
   { src: aboutBuilding, alt: "GlassCo headquarters building" },

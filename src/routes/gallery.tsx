@@ -46,27 +46,33 @@ export const Route = createFileRoute("/gallery")({
   component: GalleryPage,
 });
 
-const images: { src: string; alt: string }[] = [
-  { src: atriumImg, alt: "Glass atrium ceiling installation" },
-  { src: coastalImg, alt: "Coastal residence with large glass facade" },
-  { src: curvedImg, alt: "Curved glass facade" },
-  { src: heritageImg, alt: "Heritage building glass restoration" },
-  { src: officeImg, alt: "Modern office glass partitions" },
-  { src: retailImg, alt: "Retail storefront glazing" },
-  { src: floatImg, alt: "Stack of clear float glass sheets" },
-  { src: temperedImg, alt: "Toughened safety glass panels" },
-  { src: laminatedImg, alt: "Laminated safety glass cross-section" },
-  { src: lowEImg, alt: "Low-E coated glass facade" },
-  { src: mirrorsImg, alt: "Custom silvered mirror panels" },
-  { src: acousticImg, alt: "Acoustic glass interior" },
-  { src: decorativeImg, alt: "Decorative patterned glass" },
-  { src: energyImg, alt: "Energy efficient glazing" },
-  { src: printingImg, alt: "Digital ceramic printed glass" },
-  { src: furnaceImg, alt: "NorthGlass toughening furnace" },
-  { src: bimatechImg, alt: "Bimatech Techno edge processing" },
-  { src: aboutManu, alt: "Manufacturing facility floor" },
-  { src: aboutBuilding, alt: "GlassCo headquarters building" },
+type GalleryImage = { src: string; alt: string; category: "projects" | "products" };
+
+const allImages: GalleryImage[] = [
+  // Projects
+  { src: atriumImg, alt: "Glass atrium ceiling installation", category: "projects" },
+  { src: coastalImg, alt: "Coastal residence with large glass facade", category: "projects" },
+  { src: curvedImg, alt: "Curved glass facade", category: "projects" },
+  { src: heritageImg, alt: "Heritage building glass restoration", category: "projects" },
+  { src: officeImg, alt: "Modern office glass partitions", category: "projects" },
+  { src: retailImg, alt: "Retail storefront glazing", category: "projects" },
+  // Products & Machinery
+  { src: floatImg, alt: "Stack of clear float glass sheets", category: "products" },
+  { src: temperedImg, alt: "Toughened safety glass panels", category: "products" },
+  { src: laminatedImg, alt: "Laminated safety glass cross-section", category: "products" },
+  { src: lowEImg, alt: "Low-E coated glass facade", category: "products" },
+  { src: mirrorsImg, alt: "Custom silvered mirror panels", category: "products" },
+  { src: acousticImg, alt: "Acoustic glass interior", category: "products" },
+  { src: decorativeImg, alt: "Decorative patterned glass", category: "products" },
+  { src: energyImg, alt: "Energy efficient glazing", category: "products" },
+  { src: printingImg, alt: "Digital ceramic printed glass", category: "products" },
+  { src: furnaceImg, alt: "NorthGlass toughening furnace", category: "products" },
+  { src: bimatechImg, alt: "Bimatech Techno edge processing", category: "products" },
+  { src: aboutManu, alt: "Manufacturing facility floor", category: "products" },
+  { src: aboutBuilding, alt: "GlassCo headquarters building", category: "products" },
 ];
+
+type Tab = "projects" | "products";
 
 function GalleryPage() {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);

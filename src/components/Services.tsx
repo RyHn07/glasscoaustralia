@@ -83,11 +83,11 @@ export function Services() {
         </div>
 
         {/* Cards */}
-        <div className="mt-14 flex flex-wrap justify-center gap-6">
+        <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2">
           {services.map(({ icon: Icon, title, desc }) => (
             <div
               key={title}
-              className="w-full rounded-xl border border-neutral-200 bg-white p-7 transition-all duration-300 hover:-translate-y-1 hover:border-neutral-300 hover:shadow-lg sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]"
+              className="rounded-xl border border-neutral-200 bg-white p-7 transition-all duration-300 hover:-translate-y-1 hover:border-neutral-300 hover:shadow-lg"
             >
               <div
                 className="flex h-11 w-11 items-center justify-center rounded-lg"

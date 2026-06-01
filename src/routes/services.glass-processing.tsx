@@ -13,7 +13,7 @@ import {
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import heroImage from "@/assets/service-glass-processing.jpg";
-import cncImage from "@/assets/glass-cnc-line.jpg";
+import cncImage from "@/assets/machine-cnc-line.jpg.asset.json";
 import waterjetImage from "@/assets/glass-waterjet.jpg";
 import bimatechImage from "@/assets/glass-bimatech.jpg";
 
@@ -281,7 +281,7 @@ function GlassProcessingPage() {
                 style={{ borderColor: ACCENT }}
               />
               <img
-                src={cncImage}
+                src={cncImage.url}
                 alt="SKILL E-D vertical CNC machining centre"
                 loading="lazy"
                 width={1280}

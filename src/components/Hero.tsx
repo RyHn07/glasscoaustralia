@@ -137,8 +137,7 @@ export function Hero() {
             {tags.map((tag, i) => (
               <div key={tag} className="flex items-center gap-4">
                 <span
-                  className="text-foreground/70"
-                  style={{ fontFamily: "Poppins, sans-serif", fontStyle: "normal", fontWeight: 400, fontSize: "13px", letterSpacing: "0.05em" }}
+                  style={{ fontFamily: "Poppins, sans-serif", fontStyle: "normal", fontWeight: 500, fontSize: "13px", letterSpacing: "0.05em", color: "#404040" }}
                 >
                   {tag}
                 </span>
@@ -151,8 +150,8 @@ export function Hero() {
 
           {/* Address */}
           <div
-            className="mt-6 flex items-center gap-2 text-foreground/70"
-            style={{ fontFamily: "Poppins, sans-serif", fontStyle: "normal", fontWeight: 400, fontSize: "13px" }}
+            className="mt-6 flex items-center gap-2"
+            style={{ fontFamily: "Poppins, sans-serif", fontStyle: "normal", fontWeight: 400, fontSize: "13px", color: "#404040" }}
           >
             <MapPin className="h-4 w-4" style={{ color: "rgb(0, 154, 170)" }} />
             370-372 Hammond Rd, Dandenong South VIC 3175

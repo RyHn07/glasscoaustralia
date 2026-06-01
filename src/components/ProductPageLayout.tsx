@@ -378,6 +378,8 @@ export function ProductPageLayout(props: ProductPageProps & { children?: React.R
         );
       })}
 
+      {children}
+
       {/* FAQs */}
       {faqs && faqs.length > 0 && (
         <section className="w-full bg-white py-20">

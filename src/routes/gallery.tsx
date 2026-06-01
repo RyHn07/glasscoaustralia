@@ -19,7 +19,7 @@ import curvedImg from "@/assets/project-curved.jpg";
 import heritageImg from "@/assets/project-heritage.jpg";
 import officeImg from "@/assets/project-office.jpg";
 import retailImg from "@/assets/project-retail.jpg";
-import cncImg from "@/assets/glass-cnc-line.jpg";
+
 import waterjetImg from "@/assets/glass-waterjet.jpg";
 import bimatechImg from "@/assets/glass-bimatech.jpg";
 import furnaceImg from "@/assets/northglass-furnace.jpg";
@@ -63,8 +63,6 @@ const images: { src: string; alt: string }[] = [
   { src: energyImg, alt: "Energy efficient glazing" },
   { src: printingImg, alt: "Digital ceramic printed glass" },
   { src: furnaceImg, alt: "NorthGlass toughening furnace" },
-  { src: cncImg, alt: "CNC glass processing line" },
-  { src: waterjetImg, alt: "TECHNI Intec waterjet cutter" },
   { src: bimatechImg, alt: "Bimatech Techno edge processing" },
   { src: aboutManu, alt: "Manufacturing facility floor" },
   { src: aboutBuilding, alt: "GlassCo headquarters building" },

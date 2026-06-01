@@ -1,18 +1,16 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ProductPageLayout } from "@/components/ProductPageLayout";
 import heroImage from "@/assets/product-decorative.jpg";
-import pAfricana from "@/assets/pattern-africana.jpg";
-import pCathedral from "@/assets/pattern-cathedral-aqualite.jpg";
-import pChinchilla from "@/assets/pattern-chinchilla.jpg";
-import pDrop from "@/assets/pattern-drop.jpg";
-import pFlor from "@/assets/pattern-flor.jpg";
-import pKasumi from "@/assets/pattern-kasumi.jpg";
-import pMillennium from "@/assets/pattern-millennium.jpg";
-import pMatelux from "@/assets/pattern-matelux.jpg";
-import pNarrowReed from "@/assets/pattern-narrow-reed.jpg";
-import pReticulate from "@/assets/pattern-reticulate.jpg";
-import pSatinlite from "@/assets/pattern-satinlite.jpg";
-import pSpotswood from "@/assets/pattern-spotswood.jpg";
+import pAqualite from "@/assets/patterns/aqualite.png.asset.json";
+import pChinchilla from "@/assets/patterns/chinchilla.png.asset.json";
+import pDiamond from "@/assets/patterns/diamond.png.asset.json";
+import pAfricana from "@/assets/patterns/africana.png.asset.json";
+import pFlor from "@/assets/patterns/flor.png.asset.json";
+import pKasumi from "@/assets/patterns/kasumi.png.asset.json";
+import pMillennium from "@/assets/patterns/millennium.png.asset.json";
+import pNarrowReed from "@/assets/patterns/narrow-reed.png.asset.json";
+import pRain from "@/assets/patterns/rain.png.asset.json";
+import pReticulate from "@/assets/patterns/reticulate.png.asset.json";
 
 export const Route = createFileRoute("/products/decorative-glass")({
   head: () => ({
@@ -45,19 +43,18 @@ type Pattern = {
 };
 
 const PATTERNS: Pattern[] = [
-  { name: "Africana Flame Flash", image: pAfricana, thickness: ["5mm"], size: "2440 × 1830" },
-  { name: "Cathedral Aqualite", image: pCathedral, thickness: ["4mm", "5mm"], size: "2440 × 1830" },
-  { name: "Chinchilla", image: pChinchilla, thickness: ["5mm"], size: "2440 × 1830" },
-  { name: "Drop", image: pDrop, thickness: ["5mm"], size: "2440 × 1830" },
-  { name: "Flor", image: pFlor, thickness: ["5mm"], size: "2440 × 1830" },
-  { name: "Kasumi", image: pKasumi, thickness: ["5mm"], size: "2440 × 1830" },
-  { name: "Millennium", image: pMillennium, thickness: ["5mm"], size: "2440 × 1830" },
-  { name: "Matelux Decor Satin", image: pMatelux, thickness: ["4mm", "6mm"], size: "3660 × 2440" },
-  { name: "Narrow Reed (Clear & Low Iron)", image: pNarrowReed, thickness: ["5mm", "6mm"], size: "2440 × 2100" },
-  { name: "Reticulate", image: pReticulate, thickness: ["5mm"], size: "2440 × 1830" },
-  { name: "Satinlite", image: pSatinlite, thickness: ["4mm", "5mm"], size: "2440 × 1830" },
-  { name: "Spotswood", image: pSpotswood, thickness: ["5mm"], size: "2440 × 1830" },
+  { name: "Aqualite / Cathedral", image: pAqualite.url, thickness: ["4mm", "5mm"], size: "2440 × 1830" },
+  { name: "Chinchilla", image: pChinchilla.url, thickness: ["5mm"], size: "2440 × 1830" },
+  { name: "Diamond", image: pDiamond.url, thickness: ["5mm"], size: "2440 × 1830" },
+  { name: "Africana / Flame", image: pAfricana.url, thickness: ["5mm"], size: "2440 × 1830" },
+  { name: "Flor", image: pFlor.url, thickness: ["5mm"], size: "2440 × 1830" },
+  { name: "Kasumi", image: pKasumi.url, thickness: ["5mm"], size: "2440 × 1830" },
+  { name: "Millennium", image: pMillennium.url, thickness: ["5mm"], size: "2440 × 1830" },
+  { name: "Narrow Reed / Moru", image: pNarrowReed.url, thickness: ["5mm", "6mm"], size: "2440 × 2100" },
+  { name: "Rain / Seadrift", image: pRain.url, thickness: ["5mm"], size: "2440 × 1830" },
+  { name: "Reticulate", image: pReticulate.url, thickness: ["5mm"], size: "2440 × 1830" },
 ];
+
 
 function PatternsCatalogue() {
   return (

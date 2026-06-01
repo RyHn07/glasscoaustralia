@@ -97,7 +97,7 @@ export function Hero() {
               fontSize: "clamp(3rem, 7vw, 6rem)",
               fontWeight: 700,
               lineHeight: 1.05,
-              color: "#ffffff",
+              color: "#0a0a0a",
               margin: 0,
             }}
           >

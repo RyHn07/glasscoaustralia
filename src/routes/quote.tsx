@@ -378,7 +378,7 @@ function QuotePage() {
                     />
                   </Field>
                   <Field label="Delivery">
-                    <label className="flex h-11 items-center gap-3 rounded-md border border-neutral-200 bg-white px-3 text-sm">
+                    <label className="flex h-11 items-center gap-3 rounded-md border border-neutral-200 bg-white px-3 text-sm text-neutral-900">
                       <input
                         type="checkbox"
                         checked={form.delivery}

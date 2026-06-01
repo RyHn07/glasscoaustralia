@@ -341,15 +341,15 @@ export function ProductPageLayout(props: ProductPageProps & { children?: React.R
                 <>
                   <div className="relative h-[380px] w-full overflow-hidden rounded-lg shadow-lg">
                     <img src={img} alt={s.heading} loading="lazy" className="absolute inset-0 h-full w-full object-cover" />
-                    <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/55 to-transparent" />
-                    <div className="relative z-10 flex h-full max-w-2xl flex-col justify-end p-10">
+                    <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/45 to-black/30" />
+                    <div className="relative z-10 flex h-full max-w-2xl flex-col justify-start p-10">
                       <h2 style={{ fontFamily: HEAD_FONT, fontSize: "clamp(1.75rem, 3.5vw, 2.75rem)", fontWeight: 700, lineHeight: 1.1, color: "#fff", margin: 0 }}>
                         {s.heading}
                       </h2>
                     </div>
                   </div>
                   {s.paragraphs && (
-                    <div className={`relative z-10 mx-auto -mt-14 max-w-4xl rounded-lg border border-neutral-200 ${cardBg === "bg-white" ? "bg-white" : "bg-white"} p-10 shadow-lg`}>
+                    <div className={`relative z-10 mx-auto -mt-14 max-w-4xl rounded-lg border border-neutral-200 bg-white p-10 shadow-lg`}>
                       <div className="space-y-4 text-neutral-700" style={{ fontFamily: BODY_FONT, fontSize: "15px", lineHeight: 1.8 }}>
                         {s.paragraphs.map((p, i) => (<p key={i}>{p}</p>))}
                       </div>

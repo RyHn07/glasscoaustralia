@@ -75,8 +75,14 @@ const allImages: GalleryImage[] = [
 type Tab = "projects" | "products";
 
 function GalleryPage() {
+  const [tab, setTab] = useState<Tab>("projects");
+  const images = useMemo(() => allImages.filter((i) => i.category === tab), [tab]);
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const isOpen = activeIndex !== null;
+
+  useEffect(() => {
+    setActiveIndex(null);
+  }, [tab]);
 
   useEffect(() => {
     if (!isOpen) return;
@@ -95,7 +101,7 @@ function GalleryPage() {
       window.removeEventListener("keydown", onKey);
       document.body.style.overflow = "";
     };
-  }, [isOpen]);
+  }, [isOpen, images.length]);
 
   const next = () =>
     setActiveIndex((i) => (i === null ? i : (i + 1) % images.length));
@@ -103,6 +109,7 @@ function GalleryPage() {
     setActiveIndex((i) =>
       i === null ? i : (i - 1 + images.length) % images.length,
     );
+
 
   return (
     <div className="min-h-screen bg-white">

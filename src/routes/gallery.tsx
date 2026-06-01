@@ -19,7 +19,7 @@ import curvedImg from "@/assets/project-curved.jpg";
 import heritageImg from "@/assets/project-heritage.jpg";
 import officeImg from "@/assets/project-office.jpg";
 import retailImg from "@/assets/project-retail.jpg";
-import cncImg from "@/assets/glass-cnc-line.jpg";
+import cncImg from "@/assets/machine-cnc-real.jpg";
 import waterjetImg from "@/assets/glass-waterjet.jpg";
 import bimatechImg from "@/assets/glass-bimatech.jpg";
 import furnaceImg from "@/assets/northglass-furnace.jpg";

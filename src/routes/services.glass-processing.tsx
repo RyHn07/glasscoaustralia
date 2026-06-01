@@ -59,6 +59,16 @@ const subServices = [
     label: "Bimatech Techno Edge",
     short: "Italian CNC edging & polishing",
   },
+  {
+    id: "float-cutting",
+    label: "Float Cutting Line",
+    short: "Automated float glass cutting & break-out",
+  },
+  {
+    id: "laminate-cutting",
+    label: "Laminate Cutting Line",
+    short: "Precision cutting for PVB-laminated glass",
+  },
 ];
 
 const cncProcesses = [
@@ -708,6 +718,85 @@ function GlassProcessingPage() {
                   </li>
                 ))}
               </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* (D) FLOAT CUTTING LINE */}
+      <section id="float-cutting" className="w-full bg-neutral-50 py-24 scroll-mt-24">
+        <div className="mx-auto max-w-[1280px] px-6">
+          <div className="grid grid-cols-1 gap-14 lg:grid-cols-2 lg:items-center">
+            <div className="flex h-[420px] w-full items-center justify-center rounded-xl border border-dashed border-neutral-300 bg-white text-sm text-neutral-400" style={{ fontFamily: BODY_FONT }}>
+              Float Cutting Line photo coming soon
+            </div>
+            <div>
+              <div className="mb-4 inline-flex items-center gap-3 rounded-full border border-neutral-200 bg-white px-4 py-1.5 text-xs font-semibold uppercase tracking-wider" style={{ fontFamily: HEAD_FONT, color: ACCENT, letterSpacing: "0.15em" }}>
+                (D) FLOAT CUTTING LINE
+              </div>
+              <h2 style={{ fontFamily: HEAD_FONT, fontSize: "clamp(2rem, 3.5vw, 3rem)", fontWeight: 700, lineHeight: 1.1, color: "#0a0a0a", margin: 0 }}>
+                Automated <span style={{ color: ACCENT }}>float cutting</span>
+              </h2>
+              <p className="mt-5 text-neutral-700" style={{ fontFamily: BODY_FONT, fontSize: "15px", lineHeight: 1.75 }}>
+                Our float cutting line handles annealed clear, tinted and low-iron float glass from
+                full jumbo stock sheets down to finished blanks. CNC-driven optimisation maximises
+                sheet yield, while automatic break-out arms separate cut shapes cleanly before they
+                move into edgework or toughening.
+              </p>
+              <ul className="mt-7 grid grid-cols-1 gap-3 sm:grid-cols-2">
+                {[
+                  "Up to jumbo sheet (6000 × 3210 mm)",
+                  "Thickness 3 – 19 mm",
+                  "Optimised nesting for low waste",
+                  "Straight, X/Y and shape cuts",
+                  "Automatic break-out & sorting",
+                  "Direct feed to toughening & IGU line",
+                ].map((f) => (
+                  <li key={f} className="flex items-start gap-2 text-neutral-700" style={{ fontSize: "14px", lineHeight: 1.6 }}>
+                    <Check className="mt-0.5 h-4 w-4 shrink-0" style={{ color: ACCENT }} />
+                    <span>{f}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* (E) LAMINATE CUTTING LINE */}
+      <section id="laminate-cutting" className="w-full bg-white py-24 scroll-mt-24">
+        <div className="mx-auto max-w-[1280px] px-6">
+          <div className="grid grid-cols-1 gap-14 lg:grid-cols-2 lg:items-center">
+            <div className="order-2 lg:order-1">
+              <div className="mb-4 inline-flex items-center gap-3 rounded-full border border-neutral-200 bg-neutral-50 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider" style={{ fontFamily: HEAD_FONT, color: ACCENT, letterSpacing: "0.15em" }}>
+                (E) LAMINATE CUTTING LINE
+              </div>
+              <h2 style={{ fontFamily: HEAD_FONT, fontSize: "clamp(2rem, 3.5vw, 3rem)", fontWeight: 700, lineHeight: 1.1, color: "#0a0a0a", margin: 0 }}>
+                Precision <span style={{ color: ACCENT }}>laminated cutting</span>
+              </h2>
+              <p className="mt-5 text-neutral-700" style={{ fontFamily: BODY_FONT, fontSize: "15px", lineHeight: 1.75 }}>
+                Dedicated cutting line for PVB-interlayer laminated glass. Both glass lites are
+                scored, snapped, and the interlayer is heated and cleanly separated in a single
+                automated pass — preserving the integrity of the PVB film for clean, square edges.
+              </p>
+              <ul className="mt-7 grid grid-cols-1 gap-3 sm:grid-cols-2">
+                {[
+                  "Standard & acoustic PVB interlayers",
+                  "Thickness 6.38 – 21.52 mm",
+                  "Heated wire interlayer separation",
+                  "Clean cut without delamination",
+                  "Ideal for safety & security glazing",
+                  "Feeds toughening and IGU lines",
+                ].map((f) => (
+                  <li key={f} className="flex items-start gap-2 text-neutral-700" style={{ fontSize: "14px", lineHeight: 1.6 }}>
+                    <Check className="mt-0.5 h-4 w-4 shrink-0" style={{ color: ACCENT }} />
+                    <span>{f}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="order-1 flex h-[420px] w-full items-center justify-center rounded-xl border border-dashed border-neutral-300 bg-neutral-50 text-sm text-neutral-400 lg:order-2" style={{ fontFamily: BODY_FONT }}>
+              Laminate Cutting Line photo coming soon
             </div>
           </div>
         </div>

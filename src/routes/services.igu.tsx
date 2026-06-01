@@ -348,12 +348,13 @@ function IGUPage() {
                     {label}
                   </h3>
 
-                <p
-                  className="mt-4 text-neutral-600"
-                  style={{ fontFamily: BODY_FONT, fontSize: "14px", lineHeight: 1.7 }}
-                >
-                  {body}
-                </p>
+                  <p
+                    className="mt-4 text-neutral-600"
+                    style={{ fontFamily: BODY_FONT, fontSize: "14px", lineHeight: 1.7 }}
+                  >
+                    {body}
+                  </p>
+                </div>
               </div>
             ))}
           </div>

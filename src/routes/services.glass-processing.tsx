@@ -804,8 +804,15 @@ function GlassProcessingPage() {
                 ))}
               </ul>
             </div>
-            <div className="order-1 flex h-[420px] w-full items-center justify-center rounded-xl border border-dashed border-neutral-300 bg-neutral-50 text-sm text-neutral-400 lg:order-2" style={{ fontFamily: BODY_FONT }}>
-              Laminate Cutting Line photo coming soon
+            <div className="relative order-1 h-[420px] w-full overflow-hidden rounded-xl bg-neutral-100 shadow-lg lg:order-2">
+              <img
+                src={laminateCuttingImage}
+                alt="Laminated glass cutting line with PVB interlayer"
+                loading="lazy"
+                width={1024}
+                height={768}
+                className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 hover:scale-105"
+              />
             </div>
           </div>
         </div>

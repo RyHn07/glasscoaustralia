@@ -51,6 +51,7 @@ type ServiceItem = {
   label: string;
   description: string;
   to:
+    | "/services"
     | "/services/toughening-heat-strengthening"
     | "/services/igu"
     | "/services/glass-processing"
@@ -90,7 +91,7 @@ const serviceItems: ServiceItem[] = [
 const navItems = [
   { label: "Home", to: "/" as const },
   { label: "About Us", to: "/about" as const },
-  { label: "Services", to: "/" as const },
+  { label: "Services", to: "/services" as const },
   { label: "Gallery", to: "/gallery" as const },
   { label: "Our Certification", to: "/certifications" as const },
   { label: "Contact", to: "/contact" as const },
@@ -142,9 +143,9 @@ export function Header() {
             onMouseEnter={() => setServicesOpen(true)}
             onMouseLeave={() => setServicesOpen(false)}
           >
-            <button
-              type="button"
-              onClick={() => setServicesOpen((v) => !v)}
+            <Link
+              to="/services"
+              onClick={() => setServicesOpen(false)}
               className="flex items-center gap-1 text-[15px] font-medium text-black/70 transition-colors hover:text-black"
               aria-expanded={servicesOpen}
               aria-haspopup="true"
@@ -153,7 +154,7 @@ export function Header() {
               <ChevronDown
                 className={`h-3.5 w-3.5 transition-transform ${servicesOpen ? "rotate-180" : ""}`}
               />
-            </button>
+            </Link>
 
             {servicesOpen && (
               <div className="absolute left-1/2 top-full z-50 -translate-x-1/2 pt-3">

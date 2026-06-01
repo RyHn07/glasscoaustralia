@@ -11,6 +11,8 @@ import {
   Volume2,
   Thermometer,
   Sun,
+  FlaskConical,
+  Move3d,
 } from "lucide-react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
@@ -56,11 +58,41 @@ const technicalData: { label: string; value: string }[] = [
 ];
 
 const components = [
-  { icon: Droplets, label: "Washing machine" },
-  { icon: Search, label: "Inspecting station" },
-  { icon: Frame, label: "Frame mounting station" },
-  { icon: Wind, label: "Gas-filling press / assembly press" },
-  { icon: Wrench, label: "Automatic sealing machine" },
+  {
+    icon: Droplets,
+    label: "Washing Machine",
+    body: "Vertical glass washing line removes dust, fingerprints and residue. Brushes and de-ionised water deliver a contaminant-free surface — essential before sealing.",
+  },
+  {
+    icon: Search,
+    label: "Inspecting Station",
+    body: "High-intensity backlight inspection catches scratches, edge chips, coating defects and visual flaws before the unit moves into assembly.",
+  },
+  {
+    icon: Move3d,
+    label: "Spacer Bending Machine",
+    body: "Automated bending of aluminium or warm-edge spacer bars to the exact unit geometry — including rectangular, shaped and stepped IGUs.",
+  },
+  {
+    icon: FlaskConical,
+    label: "Desiccant Filling Machine",
+    body: "Precisely fills bent spacer frames with molecular-sieve desiccant to absorb residual moisture inside the cavity, preventing internal fogging over the unit's life.",
+  },
+  {
+    icon: Frame,
+    label: "Frame Mounting Station",
+    body: "Spacer frame is butyl-coated and accurately positioned on the first glass lite — locking in the cavity depth and a primary moisture seal.",
+  },
+  {
+    icon: Wind,
+    label: "Gas-Filling Press",
+    body: "Argon (or Krypton) gas is injected as the lites are pressed together inside the LISEC press, replacing air in the cavity for superior U-values.",
+  },
+  {
+    icon: Wrench,
+    label: "Automatic Sealing Machine",
+    body: "Two-component structural silicone or polysulphide is robotically extruded around the perimeter to form the secondary seal and lock the unit together for life.",
+  },
 ];
 
 const benefits = [
@@ -259,24 +291,50 @@ function IGUPage() {
               Line <span style={{ color: ACCENT }}>configuration</span>
             </h2>
           </div>
-          <div className="mt-12 grid grid-cols-2 gap-5 md:grid-cols-3 lg:grid-cols-5">
-            {components.map(({ icon: Icon, label }) => (
+          <p
+            className="mx-auto mt-6 max-w-2xl text-center text-neutral-600"
+            style={{ fontFamily: BODY_FONT, fontSize: "15px", lineHeight: 1.75 }}
+          >
+            Every IGU on our LISEC line passes through a sequence of dedicated stations. Each
+            machine has a specific role in producing a hermetically sealed, gas-filled unit.
+          </p>
+          <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {components.map(({ icon: Icon, label, body }, idx) => (
               <div
                 key={label}
-                className="flex flex-col items-center rounded-xl border border-neutral-200 bg-white p-6 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-neutral-300 hover:shadow-lg"
+                className="group relative flex flex-col rounded-xl border border-neutral-200 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-neutral-300 hover:shadow-lg"
               >
+                <span
+                  className="absolute right-5 top-5 text-xs font-bold tracking-wider text-neutral-300"
+                  style={{ fontFamily: HEAD_FONT }}
+                >
+                  {String(idx + 1).padStart(2, "0")}
+                </span>
                 <span
                   className="flex h-14 w-14 items-center justify-center rounded-full"
                   style={{ background: `${ACCENT}15` }}
                 >
                   <Icon className="h-7 w-7" style={{ color: ACCENT }} />
                 </span>
-                <span
-                  className="mt-4 text-neutral-800"
-                  style={{ fontFamily: BODY_FONT, fontSize: "14px", fontWeight: 500, lineHeight: 1.4 }}
+                <h3
+                  className="mt-5 text-neutral-900"
+                  style={{ fontFamily: HEAD_FONT, fontSize: "20px", fontWeight: 700, lineHeight: 1.2 }}
                 >
                   {label}
-                </span>
+                </h3>
+                {/* Component image placeholder — real photo to be added */}
+                <div
+                  className="mt-4 flex h-32 w-full items-center justify-center rounded-lg border border-dashed border-neutral-200 bg-neutral-50 text-xs text-neutral-400"
+                  style={{ fontFamily: BODY_FONT }}
+                >
+                  Photo coming soon
+                </div>
+                <p
+                  className="mt-4 text-neutral-600"
+                  style={{ fontFamily: BODY_FONT, fontSize: "14px", lineHeight: 1.7 }}
+                >
+                  {body}
+                </p>
               </div>
             ))}
           </div>

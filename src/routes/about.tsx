@@ -4,7 +4,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import heroImg from "@/assets/about-hero.jpg";
 import manufacturingImg from "@/assets/about-manufacturing.jpg";
-import teamImg from "@/assets/about-team.jpg";
+import companyImg from "@/assets/about-company.jpg";
 import printingImg from "@/assets/about-printing.jpg";
 import environmentImg from "@/assets/about-environment.jpg";
 
@@ -117,8 +117,8 @@ function AboutPage() {
       {/* OUR COMPANY */}
       <SplitSection
         eyebrow="OUR COMPANY"
-        image={teamImg}
-        imageAlt="GlassCo team collaborating"
+        image={companyImg}
+        imageAlt="GlassCo facility and operations"
         heading={
           <>
             Trusted Glass <span style={{ color: ACCENT }}>Partner</span>

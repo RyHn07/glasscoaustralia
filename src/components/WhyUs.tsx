@@ -18,8 +18,8 @@ const features = [
   },
   {
     icon: Zap,
-    title: "Fast Installation",
-    desc: "Efficient service delivery without compromising on quality or attention to detail",
+    title: "Fast Delivery",
+    desc: "Efficient order processing and delivery without compromising on quality or attention to detail",
   },
   {
     icon: Leaf,

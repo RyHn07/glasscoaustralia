@@ -108,8 +108,8 @@ export function Hero() {
 
           {/* Description */}
           <p
-            className="mt-8 text-base leading-relaxed text-foreground/80"
-            style={{ fontFamily: "Poppins, sans-serif", fontStyle: "normal", fontWeight: 400, maxWidth: "640px" }}
+            className="mt-8 text-base leading-relaxed"
+            style={{ fontFamily: "Poppins, sans-serif", fontStyle: "normal", fontWeight: 400, maxWidth: "640px", color: "#262626" }}
           >
             We manufacture premium glass from source — supplying builders,
             <br />
@@ -125,8 +125,8 @@ export function Hero() {
               Get a Free Quote  ›
             </button>
             <button
-              className="btn-animate rounded-md border border-foreground/30 bg-background/40 px-7 py-4 text-sm font-semibold text-foreground backdrop-blur hover:bg-background/60"
-              style={{ fontFamily: "Rajdhani, sans-serif" }}
+              className="btn-animate rounded-md border px-7 py-4 text-sm font-semibold backdrop-blur hover:bg-white"
+              style={{ fontFamily: "Rajdhani, sans-serif", borderColor: "rgba(10,10,10,0.3)", backgroundColor: "rgba(255,255,255,0.6)", color: "#0a0a0a" }}
             >
               View Products
             </button>

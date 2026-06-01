@@ -174,7 +174,8 @@ function QuotePage() {
             <button
               onClick={() => {
                 setSubmitted(false);
-                setItems([newLine()]);
+                setFiles([]);
+                setFileError("");
                 setForm({
                   name: "",
                   email: "",

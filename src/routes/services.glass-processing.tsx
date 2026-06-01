@@ -16,6 +16,8 @@ import heroImage from "@/assets/service-glass-processing.jpg";
 import cncImage from "@/assets/machine-cnc-real.jpg.asset.json";
 import waterjetImage from "@/assets/glass-waterjet.jpg";
 import bimatechImage from "@/assets/glass-bimatech.jpg";
+import floatCuttingImage from "@/assets/processing-float-cutting.jpg";
+import laminateCuttingImage from "@/assets/processing-laminate-cutting.jpg";
 
 const ACCENT = "#009AAA";
 const HEAD_FONT = "Rajdhani, sans-serif";

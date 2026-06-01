@@ -147,7 +147,7 @@ function GalleryPage() {
                   margin: 0,
                 }}
               >
-                Projects, <span style={{ color: "#009AAA" }}>Products</span> & Facility
+                {tab === "projects" ? <>Our <span style={{ color: "#009AAA" }}>Projects</span></> : <><span style={{ color: "#009AAA" }}>Products</span> & Machinery</>}
               </h1>
             </div>
             <p
@@ -158,8 +158,30 @@ function GalleryPage() {
             </p>
           </div>
 
+          {/* Tab switcher */}
+          <div className="mt-10 flex flex-wrap gap-2">
+            {([
+              { id: "projects" as Tab, label: "Projects" },
+              { id: "products" as Tab, label: "Products & Machinery" },
+            ]).map((t) => (
+              <button
+                key={t.id}
+                type="button"
+                onClick={() => setTab(t.id)}
+                className={`rounded-full border px-5 py-2 text-sm font-semibold transition-all ${
+                  tab === t.id
+                    ? "border-[#009AAA] bg-[#009AAA] text-white shadow-[0_6px_16px_-6px_rgba(0,154,170,0.6)]"
+                    : "border-neutral-200 bg-white text-neutral-700 hover:border-[#009AAA]/50 hover:text-[#009AAA]"
+                }`}
+                style={{ fontFamily: "Rajdhani, sans-serif", letterSpacing: "0.04em" }}
+              >
+                {t.label}
+              </button>
+            ))}
+          </div>
+
           {/* Image grid: 2 + 3 repeating */}
-          <div className="mt-14 grid grid-cols-1 gap-6 md:grid-cols-6">
+          <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-6">
             {images.map((it, i) => {
               const posInGroup = i % 5;
               const span = posInGroup < 2 ? "md:col-span-3" : "md:col-span-2";

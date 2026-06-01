@@ -78,7 +78,7 @@ export type ProductPageProps = {
   ctaBody?: string;
 };
 
-export function ProductPageLayout(props: ProductPageProps) {
+export function ProductPageLayout(props: ProductPageProps & { children?: React.ReactNode }) {
   const {
     eyebrow,
     title,
@@ -91,6 +91,7 @@ export function ProductPageLayout(props: ProductPageProps) {
     faqs,
     ctaTitle = "Talk to our glass specialists",
     ctaBody = "Get tailored advice on the right glass solution for your project.",
+    children,
   } = props;
 
   return (
@@ -376,6 +377,8 @@ export function ProductPageLayout(props: ProductPageProps) {
           </section>
         );
       })}
+
+      {children}
 
       {/* FAQs */}
       {faqs && faqs.length > 0 && (

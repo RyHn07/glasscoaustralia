@@ -1,5 +1,6 @@
 import { ArrowUpRight } from "lucide-react";
-import floatImg from "@/assets/range-float.jpg";
+import { Link } from "@tanstack/react-router";
+import floatAsset from "@/assets/range-float-stacked.jpg.asset.json";
 import temperedImg from "@/assets/range-tempered.jpg";
 import laminatedImg from "@/assets/range-laminated.jpg";
 import lowEImg from "@/assets/range-lowe.jpg";
@@ -7,20 +8,22 @@ import mirrorsImg from "@/assets/range-mirrors.jpg";
 
 const items = [
   {
-    image: floatImg,
-    alt: "Stack of clear float glass sheets",
+    image: floatAsset.url,
+    alt: "Stack of clear float glass sheets standing vertically",
     category: "BASE PRODUCT",
     title: "Float & Annealed Glass",
     spec: "3–19 mm · Clear & Low-Iron · AS/NZS 4666",
     tags: ["Optically Clear", "Cut-to-Size", "Custom Edges"],
+    to: "/products/clear-float-glass",
   },
   {
     image: temperedImg,
-    alt: "Toughened safety glass panels",
+    alt: "Toughened safety glass panel",
     category: "SAFETY GLASS",
     title: "Toughened (Tempered) Glass",
     spec: "4–19 mm · AS/NZS 2208 Grade A",
     tags: ["Impact Resistant", "Heat-Strengthened", "Certified"],
+    to: "/products/security-glass-assault-shield",
   },
   {
     image: laminatedImg,
@@ -29,6 +32,7 @@ const items = [
     title: "Laminated Safety Glass",
     spec: "6.38–13.52 mm · PVB/SGP interlayer",
     tags: ["Intruder Resistant", "Acoustic Control", "UV Block"],
+    to: "/products/clear-laminated-glass",
   },
   {
     image: lowEImg,
@@ -37,6 +41,7 @@ const items = [
     title: "Low-E Glass",
     spec: "U-value from 1.6 W/m²K · SHGC tunable",
     tags: ["Thermal Control", "High VLT", "Lower Energy Bills"],
+    to: "/products/energy-efficient-glass",
   },
   {
     image: mirrorsImg,
@@ -45,8 +50,9 @@ const items = [
     title: "Mirrors & Decorative",
     spec: "3–6 mm · Silver, Bronze, Grey · Custom cut",
     tags: ["Polished Edges", "Tinted Options", "Made to Order"],
+    to: "/products/decorative-glass",
   },
-];
+] as const;
 
 export function Range() {
   return (
@@ -97,12 +103,12 @@ export function Range() {
         {/* Grid: 6-col layout — first row 2 wide cards, second row 3 cards */}
         <div className="mt-14 grid grid-cols-1 gap-6 md:grid-cols-6">
           {items.map((it, i) => {
-            // 2 + 3 layout: first two span 3, last three span 2
             const span = i < 2 ? "md:col-span-3" : "md:col-span-2";
             return (
-              <article
+              <Link
                 key={it.title}
-                className={`group relative h-[380px] overflow-hidden rounded-xl bg-neutral-200 ${span}`}
+                to={it.to}
+                className={`group relative block h-[380px] overflow-hidden rounded-xl bg-neutral-200 ${span}`}
               >
                 <img
                   src={it.image}
@@ -162,7 +168,7 @@ export function Range() {
                 <div className="absolute bottom-6 right-6 flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white backdrop-blur transition-all group-hover:bg-white group-hover:text-black">
                   <ArrowUpRight className="h-5 w-5" />
                 </div>
-              </article>
+              </Link>
             );
           })}
         </div>

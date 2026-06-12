@@ -110,15 +110,49 @@ export function Header() {
   }, []);
 
   return (
-    <header
-      className="sticky top-0 z-50 w-full bg-white/95 backdrop-blur transition-shadow"
-      style={{
-        fontFamily: '"Geist", "Geist Fallback", sans-serif',
-        fontSize: "15px",
-        fontWeight: 500,
-        boxShadow: scrolled ? "0 2px 12px rgba(0,0,0,0.08)" : "none",
-      }}
-    >
+    <div className="sticky top-0 z-50 w-full">
+      {/* Top utility bar */}
+      <div
+        className="w-full text-white"
+        style={{ backgroundColor: "#009AAA", fontFamily: '"Rajdhani", sans-serif' }}
+      >
+        <div className="mx-auto flex max-w-[1400px] items-center justify-between px-6 py-2">
+          <div className="text-[13px] font-semibold tracking-wide md:text-sm">
+            Premium Glass. Crafted in Australia.
+          </div>
+          <div className="flex items-center gap-5">
+            <Link
+              to="/quote"
+              className="hidden rounded-full bg-white px-5 py-1.5 text-xs font-bold uppercase tracking-wider transition-opacity hover:opacity-90 sm:inline-flex"
+              style={{ color: "#009AAA" }}
+            >
+              Request Quote
+            </Link>
+            <a
+              href="tel:+61397065506"
+              className="flex items-center gap-2.5"
+            >
+              <span className="flex h-8 w-8 items-center justify-center rounded-full bg-white/20">
+                <Phone className="h-4 w-4" />
+              </span>
+              <span className="leading-tight">
+                <span className="block text-sm font-bold tracking-wide">(03) 9706 5506</span>
+                <span className="block text-[11px] text-white/85">Call us today</span>
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <header
+        className="w-full bg-white/95 backdrop-blur transition-shadow"
+        style={{
+          fontFamily: '"Geist", "Geist Fallback", sans-serif',
+          fontSize: "15px",
+          fontWeight: 500,
+          boxShadow: scrolled ? "0 2px 12px rgba(0,0,0,0.08)" : "none",
+        }}
+      >
       <div className="mx-auto flex max-w-[1400px] items-center justify-between px-6 py-2">
         {/* Logo */}
         <Link to="/" className="flex items-center">

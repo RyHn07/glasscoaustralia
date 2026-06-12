@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "@tanstack/react-router";
-import { ChevronDown, Phone } from "lucide-react";
+import { ChevronDown, Phone, MapPin } from "lucide-react";
 import logo from "@/assets/logo.svg";
 
 type ProductItem = {
@@ -116,11 +116,12 @@ export function Header() {
         className="w-full text-white"
         style={{ backgroundColor: "#009AAA", fontFamily: '"Rajdhani", sans-serif' }}
       >
-        <div className="mx-auto flex max-w-[1400px] items-center justify-between px-6 py-2">
-          <div className="text-[13px] font-semibold tracking-wide md:text-sm">
-            Premium Glass. Crafted in Australia.
+        <div className="mx-auto flex max-w-[1400px] items-center justify-between gap-4 px-6 py-2">
+          <div className="flex items-center gap-2 text-[13px] font-semibold tracking-wide md:text-sm">
+            <MapPin className="h-4 w-4 shrink-0" />
+            <span className="truncate">370-372 Hammond Rd, Dandenong South VIC 3175</span>
           </div>
-          <div className="flex items-center gap-5">
+          <div className="flex items-center gap-5 shrink-0">
             <a
               href="tel:+61397065506"
               className="flex items-center gap-2.5"

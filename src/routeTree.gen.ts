@@ -18,6 +18,9 @@ import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ServicesIndexRouteImport } from './routes/services.index'
 import { Route as ProductsIndexRouteImport } from './routes/products.index'
+import { Route as SolutionsResidentialRouteImport } from './routes/solutions.residential'
+import { Route as SolutionsIndustrialAutomotiveRouteImport } from './routes/solutions.industrial-automotive'
+import { Route as SolutionsCommercialRouteImport } from './routes/solutions.commercial'
 import { Route as ServicesTougheningHeatStrengtheningRouteImport } from './routes/services.toughening-heat-strengthening'
 import { Route as ServicesIguRouteImport } from './routes/services.igu'
 import { Route as ServicesGlassProcessingRouteImport } from './routes/services.glass-processing'
@@ -74,6 +77,22 @@ const ServicesIndexRoute = ServicesIndexRouteImport.update({
 const ProductsIndexRoute = ProductsIndexRouteImport.update({
   id: '/products/',
   path: '/products/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SolutionsResidentialRoute = SolutionsResidentialRouteImport.update({
+  id: '/solutions/residential',
+  path: '/solutions/residential',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SolutionsIndustrialAutomotiveRoute =
+  SolutionsIndustrialAutomotiveRouteImport.update({
+    id: '/solutions/industrial-automotive',
+    path: '/solutions/industrial-automotive',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const SolutionsCommercialRoute = SolutionsCommercialRouteImport.update({
+  id: '/solutions/commercial',
+  path: '/solutions/commercial',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ServicesTougheningHeatStrengtheningRoute =
@@ -162,6 +181,9 @@ export interface FileRoutesByFullPath {
   '/services/glass-processing': typeof ServicesGlassProcessingRoute
   '/services/igu': typeof ServicesIguRoute
   '/services/toughening-heat-strengthening': typeof ServicesTougheningHeatStrengtheningRoute
+  '/solutions/commercial': typeof SolutionsCommercialRoute
+  '/solutions/industrial-automotive': typeof SolutionsIndustrialAutomotiveRoute
+  '/solutions/residential': typeof SolutionsResidentialRoute
   '/products/': typeof ProductsIndexRoute
   '/services/': typeof ServicesIndexRoute
 }
@@ -185,6 +207,9 @@ export interface FileRoutesByTo {
   '/services/glass-processing': typeof ServicesGlassProcessingRoute
   '/services/igu': typeof ServicesIguRoute
   '/services/toughening-heat-strengthening': typeof ServicesTougheningHeatStrengtheningRoute
+  '/solutions/commercial': typeof SolutionsCommercialRoute
+  '/solutions/industrial-automotive': typeof SolutionsIndustrialAutomotiveRoute
+  '/solutions/residential': typeof SolutionsResidentialRoute
   '/products': typeof ProductsIndexRoute
   '/services': typeof ServicesIndexRoute
 }
@@ -209,6 +234,9 @@ export interface FileRoutesById {
   '/services/glass-processing': typeof ServicesGlassProcessingRoute
   '/services/igu': typeof ServicesIguRoute
   '/services/toughening-heat-strengthening': typeof ServicesTougheningHeatStrengtheningRoute
+  '/solutions/commercial': typeof SolutionsCommercialRoute
+  '/solutions/industrial-automotive': typeof SolutionsIndustrialAutomotiveRoute
+  '/solutions/residential': typeof SolutionsResidentialRoute
   '/products/': typeof ProductsIndexRoute
   '/services/': typeof ServicesIndexRoute
 }
@@ -234,6 +262,9 @@ export interface FileRouteTypes {
     | '/services/glass-processing'
     | '/services/igu'
     | '/services/toughening-heat-strengthening'
+    | '/solutions/commercial'
+    | '/solutions/industrial-automotive'
+    | '/solutions/residential'
     | '/products/'
     | '/services/'
   fileRoutesByTo: FileRoutesByTo
@@ -257,6 +288,9 @@ export interface FileRouteTypes {
     | '/services/glass-processing'
     | '/services/igu'
     | '/services/toughening-heat-strengthening'
+    | '/solutions/commercial'
+    | '/solutions/industrial-automotive'
+    | '/solutions/residential'
     | '/products'
     | '/services'
   id:
@@ -280,6 +314,9 @@ export interface FileRouteTypes {
     | '/services/glass-processing'
     | '/services/igu'
     | '/services/toughening-heat-strengthening'
+    | '/solutions/commercial'
+    | '/solutions/industrial-automotive'
+    | '/solutions/residential'
     | '/products/'
     | '/services/'
   fileRoutesById: FileRoutesById
@@ -304,6 +341,9 @@ export interface RootRouteChildren {
   ServicesGlassProcessingRoute: typeof ServicesGlassProcessingRoute
   ServicesIguRoute: typeof ServicesIguRoute
   ServicesTougheningHeatStrengtheningRoute: typeof ServicesTougheningHeatStrengtheningRoute
+  SolutionsCommercialRoute: typeof SolutionsCommercialRoute
+  SolutionsIndustrialAutomotiveRoute: typeof SolutionsIndustrialAutomotiveRoute
+  SolutionsResidentialRoute: typeof SolutionsResidentialRoute
   ProductsIndexRoute: typeof ProductsIndexRoute
   ServicesIndexRoute: typeof ServicesIndexRoute
 }
@@ -371,6 +411,27 @@ declare module '@tanstack/react-router' {
       path: '/products'
       fullPath: '/products/'
       preLoaderRoute: typeof ProductsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/solutions/residential': {
+      id: '/solutions/residential'
+      path: '/solutions/residential'
+      fullPath: '/solutions/residential'
+      preLoaderRoute: typeof SolutionsResidentialRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/solutions/industrial-automotive': {
+      id: '/solutions/industrial-automotive'
+      path: '/solutions/industrial-automotive'
+      fullPath: '/solutions/industrial-automotive'
+      preLoaderRoute: typeof SolutionsIndustrialAutomotiveRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/solutions/commercial': {
+      id: '/solutions/commercial'
+      path: '/solutions/commercial'
+      fullPath: '/solutions/commercial'
+      preLoaderRoute: typeof SolutionsCommercialRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/services/toughening-heat-strengthening': {
@@ -482,6 +543,9 @@ const rootRouteChildren: RootRouteChildren = {
   ServicesIguRoute: ServicesIguRoute,
   ServicesTougheningHeatStrengtheningRoute:
     ServicesTougheningHeatStrengtheningRoute,
+  SolutionsCommercialRoute: SolutionsCommercialRoute,
+  SolutionsIndustrialAutomotiveRoute: SolutionsIndustrialAutomotiveRoute,
+  SolutionsResidentialRoute: SolutionsResidentialRoute,
   ProductsIndexRoute: ProductsIndexRoute,
   ServicesIndexRoute: ServicesIndexRoute,
 }

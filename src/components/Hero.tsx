@@ -52,7 +52,7 @@ export function Hero() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 mx-auto flex h-full max-w-[1280px] flex-col items-center justify-center px-6 text-center">
+      <div className="relative z-10 mx-auto flex h-full max-w-[1280px] flex-col items-center justify-center px-6 pb-[140px] text-center">
         <div className="flex w-full max-w-3xl flex-col items-center">
           {/* Eyebrow */}
           <div className="mb-6 flex items-center justify-center gap-3">

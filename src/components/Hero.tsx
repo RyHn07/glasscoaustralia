@@ -37,18 +37,13 @@ export function Hero() {
 
   return (
     <section className="relative h-full w-full overflow-hidden bg-background">
-      {/* Background video */}
+      {/* Background image */}
       <div className="absolute inset-0">
-        <video
-          src="/hero-bg.mov"
-          poster={heroImage}
-          autoPlay
-          muted
-          loop
-          playsInline
+        <img
+          src={heroImage}
+          alt="Modern glass facade"
           className="h-full w-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-white/85 via-white/70 to-white/50" />
       </div>
 
       {/* Content */}

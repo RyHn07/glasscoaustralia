@@ -121,13 +121,6 @@ export function Header() {
             Premium Glass. Crafted in Australia.
           </div>
           <div className="flex items-center gap-5">
-            <Link
-              to="/quote"
-              className="hidden rounded-full bg-white px-5 py-1.5 text-xs font-bold uppercase tracking-wider transition-opacity hover:opacity-90 sm:inline-flex"
-              style={{ color: "#009AAA" }}
-            >
-              Request Quote
-            </Link>
             <a
               href="tel:+61397065506"
               className="flex items-center gap-2.5"

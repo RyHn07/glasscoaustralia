@@ -318,14 +318,6 @@ export function Header() {
 
         {/* Right side */}
         <div className="flex items-center gap-4">
-          <a
-            href="tel:+61397065506"
-            className="hidden items-center gap-2 text-sm font-semibold transition-opacity hover:opacity-80 md:inline-flex"
-            style={{ fontFamily: '"Rajdhani", sans-serif', color: "#009AAA" }}
-          >
-            <Phone className="h-4 w-4" />
-            (03) 9706 5506
-          </a>
           <Link
             to="/quote"
             className="rounded-md bg-neutral-900 px-5 py-2.5 text-sm font-semibold text-white transition-opacity hover:opacity-90"
@@ -335,6 +327,8 @@ export function Header() {
           </Link>
         </div>
       </div>
-    </header>
+      </header>
+    </div>
   );
 }
+

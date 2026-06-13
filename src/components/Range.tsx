@@ -5,6 +5,7 @@ import temperedImg from "@/assets/range-tempered.jpg";
 import laminatedImg from "@/assets/range-laminated.jpg";
 import lowEImg from "@/assets/range-lowe.jpg";
 import mirrorsImg from "@/assets/range-mirrors.jpg";
+import acousticImg from "@/assets/product-acoustic.jpg";
 
 const items = [
   {
@@ -43,6 +44,13 @@ const items = [
     name: "Mirrors & Decorative",
     description: "Silver, bronze and grey mirrors — polished, tinted and made to order.",
     to: "/products/decorative-glass" as const,
+  },
+  {
+    image: acousticImg,
+    alt: "Acoustic laminated glass installed in modern interior",
+    name: "Acoustic Glass",
+    description: "Noise-reducing laminated glass for quieter homes, offices and apartments.",
+    to: "/products/acoustic-glass" as const,
   },
 ];
 

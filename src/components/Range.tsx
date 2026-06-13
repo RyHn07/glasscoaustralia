@@ -1,4 +1,4 @@
-import { ArrowUpRight } from "lucide-react";
+import { Star } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import floatAsset from "@/assets/range-float-stacked.jpg.asset.json";
 import temperedImg from "@/assets/range-tempered.jpg";
@@ -10,49 +10,41 @@ const items = [
   {
     image: floatAsset.url,
     alt: "Stack of clear float glass sheets standing vertically",
-    category: "BASE PRODUCT",
-    title: "Float & Annealed Glass",
-    spec: "3–19 mm · Clear & Low-Iron · AS/NZS 4666",
-    tags: ["Optically Clear", "Cut-to-Size", "Custom Edges"],
-    to: "/products/clear-float-glass",
+    name: "Float & Annealed Glass",
+    description: "Premium architectural float glass — flat, clear and ready for processing.",
+    to: "/products/clear-float-glass" as const,
+    topSeller: true,
   },
   {
     image: temperedImg,
     alt: "Toughened safety glass panel",
-    category: "SAFETY GLASS",
-    title: "Toughened (Tempered) Glass",
-    spec: "4–19 mm · AS/NZS 2208 Grade A",
-    tags: ["Impact Resistant", "Heat-Strengthened", "Certified"],
-    to: "/products/security-glass-assault-shield",
+    name: "Toughened (Tempered) Glass",
+    description: "AS/NZS 2208 Grade A safety glass — impact resistant and heat-strengthened.",
+    to: "/products/security-glass-assault-shield" as const,
+    topSeller: true,
   },
   {
     image: laminatedImg,
     alt: "Laminated safety glass cross-section",
-    category: "SECURITY & ACOUSTIC",
-    title: "Laminated Safety Glass",
-    spec: "6.38–13.52 mm · PVB/SGP interlayer",
-    tags: ["Intruder Resistant", "Acoustic Control", "UV Block"],
-    to: "/products/clear-laminated-glass",
+    name: "Laminated Safety Glass",
+    description: "PVB/SGP interlayer glass with intruder, acoustic and UV control benefits.",
+    to: "/products/clear-laminated-glass" as const,
   },
   {
     image: lowEImg,
     alt: "Low-E coated glass facade",
-    category: "ENERGY EFFICIENT",
-    title: "Low-E Glass",
-    spec: "U-value from 1.6 W/m²K · SHGC tunable",
-    tags: ["Thermal Control", "High VLT", "Lower Energy Bills"],
-    to: "/products/energy-efficient-glass",
+    name: "Low-E Glass",
+    description: "Thermal-control glazing with high VLT — lower energy bills, year-round comfort.",
+    to: "/products/energy-efficient-glass" as const,
   },
   {
     image: mirrorsImg,
     alt: "Custom silvered mirror panels in interior",
-    category: "DECORATIVE",
-    title: "Mirrors & Decorative",
-    spec: "3–6 mm · Silver, Bronze, Grey · Custom cut",
-    tags: ["Polished Edges", "Tinted Options", "Made to Order"],
-    to: "/products/decorative-glass",
+    name: "Mirrors & Decorative",
+    description: "Silver, bronze and grey mirrors — polished, tinted and made to order.",
+    to: "/products/decorative-glass" as const,
   },
-] as const;
+];
 
 export function Range() {
   return (
@@ -100,77 +92,66 @@ export function Range() {
           </p>
         </div>
 
-        {/* Grid: 6-col layout — first row 2 wide cards, second row 3 cards */}
-        <div className="mt-14 grid grid-cols-1 gap-6 md:grid-cols-6">
-          {items.map((it, i) => {
-            const span = i < 2 ? "md:col-span-3" : "md:col-span-2";
-            return (
-              <Link
-                key={it.title}
-                to={it.to}
-                className={`group relative block h-[380px] overflow-hidden rounded-xl bg-neutral-200 ${span}`}
-              >
+        {/* Grid — matches /products page card style */}
+        <div className="mt-14 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          {items.map((p) => (
+            <Link
+              key={p.to}
+              to={p.to}
+              className="group flex flex-col overflow-hidden rounded-2xl border border-neutral-200 bg-white transition-all hover:-translate-y-1 hover:border-[#009AAA]/40 hover:shadow-[0_20px_50px_-20px_rgba(0,154,170,0.35)]"
+            >
+              <div className="relative aspect-[4/3] overflow-hidden bg-neutral-100">
                 <img
-                  src={it.image}
-                  alt={it.alt}
+                  src={p.image}
+                  alt={p.alt}
                   loading="lazy"
-                  width={1024}
-                  height={768}
-                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  width={1600}
+                  height={1024}
+                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
-                <div className="absolute inset-0 flex flex-col justify-end p-7 text-white">
+                {p.topSeller && (
                   <span
-                    style={{
-                      fontFamily: "Rajdhani, sans-serif",
-                      fontSize: "12px",
-                      fontWeight: 700,
-                      letterSpacing: "0.2em",
-                      color: "#00DEF7",
-                    }}
+                    className="absolute left-4 top-4 inline-flex items-center gap-1.5 rounded-full bg-[#009AAA] px-3 py-1 text-xs font-semibold uppercase tracking-wider text-white shadow-md"
+                    style={{ fontFamily: "Rajdhani, sans-serif", letterSpacing: "0.12em" }}
                   >
-                    {it.category}
+                    <Star className="h-3 w-3 fill-white" />
+                    Top Seller
                   </span>
-                  <h3
-                    className="mt-2"
-                    style={{
-                      fontFamily: "Rajdhani, sans-serif",
-                      fontSize: "26px",
-                      fontWeight: 700,
-                      lineHeight: 1.1,
-                    }}
-                  >
-                    {it.title}
-                  </h3>
-                  <div
-                    className="mt-2 text-white/85"
-                    style={{
-                      fontFamily: "Rajdhani, sans-serif",
-                      fontSize: "13px",
-                      fontWeight: 600,
-                      letterSpacing: "0.05em",
-                    }}
-                  >
-                    {it.spec}
-                  </div>
-                  <div className="mt-3 flex flex-wrap gap-2">
-                    {it.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs backdrop-blur"
-                        style={{ fontFamily: "Poppins, sans-serif" }}
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-                <div className="absolute bottom-6 right-6 flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white backdrop-blur transition-all group-hover:bg-white group-hover:text-black">
-                  <ArrowUpRight className="h-5 w-5" />
-                </div>
-              </Link>
-            );
-          })}
+                )}
+              </div>
+              <div className="flex flex-1 flex-col p-6">
+                <h3
+                  className="text-xl font-semibold text-neutral-900 transition-colors group-hover:text-[#009AAA]"
+                  style={{ fontFamily: '"Rajdhani", sans-serif' }}
+                >
+                  {p.name}
+                </h3>
+                <p className="mt-2 flex-1 text-sm leading-relaxed text-neutral-600">
+                  {p.description}
+                </p>
+                <span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-[#009AAA]">
+                  View product
+                  <span className="transition-transform group-hover:translate-x-1">→</span>
+                </span>
+              </div>
+            </Link>
+          ))}
+        </div>
+
+        <div className="mt-12 flex justify-center">
+          <Link
+            to="/products"
+            className="inline-flex items-center gap-2 rounded-md px-6 py-3 text-white transition-opacity hover:opacity-90"
+            style={{
+              backgroundColor: "#009AAA",
+              fontFamily: "Rajdhani, sans-serif",
+              fontSize: "14px",
+              fontWeight: 700,
+              letterSpacing: "0.05em",
+            }}
+          >
+            View All Products →
+          </Link>
         </div>
       </div>
     </section>

@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as TermsRouteImport } from './routes/terms'
+import { Route as ResourcesRouteImport } from './routes/resources'
 import { Route as QuoteRouteImport } from './routes/quote'
 import { Route as GalleryRouteImport } from './routes/gallery'
 import { Route as ContactRouteImport } from './routes/contact'
@@ -37,6 +38,11 @@ import { Route as ProductsAcousticGlassRouteImport } from './routes/products.aco
 const TermsRoute = TermsRouteImport.update({
   id: '/terms',
   path: '/terms',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ResourcesRoute = ResourcesRouteImport.update({
+  id: '/resources',
+  path: '/resources',
   getParentRoute: () => rootRouteImport,
 } as any)
 const QuoteRoute = QuoteRouteImport.update({
@@ -168,6 +174,7 @@ export interface FileRoutesByFullPath {
   '/contact': typeof ContactRoute
   '/gallery': typeof GalleryRoute
   '/quote': typeof QuoteRoute
+  '/resources': typeof ResourcesRoute
   '/terms': typeof TermsRoute
   '/products/acoustic-glass': typeof ProductsAcousticGlassRoute
   '/products/automotive-glass': typeof ProductsAutomotiveGlassRoute
@@ -194,6 +201,7 @@ export interface FileRoutesByTo {
   '/contact': typeof ContactRoute
   '/gallery': typeof GalleryRoute
   '/quote': typeof QuoteRoute
+  '/resources': typeof ResourcesRoute
   '/terms': typeof TermsRoute
   '/products/acoustic-glass': typeof ProductsAcousticGlassRoute
   '/products/automotive-glass': typeof ProductsAutomotiveGlassRoute
@@ -221,6 +229,7 @@ export interface FileRoutesById {
   '/contact': typeof ContactRoute
   '/gallery': typeof GalleryRoute
   '/quote': typeof QuoteRoute
+  '/resources': typeof ResourcesRoute
   '/terms': typeof TermsRoute
   '/products/acoustic-glass': typeof ProductsAcousticGlassRoute
   '/products/automotive-glass': typeof ProductsAutomotiveGlassRoute
@@ -249,6 +258,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/gallery'
     | '/quote'
+    | '/resources'
     | '/terms'
     | '/products/acoustic-glass'
     | '/products/automotive-glass'
@@ -275,6 +285,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/gallery'
     | '/quote'
+    | '/resources'
     | '/terms'
     | '/products/acoustic-glass'
     | '/products/automotive-glass'
@@ -301,6 +312,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/gallery'
     | '/quote'
+    | '/resources'
     | '/terms'
     | '/products/acoustic-glass'
     | '/products/automotive-glass'
@@ -328,6 +340,7 @@ export interface RootRouteChildren {
   ContactRoute: typeof ContactRoute
   GalleryRoute: typeof GalleryRoute
   QuoteRoute: typeof QuoteRoute
+  ResourcesRoute: typeof ResourcesRoute
   TermsRoute: typeof TermsRoute
   ProductsAcousticGlassRoute: typeof ProductsAcousticGlassRoute
   ProductsAutomotiveGlassRoute: typeof ProductsAutomotiveGlassRoute
@@ -355,6 +368,13 @@ declare module '@tanstack/react-router' {
       path: '/terms'
       fullPath: '/terms'
       preLoaderRoute: typeof TermsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/resources': {
+      id: '/resources'
+      path: '/resources'
+      fullPath: '/resources'
+      preLoaderRoute: typeof ResourcesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/quote': {
@@ -528,6 +548,7 @@ const rootRouteChildren: RootRouteChildren = {
   ContactRoute: ContactRoute,
   GalleryRoute: GalleryRoute,
   QuoteRoute: QuoteRoute,
+  ResourcesRoute: ResourcesRoute,
   TermsRoute: TermsRoute,
   ProductsAcousticGlassRoute: ProductsAcousticGlassRoute,
   ProductsAutomotiveGlassRoute: ProductsAutomotiveGlassRoute,

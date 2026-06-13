@@ -94,6 +94,7 @@ const navItems = [
   { label: "Services", to: "/services" as const },
   { label: "Gallery", to: "/gallery" as const },
   { label: "Our Certification", to: "/certifications" as const },
+  { label: "Resources", to: "/resources" as const },
   { label: "Contact", to: "/contact" as const },
 ];
 

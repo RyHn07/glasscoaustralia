@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { Home, Building2, Factory } from "lucide-react";
 import heroImage from "@/assets/hero-glass.jpg";
+import heroImage2 from "@/assets/hero-glass-2.jpg";
+import heroImage3 from "@/assets/hero-glass-3.jpg";
 
 const rotatingWords = [
   "GLASS WHOLESALER",
@@ -11,6 +13,8 @@ const rotatingWords = [
   "GLASS SUPPLIER",
   "GLASS SUPPLIER",
 ];
+
+const heroSlides = [heroImage, heroImage2, heroImage3];
 
 type Segment = {
   to: "/solutions/residential" | "/solutions/commercial" | "/solutions/industrial-automotive";
@@ -27,6 +31,7 @@ const segments: Segment[] = [
 
 export function Hero() {
   const [wordIndex, setWordIndex] = useState(0);
+  const [slideIndex, setSlideIndex] = useState(0);
 
   useEffect(() => {
     const id = setInterval(() => {
@@ -35,15 +40,35 @@ export function Hero() {
     return () => clearInterval(id);
   }, []);
 
+  useEffect(() => {
+    const id = setInterval(() => {
+      setSlideIndex((i) => (i + 1) % heroSlides.length);
+    }, 6000);
+    return () => clearInterval(id);
+  }, []);
+
   return (
     <section className="relative h-full w-full overflow-hidden bg-background">
-      {/* Background image */}
+      {/* Background image slider with Ken Burns zoom */}
       <div className="absolute inset-0">
-        <img
-          src={heroImage}
-          alt="Modern glass facade"
-          className="h-full w-full object-cover"
-        />
+        {heroSlides.map((src, i) => (
+          <img
+            key={src}
+            src={src}
+            alt=""
+            aria-hidden={i !== slideIndex}
+            className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-[1500ms] ease-in-out ${
+              i === slideIndex ? "opacity-100 hero-zoom" : "opacity-0"
+            }`}
+          />
+        ))}
+        <style>{`
+          @keyframes heroKenBurns {
+            0% { transform: scale(1.05); }
+            100% { transform: scale(1.18); }
+          }
+          .hero-zoom { animation: heroKenBurns 7s ease-out forwards; }
+        `}</style>
       </div>
 
       {/* Content */}

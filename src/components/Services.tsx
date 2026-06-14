@@ -25,8 +25,8 @@ const services = [
 
 export function Services() {
   return (
-    <section className="w-full bg-neutral-50 py-24">
-      <div className="mx-auto max-w-[1280px] px-6">
+    <section className="w-full bg-white py-24">
+      <div className="mx-auto max-w-[1080px] px-6">
         {/* Header */}
         <div className="text-center">
           <span
@@ -87,7 +87,7 @@ export function Services() {
           {services.map(({ icon: Icon, title, desc }) => (
             <div
               key={title}
-              className="rounded-xl border border-neutral-200 bg-white p-7 transition-all duration-300 hover:-translate-y-1 hover:border-neutral-300 hover:shadow-lg"
+              className="rounded-2xl border border-neutral-100 bg-white p-7 transition-all duration-300 hover:-translate-y-1 hover:border-neutral-200 hover:shadow-lg"
             >
               <div
                 className="flex h-11 w-11 items-center justify-center rounded-lg"

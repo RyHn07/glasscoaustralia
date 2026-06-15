@@ -611,7 +611,7 @@ function IGUPage() {
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-4">
             <Link
-              to="/"
+              to="/quote"
               className="rounded-md bg-white px-7 py-3 text-sm font-semibold transition-opacity hover:opacity-90"
               style={{ color: ACCENT, fontFamily: HEAD_FONT, letterSpacing: "0.05em" }}
             >

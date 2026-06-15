@@ -143,13 +143,15 @@ export function Hero() {
 
           {/* CTAs */}
           <div className="mt-8 flex flex-wrap justify-center gap-4">
-            <button
+            <Link
+              to="/quote"
               className="btn-animate rounded-md px-7 py-4 text-sm font-semibold text-white hover:opacity-95"
               style={{ backgroundColor: "#009AAA", fontFamily: "Rajdhani, sans-serif" }}
             >
               Get a Free Quote ›
-            </button>
-            <button
+            </Link>
+            <Link
+              to="/products"
               className="btn-animate rounded-md border px-7 py-4 text-sm font-semibold backdrop-blur hover:bg-white"
               style={{
                 fontFamily: "Rajdhani, sans-serif",
@@ -159,7 +161,7 @@ export function Hero() {
               }}
             >
               View Products
-            </button>
+            </Link>
           </div>
         </div>
       </div>

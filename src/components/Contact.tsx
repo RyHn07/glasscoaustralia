@@ -1,4 +1,5 @@
 import { MessageSquare, Phone, Mail, ChevronRight } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 
 export function Contact() {
   return (
@@ -63,21 +64,23 @@ export function Contact() {
 
             {/* Right buttons */}
             <div className="flex flex-col gap-4 lg:w-[240px]">
-              <button
+              <Link
+                to="/quote"
                 className="btn-animate inline-flex items-center justify-center gap-2 rounded-md bg-white px-6 py-3.5 text-sm font-semibold hover:opacity-95"
                 style={{ color: "#009AAA", fontFamily: "Rajdhani, sans-serif" }}
               >
                 <MessageSquare className="h-4 w-4" />
                 Request a Free Quote
                 <ChevronRight className="h-4 w-4" />
-              </button>
-              <button
+              </Link>
+              <a
+                href="tel:+61397065506"
                 className="btn-animate inline-flex items-center justify-center gap-2 rounded-md border border-white/40 px-6 py-3.5 text-sm font-semibold text-white hover:bg-white/10"
                 style={{ fontFamily: "Rajdhani, sans-serif" }}
               >
                 <Phone className="h-4 w-4" />
                 (03) 9706 5506
-              </button>
+              </a>
             </div>
           </div>
 

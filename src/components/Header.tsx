@@ -303,19 +303,11 @@ export function Header() {
                       )}
                     </div>
                   ))}
-                  <div className="my-1 h-px bg-neutral-100" />
-                  <Link
-                    to="/products"
-                    onClick={() => setProductsOpen(false)}
-                    className="mt-1 block rounded-lg bg-[#009AAA]/5 px-3 py-2.5 text-sm font-semibold text-[#009AAA] transition-all hover:bg-[#009AAA]/10"
-                  >
-                    View all products →
-                  </Link>
-
                 </div>
               </div>
             )}
           </div>
+
 
           {navItems
             .filter((i) => !["Home", "About Us", "Services"].includes(i.label))

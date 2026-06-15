@@ -106,7 +106,7 @@ export function Range() {
             <Link
               key={p.to}
               to={p.to}
-              className="group flex flex-col overflow-hidden rounded-2xl border border-neutral-200 bg-white transition-all hover:-translate-y-1 hover:border-[#009AAA]/40 hover:shadow-[0_20px_50px_-20px_rgba(0,154,170,0.35)]"
+              className="group flex flex-col overflow-hidden rounded-2xl border border-neutral-200 bg-white transition-[translate,border-color,box-shadow] duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-1 hover:border-[#009AAA]/40 hover:shadow-[0_20px_50px_-20px_rgba(0,154,170,0.35)]"
             >
               <div className="relative aspect-[4/3] overflow-hidden bg-neutral-100">
                 <img
@@ -139,7 +139,7 @@ export function Range() {
                 </p>
                 <span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-[#009AAA]">
                   View product
-                  <span className="transition-transform group-hover:translate-x-1">→</span>
+                  <span className="transition-[translate] duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-x-1">→</span>
                 </span>
               </div>
             </Link>

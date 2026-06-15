@@ -1,5 +1,6 @@
 import { Calendar, Users, Award, MapPin } from "lucide-react";
-import buildingImg from "@/assets/about-building.jpg";
+import buildingAsset from "@/assets/about-building-new.jpg.asset.json";
+const buildingImg = buildingAsset.url;
 
 const stats = [
   { icon: Calendar, value: "33+", label: "Years Experience" },

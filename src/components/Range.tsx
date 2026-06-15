@@ -1,56 +1,72 @@
 import { Star } from "lucide-react";
 import { Link } from "@tanstack/react-router";
-import floatAsset from "@/assets/range-float-stacked.jpg.asset.json";
-import temperedImg from "@/assets/range-tempered.jpg";
-import laminatedImg from "@/assets/range-laminated.jpg";
-import lowEImg from "@/assets/range-lowe.jpg";
-import mirrorsImg from "@/assets/range-mirrors.jpg";
-import acousticImg from "@/assets/product-acoustic.jpg";
+import rangeFloat from "@/assets/range-float.jpg";
+import rangeLaminated from "@/assets/range-laminated.jpg";
+import rangeLowE from "@/assets/range-lowe.jpg";
+import productSecurity from "@/assets/product-security.jpg";
+import productAcoustic from "@/assets/product-acoustic.jpg";
+import productDecorative from "@/assets/product-decorative.jpg";
+import productEnergy from "@/assets/product-energy.jpg";
+import productAutomotive from "@/assets/product-automotive.jpg";
 
 const items = [
   {
-    image: floatAsset.url,
-    alt: "Stack of clear float glass sheets standing vertically",
-    name: "Float & Annealed Glass",
+    image: rangeFloat,
+    alt: "Clear float glass sheets",
+    name: "Clear Float Glass",
     description: "Premium architectural float glass — flat, clear and ready for processing.",
     to: "/products/clear-float-glass" as const,
     topSeller: true,
   },
   {
-    image: temperedImg,
-    alt: "Toughened safety glass panel",
-    name: "Toughened (Tempered) Glass",
-    description: "AS/NZS 2208 Grade A safety glass — impact resistant and heat-strengthened.",
-    to: "/products/security-glass-assault-shield" as const,
+    image: rangeLaminated,
+    alt: "Clear laminated safety glass",
+    name: "Clear Laminated Glass",
+    description: "Safety glass with PVB interlayer for impact, UV and acoustic performance.",
+    to: "/products/clear-laminated-glass" as const,
     topSeller: true,
   },
   {
-    image: laminatedImg,
-    alt: "Laminated safety glass cross-section",
-    name: "Laminated Safety Glass",
-    description: "PVB/SGP interlayer glass with intruder, acoustic and UV control benefits.",
-    to: "/products/clear-laminated-glass" as const,
+    image: rangeLowE,
+    alt: "Low iron ultra clear glass",
+    name: "Low Iron Glass",
+    description: "Ultra clear glass with reduced green tint for true colour rendering.",
+    to: "/products/low-iron-glass" as const,
   },
   {
-    image: lowEImg,
-    alt: "Low-E coated glass facade",
-    name: "Low-E Glass",
-    description: "Thermal-control glazing with high VLT — lower energy bills, year-round comfort.",
-    to: "/products/energy-efficient-glass" as const,
+    image: productSecurity,
+    alt: "Security assault shield glass",
+    name: "Security Glass — Assault Shield 14.25 SGP",
+    description: "Laminated SGP security glass engineered for forced-entry resistance.",
+    to: "/products/security-glass-assault-shield" as const,
   },
   {
-    image: mirrorsImg,
-    alt: "Custom silvered mirror panels in interior",
-    name: "Mirrors & Decorative",
-    description: "Silver, bronze and grey mirrors — polished, tinted and made to order.",
+    image: productAcoustic,
+    alt: "Acoustic laminated glass",
+    name: "Acoustic Glass",
+    description: "Noise-reducing laminated glass for quieter interiors.",
+    to: "/products/acoustic-glass" as const,
+  },
+  {
+    image: productDecorative,
+    alt: "Decorative patterned glass",
+    name: "Decorative Glass",
+    description: "Patterned, printed, mirror and ultra clear decorative ranges.",
     to: "/products/decorative-glass" as const,
   },
   {
-    image: acousticImg,
-    alt: "Acoustic laminated glass installed in modern interior",
-    name: "Acoustic Glass",
-    description: "Noise-reducing laminated glass for quieter homes, offices and apartments.",
-    to: "/products/acoustic-glass" as const,
+    image: productEnergy,
+    alt: "Energy efficient Low-E glass",
+    name: "Energy Efficient Glass",
+    description: "Low-E, IGUs and solar control glazing for thermal performance.",
+    to: "/products/energy-efficient-glass" as const,
+  },
+  {
+    image: productAutomotive,
+    alt: "Automotive laminated glass",
+    name: "Automotive Glass",
+    description: "Laminated safety glass and toughened printed glass for vehicles.",
+    to: "/products/automotive-glass" as const,
   },
 ];
 

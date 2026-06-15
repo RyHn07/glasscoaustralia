@@ -397,3 +397,16 @@ button:not([data-no-hover]):not(.btn-animate):hover {
   }
   a::after { transition: none !important; }
 }
+
+/* Smooth image hover animations (zoom/scale) — applied globally */
+img.transition-transform,
+.group:hover img.transition-transform,
+img[class*="group-hover:scale"],
+img[class*="hover:scale"] {
+  transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  transition-duration: 900ms;
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}

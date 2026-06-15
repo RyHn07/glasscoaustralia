@@ -6,8 +6,6 @@ import rangeLowE from "@/assets/range-lowe.jpg";
 import productSecurity from "@/assets/product-security.jpg";
 import productAcoustic from "@/assets/product-acoustic.jpg";
 import productDecorative from "@/assets/product-decorative.jpg";
-import productEnergy from "@/assets/product-energy.jpg";
-import productAutomotive from "@/assets/product-automotive.jpg";
 
 const items = [
   {
@@ -53,20 +51,6 @@ const items = [
     name: "Decorative Glass",
     description: "Patterned, printed, mirror and ultra clear decorative ranges.",
     to: "/products/decorative-glass" as const,
-  },
-  {
-    image: productEnergy,
-    alt: "Energy efficient Low-E glass",
-    name: "Energy Efficient Glass",
-    description: "Low-E, IGUs and solar control glazing for thermal performance.",
-    to: "/products/energy-efficient-glass" as const,
-  },
-  {
-    image: productAutomotive,
-    alt: "Automotive laminated glass",
-    name: "Automotive Glass",
-    description: "Laminated safety glass and toughened printed glass for vehicles.",
-    to: "/products/automotive-glass" as const,
   },
 ];
 

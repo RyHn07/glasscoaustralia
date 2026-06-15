@@ -142,6 +142,13 @@ export function Header() {
             <span className="truncate">370-372 Hammond Rd, Dandenong South VIC 3175</span>
           </div>
           <div className="flex items-center gap-5 shrink-0">
+            <Link
+              to="/quote"
+              className="rounded-md bg-white px-4 py-1.5 text-[13px] font-bold text-[#009AAA] transition-opacity hover:opacity-90"
+              style={{ fontFamily: '"Rajdhani", sans-serif' }}
+            >
+              Get Quote
+            </Link>
             <a
               href="tel:+61397065506"
               className="flex items-center gap-2.5"

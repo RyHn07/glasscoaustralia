@@ -332,11 +332,11 @@ export function Header() {
         {/* Right side */}
         <div className="flex items-center gap-4">
           <Link
-            to="/quote"
+            to="/contact"
             className="rounded-md bg-neutral-900 px-5 py-2.5 text-sm font-semibold text-white transition-opacity hover:opacity-90"
             style={{ fontFamily: '"Rajdhani", sans-serif' }}
           >
-            Get Quote
+            Contact Menu
           </Link>
         </div>
       </div>

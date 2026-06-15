@@ -21,12 +21,13 @@ type Segment = {
   title: string;
   subtitle: string;
   Icon: typeof Home;
+  color: string;
 };
 
 const segments: Segment[] = [
-  { to: "/solutions/residential", title: "RESIDENTIAL", subtitle: "Home Glass Solutions", Icon: Home },
-  { to: "/solutions/commercial", title: "COMMERCIAL", subtitle: "Offices, Retail & Hospitality", Icon: Building2 },
-  { to: "/solutions/industrial-automotive", title: "INDUSTRIAL & AUTOMOTIVE", subtitle: "Engineered Performance", Icon: Factory },
+  { to: "/solutions/residential", title: "RESIDENTIAL", subtitle: "Home Glass Solutions", Icon: Home, color: "#F59E0B" },
+  { to: "/solutions/commercial", title: "COMMERCIAL", subtitle: "Offices, Retail & Hospitality", Icon: Building2, color: "#C026D3" },
+  { to: "/solutions/industrial-automotive", title: "INDUSTRIAL & AUTOMOTIVE", subtitle: "Engineered Performance", Icon: Factory, color: "#009AAA" },
 ];
 
 export function Hero() {
@@ -163,25 +164,26 @@ export function Hero() {
         </div>
       </div>
 
-      {/* Bottom segment menu */}
+      {/* Bottom segment menu — full width, aligned with hero image */}
       <div className="absolute inset-x-0 bottom-0 z-10 px-4 pb-4 sm:px-6 sm:pb-6">
-        <div className="mx-auto grid max-w-[1280px] grid-cols-1 gap-3 sm:grid-cols-3">
-          {segments.map(({ to, title, subtitle, Icon }) => (
+        <div className="grid w-full grid-cols-1 gap-3 sm:grid-cols-3">
+          {segments.map(({ to, title, subtitle, Icon, color }) => (
             <Link
               key={to}
               to={to}
-              className="group relative flex items-center gap-3 overflow-hidden rounded-lg border border-white/40 bg-white/85 px-5 py-4 backdrop-blur transition-all hover:-translate-y-0.5 hover:border-[#009AAA] hover:bg-white hover:shadow-[0_12px_30px_-10px_rgba(0,154,170,0.45)]"
+              className="group relative flex items-center gap-3 overflow-hidden rounded-lg border border-white/40 bg-white/85 px-5 py-4 backdrop-blur transition-all hover:-translate-y-0.5 hover:bg-white"
+              style={{ ["--seg-color" as any]: color }}
             >
               <span
                 className="flex h-11 w-11 shrink-0 items-center justify-center rounded-md text-white transition-transform group-hover:scale-105"
-                style={{ backgroundColor: "#009AAA" }}
+                style={{ backgroundColor: color }}
               >
                 <Icon className="h-5 w-5" />
               </span>
               <span className="min-w-0 flex-1 text-left">
                 <span
-                  className="block truncate text-[15px] font-bold tracking-wide text-neutral-900 group-hover:text-[#009AAA]"
-                  style={{ fontFamily: "Rajdhani, sans-serif" }}
+                  className="block truncate text-[15px] font-bold tracking-wide transition-colors"
+                  style={{ fontFamily: "Rajdhani, sans-serif", color }}
                 >
                   {title}
                 </span>
@@ -194,7 +196,7 @@ export function Hero() {
               </span>
               <span
                 className="absolute inset-x-0 bottom-0 h-[3px] origin-left scale-x-0 transition-transform duration-300 group-hover:scale-x-100"
-                style={{ backgroundColor: "#009AAA" }}
+                style={{ backgroundColor: color }}
               />
             </Link>
           ))}

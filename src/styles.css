@@ -425,7 +425,7 @@ figure img,
   [class*="hover:scale"],
   [class*="scale-105"],
   [class*="scale-110"],
-  [class*="scale["] {
+  [class*="scale-["] {
     transition: none !important;
     transform: none !important;
     scale: 1 !important;

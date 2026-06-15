@@ -668,7 +668,7 @@ function EnergyGlassPage() {
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-4">
             <Link
-              to="/"
+              to="/quote"
               className="rounded-md px-7 py-3 text-sm font-semibold transition-opacity hover:opacity-90"
               style={{ background: "#ffffff", color: ACCENT, fontFamily: HEAD_FONT, letterSpacing: "0.05em" }}
             >

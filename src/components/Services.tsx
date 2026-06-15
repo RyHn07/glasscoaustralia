@@ -1,25 +1,25 @@
-import { Home, Building2, Wind, Lock, Quote } from "lucide-react";
+import { Flame, Layers, Cog, Printer, Quote } from "lucide-react";
 
 const services = [
   {
-    icon: Home,
-    title: "Residential Glass",
-    desc: "Custom windows, doors, and glass installations for your home with modern designs and energy efficiency.",
+    icon: Flame,
+    title: "Toughening & Heat Strengthening",
+    desc: "NorthGlass horizontal toughening furnace producing premium tempered safety glass with exceptional flatness and clarity.",
   },
   {
-    icon: Building2,
-    title: "Commercial Solutions",
-    desc: "Large-scale glass systems for offices, retail spaces, and commercial buildings designed for durability.",
+    icon: Layers,
+    title: "Insulating Glass Units (IGU)",
+    desc: "Fully automated LISEC IGU line with Argon gas filling, structural silicone sealing and integrated spacer bending.",
   },
   {
-    icon: Wind,
-    title: "Energy Efficient",
-    desc: "Advanced Low-E and double-glaze systems that reduce energy costs and improve thermal performance year-round.",
+    icon: Cog,
+    title: "Glass Processing",
+    desc: "CNC machining, waterjet cutting, edgework, and float / laminate cutting lines on advanced Italian machinery.",
   },
   {
-    icon: Lock,
-    title: "Safety Glass",
-    desc: "Certified toughened and laminated glass solutions for maximum safety and code compliance in any application.",
+    icon: Printer,
+    title: "Digital Glass Printing",
+    desc: "Ceramic frit digital printing for facades, decorative panels and architectural design — fired into the glass surface.",
   },
 ];
 

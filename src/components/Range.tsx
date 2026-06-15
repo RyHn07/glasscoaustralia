@@ -115,7 +115,7 @@ export function Range() {
                   loading="lazy"
                   width={1600}
                   height={1024}
-                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="h-full w-full object-cover transition-transform duration-[1300ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-110 will-change-transform"
                 />
                 {p.topSeller && (
                   <span

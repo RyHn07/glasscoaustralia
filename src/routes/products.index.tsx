@@ -134,7 +134,7 @@ function AllProductsPage() {
             <Link
               key={p.to}
               to={p.to}
-              className="group flex flex-col overflow-hidden rounded-2xl border border-neutral-200 bg-white transition-all hover:-translate-y-1 hover:border-[#009AAA]/40 hover:shadow-[0_20px_50px_-20px_rgba(0,154,170,0.35)]"
+              className="group flex flex-col overflow-hidden rounded-2xl border border-neutral-200 bg-white transition-[transform,border-color,box-shadow] duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-1 hover:border-[#009AAA]/40 hover:shadow-[0_20px_50px_-20px_rgba(0,154,170,0.35)]"
             >
               <div className="relative aspect-[4/3] overflow-hidden bg-neutral-100">
                 <img
@@ -143,7 +143,7 @@ function AllProductsPage() {
                   loading="lazy"
                   width={1600}
                   height={1024}
-                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="h-full w-full object-cover transition-[transform,scale] duration-[1300ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105 will-change-transform"
                 />
                 {p.topSeller && (
                   <span
@@ -165,7 +165,7 @@ function AllProductsPage() {
                 <p className="mt-2 flex-1 text-sm leading-relaxed text-neutral-600">{p.description}</p>
                 <span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-[#009AAA]">
                   View product
-                  <span className="transition-transform group-hover:translate-x-1">→</span>
+                  <span className="transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-x-1">→</span>
                 </span>
               </div>
             </Link>

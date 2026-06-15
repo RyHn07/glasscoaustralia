@@ -19,7 +19,26 @@ type ProductItem = {
 };
 
 const productItems: ProductItem[] = [
-
+  {
+    label: "Clear Float Glass",
+    description: "Premium architectural float glass",
+    to: "/products/clear-float-glass",
+  },
+  {
+    label: "Clear Laminated Glass",
+    description: "Safety glass with PVB interlayer",
+    to: "/products/clear-laminated-glass",
+  },
+  {
+    label: "Low Iron Glass",
+    description: "Ultra clear glass with true colour rendering",
+    to: "/products/low-iron-glass",
+  },
+  {
+    label: "Security Glass — Assault Shield",
+    description: "Laminated SGP forced-entry resistant glass",
+    to: "/products/security-glass-assault-shield",
+  },
   {
     label: "Acoustic Glass",
     description: "Noise reduction for quieter interiors",
@@ -284,19 +303,11 @@ export function Header() {
                       )}
                     </div>
                   ))}
-                  <div className="my-1 h-px bg-neutral-100" />
-                  <Link
-                    to="/products"
-                    onClick={() => setProductsOpen(false)}
-                    className="mt-1 block rounded-lg bg-[#009AAA]/5 px-3 py-2.5 text-sm font-semibold text-[#009AAA] transition-all hover:bg-[#009AAA]/10"
-                  >
-                    View all products →
-                  </Link>
-
                 </div>
               </div>
             )}
           </div>
+
 
           {navItems
             .filter((i) => !["Home", "About Us", "Services"].includes(i.label))

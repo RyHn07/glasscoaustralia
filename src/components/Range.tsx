@@ -75,7 +75,7 @@ export function Range() {
                   color: "#009AAA",
                 }}
               >
-                OUR RANGE
+                OUR PRODUCT
               </span>
             </div>
             <h2

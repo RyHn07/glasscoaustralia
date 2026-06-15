@@ -26,10 +26,10 @@ export const Route = createFileRoute("/products/clear-float-glass")({
 function ClearFloatGlassPage() {
   return (
     <ProductPageLayout
-      eyebrow="TOP SELLER — CLEAR FLOAT GLASS"
-      title="Clear Float"
+      eyebrow="TOP SELLER — FLOAT GLASS"
+      title="Float"
       titleAccent="Glass"
-      subtitle="Our top-selling architectural float glass — perfectly flat, optically clear and the foundation for almost every modern glazing application."
+      subtitle="Our top-selling architectural float glass — perfectly flat, optically clear and the foundation for almost every modern glazing application. Available in various tints — Grey, Green and Bronze."
       heroImage={heroImage}
       keyBenefits={[
         "Exceptional optical clarity",

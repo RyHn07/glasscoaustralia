@@ -26,10 +26,10 @@ export const Route = createFileRoute("/products/clear-laminated-glass")({
 function ClearLaminatedGlassPage() {
   return (
     <ProductPageLayout
-      eyebrow="TOP SELLER — CLEAR LAMINATED GLASS"
-      title="Clear Laminated"
+      eyebrow="TOP SELLER — LAMINATE GLASS"
+      title="Laminate"
       titleAccent="Glass"
-      subtitle="Our top-selling safety glass — two layers of clear float bonded with a tough PVB interlayer for impact resistance, UV control and improved acoustic performance."
+      subtitle="Our top-selling safety glass — two layers of float bonded with a tough PVB interlayer for impact resistance, UV control and improved acoustic performance. Available in Clear, Grey and Green."
       heroImage={heroImage}
       keyBenefits={[
         "Holds together on impact for safety",

@@ -27,8 +27,8 @@ export const Route = createFileRoute("/")({
 function Index() {
   return (
     <main className="flex min-h-screen flex-col bg-white">
-      <div className="flex h-screen flex-col">
-        <Header />
+      <Header />
+      <div className="flex h-[calc(100dvh-120px)] min-h-[400px] flex-col">
         <div className="flex-1 min-h-0 px-1.5 pb-1.5">
           <div className="h-full w-full overflow-hidden rounded-lg">
             <Hero />

@@ -129,7 +129,7 @@ export function Header() {
   }, []);
 
   return (
-    <div className="sticky top-0 z-50 w-full">
+    <div className="fixed top-0 z-50 w-full" style={{ position: "fixed", top: 0 }}>
       {/* Top utility bar */}
       <div
         className="w-full text-white"

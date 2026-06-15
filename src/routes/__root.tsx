@@ -129,7 +129,9 @@ function RootComponent() {
   return (
     <QueryClientProvider client={queryClient}>
       <ScrollReveal />
-      <Outlet />
+      <div className="pt-[148px]">
+        <Outlet />
+      </div>
     </QueryClientProvider>
   );
 }

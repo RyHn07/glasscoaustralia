@@ -398,17 +398,36 @@ button:not([data-no-hover]):not(.btn-animate):hover {
   a::after { transition: none !important; }
 }
 
-/* Smooth image hover animations (zoom/scale) — applied globally with higher specificity */
+/* Smooth image hover animations (zoom/scale) — covers Tailwind's transform + scale properties */
 img,
 .group img,
 a img,
 figure img,
-[class*="group-hover"] img,
-[class*="hover:scale"] {
-  transition-property: transform, opacity;
-  transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1) !important;
-  transition-duration: 1100ms !important;
+[class*="group-hover:scale"],
+[class*="hover:scale"],
+[class*="scale-105"],
+[class*="scale-110"],
+[class*="scale-["] {
+  transition-property: transform, scale, rotate, translate, opacity !important;
+  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1) !important;
+  transition-duration: 1300ms !important;
   will-change: transform;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  img,
+  .group img,
+  a img,
+  figure img,
+  [class*="group-hover:scale"],
+  [class*="hover:scale"],
+  [class*="scale-105"],
+  [class*="scale-110"],
+  [class*="scale-["] {
+    transition: none !important;
+    transform: none !important;
+    scale: 1 !important;
+  }
 }

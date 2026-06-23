@@ -10,6 +10,8 @@ import {
 
 import appCss from "../styles.css?url";
 import { ScrollReveal } from "@/components/ScrollReveal";
+import { ScrollToTop } from "@/components/ScrollToTop";
+
 
 function NotFoundComponent() {
   return (
@@ -128,8 +130,10 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
+      <ScrollToTop />
       <ScrollReveal />
       <div className="pt-[148px]">
+
         <Outlet />
       </div>
     </QueryClientProvider>

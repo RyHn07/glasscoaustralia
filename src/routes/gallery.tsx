@@ -46,7 +46,40 @@ export const Route = createFileRoute("/gallery")({
   component: GalleryPage,
 });
 
-type GalleryImage = { src: string; alt: string; category: "projects" | "products" };
+type Tab =
+  | "projects"
+  | "products"
+  | "balustrade"
+  | "doors"
+  | "facades"
+  | "mirrors"
+  | "office-partitions"
+  | "pool-fencing";
+
+type GalleryImage = { src: string; alt: string; category: Tab };
+
+// Load all uploaded category assets via Vite's glob import
+const categoryAssets = import.meta.glob<{ default: { url: string } }>(
+  "@/assets/gallery/*/*.asset.json",
+  { eager: true },
+);
+
+function buildCategoryImages(folder: string, altPrefix: string, category: Tab): GalleryImage[] {
+  return Object.entries(categoryAssets)
+    .filter(([path]) => path.includes(`/gallery/${folder}/`))
+    .map(([path, mod]) => {
+      const m = path.match(/-(\d+)\.jpg\.asset\.json$/);
+      const n = m ? parseInt(m[1], 10) : 0;
+      return {
+        src: mod.default.url,
+        alt: `${altPrefix} ${n}`,
+        category,
+        _n: n,
+      } as GalleryImage & { _n: number };
+    })
+    .sort((a, b) => a._n - b._n)
+    .map(({ _n, ...rest }) => rest);
+}
 
 const allImages: GalleryImage[] = [
   // Projects
@@ -70,9 +103,15 @@ const allImages: GalleryImage[] = [
   { src: bimatechImg, alt: "Bimatech Techno edge processing", category: "products" },
   { src: aboutManu, alt: "Manufacturing facility floor", category: "products" },
   { src: aboutBuilding, alt: "GlassCo headquarters building", category: "products" },
+  // Uploaded category photos
+  ...buildCategoryImages("balustrade", "Balustrade installation", "balustrade"),
+  ...buildCategoryImages("doors", "Glass door", "doors"),
+  ...buildCategoryImages("facades", "Facade & curtain wall", "facades"),
+  ...buildCategoryImages("mirrors", "Mirror installation", "mirrors"),
+  ...buildCategoryImages("office-partitions", "Office partition", "office-partitions"),
+  ...buildCategoryImages("pool-fencing", "Pool fencing", "pool-fencing"),
 ];
 
-type Tab = "projects" | "products";
 
 function GalleryPage() {
   const [tab, setTab] = useState<Tab>("projects");

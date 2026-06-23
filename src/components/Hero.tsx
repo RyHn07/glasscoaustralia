@@ -133,12 +133,28 @@ export function Hero() {
             GlassCo <span style={{ color: "rgb(0, 154, 170)" }}>Australia</span>
           </h1>
 
+          {/* Tagline */}
+          <p
+            className="mt-4"
+            style={{
+              fontFamily: "'Cormorant Garamond', serif",
+              fontStyle: "italic",
+              fontWeight: 500,
+              fontSize: "clamp(1.25rem, 2.2vw, 1.75rem)",
+              color: "#0a0a0a",
+              letterSpacing: "0.01em",
+            }}
+          >
+            Your Vision <span style={{ color: "rgb(0, 154, 170)" }}>–</span> Our Glass Solution{" "}
+            <span style={{ color: "rgb(0, 154, 170)" }}>–</span> Exceptional Quality
+          </p>
+
           {/* Description */}
           <p
-            className="mt-6 text-base leading-relaxed"
-            style={{ fontFamily: "Poppins, sans-serif", fontWeight: 400, maxWidth: "640px", color: "#262626" }}
+            className="mt-4 text-base leading-relaxed"
+            style={{ fontFamily: "'Lato', sans-serif", fontWeight: 400, maxWidth: "640px", color: "#262626" }}
           >
-            We manufacture premium glass from source — supplying builders, architects & retailers across Australia.
+            From homes to businesses, industries to vehicles — premium glass solutions tailored to your needs.
           </p>
 
           {/* CTAs */}

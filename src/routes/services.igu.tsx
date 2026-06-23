@@ -27,7 +27,7 @@ import imgGasPress from "@/assets/igu-gas-filling-press.jpg";
 import imgSealing from "@/assets/igu-sealing-machine.jpg";
 
 const ACCENT = "#009AAA";
-const HEAD_FONT = "Rajdhani, sans-serif";
+const HEAD_FONT = "Montserrat, sans-serif";
 const BODY_FONT = "Poppins, sans-serif";
 
 export const Route = createFileRoute("/services/igu")({

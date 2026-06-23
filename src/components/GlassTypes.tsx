@@ -227,7 +227,7 @@ export function GlassTypes() {
               />
               <span
                 style={{
-                  fontFamily: "Rajdhani, sans-serif",
+                  fontFamily: "Montserrat, sans-serif",
                   fontSize: "14px",
                   fontWeight: 700,
                   letterSpacing: "0.2em",
@@ -239,7 +239,7 @@ export function GlassTypes() {
             </div>
             <h2
               style={{
-                fontFamily: "Rajdhani, sans-serif",
+                fontFamily: "Montserrat, sans-serif",
                 fontSize: "clamp(2.25rem, 5vw, 4rem)",
                 fontWeight: 700,
                 lineHeight: 1.05,
@@ -263,7 +263,7 @@ export function GlassTypes() {
               className="btn-animate inline-flex items-center gap-2 rounded-md px-5 py-3 text-white hover:opacity-95"
               style={{
                 backgroundColor: "#009AAA",
-                fontFamily: "Rajdhani, sans-serif",
+                fontFamily: "Montserrat, sans-serif",
                 fontSize: "14px",
                 fontWeight: 700,
                 letterSpacing: "0.05em",
@@ -286,7 +286,7 @@ export function GlassTypes() {
                       key={c.key}
                       className="whitespace-nowrap px-5 py-5 text-white"
                       style={{
-                        fontFamily: "Rajdhani, sans-serif",
+                        fontFamily: "Montserrat, sans-serif",
                         fontSize: "13px",
                         fontWeight: 700,
                         letterSpacing: "0.08em",

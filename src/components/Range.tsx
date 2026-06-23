@@ -68,7 +68,7 @@ export function Range() {
               />
               <span
                 style={{
-                  fontFamily: "Rajdhani, sans-serif",
+                  fontFamily: "Montserrat, sans-serif",
                   fontSize: "14px",
                   fontWeight: 700,
                   letterSpacing: "0.2em",
@@ -80,7 +80,7 @@ export function Range() {
             </div>
             <h2
               style={{
-                fontFamily: "Rajdhani, sans-serif",
+                fontFamily: "Montserrat, sans-serif",
                 fontSize: "clamp(2.25rem, 5vw, 4rem)",
                 fontWeight: 700,
                 lineHeight: 1.05,
@@ -120,7 +120,7 @@ export function Range() {
                 {p.topSeller && (
                   <span
                     className="absolute left-4 top-4 inline-flex items-center gap-1.5 rounded-full bg-[#009AAA] px-3 py-1 text-xs font-semibold uppercase tracking-wider text-white shadow-md"
-                    style={{ fontFamily: "Rajdhani, sans-serif", letterSpacing: "0.12em" }}
+                    style={{ fontFamily: "Montserrat, sans-serif", letterSpacing: "0.12em" }}
                   >
                     <Star className="h-3 w-3 fill-white" />
                     Top Seller
@@ -130,7 +130,7 @@ export function Range() {
               <div className="flex flex-1 flex-col p-6">
                 <h3
                   className="text-xl font-semibold text-neutral-900 transition-colors group-hover:text-[#009AAA]"
-                  style={{ fontFamily: '"Rajdhani", sans-serif' }}
+                  style={{ fontFamily: '"Montserrat", sans-serif' }}
                 >
                   {p.name}
                 </h3>
@@ -152,7 +152,7 @@ export function Range() {
             className="inline-flex items-center gap-2 rounded-md px-6 py-3 text-white transition-opacity hover:opacity-90"
             style={{
               backgroundColor: "#009AAA",
-              fontFamily: "Rajdhani, sans-serif",
+              fontFamily: "Montserrat, sans-serif",
               fontSize: "14px",
               fontWeight: 700,
               letterSpacing: "0.05em",

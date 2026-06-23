@@ -6,7 +6,7 @@ import { Footer } from "@/components/Footer";
 import heroImage from "@/assets/product-energy.jpg";
 
 const ACCENT = "#009AAA";
-const HEAD_FONT = "Rajdhani, sans-serif";
+const HEAD_FONT = "Montserrat, sans-serif";
 const BODY_FONT = "Poppins, sans-serif";
 
 export const Route = createFileRoute("/products/energy-efficient-glass")({

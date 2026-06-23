@@ -133,7 +133,7 @@ export function Header() {
       {/* Top utility bar */}
       <div
         className="w-full text-white"
-        style={{ backgroundColor: "#009AAA", fontFamily: '"Rajdhani", sans-serif' }}
+        style={{ backgroundColor: "#009AAA", fontFamily: '"Montserrat", sans-serif' }}
       >
         <div className="mx-auto flex max-w-[1400px] items-center justify-between gap-4 px-6 py-2">
           <div className="flex items-center gap-2 text-[13px] font-semibold tracking-wide md:text-sm">
@@ -144,7 +144,7 @@ export function Header() {
             <Link
               to="/quote"
               className="rounded-md bg-white px-4 py-1.5 text-[13px] font-bold text-[#009AAA] transition-opacity hover:opacity-90"
-              style={{ fontFamily: '"Rajdhani", sans-serif' }}
+              style={{ fontFamily: '"Montserrat", sans-serif' }}
             >
               Get Quote
             </Link>
@@ -333,7 +333,7 @@ export function Header() {
           <Link
             to="/contact"
             className="rounded-md bg-neutral-900 px-5 py-2.5 text-sm font-semibold text-white transition-opacity hover:opacity-90"
-            style={{ fontFamily: '"Rajdhani", sans-serif' }}
+            style={{ fontFamily: '"Montserrat", sans-serif' }}
           >
             Contact Us
           </Link>

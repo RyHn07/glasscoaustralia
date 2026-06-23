@@ -36,7 +36,7 @@ export const Route = createFileRoute("/products/decorative-glass")({
 });
 
 const ACCENT = "#009AAA";
-const HEAD_FONT = "Rajdhani, sans-serif";
+const HEAD_FONT = "Montserrat, sans-serif";
 const BODY_FONT = "Poppins, sans-serif";
 
 type Pattern = {

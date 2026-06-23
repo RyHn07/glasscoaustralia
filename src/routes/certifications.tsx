@@ -225,7 +225,7 @@ function CertificationsPage() {
           <h1
             className="mt-6 max-w-3xl"
             style={{
-              fontFamily: "Rajdhani, sans-serif",
+              fontFamily: "Montserrat, sans-serif",
               fontSize: "clamp(2.5rem, 5.5vw, 4.5rem)",
               fontWeight: 700,
               lineHeight: 1.05,
@@ -258,7 +258,7 @@ function CertificationsPage() {
               >
                 <div
                   style={{
-                    fontFamily: "Rajdhani, sans-serif",
+                    fontFamily: "Montserrat, sans-serif",
                     fontSize: 28,
                     fontWeight: 700,
                     color: "#00DEF7",
@@ -375,7 +375,7 @@ function CertificationsPage() {
               <div className="flex flex-1 flex-col p-6">
                 <div
                   style={{
-                    fontFamily: "Rajdhani, sans-serif",
+                    fontFamily: "Montserrat, sans-serif",
                     fontSize: 13,
                     fontWeight: 700,
                     letterSpacing: "0.18em",
@@ -387,7 +387,7 @@ function CertificationsPage() {
                 <h3
                   className="mt-1 text-neutral-900"
                   style={{
-                    fontFamily: "Rajdhani, sans-serif",
+                    fontFamily: "Montserrat, sans-serif",
                     fontSize: 22,
                     fontWeight: 700,
                     lineHeight: 1.2,
@@ -482,7 +482,7 @@ function CertificationsPage() {
                 <div>
                   <h4
                     className="text-neutral-900"
-                    style={{ fontFamily: "Rajdhani, sans-serif", fontSize: 20, fontWeight: 700 }}
+                    style={{ fontFamily: "Montserrat, sans-serif", fontSize: 20, fontWeight: 700 }}
                   >
                     {b.title}
                   </h4>
@@ -532,7 +532,7 @@ function CertificationsPage() {
             <aside className="flex w-full shrink-0 flex-col gap-4 border-t border-neutral-200 p-6 md:w-[340px] md:border-l md:border-t-0">
               <div
                 style={{
-                  fontFamily: "Rajdhani, sans-serif",
+                  fontFamily: "Montserrat, sans-serif",
                   fontSize: 13,
                   fontWeight: 700,
                   letterSpacing: "0.18em",
@@ -543,7 +543,7 @@ function CertificationsPage() {
               </div>
               <h3
                 style={{
-                  fontFamily: "Rajdhani, sans-serif",
+                  fontFamily: "Montserrat, sans-serif",
                   fontSize: 26,
                   fontWeight: 700,
                   lineHeight: 1.15,

@@ -159,7 +159,7 @@ function QuotePage() {
             </div>
             <h1
               className="mt-6 text-3xl font-bold text-neutral-900"
-              style={{ fontFamily: '"Rajdhani", sans-serif' }}
+              style={{ fontFamily: '"Montserrat", sans-serif' }}
             >
               Quote request received
             </h1>
@@ -189,7 +189,7 @@ function QuotePage() {
                 });
               }}
               className="mt-8 inline-flex items-center gap-2 rounded-md bg-[#009AAA] px-5 py-2.5 text-sm font-semibold text-white transition-opacity hover:opacity-90"
-              style={{ fontFamily: '"Rajdhani", sans-serif' }}
+              style={{ fontFamily: '"Montserrat", sans-serif' }}
             >
               Submit another <ArrowRight className="h-4 w-4" />
             </button>
@@ -232,13 +232,13 @@ function QuotePage() {
         <div className="relative mx-auto w-full max-w-[1200px] py-16">
           <span
             className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs font-semibold tracking-[0.18em] text-[#00DEF7]"
-            style={{ fontFamily: '"Rajdhani", sans-serif' }}
+            style={{ fontFamily: '"Montserrat", sans-serif' }}
           >
             <Sparkles className="h-3.5 w-3.5" /> GET A QUOTE
           </span>
           <h1
             className="mt-5 max-w-3xl text-5xl font-bold leading-[1.05] md:text-6xl"
-            style={{ fontFamily: '"Rajdhani", sans-serif' }}
+            style={{ fontFamily: '"Montserrat", sans-serif' }}
           >
             Fast, accurate glass quotes — straight from the source.
           </h1>
@@ -267,7 +267,7 @@ function QuotePage() {
               <b.icon className="h-5 w-5 text-[#00DEF7]" />
               <div
                 className="mt-2 text-base font-semibold"
-                style={{ fontFamily: '"Rajdhani", sans-serif' }}
+                style={{ fontFamily: '"Montserrat", sans-serif' }}
               >
                 {b.title}
               </div>
@@ -437,7 +437,7 @@ function QuotePage() {
                   </div>
                   <p
                     className="mt-3 text-base font-semibold text-neutral-800"
-                    style={{ fontFamily: '"Rajdhani", sans-serif' }}
+                    style={{ fontFamily: '"Montserrat", sans-serif' }}
                   >
                     Drag & drop files here, or click to browse
                   </p>
@@ -520,7 +520,7 @@ function QuotePage() {
               <button
                 type="submit"
                 className="inline-flex items-center justify-center gap-2 rounded-md bg-[#009AAA] px-7 py-3.5 text-base font-bold text-white shadow-[0_10px_30px_-10px_rgba(0,154,170,0.7)] transition-transform hover:-translate-y-0.5 hover:opacity-95"
-                style={{ fontFamily: '"Rajdhani", sans-serif', letterSpacing: "0.04em" }}
+                style={{ fontFamily: '"Montserrat", sans-serif', letterSpacing: "0.04em" }}
               >
                 Send quote request <ArrowRight className="h-5 w-5" />
               </button>
@@ -532,7 +532,7 @@ function QuotePage() {
             <div className="rounded-2xl bg-[#0b1f24] p-6 text-white">
               <h3
                 className="text-xl font-bold"
-                style={{ fontFamily: '"Rajdhani", sans-serif' }}
+                style={{ fontFamily: '"Montserrat", sans-serif' }}
               >
                 Prefer to talk?
               </h3>
@@ -573,7 +573,7 @@ function QuotePage() {
             <div className="rounded-2xl border border-neutral-200 bg-white p-6">
               <h3
                 className="text-lg font-bold text-neutral-900"
-                style={{ fontFamily: '"Rajdhani", sans-serif' }}
+                style={{ fontFamily: '"Montserrat", sans-serif' }}
               >
                 What happens next
               </h3>
@@ -589,7 +589,7 @@ function QuotePage() {
                   <li key={s} className="flex gap-3">
                     <span
                       className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#009AAA]/10 text-xs font-bold text-[#009AAA]"
-                      style={{ fontFamily: '"Rajdhani", sans-serif' }}
+                      style={{ fontFamily: '"Montserrat", sans-serif' }}
                     >
                       {i + 1}
                     </span>
@@ -603,7 +603,7 @@ function QuotePage() {
               <ShieldCheck className="h-6 w-6 text-[#009AAA]" />
               <h3
                 className="mt-3 text-lg font-bold text-neutral-900"
-                style={{ fontFamily: '"Rajdhani", sans-serif' }}
+                style={{ fontFamily: '"Montserrat", sans-serif' }}
               >
                 Certified & compliant
               </h3>
@@ -652,7 +652,7 @@ function Card({
           <div>
             <h2
               className="text-xl font-bold text-neutral-900"
-              style={{ fontFamily: '"Rajdhani", sans-serif' }}
+              style={{ fontFamily: '"Montserrat", sans-serif' }}
             >
               {title}
             </h2>

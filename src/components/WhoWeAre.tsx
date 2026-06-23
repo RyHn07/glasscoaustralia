@@ -34,7 +34,7 @@ export function WhoWeAre() {
             {/* Stat badge */}
             <div
               className="absolute -bottom-6 -right-6 rounded-lg px-8 py-5 text-center text-white shadow-xl transition-transform duration-500 group-hover:-translate-y-1 group-hover:scale-105"
-              style={{ backgroundColor: "#009AAA", fontFamily: "Rajdhani, sans-serif" }}
+              style={{ backgroundColor: "#009AAA", fontFamily: "Montserrat, sans-serif" }}
             >
               <div className="text-4xl font-bold leading-none">33+</div>
               <div className="mt-1 text-sm font-medium">Years in Glass</div>
@@ -51,7 +51,7 @@ export function WhoWeAre() {
               />
               <span
                 style={{
-                  fontFamily: "Rajdhani, sans-serif",
+                  fontFamily: "Montserrat, sans-serif",
                   fontSize: "14px",
                   fontWeight: 700,
                   letterSpacing: "0.15em",
@@ -65,7 +65,7 @@ export function WhoWeAre() {
             {/* Heading */}
             <h2
               style={{
-                fontFamily: "Rajdhani, sans-serif",
+                fontFamily: "Montserrat, sans-serif",
                 fontSize: "clamp(2.25rem, 4vw, 3.5rem)",
                 fontWeight: 700,
                 lineHeight: 1.1,
@@ -114,7 +114,7 @@ export function WhoWeAre() {
                   <Icon className="mx-auto h-6 w-6" style={{ color: "#009AAA" }} />
                   <div
                     className="mt-3 text-3xl font-bold text-neutral-900"
-                    style={{ fontFamily: "Rajdhani, sans-serif" }}
+                    style={{ fontFamily: "Montserrat, sans-serif" }}
                   >
                     {value}
                   </div>

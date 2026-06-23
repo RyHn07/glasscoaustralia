@@ -46,7 +46,40 @@ export const Route = createFileRoute("/gallery")({
   component: GalleryPage,
 });
 
-type GalleryImage = { src: string; alt: string; category: "projects" | "products" };
+type Tab =
+  | "projects"
+  | "products"
+  | "balustrade"
+  | "doors"
+  | "facades"
+  | "mirrors"
+  | "office-partitions"
+  | "pool-fencing";
+
+type GalleryImage = { src: string; alt: string; category: Tab };
+
+// Load all uploaded category assets via Vite's glob import
+const categoryAssets = import.meta.glob<{ default: { url: string } }>(
+  "../assets/gallery/*/*.asset.json",
+  { eager: true },
+);
+
+function buildCategoryImages(folder: string, altPrefix: string, category: Tab): GalleryImage[] {
+  return Object.entries(categoryAssets)
+    .filter(([path]) => path.includes(`/gallery/${folder}/`))
+    .map(([path, mod]) => {
+      const m = path.match(/-(\d+)\.jpg\.asset\.json$/);
+      const n = m ? parseInt(m[1], 10) : 0;
+      return {
+        src: mod.default.url,
+        alt: `${altPrefix} ${n}`,
+        category,
+        _n: n,
+      } as GalleryImage & { _n: number };
+    })
+    .sort((a, b) => a._n - b._n)
+    .map(({ _n, ...rest }) => rest);
+}
 
 const allImages: GalleryImage[] = [
   // Projects
@@ -70,9 +103,15 @@ const allImages: GalleryImage[] = [
   { src: bimatechImg, alt: "Bimatech Techno edge processing", category: "products" },
   { src: aboutManu, alt: "Manufacturing facility floor", category: "products" },
   { src: aboutBuilding, alt: "GlassCo headquarters building", category: "products" },
+  // Uploaded category photos
+  ...buildCategoryImages("balustrade", "Balustrade installation", "balustrade"),
+  ...buildCategoryImages("doors", "Glass door", "doors"),
+  ...buildCategoryImages("facades", "Facade & curtain wall", "facades"),
+  ...buildCategoryImages("mirrors", "Mirror installation", "mirrors"),
+  ...buildCategoryImages("office-partitions", "Office partition", "office-partitions"),
+  ...buildCategoryImages("pool-fencing", "Pool fencing", "pool-fencing"),
 ];
 
-type Tab = "projects" | "products";
 
 function GalleryPage() {
   const [tab, setTab] = useState<Tab>("projects");
@@ -145,9 +184,17 @@ function GalleryPage() {
                   lineHeight: 1.05,
                   color: "#0a0a0a",
                   margin: 0,
+                  textTransform: "capitalize",
                 }}
               >
-                {tab === "projects" ? <>Our <span style={{ color: "#009AAA" }}>Projects</span></> : <><span style={{ color: "#009AAA" }}>Products</span> & Machinery</>}
+                {tab === "projects" && (<>Our <span style={{ color: "#009AAA" }}>Projects</span></>)}
+                {tab === "products" && (<><span style={{ color: "#009AAA" }}>Products</span> & Machinery</>)}
+                {tab === "balustrade" && (<><span style={{ color: "#009AAA" }}>Balustrade</span></>)}
+                {tab === "doors" && (<><span style={{ color: "#009AAA" }}>Doors</span></>)}
+                {tab === "facades" && (<><span style={{ color: "#009AAA" }}>Facades</span> & Curtain Walls</>)}
+                {tab === "mirrors" && (<><span style={{ color: "#009AAA" }}>Mirrors</span></>)}
+                {tab === "office-partitions" && (<>Office <span style={{ color: "#009AAA" }}>Partitions</span></>)}
+                {tab === "pool-fencing" && (<>Pool <span style={{ color: "#009AAA" }}>Fencing</span></>)}
               </h1>
             </div>
             <p
@@ -159,16 +206,22 @@ function GalleryPage() {
           </div>
 
           {/* Tab switcher */}
-          <div className="mt-10 flex flex-wrap gap-2">
+          <div className="mt-10 flex flex-wrap gap-2 overflow-x-auto">
             {([
               { id: "projects" as Tab, label: "Projects" },
               { id: "products" as Tab, label: "Products & Machinery" },
+              { id: "balustrade" as Tab, label: "Balustrade" },
+              { id: "doors" as Tab, label: "Doors" },
+              { id: "facades" as Tab, label: "Facades & Curtain Walls" },
+              { id: "mirrors" as Tab, label: "Mirrors" },
+              { id: "office-partitions" as Tab, label: "Office Partitions" },
+              { id: "pool-fencing" as Tab, label: "Pool Fencing" },
             ]).map((t) => (
               <button
                 key={t.id}
                 type="button"
                 onClick={() => setTab(t.id)}
-                className={`rounded-full border px-5 py-2 text-sm font-semibold transition-all ${
+                className={`whitespace-nowrap rounded-full border px-5 py-2 text-sm font-semibold transition-all ${
                   tab === t.id
                     ? "border-[#009AAA] bg-[#009AAA] text-white shadow-[0_6px_16px_-6px_rgba(0,154,170,0.6)]"
                     : "border-neutral-200 bg-white text-neutral-700 hover:border-[#009AAA]/50 hover:text-[#009AAA]"
@@ -179,6 +232,7 @@ function GalleryPage() {
               </button>
             ))}
           </div>
+
 
           {/* Image grid: 2 + 3 repeating */}
           <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-6">

@@ -1,22 +1,35 @@
-## Gallery Page (`src/routes/gallery.tsx`)
+# Add new gallery categories from uploaded photos
 
-- Image list ke 2 category te split korbo:
-  - **Projects** — atrium, coastal, curved, heritage, office, retail
-  - **Products & Machinery** — float, tempered, laminated, lowE, mirrors, acoustic, decorative, energy, printing, furnace, bimatech, manufacturing, building
-- Top e tab switcher (Projects / Products & Machinery / All) — default "Projects"
-- Active tab onujayi grid filter hobe; lightbox + keyboard nav existing tab er images er moddhe cycle korbe
-- Heading update: "Projects & Facility"
+You uploaded 78 photos across 6 categories:
 
-## Quote Page (`src/routes/quote.tsx`)
+| Category | Count |
+|---|---|
+| Balustrade | 15 |
+| Doors | 11 |
+| Facades & Curtain Walls | 13 |
+| Mirrors | 13 |
+| Office Partitions | 10 |
+| Pool Fencing | 7 (Photos 2) – wait, 7 listed but 10 files exist (1, 2…6, 10) |
 
-- "Glass specifications" section puro remove (thickness, dimensions, items array, add/remove item UI)
-- Replace with **File Upload** section:
-  - Drag-and-drop + click-to-browse input
-  - Accept: PDF, DWG, DXF, JPG, PNG (max 10MB per file, max 5 files)
-  - Selected files er list dekhabo with name, size, remove button
-  - Client-side validation (size, type, count) with toast error
-- Form schema (zod) theke `items` remove kore `files` array add (optional, client-side only validation)
-- Submit handler updated — files er name/size include korbo confirmation message e
-- "Email files to..." line ar lagbe na karon upload direct ache; rakhbo as fallback note
+(Total ≈ 78 photos. Thumbs.db files ignored.)
 
-**Note:** Files actual upload kothao hobe na (backend nai) — sudhu form UI te collect hobe ar user contact er sathe describe korbe. Backend storage chaile Lovable Cloud enable kore Supabase Storage e upload korte hobe — eta porer step.
+## What I'll do
+
+### 1. Upload every image as a Lovable CDN asset
+- Run `lovable-assets create` for each `.jpg` (skip `Thumbs.db`).
+- Store generated `.asset.json` pointer files under `src/assets/gallery/<category>/<filename>.jpg.asset.json`.
+- No binaries copied into the repo — only the JSON pointers (each ~300 B).
+
+### 2. Extend `src/routes/gallery.tsx`
+- Add 6 new tabs to the existing tab switcher: **Balustrade · Doors · Facades & Curtain Walls · Mirrors · Office Partitions · Pool Fencing** (alongside the existing **Projects** and **Products & Machinery** tabs).
+- Each new category renders its photos in the same 2+3 responsive grid with the existing lightbox (click + arrow-key navigation).
+- Pull image URLs from the `.asset.json` pointers (`import x from "...asset.json"; src={x.url}`).
+- Alt text auto-generated from filename (e.g. "Balustrade installation 1").
+
+### 3. No other pages touched
+The homepage, services, and products pages stay as-is — photos are only surfaced through the Gallery page per your selection.
+
+## Technical notes
+- The "Just upload as assets for later use" option is satisfied automatically because all photos become CDN-hosted `.asset.json` pointers you can reference from any other page later.
+- Header tab list will become scrollable on small viewports (overflow-x auto) so 8 tabs fit on mobile.
+- No new routes, no schema changes, no dependencies.

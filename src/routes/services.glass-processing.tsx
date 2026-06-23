@@ -320,10 +320,13 @@ function GlassProcessingPage() {
                 <span
                   style={{
                     fontFamily: HEAD_FONT,
-                    fontSize: "13px",
-                    fontWeight: 700,
+                    fontSize: "18px",
+                    fontWeight: 800,
                     letterSpacing: "0.2em",
-                    color: ACCENT,
+                    color: "#ffffff",
+                    background: ACCENT,
+                    padding: "6px 14px",
+                    borderRadius: "9999px",
                   }}
                 >
                   (A) CNC LINE
@@ -411,10 +414,13 @@ function GlassProcessingPage() {
                 <span
                   style={{
                     fontFamily: HEAD_FONT,
-                    fontSize: "13px",
-                    fontWeight: 700,
+                    fontSize: "18px",
+                    fontWeight: 800,
                     letterSpacing: "0.2em",
-                    color: ACCENT,
+                    color: "#ffffff",
+                    background: ACCENT,
+                    padding: "6px 14px",
+                    borderRadius: "9999px",
                   }}
                 >
                   (B) WATERJET CUTTING
@@ -636,10 +642,13 @@ function GlassProcessingPage() {
                 <span
                   style={{
                     fontFamily: HEAD_FONT,
-                    fontSize: "13px",
-                    fontWeight: 700,
+                    fontSize: "18px",
+                    fontWeight: 800,
                     letterSpacing: "0.2em",
-                    color: ACCENT,
+                    color: "#ffffff",
+                    background: ACCENT,
+                    padding: "6px 14px",
+                    borderRadius: "9999px",
                   }}
                 >
                   (C) EDGE PROCESSING
@@ -740,7 +749,7 @@ function GlassProcessingPage() {
               />
             </div>
             <div>
-              <div className="mb-4 inline-flex items-center gap-3 rounded-full border border-neutral-200 bg-white px-4 py-1.5 text-xs font-semibold uppercase tracking-wider" style={{ fontFamily: HEAD_FONT, color: ACCENT, letterSpacing: "0.15em" }}>
+              <div className="mb-4 inline-flex items-center gap-3 rounded-full px-4 py-1.5 font-extrabold uppercase" style={{ fontFamily: HEAD_FONT, color: "#ffffff", background: ACCENT, letterSpacing: "0.2em", fontSize: "18px" }}>
                 (D) FLOAT CUTTING LINE
               </div>
               <h2 style={{ fontFamily: HEAD_FONT, fontSize: "clamp(2rem, 3.5vw, 3rem)", fontWeight: 700, lineHeight: 1.1, color: "#0a0a0a", margin: 0 }}>
@@ -777,7 +786,7 @@ function GlassProcessingPage() {
         <div className="mx-auto max-w-[1280px] px-6">
           <div className="grid grid-cols-1 gap-14 lg:grid-cols-2 lg:items-center">
             <div className="order-2 lg:order-1">
-              <div className="mb-4 inline-flex items-center gap-3 rounded-full border border-neutral-200 bg-neutral-50 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider" style={{ fontFamily: HEAD_FONT, color: ACCENT, letterSpacing: "0.15em" }}>
+              <div className="mb-4 inline-flex items-center gap-3 rounded-full px-4 py-1.5 font-extrabold uppercase" style={{ fontFamily: HEAD_FONT, color: "#ffffff", background: ACCENT, letterSpacing: "0.2em", fontSize: "18px" }}>
                 (E) LAMINATE CUTTING LINE
               </div>
               <h2 style={{ fontFamily: HEAD_FONT, fontSize: "clamp(2rem, 3.5vw, 3rem)", fontWeight: 700, lineHeight: 1.1, color: "#0a0a0a", margin: 0 }}>

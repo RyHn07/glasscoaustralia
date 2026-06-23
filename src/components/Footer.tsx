@@ -45,7 +45,7 @@ const contactItems = [
   {
     Icon: MapPin,
     label: "Visit",
-    lines: ["Melbourne, Victoria, Australia"],
+    lines: ["370–372 Hammond Road, Dandenong"],
   },
   {
     Icon: Clock,

@@ -13,7 +13,7 @@ function FAQItem({ q, a, defaultOpen }: { q: string; a: string; defaultOpen?: bo
       >
         <span
           className="text-neutral-900"
-          style={{ fontFamily: "Rajdhani, sans-serif", fontSize: "18px", fontWeight: 600, letterSpacing: "0.01em" }}
+          style={{ fontFamily: "Montserrat, sans-serif", fontSize: "18px", fontWeight: 600, letterSpacing: "0.01em" }}
         >
           {q}
         </span>
@@ -47,7 +47,7 @@ import sectionImg7 from "@/assets/project-coastal.jpg";
 import sectionImg8 from "@/assets/project-retail.jpg";
 
 const ACCENT = "#009AAA";
-const HEAD_FONT = "Rajdhani, sans-serif";
+const HEAD_FONT = "Montserrat, sans-serif";
 const BODY_FONT = "Poppins, sans-serif";
 
 const SECTION_IMAGES = [

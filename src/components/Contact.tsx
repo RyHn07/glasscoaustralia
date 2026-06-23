@@ -29,7 +29,7 @@ export function Contact() {
                 />
                 <span
                   style={{
-                    fontFamily: "Rajdhani, sans-serif",
+                    fontFamily: "Montserrat, sans-serif",
                     fontSize: "14px",
                     fontWeight: 700,
                     letterSpacing: "0.2em",
@@ -42,7 +42,7 @@ export function Contact() {
               <h2
                 className="text-white"
                 style={{
-                  fontFamily: "Rajdhani, sans-serif",
+                  fontFamily: "Montserrat, sans-serif",
                   fontSize: "clamp(2.25rem, 5vw, 4rem)",
                   fontWeight: 700,
                   lineHeight: 1.05,
@@ -67,7 +67,7 @@ export function Contact() {
               <Link
                 to="/quote"
                 className="btn-animate inline-flex items-center justify-center gap-2 rounded-md bg-white px-6 py-3.5 text-sm font-semibold hover:opacity-95"
-                style={{ color: "#009AAA", fontFamily: "Rajdhani, sans-serif" }}
+                style={{ color: "#009AAA", fontFamily: "Montserrat, sans-serif" }}
               >
                 <MessageSquare className="h-4 w-4" />
                 Request a Free Quote
@@ -76,7 +76,7 @@ export function Contact() {
               <a
                 href="tel:+61397065506"
                 className="btn-animate inline-flex items-center justify-center gap-2 rounded-md border border-white/40 px-6 py-3.5 text-sm font-semibold text-white hover:bg-white/10"
-                style={{ fontFamily: "Rajdhani, sans-serif" }}
+                style={{ fontFamily: "Montserrat, sans-serif" }}
               >
                 <Phone className="h-4 w-4" />
                 (03) 9706 5506
@@ -97,7 +97,7 @@ export function Contact() {
                 <div
                   className="text-white/80"
                   style={{
-                    fontFamily: "Rajdhani, sans-serif",
+                    fontFamily: "Montserrat, sans-serif",
                     fontSize: "12px",
                     fontWeight: 700,
                     letterSpacing: "0.2em",
@@ -108,7 +108,7 @@ export function Contact() {
                 <div
                   className="mt-1 text-white"
                   style={{
-                    fontFamily: "Rajdhani, sans-serif",
+                    fontFamily: "Montserrat, sans-serif",
                     fontSize: "18px",
                     fontWeight: 700,
                   }}
@@ -125,7 +125,7 @@ export function Contact() {
                 <div
                   className="text-white/80"
                   style={{
-                    fontFamily: "Rajdhani, sans-serif",
+                    fontFamily: "Montserrat, sans-serif",
                     fontSize: "12px",
                     fontWeight: 700,
                     letterSpacing: "0.2em",
@@ -136,7 +136,7 @@ export function Contact() {
                 <div
                   className="mt-1 text-white"
                   style={{
-                    fontFamily: "Rajdhani, sans-serif",
+                    fontFamily: "Montserrat, sans-serif",
                     fontSize: "18px",
                     fontWeight: 700,
                   }}
@@ -146,7 +146,7 @@ export function Contact() {
                 <div
                   className="text-white/90"
                   style={{
-                    fontFamily: "Rajdhani, sans-serif",
+                    fontFamily: "Montserrat, sans-serif",
                     fontSize: "16px",
                     fontWeight: 600,
                   }}

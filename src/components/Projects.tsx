@@ -30,7 +30,7 @@ export function Projects() {
               />
               <span
                 style={{
-                  fontFamily: "Rajdhani, sans-serif",
+                  fontFamily: "Montserrat, sans-serif",
                   fontSize: "14px",
                   fontWeight: 700,
                   letterSpacing: "0.2em",
@@ -42,7 +42,7 @@ export function Projects() {
             </div>
             <h2
               style={{
-                fontFamily: "Rajdhani, sans-serif",
+                fontFamily: "Montserrat, sans-serif",
                 fontSize: "clamp(2.25rem, 5vw, 4rem)",
                 fontWeight: 700,
                 lineHeight: 1.05,
@@ -92,7 +92,7 @@ export function Projects() {
           <Link
             to="/gallery"
             className="btn-animate inline-flex items-center gap-2 rounded-md bg-neutral-900 px-7 py-4 text-sm font-semibold text-white hover:opacity-95"
-            style={{ fontFamily: "Rajdhani, sans-serif" }}
+            style={{ fontFamily: "Montserrat, sans-serif" }}
           >
             View All Projects
             <ArrowUpRight className="h-4 w-4" />

@@ -34,7 +34,7 @@ export const Route = createFileRoute("/about")({
 });
 
 const ACCENT = "#009AAA";
-const HEAD_FONT = "Rajdhani, sans-serif";
+const HEAD_FONT = "Montserrat, sans-serif";
 const BODY_FONT = "Poppins, sans-serif";
 
 const equipment = [

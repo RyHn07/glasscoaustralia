@@ -47,7 +47,7 @@ export function WhyUs() {
         <div className="text-center">
           <span
             style={{
-              fontFamily: "Rajdhani, sans-serif",
+              fontFamily: "Montserrat, sans-serif",
               fontSize: "14px",
               fontWeight: 700,
               letterSpacing: "0.2em",
@@ -59,7 +59,7 @@ export function WhyUs() {
           <h2
             className="mt-3"
             style={{
-              fontFamily: "Rajdhani, sans-serif",
+              fontFamily: "Montserrat, sans-serif",
               fontSize: "clamp(2rem, 4vw, 3.25rem)",
               fontWeight: 700,
               lineHeight: 1.1,
@@ -88,7 +88,7 @@ export function WhyUs() {
               <div>
                 <h3
                   className="text-neutral-900"
-                  style={{ fontFamily: "Rajdhani, sans-serif", fontSize: "20px", fontWeight: 700 }}
+                  style={{ fontFamily: "Montserrat, sans-serif", fontSize: "20px", fontWeight: 700 }}
                 >
                   {title}
                 </h3>
@@ -107,7 +107,7 @@ export function WhyUs() {
         <div className="mt-14 rounded-2xl border px-8 py-12 text-center" style={{ backgroundColor: "#F7F6F6", borderColor: "#E6E4E4" }}>
           <h3
             style={{
-              fontFamily: "Rajdhani, sans-serif",
+              fontFamily: "Montserrat, sans-serif",
               fontSize: "clamp(1.5rem, 2.5vw, 2rem)",
               fontWeight: 700,
               color: "#0a0a0a",
@@ -128,7 +128,7 @@ export function WhyUs() {
               <div key={s.label} className="text-center">
                 <div
                   style={{
-                    fontFamily: "Rajdhani, sans-serif",
+                    fontFamily: "Montserrat, sans-serif",
                     fontSize: "36px",
                     fontWeight: 700,
                     color: "#009AAA",

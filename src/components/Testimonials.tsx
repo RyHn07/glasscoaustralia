@@ -65,7 +65,7 @@ function Card({ t }: { t: (typeof testimonials)[number] }) {
         <div>
           <div
             style={{
-              fontFamily: "Rajdhani, sans-serif",
+              fontFamily: "Montserrat, sans-serif",
               fontSize: "16px",
               fontWeight: 700,
               color: "#0a0a0a",
@@ -75,7 +75,7 @@ function Card({ t }: { t: (typeof testimonials)[number] }) {
           </div>
           <div
             style={{
-              fontFamily: "Rajdhani, sans-serif",
+              fontFamily: "Montserrat, sans-serif",
               fontSize: "12px",
               fontWeight: 600,
               letterSpacing: "0.15em",
@@ -107,7 +107,7 @@ export function Testimonials() {
               />
               <span
                 style={{
-                  fontFamily: "Rajdhani, sans-serif",
+                  fontFamily: "Montserrat, sans-serif",
                   fontSize: "14px",
                   fontWeight: 700,
                   letterSpacing: "0.2em",
@@ -119,7 +119,7 @@ export function Testimonials() {
             </div>
             <h2
               style={{
-                fontFamily: "Rajdhani, sans-serif",
+                fontFamily: "Montserrat, sans-serif",
                 fontSize: "clamp(2.25rem, 5vw, 4rem)",
                 fontWeight: 700,
                 lineHeight: 1.05,

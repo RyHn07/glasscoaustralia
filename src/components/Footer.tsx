@@ -101,7 +101,7 @@ export function Footer() {
               />
               <span
                 style={{
-                  fontFamily: "Rajdhani, sans-serif",
+                  fontFamily: "Montserrat, sans-serif",
                   fontSize: "13px",
                   fontWeight: 700,
                   letterSpacing: "0.2em",
@@ -124,7 +124,7 @@ export function Footer() {
                   <div className="min-w-0">
                     <div
                       style={{
-                        fontFamily: "Rajdhani, sans-serif",
+                        fontFamily: "Montserrat, sans-serif",
                         fontSize: "12px",
                         fontWeight: 700,
                         letterSpacing: "0.18em",

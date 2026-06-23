@@ -111,13 +111,13 @@ function AllProductsPage() {
         <div className="mx-auto max-w-[1280px] px-6 py-20 md:py-28">
           <span
             className="inline-block"
-            style={{ fontFamily: "Rajdhani, sans-serif", fontSize: 14, fontWeight: 600, letterSpacing: "0.18em", color: "#009AAA" }}
+            style={{ fontFamily: "Montserrat, sans-serif", fontSize: 14, fontWeight: 600, letterSpacing: "0.18em", color: "#009AAA" }}
           >
             OUR PRODUCTS
           </span>
           <h1
             className="mt-4 max-w-3xl text-4xl font-bold text-neutral-900 md:text-5xl lg:text-6xl"
-            style={{ fontFamily: '"Rajdhani", sans-serif', letterSpacing: "-0.01em" }}
+            style={{ fontFamily: '"Montserrat", sans-serif', letterSpacing: "-0.01em" }}
           >
             The full GlassCo glass range
           </h1>
@@ -148,7 +148,7 @@ function AllProductsPage() {
                 {p.topSeller && (
                   <span
                     className="absolute left-4 top-4 inline-flex items-center gap-1.5 rounded-full bg-[#009AAA] px-3 py-1 text-xs font-semibold uppercase tracking-wider text-white shadow-md"
-                    style={{ fontFamily: "Rajdhani, sans-serif", letterSpacing: "0.12em" }}
+                    style={{ fontFamily: "Montserrat, sans-serif", letterSpacing: "0.12em" }}
                   >
                     <Star className="h-3 w-3 fill-white" />
                     Top Seller
@@ -158,7 +158,7 @@ function AllProductsPage() {
               <div className="flex flex-1 flex-col p-6">
                 <h2
                   className="text-xl font-semibold text-neutral-900 transition-colors group-hover:text-[#009AAA]"
-                  style={{ fontFamily: '"Rajdhani", sans-serif' }}
+                  style={{ fontFamily: '"Montserrat", sans-serif' }}
                 >
                   {p.name}
                 </h2>

@@ -80,7 +80,7 @@ export function Hero() {
             <span className="block" style={{ width: "32px", height: "1px", backgroundColor: "rgb(0, 154, 170)" }} />
             <span
               style={{
-                fontFamily: "Rajdhani, sans-serif",
+                fontFamily: "Montserrat, sans-serif",
                 fontSize: "14px",
                 lineHeight: "24px",
                 fontWeight: 700,
@@ -122,7 +122,7 @@ export function Hero() {
           {/* Heading */}
           <h1
             style={{
-              fontFamily: "Rajdhani, sans-serif",
+              fontFamily: "Montserrat, sans-serif",
               fontSize: "clamp(3rem, 7vw, 6rem)",
               fontWeight: 700,
               lineHeight: 1.05,
@@ -162,7 +162,7 @@ export function Hero() {
             <Link
               to="/quote"
               className="btn-animate rounded-md px-7 py-4 text-sm font-semibold text-white hover:opacity-95"
-              style={{ backgroundColor: "#009AAA", fontFamily: "Rajdhani, sans-serif" }}
+              style={{ backgroundColor: "#009AAA", fontFamily: "Montserrat, sans-serif" }}
             >
               Get a Free Quote ›
             </Link>
@@ -170,7 +170,7 @@ export function Hero() {
               to="/products"
               className="btn-animate rounded-md border px-7 py-4 text-sm font-semibold backdrop-blur hover:bg-white"
               style={{
-                fontFamily: "Rajdhani, sans-serif",
+                fontFamily: "Montserrat, sans-serif",
                 borderColor: "rgba(10,10,10,0.3)",
                 backgroundColor: "rgba(255,255,255,0.6)",
                 color: "#0a0a0a",
@@ -201,7 +201,7 @@ export function Hero() {
               <span className="min-w-0 flex-1 text-left">
                 <span
                   className="block truncate text-[15px] font-bold tracking-wide transition-colors"
-                  style={{ fontFamily: "Rajdhani, sans-serif", color }}
+                  style={{ fontFamily: "Montserrat, sans-serif", color }}
                 >
                   {title}
                 </span>

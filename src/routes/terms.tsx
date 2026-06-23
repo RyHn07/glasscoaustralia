@@ -380,7 +380,7 @@ function TermsPage() {
           </div>
           <h1
             className="mt-5 text-4xl leading-tight md:text-6xl"
-            style={{ fontFamily: "Rajdhani, sans-serif", fontWeight: 700 }}
+            style={{ fontFamily: "Montserrat, sans-serif", fontWeight: 700 }}
           >
             Terms &amp; Conditions of Trade
           </h1>
@@ -403,7 +403,7 @@ function TermsPage() {
               >
                 <div
                   className="text-2xl font-bold text-[#00DEF7]"
-                  style={{ fontFamily: "Rajdhani, sans-serif" }}
+                  style={{ fontFamily: "Montserrat, sans-serif" }}
                 >
                   {s.k}
                 </div>
@@ -493,7 +493,7 @@ function TermsPage() {
                 <div>
                   <div
                     className="text-base font-semibold text-neutral-900"
-                    style={{ fontFamily: "Rajdhani, sans-serif" }}
+                    style={{ fontFamily: "Montserrat, sans-serif" }}
                   >
                     Please read carefully
                   </div>
@@ -525,13 +525,13 @@ function TermsPage() {
                   <div className="mb-5 flex items-baseline gap-3 border-b border-neutral-200 pb-3">
                     <span
                       className="inline-flex h-9 min-w-9 items-center justify-center rounded-lg bg-gradient-to-br from-[#009AAA] to-[#00DEF7] px-2 text-sm font-bold text-white"
-                      style={{ fontFamily: "Rajdhani, sans-serif" }}
+                      style={{ fontFamily: "Montserrat, sans-serif" }}
                     >
                       {section.num}
                     </span>
                     <h2
                       className="text-2xl text-neutral-900 md:text-3xl"
-                      style={{ fontFamily: "Rajdhani, sans-serif", fontWeight: 700 }}
+                      style={{ fontFamily: "Montserrat, sans-serif", fontWeight: 700 }}
                     >
                       {section.title}
                     </h2>
@@ -561,7 +561,7 @@ function TermsPage() {
             <div className="mt-16 rounded-2xl border border-neutral-200 bg-gradient-to-br from-[#0b1f24] to-[#0d2a31] p-8 text-white">
               <h3
                 className="text-2xl"
-                style={{ fontFamily: "Rajdhani, sans-serif", fontWeight: 700 }}
+                style={{ fontFamily: "Montserrat, sans-serif", fontWeight: 700 }}
               >
                 Need clarification on any clause?
               </h3>

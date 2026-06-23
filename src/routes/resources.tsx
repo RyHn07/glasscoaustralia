@@ -41,7 +41,7 @@ function ResourcesPage() {
           <span
             className="inline-block"
             style={{
-              fontFamily: "Rajdhani, sans-serif",
+              fontFamily: "Montserrat, sans-serif",
               fontSize: 14,
               fontWeight: 600,
               letterSpacing: "0.18em",
@@ -52,7 +52,7 @@ function ResourcesPage() {
           </span>
           <h1
             className="mt-4 max-w-3xl text-4xl font-bold text-neutral-900 md:text-5xl lg:text-6xl"
-            style={{ fontFamily: '"Rajdhani", sans-serif', letterSpacing: "-0.01em" }}
+            style={{ fontFamily: '"Montserrat", sans-serif', letterSpacing: "-0.01em" }}
           >
             Technical reference & downloads
           </h1>

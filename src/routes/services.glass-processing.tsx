@@ -20,7 +20,7 @@ import floatCuttingImage from "@/assets/processing-float-cutting.jpg";
 import laminateCuttingImage from "@/assets/processing-laminate-cutting.jpg";
 
 const ACCENT = "#009AAA";
-const HEAD_FONT = "Rajdhani, sans-serif";
+const HEAD_FONT = "Montserrat, sans-serif";
 const BODY_FONT = "Poppins, sans-serif";
 
 export const Route = createFileRoute("/services/glass-processing")({

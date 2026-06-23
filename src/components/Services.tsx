@@ -31,7 +31,7 @@ export function Services() {
         <div className="text-center">
           <span
             style={{
-              fontFamily: "Rajdhani, sans-serif",
+              fontFamily: "Montserrat, sans-serif",
               fontSize: "14px",
               fontWeight: 700,
               letterSpacing: "0.2em",
@@ -43,7 +43,7 @@ export function Services() {
           <h2
             className="mt-3"
             style={{
-              fontFamily: "Rajdhani, sans-serif",
+              fontFamily: "Montserrat, sans-serif",
               fontSize: "clamp(2rem, 4vw, 3.25rem)",
               fontWeight: 700,
               lineHeight: 1.1,
@@ -97,7 +97,7 @@ export function Services() {
               </div>
               <h3
                 className="mt-5 text-neutral-900"
-                style={{ fontFamily: "Rajdhani, sans-serif", fontSize: "20px", fontWeight: 700 }}
+                style={{ fontFamily: "Montserrat, sans-serif", fontSize: "20px", fontWeight: 700 }}
               >
                 {title}
               </h3>

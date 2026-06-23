@@ -166,7 +166,7 @@ function GalleryPage() {
                 />
                 <span
                   style={{
-                    fontFamily: "Rajdhani, sans-serif",
+                    fontFamily: "Montserrat, sans-serif",
                     fontSize: "14px",
                     fontWeight: 700,
                     letterSpacing: "0.2em",
@@ -178,7 +178,7 @@ function GalleryPage() {
               </div>
               <h1
                 style={{
-                  fontFamily: "Rajdhani, sans-serif",
+                  fontFamily: "Montserrat, sans-serif",
                   fontSize: "clamp(2.25rem, 5vw, 4rem)",
                   fontWeight: 700,
                   lineHeight: 1.05,
@@ -226,7 +226,7 @@ function GalleryPage() {
                     ? "border-[#009AAA] bg-[#009AAA] text-white shadow-[0_6px_16px_-6px_rgba(0,154,170,0.6)]"
                     : "border-neutral-200 bg-white text-neutral-700 hover:border-[#009AAA]/50 hover:text-[#009AAA]"
                 }`}
-                style={{ fontFamily: "Rajdhani, sans-serif", letterSpacing: "0.04em" }}
+                style={{ fontFamily: "Montserrat, sans-serif", letterSpacing: "0.04em" }}
               >
                 {t.label}
               </button>

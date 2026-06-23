@@ -148,7 +148,7 @@ function ContactPage() {
           <h1
             className="mt-6 max-w-3xl"
             style={{
-              fontFamily: "Rajdhani, sans-serif",
+              fontFamily: "Montserrat, sans-serif",
               fontSize: "clamp(2.5rem, 5.5vw, 4.5rem)",
               fontWeight: 700,
               lineHeight: 1.05,
@@ -198,7 +198,7 @@ function ContactPage() {
                   <div
                     className="text-neutral-400"
                     style={{
-                      fontFamily: "Rajdhani, sans-serif",
+                      fontFamily: "Montserrat, sans-serif",
                       fontSize: 11,
                       fontWeight: 700,
                       letterSpacing: "0.2em",
@@ -208,7 +208,7 @@ function ContactPage() {
                   </div>
                   <div
                     className="mt-0.5 truncate text-neutral-900 transition-colors group-hover:text-[#009AAA]"
-                    style={{ fontFamily: "Rajdhani, sans-serif", fontSize: 17, fontWeight: 700 }}
+                    style={{ fontFamily: "Montserrat, sans-serif", fontSize: 17, fontWeight: 700 }}
                   >
                     {c.value}
                   </div>
@@ -233,7 +233,7 @@ function ContactPage() {
           <div className="rounded-2xl border border-neutral-200 bg-white p-8 shadow-sm md:p-10">
             <div
               style={{
-                fontFamily: "Rajdhani, sans-serif",
+                fontFamily: "Montserrat, sans-serif",
                 fontSize: 13,
                 fontWeight: 700,
                 letterSpacing: "0.2em",
@@ -245,7 +245,7 @@ function ContactPage() {
             <h2
               className="mt-2 text-neutral-900"
               style={{
-                fontFamily: "Rajdhani, sans-serif",
+                fontFamily: "Montserrat, sans-serif",
                 fontSize: 36,
                 fontWeight: 700,
                 lineHeight: 1.1,
@@ -270,7 +270,7 @@ function ContactPage() {
                 </div>
                 <h3
                   className="mt-5 text-neutral-900"
-                  style={{ fontFamily: "Rajdhani, sans-serif", fontSize: 26, fontWeight: 700 }}
+                  style={{ fontFamily: "Montserrat, sans-serif", fontSize: 26, fontWeight: 700 }}
                 >
                   Thanks, {form.name.split(" ")[0]}!
                 </h3>
@@ -425,7 +425,7 @@ function ContactPage() {
                 </div>
                 <div
                   style={{
-                    fontFamily: "Rajdhani, sans-serif",
+                    fontFamily: "Montserrat, sans-serif",
                     fontSize: 13,
                     fontWeight: 700,
                     letterSpacing: "0.2em",
@@ -437,7 +437,7 @@ function ContactPage() {
               </div>
               <h3
                 className="mt-5 text-neutral-900"
-                style={{ fontFamily: "Rajdhani, sans-serif", fontSize: 24, fontWeight: 700, lineHeight: 1.2 }}
+                style={{ fontFamily: "Montserrat, sans-serif", fontSize: 24, fontWeight: 700, lineHeight: 1.2 }}
               >
                 GlassCo Australia Pty Ltd
               </h3>
@@ -467,7 +467,7 @@ function ContactPage() {
             <div className="rounded-2xl border border-neutral-200 bg-white p-8">
               <div
                 style={{
-                  fontFamily: "Rajdhani, sans-serif",
+                  fontFamily: "Montserrat, sans-serif",
                   fontSize: 13,
                   fontWeight: 700,
                   letterSpacing: "0.2em",
@@ -492,7 +492,7 @@ function ContactPage() {
                     <a
                       href={`mailto:${d.email}`}
                       className="mt-0.5 block text-neutral-900 transition-colors hover:text-[#009AAA]"
-                      style={{ fontFamily: "Rajdhani, sans-serif", fontSize: 16, fontWeight: 600 }}
+                      style={{ fontFamily: "Montserrat, sans-serif", fontSize: 16, fontWeight: 600 }}
                     >
                       {d.email}
                     </a>
@@ -505,7 +505,7 @@ function ContactPage() {
             <div className="rounded-2xl border border-white/10 bg-[#009AAA] p-8 text-white">
               <div
                 style={{
-                  fontFamily: "Rajdhani, sans-serif",
+                  fontFamily: "Montserrat, sans-serif",
                   fontSize: 13,
                   fontWeight: 700,
                   letterSpacing: "0.2em",
@@ -546,7 +546,7 @@ function ContactPage() {
             <div>
               <div
                 style={{
-                  fontFamily: "Rajdhani, sans-serif",
+                  fontFamily: "Montserrat, sans-serif",
                   fontSize: 13,
                   fontWeight: 700,
                   letterSpacing: "0.2em",
@@ -557,7 +557,7 @@ function ContactPage() {
               </div>
               <h2
                 className="mt-2 text-neutral-900"
-                style={{ fontFamily: "Rajdhani, sans-serif", fontSize: 36, fontWeight: 700 }}
+                style={{ fontFamily: "Montserrat, sans-serif", fontSize: 36, fontWeight: 700 }}
               >
                 Visit our Melbourne facility
               </h2>

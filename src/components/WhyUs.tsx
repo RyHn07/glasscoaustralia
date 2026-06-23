@@ -48,7 +48,7 @@ export function WhyUs() {
           <span
             style={{
               fontFamily: "Montserrat, sans-serif",
-              fontSize: "14px",
+              fontSize: "11.2px",
               fontWeight: 700,
               letterSpacing: "0.2em",
               color: "#009AAA",
@@ -88,7 +88,7 @@ export function WhyUs() {
               <div>
                 <h3
                   className="text-neutral-900"
-                  style={{ fontFamily: "Montserrat, sans-serif", fontSize: "20px", fontWeight: 700 }}
+                  style={{ fontFamily: "Montserrat, sans-serif", fontSize: "16px", fontWeight: 700 }}
                 >
                   {title}
                 </h3>
@@ -129,7 +129,7 @@ export function WhyUs() {
                 <div
                   style={{
                     fontFamily: "Montserrat, sans-serif",
-                    fontSize: "36px",
+                    fontSize: "28.8px",
                     fontWeight: 700,
                     color: "#009AAA",
                     lineHeight: 1,

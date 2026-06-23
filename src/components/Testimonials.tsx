@@ -66,7 +66,7 @@ function Card({ t }: { t: (typeof testimonials)[number] }) {
           <div
             style={{
               fontFamily: "Montserrat, sans-serif",
-              fontSize: "16px",
+              fontSize: "12.8px",
               fontWeight: 700,
               color: "#0a0a0a",
             }}
@@ -76,7 +76,7 @@ function Card({ t }: { t: (typeof testimonials)[number] }) {
           <div
             style={{
               fontFamily: "Montserrat, sans-serif",
-              fontSize: "12px",
+              fontSize: "9.6px",
               fontWeight: 600,
               letterSpacing: "0.15em",
               color: "#737373",
@@ -108,7 +108,7 @@ export function Testimonials() {
               <span
                 style={{
                   fontFamily: "Montserrat, sans-serif",
-                  fontSize: "14px",
+                  fontSize: "11.2px",
                   fontWeight: 700,
                   letterSpacing: "0.2em",
                   color: "#009AAA",

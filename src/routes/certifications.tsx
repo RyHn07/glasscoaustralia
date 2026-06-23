@@ -259,7 +259,7 @@ function CertificationsPage() {
                 <div
                   style={{
                     fontFamily: "Montserrat, sans-serif",
-                    fontSize: 28,
+                    fontSize: 22.4,
                     fontWeight: 700,
                     color: "#00DEF7",
                     lineHeight: 1,
@@ -376,7 +376,7 @@ function CertificationsPage() {
                 <div
                   style={{
                     fontFamily: "Montserrat, sans-serif",
-                    fontSize: 13,
+                    fontSize: 10.4,
                     fontWeight: 700,
                     letterSpacing: "0.18em",
                     color: ACCENT,
@@ -388,7 +388,7 @@ function CertificationsPage() {
                   className="mt-1 text-neutral-900"
                   style={{
                     fontFamily: "Montserrat, sans-serif",
-                    fontSize: 22,
+                    fontSize: 17.6,
                     fontWeight: 700,
                     lineHeight: 1.2,
                   }}
@@ -482,7 +482,7 @@ function CertificationsPage() {
                 <div>
                   <h4
                     className="text-neutral-900"
-                    style={{ fontFamily: "Montserrat, sans-serif", fontSize: 20, fontWeight: 700 }}
+                    style={{ fontFamily: "Montserrat, sans-serif", fontSize: 16, fontWeight: 700 }}
                   >
                     {b.title}
                   </h4>
@@ -533,7 +533,7 @@ function CertificationsPage() {
               <div
                 style={{
                   fontFamily: "Montserrat, sans-serif",
-                  fontSize: 13,
+                  fontSize: 10.4,
                   fontWeight: 700,
                   letterSpacing: "0.18em",
                   color: ACCENT,
@@ -544,7 +544,7 @@ function CertificationsPage() {
               <h3
                 style={{
                   fontFamily: "Montserrat, sans-serif",
-                  fontSize: 26,
+                  fontSize: 20.8,
                   fontWeight: 700,
                   lineHeight: 1.15,
                   color: "#171717",

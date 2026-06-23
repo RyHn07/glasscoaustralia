@@ -199,7 +199,7 @@ function ContactPage() {
                     className="text-neutral-400"
                     style={{
                       fontFamily: "Montserrat, sans-serif",
-                      fontSize: 11,
+                      fontSize: 8.8,
                       fontWeight: 700,
                       letterSpacing: "0.2em",
                     }}
@@ -208,7 +208,7 @@ function ContactPage() {
                   </div>
                   <div
                     className="mt-0.5 truncate text-neutral-900 transition-colors group-hover:text-[#009AAA]"
-                    style={{ fontFamily: "Montserrat, sans-serif", fontSize: 17, fontWeight: 700 }}
+                    style={{ fontFamily: "Montserrat, sans-serif", fontSize: 13.6, fontWeight: 700 }}
                   >
                     {c.value}
                   </div>
@@ -234,7 +234,7 @@ function ContactPage() {
             <div
               style={{
                 fontFamily: "Montserrat, sans-serif",
-                fontSize: 13,
+                fontSize: 10.4,
                 fontWeight: 700,
                 letterSpacing: "0.2em",
                 color: ACCENT,
@@ -246,7 +246,7 @@ function ContactPage() {
               className="mt-2 text-neutral-900"
               style={{
                 fontFamily: "Montserrat, sans-serif",
-                fontSize: 36,
+                fontSize: 28.8,
                 fontWeight: 700,
                 lineHeight: 1.1,
               }}
@@ -270,7 +270,7 @@ function ContactPage() {
                 </div>
                 <h3
                   className="mt-5 text-neutral-900"
-                  style={{ fontFamily: "Montserrat, sans-serif", fontSize: 26, fontWeight: 700 }}
+                  style={{ fontFamily: "Montserrat, sans-serif", fontSize: 20.8, fontWeight: 700 }}
                 >
                   Thanks, {form.name.split(" ")[0]}!
                 </h3>
@@ -426,7 +426,7 @@ function ContactPage() {
                 <div
                   style={{
                     fontFamily: "Montserrat, sans-serif",
-                    fontSize: 13,
+                    fontSize: 10.4,
                     fontWeight: 700,
                     letterSpacing: "0.2em",
                     color: ACCENT,
@@ -437,7 +437,7 @@ function ContactPage() {
               </div>
               <h3
                 className="mt-5 text-neutral-900"
-                style={{ fontFamily: "Montserrat, sans-serif", fontSize: 24, fontWeight: 700, lineHeight: 1.2 }}
+                style={{ fontFamily: "Montserrat, sans-serif", fontSize: 19.2, fontWeight: 700, lineHeight: 1.2 }}
               >
                 GlassCo Australia Pty Ltd
               </h3>
@@ -468,7 +468,7 @@ function ContactPage() {
               <div
                 style={{
                   fontFamily: "Montserrat, sans-serif",
-                  fontSize: 13,
+                  fontSize: 10.4,
                   fontWeight: 700,
                   letterSpacing: "0.2em",
                   color: ACCENT,
@@ -492,7 +492,7 @@ function ContactPage() {
                     <a
                       href={`mailto:${d.email}`}
                       className="mt-0.5 block text-neutral-900 transition-colors hover:text-[#009AAA]"
-                      style={{ fontFamily: "Montserrat, sans-serif", fontSize: 16, fontWeight: 600 }}
+                      style={{ fontFamily: "Montserrat, sans-serif", fontSize: 12.8, fontWeight: 600 }}
                     >
                       {d.email}
                     </a>
@@ -506,7 +506,7 @@ function ContactPage() {
               <div
                 style={{
                   fontFamily: "Montserrat, sans-serif",
-                  fontSize: 13,
+                  fontSize: 10.4,
                   fontWeight: 700,
                   letterSpacing: "0.2em",
                   color: "#ffffff",
@@ -547,7 +547,7 @@ function ContactPage() {
               <div
                 style={{
                   fontFamily: "Montserrat, sans-serif",
-                  fontSize: 13,
+                  fontSize: 10.4,
                   fontWeight: 700,
                   letterSpacing: "0.2em",
                   color: ACCENT,
@@ -557,7 +557,7 @@ function ContactPage() {
               </div>
               <h2
                 className="mt-2 text-neutral-900"
-                style={{ fontFamily: "Montserrat, sans-serif", fontSize: 36, fontWeight: 700 }}
+                style={{ fontFamily: "Montserrat, sans-serif", fontSize: 28.8, fontWeight: 700 }}
               >
                 Visit our Melbourne facility
               </h2>

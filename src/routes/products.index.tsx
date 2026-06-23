@@ -111,7 +111,7 @@ function AllProductsPage() {
         <div className="mx-auto max-w-[1280px] px-6 py-20 md:py-28">
           <span
             className="inline-block"
-            style={{ fontFamily: "Montserrat, sans-serif", fontSize: 14, fontWeight: 600, letterSpacing: "0.18em", color: "#009AAA" }}
+            style={{ fontFamily: "Montserrat, sans-serif", fontSize: 11.2, fontWeight: 600, letterSpacing: "0.18em", color: "#009AAA" }}
           >
             OUR PRODUCTS
           </span>

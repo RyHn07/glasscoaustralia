@@ -33,12 +33,12 @@ function ResidentialPage() {
       tagline="Enhance Your Home with Quality Glass"
       description="From stylish interiors to durable exterior glazing, we provide premium glass solutions designed to improve comfort, safety, and aesthetics in modern homes."
       applications={[
-        { name: "Windows & Doors", image: doorsImg },
+        { name: "Windows & Doors", image: doorsImg.url },
         { name: "Shower Screens" },
         { name: "Splashbacks" },
-        { name: "Mirrors", image: mirrorsImg },
-        { name: "Balustrades", image: balustradeImg },
-        { name: "Pool Fencing", image: poolFencingImg },
+        { name: "Mirrors", image: mirrorsImg.url },
+        { name: "Balustrades", image: balustradeImg.url },
+        { name: "Pool Fencing", image: poolFencingImg.url },
       ]}
       heroImage={heroImage}
     />

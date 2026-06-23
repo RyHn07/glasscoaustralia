@@ -3,10 +3,15 @@ import { ShieldCheck, BadgeCheck, FlaskConical, Quote } from "lucide-react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import heroImg from "@/assets/about-hero.jpg";
-import manufacturingImg from "@/assets/about-manufacturing.jpg";
-import companyImg from "@/assets/about-company.jpg";
-import printingImg from "@/assets/about-printing.jpg";
+import manufacturingAsset from "@/assets/gallery/facades/facades-1.jpg.asset.json";
+import companyAsset from "@/assets/gallery/office-partitions/office-partitions-1.jpg.asset.json";
+import printingAsset from "@/assets/gallery/facades/facades-3.jpg.asset.json";
 import environmentImg from "@/assets/about-environment.jpg";
+
+const manufacturingImg = manufacturingAsset.url;
+const companyImg = companyAsset.url;
+const printingImg = printingAsset.url;
+
 
 export const Route = createFileRoute("/about")({
   head: () => ({

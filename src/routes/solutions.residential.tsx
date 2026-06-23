@@ -1,6 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SolutionPage } from "@/components/SolutionPage";
 import heroImage from "@/assets/solution-residential.jpg";
+import doorsImg from "@/assets/gallery/doors/doors-1.jpg.asset.json";
+import mirrorsImg from "@/assets/gallery/mirrors/mirrors-1.jpg.asset.json";
+import balustradeImg from "@/assets/gallery/balustrade/balustrade-1.jpg.asset.json";
+import poolFencingImg from "@/assets/gallery/pool-fencing/pool-fencing-1.jpg.asset.json";
 
 export const Route = createFileRoute("/solutions/residential")({
   head: () => ({

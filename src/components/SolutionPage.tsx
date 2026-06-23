@@ -7,12 +7,14 @@ const ACCENT = "#009AAA";
 const HEAD_FONT = "Rajdhani, sans-serif";
 const BODY_FONT = "Poppins, sans-serif";
 
+export type Application = string | { name: string; image?: string };
+
 export type SolutionPageProps = {
   eyebrow: string;
   title: string;
   tagline: string;
   description: string;
-  applications: string[];
+  applications: Application[];
   heroImage: string;
 };
 
@@ -84,27 +86,37 @@ export function SolutionPage({ eyebrow, title, tagline, description, application
             >
               Applications
             </h3>
-            <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-              {applications.map((app) => (
-                <li
-                  key={app}
-                  className="flex items-start gap-3 rounded-lg bg-white p-3 shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md"
-                >
-                  <span
-                    className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-white"
-                    style={{ backgroundColor: ACCENT }}
+            <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+              {applications.map((app) => {
+                const name = typeof app === "string" ? app : app.name;
+                const image = typeof app === "string" ? undefined : app.image;
+                return (
+                  <li
+                    key={name}
+                    className="overflow-hidden rounded-lg bg-white shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md"
                   >
-                    <Check className="h-3.5 w-3.5" />
-                  </span>
-                  <span className="text-sm font-medium text-neutral-800" style={{ fontFamily: BODY_FONT }}>
-                    {app}
-                  </span>
-                </li>
-              ))}
+                    {image && (
+                      <img src={image} alt={name} className="h-32 w-full object-cover" />
+                    )}
+                    <div className="flex items-start gap-3 p-3">
+                      <span
+                        className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-white"
+                        style={{ backgroundColor: ACCENT }}
+                      >
+                        <Check className="h-3.5 w-3.5" />
+                      </span>
+                      <span className="text-sm font-medium text-neutral-800" style={{ fontFamily: BODY_FONT }}>
+                        {name}
+                      </span>
+                    </div>
+                  </li>
+                );
+              })}
             </ul>
           </div>
         </div>
       </section>
+
 
       <Footer />
     </main>

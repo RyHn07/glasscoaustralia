@@ -1,6 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SolutionPage } from "@/components/SolutionPage";
 import heroImage from "@/assets/solution-residential.jpg";
+import doorsImg from "@/assets/gallery/doors/doors-1.jpg.asset.json";
+import mirrorsImg from "@/assets/gallery/mirrors/mirrors-1.jpg.asset.json";
+import balustradeImg from "@/assets/gallery/balustrade/balustrade-1.jpg.asset.json";
+import poolFencingImg from "@/assets/gallery/pool-fencing/pool-fencing-1.jpg.asset.json";
 
 export const Route = createFileRoute("/solutions/residential")({
   head: () => ({
@@ -29,12 +33,12 @@ function ResidentialPage() {
       tagline="Enhance Your Home with Quality Glass"
       description="From stylish interiors to durable exterior glazing, we provide premium glass solutions designed to improve comfort, safety, and aesthetics in modern homes."
       applications={[
-        "Windows & Doors",
-        "Shower Screens",
-        "Splashbacks",
-        "Mirrors",
-        "Balustrades",
-        "Pool Fencing",
+        { name: "Windows & Doors", image: doorsImg.url },
+        { name: "Shower Screens" },
+        { name: "Splashbacks" },
+        { name: "Mirrors", image: mirrorsImg.url },
+        { name: "Balustrades", image: balustradeImg.url },
+        { name: "Pool Fencing", image: poolFencingImg.url },
       ]}
       heroImage={heroImage}
     />

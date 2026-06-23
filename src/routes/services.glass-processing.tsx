@@ -749,7 +749,7 @@ function GlassProcessingPage() {
               />
             </div>
             <div>
-              <div className="mb-4 inline-flex items-center gap-3 rounded-full border border-neutral-200 bg-white px-4 py-1.5 text-xs font-semibold uppercase tracking-wider" style={{ fontFamily: HEAD_FONT, color: ACCENT, letterSpacing: "0.15em" }}>
+              <div className="mb-4 inline-flex items-center gap-3 rounded-full px-4 py-1.5 font-extrabold uppercase" style={{ fontFamily: HEAD_FONT, color: "#ffffff", background: ACCENT, letterSpacing: "0.2em", fontSize: "18px" }}>
                 (D) FLOAT CUTTING LINE
               </div>
               <h2 style={{ fontFamily: HEAD_FONT, fontSize: "clamp(2rem, 3.5vw, 3rem)", fontWeight: 700, lineHeight: 1.1, color: "#0a0a0a", margin: 0 }}>

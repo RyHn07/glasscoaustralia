@@ -81,7 +81,7 @@ export function Hero() {
             <span
               style={{
                 fontFamily: "Montserrat, sans-serif",
-                fontSize: "14px",
+                fontSize: "11.2px",
                 lineHeight: "24px",
                 fontWeight: 700,
                 color: "#007A87",

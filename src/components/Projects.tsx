@@ -31,7 +31,7 @@ export function Projects() {
               <span
                 style={{
                   fontFamily: "Montserrat, sans-serif",
-                  fontSize: "14px",
+                  fontSize: "11.2px",
                   fontWeight: 700,
                   letterSpacing: "0.2em",
                   color: "#009AAA",

@@ -30,7 +30,7 @@ export function Contact() {
                 <span
                   style={{
                     fontFamily: "Montserrat, sans-serif",
-                    fontSize: "14px",
+                    fontSize: "11.2px",
                     fontWeight: 700,
                     letterSpacing: "0.2em",
                     color: "#ffffff",
@@ -98,7 +98,7 @@ export function Contact() {
                   className="text-white/80"
                   style={{
                     fontFamily: "Montserrat, sans-serif",
-                    fontSize: "12px",
+                    fontSize: "9.6px",
                     fontWeight: 700,
                     letterSpacing: "0.2em",
                   }}
@@ -109,7 +109,7 @@ export function Contact() {
                   className="mt-1 text-white"
                   style={{
                     fontFamily: "Montserrat, sans-serif",
-                    fontSize: "18px",
+                    fontSize: "14.4px",
                     fontWeight: 700,
                   }}
                 >
@@ -126,7 +126,7 @@ export function Contact() {
                   className="text-white/80"
                   style={{
                     fontFamily: "Montserrat, sans-serif",
-                    fontSize: "12px",
+                    fontSize: "9.6px",
                     fontWeight: 700,
                     letterSpacing: "0.2em",
                   }}
@@ -137,7 +137,7 @@ export function Contact() {
                   className="mt-1 text-white"
                   style={{
                     fontFamily: "Montserrat, sans-serif",
-                    fontSize: "18px",
+                    fontSize: "14.4px",
                     fontWeight: 700,
                   }}
                 >
@@ -147,7 +147,7 @@ export function Contact() {
                   className="text-white/90"
                   style={{
                     fontFamily: "Montserrat, sans-serif",
-                    fontSize: "16px",
+                    fontSize: "12.8px",
                     fontWeight: 600,
                   }}
                 >

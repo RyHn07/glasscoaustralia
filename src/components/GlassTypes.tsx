@@ -228,7 +228,7 @@ export function GlassTypes() {
               <span
                 style={{
                   fontFamily: "Montserrat, sans-serif",
-                  fontSize: "14px",
+                  fontSize: "11.2px",
                   fontWeight: 700,
                   letterSpacing: "0.2em",
                   color: "#009AAA",
@@ -264,7 +264,7 @@ export function GlassTypes() {
               style={{
                 backgroundColor: "#009AAA",
                 fontFamily: "Montserrat, sans-serif",
-                fontSize: "14px",
+                fontSize: "11.2px",
                 fontWeight: 700,
                 letterSpacing: "0.05em",
               }}
@@ -287,7 +287,7 @@ export function GlassTypes() {
                       className="whitespace-nowrap px-5 py-5 text-white"
                       style={{
                         fontFamily: "Montserrat, sans-serif",
-                        fontSize: "13px",
+                        fontSize: "10.4px",
                         fontWeight: 700,
                         letterSpacing: "0.08em",
                       }}

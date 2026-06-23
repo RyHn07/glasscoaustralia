@@ -414,10 +414,13 @@ function GlassProcessingPage() {
                 <span
                   style={{
                     fontFamily: HEAD_FONT,
-                    fontSize: "13px",
-                    fontWeight: 700,
+                    fontSize: "18px",
+                    fontWeight: 800,
                     letterSpacing: "0.2em",
-                    color: ACCENT,
+                    color: "#ffffff",
+                    background: ACCENT,
+                    padding: "6px 14px",
+                    borderRadius: "9999px",
                   }}
                 >
                   (B) WATERJET CUTTING

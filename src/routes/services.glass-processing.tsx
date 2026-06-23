@@ -53,7 +53,7 @@ const subServices = [
   },
   {
     id: "waterjet",
-    label: "TECHNI Intec Waterjet",
+    label: "TECHNI Waterjet",
     short: "Ultra-high-pressure abrasive cutting",
   },
   {
@@ -430,13 +430,13 @@ function GlassProcessingPage() {
                   margin: 0,
                 }}
               >
-                TECHNI Intec <span style={{ color: ACCENT }}>waterjet</span>
+                TECHNI <span style={{ color: ACCENT }}>Waterjet</span>
               </h2>
               <p
                 className="mt-6 text-neutral-600"
                 style={{ fontFamily: BODY_FONT, fontSize: "15px", lineHeight: 1.7 }}
               >
-                Our TECHNI Intec waterjet delivers high-precision cutting across a wide range of
+                Our TECHNI Waterjet delivers high-precision cutting across a wide range of
                 materials using ultra-high-pressure abrasive waterjet technology. With a large
                 3480 × 1750 mm cutting bed and no heat distortion during cutting, the machine is
                 ideal for both industrial fabrication and custom projects.
@@ -458,7 +458,7 @@ function GlassProcessingPage() {
               />
               <img
                 src={waterjetImage}
-                alt="TECHNI Intec waterjet cutting glass"
+                alt="TECHNI Waterjet cutting glass"
                 loading="lazy"
                 width={1280}
                 height={896}

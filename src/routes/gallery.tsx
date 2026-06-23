@@ -184,6 +184,7 @@ function GalleryPage() {
                   lineHeight: 1.05,
                   color: "#0a0a0a",
                   margin: 0,
+                  textTransform: "capitalize",
                 }}
               >
                 {tab === "projects" ? <>Our <span style={{ color: "#009AAA" }}>Projects</span></> : <><span style={{ color: "#009AAA" }}>Products</span> & Machinery</>}

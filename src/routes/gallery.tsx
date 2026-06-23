@@ -60,7 +60,7 @@ type GalleryImage = { src: string; alt: string; category: Tab };
 
 // Load all uploaded category assets via Vite's glob import
 const categoryAssets = import.meta.glob<{ default: { url: string } }>(
-  "@/assets/gallery/*/*.asset.json",
+  "../assets/gallery/*/*.asset.json",
   { eager: true },
 );
 

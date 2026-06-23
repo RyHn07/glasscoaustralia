@@ -7,12 +7,14 @@ const ACCENT = "#009AAA";
 const HEAD_FONT = "Rajdhani, sans-serif";
 const BODY_FONT = "Poppins, sans-serif";
 
+export type Application = string | { name: string; image?: string };
+
 export type SolutionPageProps = {
   eyebrow: string;
   title: string;
   tagline: string;
   description: string;
-  applications: string[];
+  applications: Application[];
   heroImage: string;
 };
 

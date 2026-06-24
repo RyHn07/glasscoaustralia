@@ -96,7 +96,7 @@ const serviceItems: ServiceItem[] = [
     to: "/services/glass-processing",
     children: [
       { label: "CNC Line — SKILL E-D", hash: "cnc-line" },
-      { label: "TECHNI Intec Waterjet", hash: "waterjet" },
+      { label: "TECHNI Waterjet", hash: "waterjet" },
       { label: "Bimatech Techno Edge", hash: "bimatech" },
     ],
   },

@@ -108,21 +108,28 @@ function AllProductsPage() {
       <Header />
 
       {/* Hero */}
-      <section className="border-b border-neutral-100 bg-neutral-50">
-        <div className="mx-auto max-w-[1280px] px-6 py-20 md:py-28">
+      <section className="relative overflow-hidden border-b border-neutral-100">
+        <img
+          src={productsHero}
+          alt=""
+          aria-hidden="true"
+          className="absolute inset-0 h-full w-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/70 to-black/85" />
+        <div className="relative z-10 mx-auto max-w-[1280px] px-6 py-20 md:py-28">
           <span
             className="inline-block"
-            style={{ fontFamily: "Montserrat, sans-serif", fontSize: 11.2, fontWeight: 600, letterSpacing: "0.18em", color: "#009AAA" }}
+            style={{ fontFamily: "Montserrat, sans-serif", fontSize: 11.2, fontWeight: 600, letterSpacing: "0.18em", color: "#33C5D2" }}
           >
             OUR PRODUCTS
           </span>
           <h1
-            className="mt-4 max-w-3xl text-4xl font-bold text-neutral-900 md:text-5xl lg:text-6xl"
+            className="mt-4 max-w-3xl text-4xl font-bold text-white md:text-5xl lg:text-6xl"
             style={{ fontFamily: '"Montserrat", sans-serif', letterSpacing: "-0.01em" }}
           >
             The full GlassCo glass range
           </h1>
-          <p className="mt-5 max-w-2xl text-base leading-relaxed text-neutral-600 md:text-lg">
+          <p className="mt-5 max-w-2xl text-base leading-relaxed text-white/85 md:text-lg">
             From everyday clear float to high-performance security and acoustic glazing — explore our complete catalogue and click any product for full specifications.
           </p>
         </div>

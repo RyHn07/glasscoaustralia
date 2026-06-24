@@ -204,53 +204,6 @@ function QuotePage() {
     <main className="flex min-h-screen flex-col bg-white">
       <Header />
 
-      {/* Hero */}
-      <section
-        className="relative flex h-[52vh] min-h-[380px] items-center overflow-hidden px-6 text-white"
-        style={{
-          background:
-            "linear-gradient(135deg,#0b1f24 0%,#0d2a31 50%,#0a3640 100%)",
-        }}
-      >
-        <img
-          src={heroBg}
-          alt=""
-          aria-hidden="true"
-          className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-35"
-          width={1920}
-          height={1080}
-        />
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-[#0b1f24]/80 via-[#0b1f24]/70 to-[#0a3640]/90" />
-        <div
-          className="pointer-events-none absolute -right-32 -top-32 h-96 w-96 rounded-full opacity-30 blur-3xl"
-          style={{ background: "#009AAA" }}
-        />
-        <div
-          className="pointer-events-none absolute -bottom-40 -left-20 h-96 w-96 rounded-full opacity-20 blur-3xl"
-          style={{ background: "#00DEF7" }}
-        />
-        <div className="relative mx-auto w-full max-w-[1200px] py-16">
-          <span
-            className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs font-semibold tracking-[0.18em] text-[#00DEF7]"
-            style={{ fontFamily: '"Montserrat", sans-serif' }}
-          >
-            <Sparkles className="h-3.5 w-3.5" /> GET A QUOTE
-          </span>
-          <h1
-            className="mt-5 max-w-3xl text-5xl font-bold leading-[1.05] md:text-6xl"
-            style={{ fontFamily: '"Montserrat", sans-serif' }}
-          >
-            Fast, accurate glass quotes — straight from the source.
-          </h1>
-          <p
-            className="mt-5 max-w-2xl text-lg text-white/75"
-            style={{ fontFamily: '"Poppins", sans-serif' }}
-          >
-            Tell us what you need and we'll come back with pricing, lead time and
-            spec recommendations within one business day.
-          </p>
-        </div>
-      </section>
 
       {/* Trust strip */}
       <section className="border-b border-neutral-200 bg-[#0b1f24] px-6 py-10 text-white">

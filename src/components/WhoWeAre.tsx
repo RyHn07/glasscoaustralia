@@ -52,7 +52,7 @@ export function WhoWeAre() {
               <span
                 style={{
                   fontFamily: "Montserrat, sans-serif",
-                  fontSize: "11.2px",
+                  fontSize: "10px",
                   fontWeight: 700,
                   letterSpacing: "0.15em",
                   color: "#009AAA",
@@ -66,7 +66,7 @@ export function WhoWeAre() {
             <h2
               style={{
                 fontFamily: "Montserrat, sans-serif",
-                fontSize: "clamp(2.25rem, 4vw, 3.5rem)",
+                fontSize: "clamp(2.025rem, 4vw, 3.15rem)",
                 fontWeight: 700,
                 lineHeight: 1.1,
                 color: "#0a0a0a",

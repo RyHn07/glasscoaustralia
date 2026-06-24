@@ -30,7 +30,7 @@ export function Contact() {
                 <span
                   style={{
                     fontFamily: "Montserrat, sans-serif",
-                    fontSize: "11.2px",
+                    fontSize: "10px",
                     fontWeight: 700,
                     letterSpacing: "0.2em",
                     color: "#ffffff",
@@ -43,7 +43,7 @@ export function Contact() {
                 className="text-white"
                 style={{
                   fontFamily: "Montserrat, sans-serif",
-                  fontSize: "clamp(2.25rem, 5vw, 4rem)",
+                  fontSize: "clamp(2.025rem, 5vw, 3.6rem)",
                   fontWeight: 700,
                   lineHeight: 1.05,
                   margin: 0,
@@ -98,7 +98,7 @@ export function Contact() {
                   className="text-white/80"
                   style={{
                     fontFamily: "Montserrat, sans-serif",
-                    fontSize: "9.6px",
+                    fontSize: "9px",
                     fontWeight: 700,
                     letterSpacing: "0.2em",
                   }}
@@ -109,7 +109,7 @@ export function Contact() {
                   className="mt-1 text-white"
                   style={{
                     fontFamily: "Montserrat, sans-serif",
-                    fontSize: "14.4px",
+                    fontSize: "13px",
                     fontWeight: 700,
                   }}
                 >
@@ -126,7 +126,7 @@ export function Contact() {
                   className="text-white/80"
                   style={{
                     fontFamily: "Montserrat, sans-serif",
-                    fontSize: "9.6px",
+                    fontSize: "9px",
                     fontWeight: 700,
                     letterSpacing: "0.2em",
                   }}
@@ -137,7 +137,7 @@ export function Contact() {
                   className="mt-1 text-white"
                   style={{
                     fontFamily: "Montserrat, sans-serif",
-                    fontSize: "14.4px",
+                    fontSize: "13px",
                     fontWeight: 700,
                   }}
                 >
@@ -147,7 +147,7 @@ export function Contact() {
                   className="text-white/90"
                   style={{
                     fontFamily: "Montserrat, sans-serif",
-                    fontSize: "12.8px",
+                    fontSize: "12px",
                     fontWeight: 600,
                   }}
                 >

@@ -32,7 +32,7 @@ export function Services() {
           <span
             style={{
               fontFamily: "Montserrat, sans-serif",
-              fontSize: "11.2px",
+              fontSize: "10px",
               fontWeight: 700,
               letterSpacing: "0.2em",
               color: "#009AAA",
@@ -44,7 +44,7 @@ export function Services() {
             className="mt-3"
             style={{
               fontFamily: "Montserrat, sans-serif",
-              fontSize: "clamp(2rem, 4vw, 3.25rem)",
+              fontSize: "clamp(1.8rem, 4vw, 2.925rem)",
               fontWeight: 700,
               lineHeight: 1.1,
               color: "#0a0a0a",
@@ -97,7 +97,7 @@ export function Services() {
               </div>
               <h3
                 className="mt-5 text-neutral-900"
-                style={{ fontFamily: "Montserrat, sans-serif", fontSize: "16px", fontWeight: 700 }}
+                style={{ fontFamily: "Montserrat, sans-serif", fontSize: "14px", fontWeight: 700 }}
               >
                 {title}
               </h3>

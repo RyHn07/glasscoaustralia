@@ -11,6 +11,7 @@ import productSecurity from "@/assets/product-security.jpg";
 import rangeFloat from "@/assets/range-float.jpg";
 import rangeLowE from "@/assets/range-lowe.jpg";
 import rangeLaminated from "@/assets/range-laminated.jpg";
+import productsHero from "@/assets/hero-glass-2.jpg";
 
 type ProductCard = {
   name: string;

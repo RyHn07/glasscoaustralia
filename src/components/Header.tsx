@@ -96,7 +96,7 @@ const serviceItems: ServiceItem[] = [
     to: "/services/glass-processing",
     children: [
       { label: "CNC Line — SKILL E-D", hash: "cnc-line" },
-      { label: "TECHNI Intec Waterjet", hash: "waterjet" },
+      { label: "TECHNI Waterjet", hash: "waterjet" },
       { label: "Bimatech Techno Edge", hash: "bimatech" },
     ],
   },
@@ -176,12 +176,11 @@ export function Header() {
       <div className="mx-auto flex max-w-[1400px] items-center justify-between px-6 py-2">
         {/* Logo */}
         <Link to="/" className="flex items-center">
-          <span
-            className={`font-bold tracking-tight text-black transition-all duration-300 ${scrolled ? "text-xl" : "text-2xl"}`}
-            style={{ fontFamily: '"Montserrat", sans-serif' }}
-          >
-            TECHNI Waterjet
-          </span>
+          <img
+            src={logo}
+            alt="GlassCo"
+            className={`w-auto transition-all duration-300 ${scrolled ? "h-14" : "h-24"}`}
+          />
         </Link>
 
         {/* Nav */}

@@ -128,6 +128,7 @@ export function Hero() {
               lineHeight: 1.05,
               color: "#0a0a0a",
               margin: 0,
+              whiteSpace: "nowrap",
             }}
           >
             GlassCo <span style={{ color: "rgb(0, 154, 170)" }}>Australia</span>

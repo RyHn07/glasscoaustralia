@@ -97,16 +97,14 @@ function AboutPage() {
             className="mt-5"
             style={{
               fontFamily: HEAD_FONT,
-              fontSize: "clamp(3rem, 7vw, 6rem)",
+              fontSize: "clamp(2.025rem, 5vw, 3.6rem)",
               fontWeight: 700,
               lineHeight: 1.05,
               color: "#ffffff",
               margin: 0,
             }}
           >
-            GlassCo
-            <br />
-            <span style={{ color: ACCENT }}>Australia</span>
+            GlassCo <span style={{ color: ACCENT }}>Australia</span>
           </h1>
           <p
             className="mt-6 max-w-2xl text-base text-white/85 sm:text-lg"

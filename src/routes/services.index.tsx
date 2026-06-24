@@ -105,13 +105,13 @@ function ServicesIndexPage() {
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-black/90" />
         </div>
-        <div className="relative z-10 mx-auto max-w-[1280px] px-6 text-center">
+        <div className="relative z-10 mx-auto max-w-[1280px] px-6 text-left">
           <div className="inline-flex items-center gap-3">
             <span className="block" style={{ width: 32, height: 1, backgroundColor: ACCENT }} />
             <span
               style={{
                 fontFamily: HEAD_FONT,
-                fontSize: 14,
+                fontSize: 10,
                 fontWeight: 700,
                 letterSpacing: "0.2em",
                 color: "#7DD3DC",
@@ -119,13 +119,12 @@ function ServicesIndexPage() {
             >
               OUR SERVICES
             </span>
-            <span className="block" style={{ width: 32, height: 1, backgroundColor: ACCENT }} />
           </div>
           <h1
             className="mt-5"
             style={{
               fontFamily: HEAD_FONT,
-              fontSize: "clamp(2.5rem, 6vw, 5rem)",
+              fontSize: "clamp(2.025rem, 5vw, 3.6rem)",
               fontWeight: 700,
               lineHeight: 1.05,
               color: "#ffffff",
@@ -134,7 +133,7 @@ function ServicesIndexPage() {
           >
             End‑to‑end <span style={{ color: ACCENT }}>glass processing</span>
           </h1>
-          <p className="mx-auto mt-6 max-w-2xl text-base text-white/80 sm:text-lg">
+          <p className="mt-6 max-w-2xl text-white/80" style={{ fontFamily: BODY_FONT, fontSize: 15, lineHeight: 1.7 }}>
             From tempering and insulating glass units to CNC, waterjet and digital printing —
             select a service below to explore our capabilities, machinery and specifications.
           </p>

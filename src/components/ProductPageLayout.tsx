@@ -13,7 +13,7 @@ function FAQItem({ q, a, defaultOpen }: { q: string; a: string; defaultOpen?: bo
       >
         <span
           className="text-neutral-900"
-          style={{ fontFamily: "Montserrat, sans-serif", fontSize: "14.4px", fontWeight: 600, letterSpacing: "0.01em" }}
+          style={{ fontFamily: "Montserrat, sans-serif", fontSize: "13px", fontWeight: 600, letterSpacing: "0.01em" }}
         >
           {q}
         </span>

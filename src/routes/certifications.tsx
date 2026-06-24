@@ -226,7 +226,7 @@ function CertificationsPage() {
             className="mt-6 max-w-3xl"
             style={{
               fontFamily: "Montserrat, sans-serif",
-              fontSize: "clamp(2.5rem, 5.5vw, 4.5rem)",
+              fontSize: "clamp(2.25rem, 5.5vw, 4.05rem)",
               fontWeight: 700,
               lineHeight: 1.05,
               letterSpacing: "-0.01em",

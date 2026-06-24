@@ -167,7 +167,7 @@ function GalleryPage() {
                 <span
                   style={{
                     fontFamily: "Montserrat, sans-serif",
-                    fontSize: "11.2px",
+                    fontSize: "10px",
                     fontWeight: 700,
                     letterSpacing: "0.2em",
                     color: "#009AAA",
@@ -179,7 +179,7 @@ function GalleryPage() {
               <h1
                 style={{
                   fontFamily: "Montserrat, sans-serif",
-                  fontSize: "clamp(2.25rem, 5vw, 4rem)",
+                  fontSize: "clamp(2.025rem, 5vw, 3.6rem)",
                   fontWeight: 700,
                   lineHeight: 1.05,
                   color: "#0a0a0a",

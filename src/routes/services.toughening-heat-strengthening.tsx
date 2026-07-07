@@ -3,7 +3,8 @@ import { Check, Building2, Droplets, Sofa, Cpu, Fence, ShieldCheck } from "lucid
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import heroImage from "@/assets/service-toughening.jpg";
-import furnaceImage from "@/assets/northglass-furnace.jpg";
+import furnaceAsset from "@/assets/machinery/northglass.jpg.asset.json";
+const furnaceImage = furnaceAsset.url;
 
 const ACCENT = "#009AAA";
 const HEAD_FONT = "Montserrat, sans-serif";

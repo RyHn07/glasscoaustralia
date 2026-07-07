@@ -75,49 +75,6 @@ export function Hero() {
       {/* Content */}
       <div className="relative z-10 mx-auto flex h-full max-w-[1280px] flex-col items-center justify-center px-6 pb-[140px] text-center">
         <div className="flex w-full max-w-3xl flex-col items-center">
-          {/* Eyebrow */}
-          <div className="mb-6 flex items-center justify-center gap-3">
-            <span className="block" style={{ width: "32px", height: "1px", backgroundColor: "rgb(0, 154, 170)" }} />
-            <span
-              style={{
-                fontFamily: "Montserrat, sans-serif",
-                fontSize: "10px",
-                lineHeight: "24px",
-                fontWeight: 700,
-                color: "#007A87",
-                display: "inline-block",
-                position: "relative",
-                overflow: "hidden",
-                height: "24px",
-                minWidth: "220px",
-              }}
-            >
-              {rotatingWords.map((word, i) => (
-                <span
-                  key={i}
-                  style={{
-                    position: i === wordIndex ? "relative" : "absolute",
-                    left: 0,
-                    right: 0,
-                    top: 0,
-                    whiteSpace: "nowrap",
-                    display: "inline-block",
-                    animation:
-                      i === wordIndex
-                        ? "rotateInUp 0.6s ease-out forwards"
-                        : i === (wordIndex - 1 + rotatingWords.length) % rotatingWords.length
-                          ? "rotateOutUp 0.6s ease-out forwards"
-                          : "none",
-                    opacity:
-                      i === wordIndex || i === (wordIndex - 1 + rotatingWords.length) % rotatingWords.length ? 1 : 0,
-                  }}
-                >
-                  {word}
-                </span>
-              ))}
-            </span>
-            <span className="block" style={{ width: "32px", height: "1px", backgroundColor: "rgb(0, 154, 170)" }} />
-          </div>
 
           {/* Heading */}
           <h1

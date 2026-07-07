@@ -161,7 +161,7 @@ function GalleryPage() {
                 }}
               >
                 {tab === "projects" && (<>Our <span style={{ color: "#009AAA" }}>Projects</span></>)}
-                {tab === "products" && (<><span style={{ color: "#009AAA" }}>Products</span> & Machinery</>)}
+                
                 {tab === "balustrade" && (<><span style={{ color: "#009AAA" }}>Balustrade</span></>)}
                 {tab === "doors" && (<><span style={{ color: "#009AAA" }}>Doors</span></>)}
                 {tab === "facades" && (<><span style={{ color: "#009AAA" }}>Facades</span> & Curtain Walls</>)}

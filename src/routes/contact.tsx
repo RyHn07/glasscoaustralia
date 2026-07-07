@@ -234,7 +234,7 @@ function ContactPage() {
             <div
               style={{
                 fontFamily: "Montserrat, sans-serif",
-                fontSize: 10.4,
+                fontSize: 12,
                 fontWeight: 700,
                 letterSpacing: "0.2em",
                 color: ACCENT,

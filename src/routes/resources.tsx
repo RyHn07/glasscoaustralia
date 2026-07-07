@@ -42,9 +42,9 @@ function ResourcesPage() {
             className="inline-block"
             style={{
               fontFamily: "Montserrat, sans-serif",
-              fontSize: 11.2,
-              fontWeight: 600,
-              letterSpacing: "0.18em",
+              fontSize: 12,
+              fontWeight: 700,
+              letterSpacing: "0.2em",
               color: "#009AAA",
             }}
           >

@@ -22,15 +22,7 @@ const segments: Segment[] = [
 ];
 
 export function Hero() {
-  const [wordIndex, setWordIndex] = useState(0);
   const [slideIndex, setSlideIndex] = useState(0);
-
-  useEffect(() => {
-    const id = setInterval(() => {
-      setWordIndex((i) => (i + 1) % rotatingWords.length);
-    }, 2200);
-    return () => clearInterval(id);
-  }, []);
 
   useEffect(() => {
     const id = setInterval(() => {

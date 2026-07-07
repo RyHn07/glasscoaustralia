@@ -4,15 +4,6 @@ import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 
-import floatImg from "@/assets/range-float.jpg";
-import temperedImg from "@/assets/range-tempered.jpg";
-import laminatedImg from "@/assets/range-laminated.jpg";
-import lowEImg from "@/assets/range-lowe.jpg";
-import mirrorsImg from "@/assets/range-mirrors.jpg";
-import acousticImg from "@/assets/product-acoustic.jpg";
-import decorativeImg from "@/assets/product-decorative.jpg";
-import energyImg from "@/assets/product-energy.jpg";
-import printingImg from "@/assets/product-printing.jpg";
 import atriumImg from "@/assets/project-atrium.jpg";
 import coastalImg from "@/assets/project-coastal.jpg";
 import curvedImg from "@/assets/project-curved.jpg";
@@ -20,11 +11,6 @@ import heritageImg from "@/assets/project-heritage.jpg";
 import officeImg from "@/assets/project-office.jpg";
 import retailImg from "@/assets/project-retail.jpg";
 
-import waterjetImg from "@/assets/glass-waterjet.jpg";
-import bimatechImg from "@/assets/glass-bimatech.jpg";
-import furnaceImg from "@/assets/northglass-furnace.jpg";
-import aboutManu from "@/assets/about-manufacturing.jpg";
-import aboutBuilding from "@/assets/about-building.jpg";
 
 export const Route = createFileRoute("/gallery")({
   head: () => ({
@@ -48,13 +34,13 @@ export const Route = createFileRoute("/gallery")({
 
 type Tab =
   | "projects"
-  | "products"
   | "balustrade"
   | "doors"
   | "facades"
   | "mirrors"
   | "office-partitions"
   | "pool-fencing";
+
 
 type GalleryImage = { src: string; alt: string; category: Tab };
 
@@ -89,21 +75,8 @@ const allImages: GalleryImage[] = [
   { src: heritageImg, alt: "Heritage building glass restoration", category: "projects" },
   { src: officeImg, alt: "Modern office glass partitions", category: "projects" },
   { src: retailImg, alt: "Retail storefront glazing", category: "projects" },
-  // Products & Machinery
-  { src: floatImg, alt: "Stack of clear float glass sheets", category: "products" },
-  { src: temperedImg, alt: "Toughened safety glass panels", category: "products" },
-  { src: laminatedImg, alt: "Laminated safety glass cross-section", category: "products" },
-  { src: lowEImg, alt: "Low-E coated glass facade", category: "products" },
-  { src: mirrorsImg, alt: "Custom silvered mirror panels", category: "products" },
-  { src: acousticImg, alt: "Acoustic glass interior", category: "products" },
-  { src: decorativeImg, alt: "Decorative patterned glass", category: "products" },
-  { src: energyImg, alt: "Energy efficient glazing", category: "products" },
-  { src: printingImg, alt: "Digital ceramic printed glass", category: "products" },
-  { src: furnaceImg, alt: "NorthGlass toughening furnace", category: "products" },
-  { src: bimatechImg, alt: "Bimatech Techno edge processing", category: "products" },
-  { src: aboutManu, alt: "Manufacturing facility floor", category: "products" },
-  { src: aboutBuilding, alt: "GlassCo headquarters building", category: "products" },
   // Uploaded category photos
+
   ...buildCategoryImages("balustrade", "Balustrade installation", "balustrade"),
   ...buildCategoryImages("doors", "Glass door", "doors"),
   ...buildCategoryImages("facades", "Facade & curtain wall", "facades"),
@@ -188,7 +161,7 @@ function GalleryPage() {
                 }}
               >
                 {tab === "projects" && (<>Our <span style={{ color: "#009AAA" }}>Projects</span></>)}
-                {tab === "products" && (<><span style={{ color: "#009AAA" }}>Products</span> & Machinery</>)}
+                
                 {tab === "balustrade" && (<><span style={{ color: "#009AAA" }}>Balustrade</span></>)}
                 {tab === "doors" && (<><span style={{ color: "#009AAA" }}>Doors</span></>)}
                 {tab === "facades" && (<><span style={{ color: "#009AAA" }}>Facades</span> & Curtain Walls</>)}
@@ -209,7 +182,7 @@ function GalleryPage() {
           <div className="mt-10 flex flex-wrap gap-2 overflow-x-auto">
             {([
               { id: "projects" as Tab, label: "Projects" },
-              { id: "products" as Tab, label: "Products & Machinery" },
+              
               { id: "balustrade" as Tab, label: "Balustrade" },
               { id: "doors" as Tab, label: "Doors" },
               { id: "facades" as Tab, label: "Facades & Curtain Walls" },

@@ -102,7 +102,7 @@ export function Footer() {
               <span
                 style={{
                   fontFamily: "Montserrat, sans-serif",
-                  fontSize: "9px",
+                  fontSize: "12px",
                   fontWeight: 700,
                   letterSpacing: "0.2em",
                   color: "#009AAA",

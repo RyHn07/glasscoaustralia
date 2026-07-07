@@ -1,20 +1,11 @@
 import { useEffect, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { Home, Building2, Factory } from "lucide-react";
-import heroImage from "@/assets/hero-glass.jpg";
-import heroImage2 from "@/assets/hero-glass-2.jpg";
-import heroImage3 from "@/assets/hero-glass-3.jpg";
+import heroResidential from "@/assets/hero/hero-residential.jpg.asset.json";
+import heroCommercial from "@/assets/hero/hero-commercial.jpg.asset.json";
+import heroIndustrial from "@/assets/hero/hero-industrial.jpg.asset.json";
 
-const rotatingWords = [
-  "GLASS WHOLESALER",
-  "GLASS PRECISION CUTTER",
-  "GLASS MANUFACTURER",
-  "GLASS PRECISION CUTTER",
-  "GLASS SUPPLIER",
-  "GLASS SUPPLIER",
-];
-
-const heroSlides = [heroImage, heroImage2, heroImage3];
+const heroSlides = [heroResidential.url, heroCommercial.url, heroIndustrial.url];
 
 type Segment = {
   to: "/solutions/residential" | "/solutions/commercial" | "/solutions/industrial-automotive";
@@ -31,15 +22,7 @@ const segments: Segment[] = [
 ];
 
 export function Hero() {
-  const [wordIndex, setWordIndex] = useState(0);
   const [slideIndex, setSlideIndex] = useState(0);
-
-  useEffect(() => {
-    const id = setInterval(() => {
-      setWordIndex((i) => (i + 1) % rotatingWords.length);
-    }, 2200);
-    return () => clearInterval(id);
-  }, []);
 
   useEffect(() => {
     const id = setInterval(() => {
@@ -143,10 +126,13 @@ export function Hero() {
       {/* Bottom segment menu — full width, aligned with hero image */}
       <div className="absolute inset-x-0 bottom-0 z-10 px-4 pb-4 sm:px-6 sm:pb-6">
         <div className="grid w-full grid-cols-1 gap-3 sm:grid-cols-3">
-          {segments.map(({ to, title, subtitle, Icon, color }) => (
+          {segments.map(({ to, title, subtitle, Icon, color }, idx) => (
             <Link
               key={to}
               to={to}
+              onMouseEnter={() => setSlideIndex(idx)}
+              onFocus={() => setSlideIndex(idx)}
+              onClick={() => setSlideIndex(idx)}
               className="group relative flex items-center gap-3 overflow-hidden rounded-lg border border-white/40 bg-white/85 px-5 py-4 backdrop-blur transition-all hover:-translate-y-0.5 hover:bg-white"
               style={{ ["--seg-color" as any]: color }}
             >

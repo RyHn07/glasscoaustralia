@@ -35,12 +35,12 @@ function IndustrialPage() {
       tagline="Engineered for Performance and Safety"
       description="We provide durable, high-performance glass solutions for industrial facilities, automotive applications, transport, and specialised manufacturing requirements. Our products are designed to meet demanding environments where strength, reliability, and safety are critical."
       applications={[
-        "Automotive Glass Components",
-        "Transport & Fleet Vehicles",
-        "Manufacturing Facilities",
-        "Warehouses & Distribution Centres",
-        "Infrastructure Projects",
-        "Safety & Protective Glazing",
+        { name: "Automotive Glass Components", image: automotiveImg.url },
+        { name: "Transport & Fleet Vehicles", image: transportImg.url },
+        { name: "Manufacturing Facilities", image: manufacturingImg.url },
+        { name: "Warehouses & Distribution Centres", image: warehousesImg.url },
+        { name: "Infrastructure Projects", image: infrastructureImg.url },
+        { name: "Safety & Protective Glazing", image: safetyImg.url },
       ]}
       heroImage={heroImage}
     />

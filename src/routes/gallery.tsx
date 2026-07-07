@@ -4,15 +4,6 @@ import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 
-import floatImg from "@/assets/range-float.jpg";
-import temperedImg from "@/assets/range-tempered.jpg";
-import laminatedImg from "@/assets/range-laminated.jpg";
-import lowEImg from "@/assets/range-lowe.jpg";
-import mirrorsImg from "@/assets/range-mirrors.jpg";
-import acousticImg from "@/assets/product-acoustic.jpg";
-import decorativeImg from "@/assets/product-decorative.jpg";
-import energyImg from "@/assets/product-energy.jpg";
-import printingImg from "@/assets/product-printing.jpg";
 import atriumImg from "@/assets/project-atrium.jpg";
 import coastalImg from "@/assets/project-coastal.jpg";
 import curvedImg from "@/assets/project-curved.jpg";
@@ -20,11 +11,6 @@ import heritageImg from "@/assets/project-heritage.jpg";
 import officeImg from "@/assets/project-office.jpg";
 import retailImg from "@/assets/project-retail.jpg";
 
-import waterjetImg from "@/assets/glass-waterjet.jpg";
-import bimatechImg from "@/assets/glass-bimatech.jpg";
-import furnaceImg from "@/assets/northglass-furnace.jpg";
-import aboutManu from "@/assets/about-manufacturing.jpg";
-import aboutBuilding from "@/assets/about-building.jpg";
 
 export const Route = createFileRoute("/gallery")({
   head: () => ({

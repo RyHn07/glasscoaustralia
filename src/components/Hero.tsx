@@ -53,6 +53,15 @@ export function Hero() {
           }
           .hero-zoom { animation: heroKenBurns 7s ease-out forwards; }
         `}</style>
+        {/* Readability overlay to blend text with any background image */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(180deg, rgba(255,255,255,0.85) 0%, rgba(255,255,255,0.65) 45%, rgba(255,255,255,0.35) 75%, rgba(255,255,255,0.15) 100%)",
+          }}
+          aria-hidden
+        />
       </div>
 
       {/* Content */}

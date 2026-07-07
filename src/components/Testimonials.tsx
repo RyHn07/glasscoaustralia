@@ -108,7 +108,7 @@ export function Testimonials() {
               <span
                 style={{
                   fontFamily: "Montserrat, sans-serif",
-                  fontSize: "10px",
+                  fontSize: "12px",
                   fontWeight: 700,
                   letterSpacing: "0.2em",
                   color: "#009AAA",

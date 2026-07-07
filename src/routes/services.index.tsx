@@ -111,7 +111,7 @@ function ServicesIndexPage() {
             <span
               style={{
                 fontFamily: HEAD_FONT,
-                fontSize: 10,
+                fontSize: 12,
                 fontWeight: 700,
                 letterSpacing: "0.2em",
                 color: "#7DD3DC",

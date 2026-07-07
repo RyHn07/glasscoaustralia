@@ -523,9 +523,9 @@ function Eyebrow({
       <span
         style={{
           fontFamily: HEAD_FONT,
-          fontSize: "14px",
+          fontSize: "12px",
           fontWeight: 700,
-          letterSpacing: "0.15em",
+          letterSpacing: "0.2em",
           color: light ? "#7DD3DC" : ACCENT,
         }}
       >

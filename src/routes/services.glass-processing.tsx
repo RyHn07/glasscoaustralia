@@ -298,7 +298,7 @@ function GlassProcessingPage() {
                 style={{ borderColor: ACCENT }}
               />
               <img
-                src={cncImage.url}
+                src={cncImage}
                 alt="SKILL E-D vertical CNC machining centre"
                 loading="lazy"
                 width={1280}

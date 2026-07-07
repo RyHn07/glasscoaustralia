@@ -184,7 +184,7 @@ function ContactPage() {
               value: "Dandenong South, VIC",
               href: "#location",
             },
-            { icon: Clock, label: "HOURS", value: "Mon–Fri · 8AM–6PM", href: undefined },
+            { icon: Clock, label: "HOURS", value: "Mon–Fri · 8:00 AM – 4:30 PM", href: undefined },
           ].map((c) => {
             const Inner = (
               <div className="group flex items-center gap-4 bg-white px-6 py-7 transition-colors hover:bg-neutral-50">

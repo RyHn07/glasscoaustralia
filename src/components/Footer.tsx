@@ -50,7 +50,7 @@ const contactItems = [
   {
     Icon: Clock,
     label: "Hours",
-    lines: ["Mon - Fri: 8AM - 6PM"],
+    lines: ["Mon – Fri: 8:00 AM – 4:30 PM"],
   },
 ];
 

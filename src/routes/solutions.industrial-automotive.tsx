@@ -1,6 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SolutionPage } from "@/components/SolutionPage";
 import heroImage from "@/assets/solution-industrial.jpg";
+import automotiveImg from "@/assets/industrial/automotive.jpg.asset.json";
+import transportImg from "@/assets/industrial/transport.jpg.asset.json";
+import manufacturingImg from "@/assets/industrial/manufacturing.jpg.asset.json";
+import warehousesImg from "@/assets/industrial/warehouses.jpg.asset.json";
+import infrastructureImg from "@/assets/industrial/infrastructure.jpg.asset.json";
+import safetyImg from "@/assets/industrial/safety.jpg.asset.json";
 
 export const Route = createFileRoute("/solutions/industrial-automotive")({
   head: () => ({

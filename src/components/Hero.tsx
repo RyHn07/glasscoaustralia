@@ -1,20 +1,11 @@
 import { useEffect, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { Home, Building2, Factory } from "lucide-react";
-import heroImage from "@/assets/hero-glass.jpg";
-import heroImage2 from "@/assets/hero-glass-2.jpg";
-import heroImage3 from "@/assets/hero-glass-3.jpg";
+import heroResidential from "@/assets/hero/hero-residential.jpg.asset.json";
+import heroCommercial from "@/assets/hero/hero-commercial.jpg.asset.json";
+import heroIndustrial from "@/assets/hero/hero-industrial.jpg.asset.json";
 
-const rotatingWords = [
-  "GLASS WHOLESALER",
-  "GLASS PRECISION CUTTER",
-  "GLASS MANUFACTURER",
-  "GLASS PRECISION CUTTER",
-  "GLASS SUPPLIER",
-  "GLASS SUPPLIER",
-];
-
-const heroSlides = [heroImage, heroImage2, heroImage3];
+const heroSlides = [heroResidential.url, heroCommercial.url, heroIndustrial.url];
 
 type Segment = {
   to: "/solutions/residential" | "/solutions/commercial" | "/solutions/industrial-automotive";

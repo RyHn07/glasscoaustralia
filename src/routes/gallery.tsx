@@ -182,7 +182,7 @@ function GalleryPage() {
           <div className="mt-10 flex flex-wrap gap-2 overflow-x-auto">
             {([
               { id: "projects" as Tab, label: "Projects" },
-              { id: "products" as Tab, label: "Products & Machinery" },
+              
               { id: "balustrade" as Tab, label: "Balustrade" },
               { id: "doors" as Tab, label: "Doors" },
               { id: "facades" as Tab, label: "Facades & Curtain Walls" },

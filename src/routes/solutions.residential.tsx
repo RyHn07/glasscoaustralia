@@ -36,8 +36,8 @@ function ResidentialPage() {
       description="From stylish interiors to durable exterior glazing, we provide premium glass solutions designed to improve comfort, safety, and aesthetics in modern homes."
       applications={[
         { name: "Windows & Doors", image: doorsImg.url },
-        { name: "Shower Screens" },
-        { name: "Splashbacks" },
+        { name: "Shower Screens", image: showerScreenImg.url },
+        { name: "Splashbacks", image: splashbackImg.url },
         { name: "Mirrors", image: mirrorsImg.url },
         { name: "Balustrades", image: balustradeImg.url },
         { name: "Pool Fencing", image: poolFencingImg.url },

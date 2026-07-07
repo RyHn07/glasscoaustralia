@@ -5,6 +5,8 @@ import doorsImg from "@/assets/gallery/doors/doors-1.jpg.asset.json";
 import mirrorsImg from "@/assets/gallery/mirrors/mirrors-1.jpg.asset.json";
 import balustradeImg from "@/assets/gallery/balustrade/balustrade-1.jpg.asset.json";
 import poolFencingImg from "@/assets/gallery/pool-fencing/pool-fencing-1.jpg.asset.json";
+import showerScreenImg from "@/assets/residential/shower-screen.jpg.asset.json";
+import splashbackImg from "@/assets/residential/splashback.jpg.asset.json";
 
 export const Route = createFileRoute("/solutions/residential")({
   head: () => ({
@@ -34,8 +36,8 @@ function ResidentialPage() {
       description="From stylish interiors to durable exterior glazing, we provide premium glass solutions designed to improve comfort, safety, and aesthetics in modern homes."
       applications={[
         { name: "Windows & Doors", image: doorsImg.url },
-        { name: "Shower Screens" },
-        { name: "Splashbacks" },
+        { name: "Shower Screens", image: showerScreenImg.url },
+        { name: "Splashbacks", image: splashbackImg.url },
         { name: "Mirrors", image: mirrorsImg.url },
         { name: "Balustrades", image: balustradeImg.url },
         { name: "Pool Fencing", image: poolFencingImg.url },

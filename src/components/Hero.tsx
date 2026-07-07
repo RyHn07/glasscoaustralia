@@ -126,10 +126,13 @@ export function Hero() {
       {/* Bottom segment menu — full width, aligned with hero image */}
       <div className="absolute inset-x-0 bottom-0 z-10 px-4 pb-4 sm:px-6 sm:pb-6">
         <div className="grid w-full grid-cols-1 gap-3 sm:grid-cols-3">
-          {segments.map(({ to, title, subtitle, Icon, color }) => (
+          {segments.map(({ to, title, subtitle, Icon, color }, idx) => (
             <Link
               key={to}
               to={to}
+              onMouseEnter={() => setSlideIndex(idx)}
+              onFocus={() => setSlideIndex(idx)}
+              onClick={() => setSlideIndex(idx)}
               className="group relative flex items-center gap-3 overflow-hidden rounded-lg border border-white/40 bg-white/85 px-5 py-4 backdrop-blur transition-all hover:-translate-y-0.5 hover:bg-white"
               style={{ ["--seg-color" as any]: color }}
             >

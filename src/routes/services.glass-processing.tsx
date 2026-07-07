@@ -13,11 +13,16 @@ import {
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import heroImage from "@/assets/service-glass-processing.jpg";
-import cncImage from "@/assets/machine-cnc-real.jpg.asset.json";
-import waterjetImage from "@/assets/glass-waterjet.jpg";
-import bimatechImage from "@/assets/glass-bimatech.jpg";
-import floatCuttingImage from "@/assets/processing-float-cutting.jpg";
-import laminateCuttingImage from "@/assets/processing-laminate-cutting.jpg";
+import cncAsset from "@/assets/machinery/skill.jpg.asset.json";
+import waterjetAsset from "@/assets/machinery/techni.jpg.asset.json";
+import bimatechAsset from "@/assets/machinery/bimatech.jpg.asset.json";
+import floatCuttingAsset from "@/assets/machinery/gsun.jpg.asset.json";
+import laminateCuttingAsset from "@/assets/machinery/bottero.jpg.asset.json";
+const cncImage = cncAsset.url;
+const waterjetImage = waterjetAsset.url;
+const bimatechImage = bimatechAsset.url;
+const floatCuttingImage = floatCuttingAsset.url;
+const laminateCuttingImage = laminateCuttingAsset.url;
 
 const ACCENT = "#009AAA";
 const HEAD_FONT = "Montserrat, sans-serif";
@@ -293,7 +298,7 @@ function GlassProcessingPage() {
                 style={{ borderColor: ACCENT }}
               />
               <img
-                src={cncImage.url}
+                src={cncImage}
                 alt="SKILL E-D vertical CNC machining centre"
                 loading="lazy"
                 width={1280}

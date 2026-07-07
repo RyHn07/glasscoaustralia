@@ -34,13 +34,13 @@ export const Route = createFileRoute("/gallery")({
 
 type Tab =
   | "projects"
-  | "products"
   | "balustrade"
   | "doors"
   | "facades"
   | "mirrors"
   | "office-partitions"
   | "pool-fencing";
+
 
 type GalleryImage = { src: string; alt: string; category: Tab };
 

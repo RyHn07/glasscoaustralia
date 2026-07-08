@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { Home, Building2, Factory } from "lucide-react";
+import heroBusinessman from "@/assets/hero/hero-businessman.jpg.asset.json";
 import heroResidential from "@/assets/hero/hero-residential.jpg.asset.json";
 import heroCommercial from "@/assets/hero/hero-commercial.jpg.asset.json";
 import heroIndustrial from "@/assets/hero/hero-industrial.jpg.asset.json";
 
-const heroSlides = [heroResidential.url, heroCommercial.url, heroIndustrial.url];
+const heroSlides = [heroBusinessman.url, heroResidential.url, heroCommercial.url, heroIndustrial.url];
 
 type Segment = {
   to: "/solutions/residential" | "/solutions/commercial" | "/solutions/industrial-automotive";
@@ -139,9 +140,9 @@ export function Hero() {
             <Link
               key={to}
               to={to}
-              onMouseEnter={() => setSlideIndex(idx)}
-              onFocus={() => setSlideIndex(idx)}
-              onClick={() => setSlideIndex(idx)}
+              onMouseEnter={() => setSlideIndex(idx + 1)}
+              onFocus={() => setSlideIndex(idx + 1)}
+              onClick={() => setSlideIndex(idx + 1)}
               className="group relative flex items-center gap-3 overflow-hidden rounded-lg border border-white/40 bg-white/85 px-5 py-4 backdrop-blur transition-all hover:-translate-y-0.5 hover:bg-white"
               style={{ ["--seg-color" as any]: color }}
             >

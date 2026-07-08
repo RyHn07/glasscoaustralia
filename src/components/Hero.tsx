@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { Home, Building2, Factory } from "lucide-react";
+import heroBusinessman from "@/assets/hero/hero-businessman.jpg.asset.json";
 import heroResidential from "@/assets/hero/hero-residential.jpg.asset.json";
 import heroCommercial from "@/assets/hero/hero-commercial.jpg.asset.json";
 import heroIndustrial from "@/assets/hero/hero-industrial.jpg.asset.json";
 
-const heroSlides = [heroResidential.url, heroCommercial.url, heroIndustrial.url];
+const heroSlides = [heroBusinessman.url, heroResidential.url, heroCommercial.url, heroIndustrial.url];
 
 type Segment = {
   to: "/solutions/residential" | "/solutions/commercial" | "/solutions/industrial-automotive";

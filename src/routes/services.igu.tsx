@@ -3,7 +3,6 @@ import {
   Check,
   Droplets,
   Search,
-  Frame,
   Wind,
   Wrench,
   ShieldCheck,

@@ -73,12 +73,6 @@ const components = [
     body: "Vertical glass washing line removes dust, fingerprints and residue. Brushes and de-ionised water deliver a contaminant-free surface — essential before sealing.",
   },
   {
-    icon: Search,
-    image: imgInspecting,
-    label: "Inspecting Station",
-    body: "High-intensity backlight inspection catches scratches, edge chips, coating defects and visual flaws before the unit moves into assembly.",
-  },
-  {
     icon: Move3d,
     image: imgSpacer,
     label: "Spacer Bending Machine",
@@ -91,22 +85,22 @@ const components = [
     body: "Precisely fills bent spacer frames with molecular-sieve desiccant to absorb residual moisture inside the cavity, preventing internal fogging over the unit's life.",
   },
   {
-    icon: Frame,
+    icon: Wrench,
     image: imgFrame,
-    label: "Frame Mounting Station",
-    body: "Spacer frame is butyl-coated and accurately positioned on the first glass lite — locking in the cavity depth and a primary moisture seal.",
+    label: "Butyl Machine",
+    body: "Spacer frame is butyl-coated to be accurately positioned on the first glass lite — locking in the cavity depth and a primary moisture seal.",
+  },
+  {
+    icon: Search,
+    image: imgInspecting,
+    label: "Inspecting & Frame Mounting Station",
+    body: "Combined station where high-intensity backlight inspection catches scratches, edge chips and coating defects, and the butyl-coated spacer frame is precisely mounted onto the first glass lite.",
   },
   {
     icon: Wind,
     image: imgGasPress,
-    label: "Gas-Filling Press",
-    body: "Argon (or Krypton) gas is injected as the lites are pressed together inside the LISEC press, replacing air in the cavity for superior U-values.",
-  },
-  {
-    icon: Wrench,
-    image: imgSealing,
-    label: "Automatic Sealing Machine",
-    body: "Two-component structural silicone or polysulphide is robotically extruded around the perimeter to form the secondary seal and lock the unit together for life.",
+    label: "Gas-Filling Press & Automatic Sealing Machine",
+    body: "Argon (or Krypton) gas is injected as the lites are pressed together inside the LISEC press, then two-component structural silicone is robotically extruded around the perimeter to form the secondary seal.",
   },
 ];
 

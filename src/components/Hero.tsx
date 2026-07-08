@@ -140,9 +140,9 @@ export function Hero() {
             <Link
               key={to}
               to={to}
-              onMouseEnter={() => setSlideIndex(idx)}
-              onFocus={() => setSlideIndex(idx)}
-              onClick={() => setSlideIndex(idx)}
+              onMouseEnter={() => setSlideIndex(idx + 1)}
+              onFocus={() => setSlideIndex(idx + 1)}
+              onClick={() => setSlideIndex(idx + 1)}
               className="group relative flex items-center gap-3 overflow-hidden rounded-lg border border-white/40 bg-white/85 px-5 py-4 backdrop-blur transition-all hover:-translate-y-0.5 hover:bg-white"
               style={{ ["--seg-color" as any]: color }}
             >

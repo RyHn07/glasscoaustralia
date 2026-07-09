@@ -52,7 +52,7 @@ export function WhoWeAre() {
               <span
                 style={{
                   fontFamily: "Montserrat, sans-serif",
-                  fontSize: "12px",
+                  fontSize: "14px",
                   fontWeight: 700,
                   letterSpacing: "0.2em",
                   color: "#009AAA",

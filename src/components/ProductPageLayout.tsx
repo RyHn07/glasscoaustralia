@@ -114,7 +114,7 @@ export function ProductPageLayout(props: ProductPageProps & { children?: React.R
             <span
               style={{
                 fontFamily: HEAD_FONT,
-                fontSize: "14px",
+                fontSize: "16px",
                 fontWeight: 700,
                 letterSpacing: "0.15em",
                 color: "#7DD3DC",
@@ -451,7 +451,7 @@ function Eyebrow({ children, centered }: { children: React.ReactNode; centered?:
       <span
         style={{
           fontFamily: HEAD_FONT,
-          fontSize: "14px",
+          fontSize: "16px",
           fontWeight: 700,
           letterSpacing: "0.15em",
           color: ACCENT,

@@ -168,7 +168,7 @@ function ServicesIndexPage() {
                     className="absolute bottom-4 left-5 text-white/90"
                     style={{
                       fontFamily: HEAD_FONT,
-                      fontSize: 12,
+                      fontSize: 14,
                       fontWeight: 700,
                       letterSpacing: "0.2em",
                     }}

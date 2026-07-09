@@ -33,8 +33,8 @@ export function SolutionPage({ eyebrow, title, tagline, description, application
           <div className="flex items-center gap-3">
             <span className="block h-px w-8" style={{ backgroundColor: ACCENT }} />
             <span
-              className="text-sm font-bold uppercase tracking-widest"
-              style={{ fontFamily: HEAD_FONT, color: ACCENT }}
+              className="font-bold uppercase tracking-widest"
+              style={{ fontFamily: HEAD_FONT, color: ACCENT, fontSize: "16px" }}
             >
               {eyebrow}
             </span>

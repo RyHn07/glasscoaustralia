@@ -36,8 +36,8 @@ export function WhoWeAre() {
               className="absolute -bottom-6 -right-6 rounded-lg px-8 py-5 text-center text-white shadow-xl transition-transform duration-500 group-hover:-translate-y-1 group-hover:scale-105"
               style={{ backgroundColor: "#009AAA", fontFamily: "Montserrat, sans-serif" }}
             >
-              <div className="text-3xl font-bold leading-none">Since 1993</div>
-              <div className="mt-1 text-sm font-medium">In Glass</div>
+              <div className="text-sm font-medium tracking-widest uppercase">Since</div>
+              <div className="mt-1 text-4xl font-bold leading-none">1993</div>
             </div>
           </div>
 

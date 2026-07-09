@@ -3,7 +3,7 @@ import buildingAsset from "@/assets/about-building-new.jpg.asset.json";
 const buildingImg = buildingAsset.url;
 
 const stats = [
-  { icon: Calendar, value: "Since 1993", label: "Established" },
+  { icon: Calendar, value: "1993", label: "Established" },
   { icon: Users, value: "100+", label: "Happy Clients" },
   { icon: Award, value: "25+", label: "Team Members" },
   { icon: MapPin, value: "2+", label: "Locations" },

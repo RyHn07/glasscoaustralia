@@ -2,6 +2,8 @@
 
 Ei guide-e apni jante parben kivabe ei site Hostinger-er **Web Hosting (Unlimited)** plan-e host korben ar contact/quote form-er mail apnar inbox-e ashbe.
 
+Site ekhon **pure static SPA** — Hostinger shared hosting-e direct chalanor jonno perfect.
+
 ---
 
 ## 1. Frontend build kora (apnar local machine e)
@@ -11,7 +13,7 @@ bun install
 bun run build
 ```
 
-Build shesh hole `dist/` folder toiri hobe. Amra `dist/client/` folder-er contents upload korbo Hostinger-e.
+Build shesh hole `dist/` folder toiri hobe. `dist/` folder-er **contents** upload korbo Hostinger-e.
 
 > Kono issue thakle Lovable dashboard theke "Export" / "Download code" kore local-e chalate paren.
 
@@ -32,7 +34,7 @@ Hostinger hPanel → **File Manager** → open `public_html/` folder.
 
 Upload korun ei jinishguli **directly public_html-er moddhe**:
 
-1. **`dist/client/` folder-er shob file** (index.html, assets/, favicon, etc.) — folder ta na, tar **contents** upload korben
+1. **`dist/` folder-er shob file** (index.html, assets/, favicon.ico, etc.) — folder ta na, tar **contents** upload korben
 2. `hostinger/.htaccess` → `public_html/.htaccess`
 3. `hostinger/api/` folder → `public_html/api/`
 

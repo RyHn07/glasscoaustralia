@@ -15,7 +15,9 @@ import {
   Truck,
   Upload,
   User,
+  Loader2,
 } from "lucide-react";
+import { toast } from "sonner";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import heroBg from "@/assets/hero-quote.jpg";
@@ -136,6 +138,7 @@ function QuotePage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (sending) return;
     setSendError("");
     const parsed = schema.safeParse(form);
     if (!parsed.success) {
@@ -144,10 +147,12 @@ function QuotePage() {
         errs[issue.path.join(".")] = issue.message;
       }
       setErrors(errs);
+      toast.error("Please fix the highlighted fields.");
       return;
     }
     setErrors({});
     setSending(true);
+    const tId = toast.loading("Sending your quote request…");
     try {
       const fd = new FormData();
       Object.entries(form).forEach(([k, v]) => fd.append(k, String(v)));
@@ -157,10 +162,13 @@ function QuotePage() {
       if (!r.ok || !data.ok) {
         throw new Error(data.error || "Could not send. Please try again.");
       }
+      toast.success("Quote request sent! We'll reply within 1 business day.", { id: tId });
       setSubmitted(true);
       window.scrollTo({ top: 0, behavior: "smooth" });
     } catch (err) {
-      setSendError(err instanceof Error ? err.message : "Network error");
+      const msg = err instanceof Error ? err.message : "Network error";
+      setSendError(msg);
+      toast.error(msg, { id: tId });
     } finally {
       setSending(false);
     }
@@ -495,10 +503,13 @@ function QuotePage() {
               <button
                 type="submit"
                 disabled={sending}
+                aria-busy={sending}
                 className="inline-flex items-center justify-center gap-2 rounded-md bg-[#009AAA] px-7 py-3.5 text-base font-bold text-white shadow-[0_10px_30px_-10px_rgba(0,154,170,0.7)] transition-transform hover:-translate-y-0.5 hover:opacity-95 disabled:cursor-not-allowed disabled:opacity-60"
                 style={{ fontFamily: '"Montserrat", sans-serif', letterSpacing: "0.04em" }}
               >
-                {sending ? "Sending…" : "Send quote request"} <ArrowRight className="h-5 w-5" />
+                {sending && <Loader2 className="h-5 w-5 animate-spin" />}
+                {sending ? "Sending…" : "Send quote request"}
+                {!sending && <ArrowRight className="h-5 w-5" />}
               </button>
             </div>
           </form>

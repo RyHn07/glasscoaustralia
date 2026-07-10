@@ -10,7 +10,9 @@ import {
   ArrowRight,
   CheckCircle2,
   Building2,
+  Loader2,
 } from "lucide-react";
+import { toast } from "sonner";
 
 const socialIcons = [
   {
@@ -104,6 +106,7 @@ function ContactPage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (sending) return;
     setSendError("");
     const res = contactSchema.safeParse(form);
     if (!res.success) {
@@ -113,9 +116,11 @@ function ContactPage() {
         if (!out[key]) out[key] = i.message;
       });
       setErrors(out);
+      toast.error("Please fix the highlighted fields.");
       return;
     }
     setSending(true);
+    const tId = toast.loading("Sending your message…");
     try {
       const r = await fetch("/api/send-contact.php", {
         method: "POST",
@@ -126,9 +131,12 @@ function ContactPage() {
       if (!r.ok || !data.ok) {
         throw new Error(data.error || "Could not send. Please try again.");
       }
+      toast.success("Message sent! We'll reply within 1 business day.", { id: tId });
       setSubmitted(true);
     } catch (err) {
-      setSendError(err instanceof Error ? err.message : "Network error");
+      const msg = err instanceof Error ? err.message : "Network error";
+      setSendError(msg);
+      toast.error(msg, { id: tId });
     } finally {
       setSending(false);
     }
@@ -419,6 +427,7 @@ function ContactPage() {
                 <button
                   type="submit"
                   disabled={sending}
+                  aria-busy={sending}
                   className="group inline-flex w-full items-center justify-center gap-2 rounded-lg px-6 py-3.5 text-white transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-60 md:w-auto"
                   style={{
                     backgroundColor: ACCENT,
@@ -427,9 +436,9 @@ function ContactPage() {
                     fontWeight: 600,
                   }}
                 >
-                  <Send className="h-4 w-4" />
+                  {sending ? <Loader2 className="h-4 w-4 animate-spin" /> : <Send className="h-4 w-4" />}
                   {sending ? "Sending…" : "Send Message"}
-                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  {!sending && <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />}
                 </button>
               </form>
             )}

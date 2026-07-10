@@ -11,6 +11,7 @@ import {
 import appCss from "../styles.css?url";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { ScrollToTop } from "@/components/ScrollToTop";
+import { Toaster } from "sonner";
 
 
 function NotFoundComponent() {
@@ -136,6 +137,7 @@ function RootComponent() {
 
         <Outlet />
       </div>
+      <Toaster position="top-center" richColors closeButton />
     </QueryClientProvider>
   );
 }

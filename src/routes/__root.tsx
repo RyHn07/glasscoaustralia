@@ -11,6 +11,7 @@ import {
 import appCss from "../styles.css?url";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { ScrollToTop } from "@/components/ScrollToTop";
+import { Toaster } from "sonner";
 
 
 function NotFoundComponent() {

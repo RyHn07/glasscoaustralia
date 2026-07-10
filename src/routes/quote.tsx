@@ -131,8 +131,12 @@ function QuotePage() {
   const removeFile = (idx: number) =>
     setFiles((arr) => arr.filter((_, i) => i !== idx));
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [sending, setSending] = useState(false);
+  const [sendError, setSendError] = useState("");
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setSendError("");
     const parsed = schema.safeParse(form);
     if (!parsed.success) {
       const errs: Record<string, string> = {};
@@ -143,8 +147,23 @@ function QuotePage() {
       return;
     }
     setErrors({});
-    setSubmitted(true);
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    setSending(true);
+    try {
+      const fd = new FormData();
+      Object.entries(form).forEach(([k, v]) => fd.append(k, String(v)));
+      files.forEach((f) => fd.append("files[]", f, f.name));
+      const r = await fetch("/api/send-quote.php", { method: "POST", body: fd });
+      const data = (await r.json().catch(() => ({}))) as { ok?: boolean; error?: string };
+      if (!r.ok || !data.ok) {
+        throw new Error(data.error || "Could not send. Please try again.");
+      }
+      setSubmitted(true);
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } catch (err) {
+      setSendError(err instanceof Error ? err.message : "Network error");
+    } finally {
+      setSending(false);
+    }
   };
 
 

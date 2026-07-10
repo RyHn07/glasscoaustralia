@@ -131,8 +131,12 @@ function QuotePage() {
   const removeFile = (idx: number) =>
     setFiles((arr) => arr.filter((_, i) => i !== idx));
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [sending, setSending] = useState(false);
+  const [sendError, setSendError] = useState("");
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setSendError("");
     const parsed = schema.safeParse(form);
     if (!parsed.success) {
       const errs: Record<string, string> = {};
@@ -143,8 +147,23 @@ function QuotePage() {
       return;
     }
     setErrors({});
-    setSubmitted(true);
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    setSending(true);
+    try {
+      const fd = new FormData();
+      Object.entries(form).forEach(([k, v]) => fd.append(k, String(v)));
+      files.forEach((f) => fd.append("files[]", f, f.name));
+      const r = await fetch("/api/send-quote.php", { method: "POST", body: fd });
+      const data = (await r.json().catch(() => ({}))) as { ok?: boolean; error?: string };
+      if (!r.ok || !data.ok) {
+        throw new Error(data.error || "Could not send. Please try again.");
+      }
+      setSubmitted(true);
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } catch (err) {
+      setSendError(err instanceof Error ? err.message : "Network error");
+    } finally {
+      setSending(false);
+    }
   };
 
 
@@ -470,12 +489,16 @@ function QuotePage() {
                 </a>
                 . We never share your details.
               </p>
+              {sendError && (
+                <p className="text-sm font-medium text-red-600">{sendError}</p>
+              )}
               <button
                 type="submit"
-                className="inline-flex items-center justify-center gap-2 rounded-md bg-[#009AAA] px-7 py-3.5 text-base font-bold text-white shadow-[0_10px_30px_-10px_rgba(0,154,170,0.7)] transition-transform hover:-translate-y-0.5 hover:opacity-95"
+                disabled={sending}
+                className="inline-flex items-center justify-center gap-2 rounded-md bg-[#009AAA] px-7 py-3.5 text-base font-bold text-white shadow-[0_10px_30px_-10px_rgba(0,154,170,0.7)] transition-transform hover:-translate-y-0.5 hover:opacity-95 disabled:cursor-not-allowed disabled:opacity-60"
                 style={{ fontFamily: '"Montserrat", sans-serif', letterSpacing: "0.04em" }}
               >
-                Send quote request <ArrowRight className="h-5 w-5" />
+                {sending ? "Sending…" : "Send quote request"} <ArrowRight className="h-5 w-5" />
               </button>
             </div>
           </form>

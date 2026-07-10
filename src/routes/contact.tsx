@@ -94,14 +94,17 @@ function ContactPage() {
   });
   const [errors, setErrors] = useState<Partial<Record<keyof FormState, string>>>({});
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [sendError, setSendError] = useState("");
 
   const update = (k: keyof FormState, v: string) => {
     setForm((p) => ({ ...p, [k]: v }));
     if (errors[k]) setErrors((e) => ({ ...e, [k]: undefined }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setSendError("");
     const res = contactSchema.safeParse(form);
     if (!res.success) {
       const out: Partial<Record<keyof FormState, string>> = {};
@@ -112,7 +115,23 @@ function ContactPage() {
       setErrors(out);
       return;
     }
-    setSubmitted(true);
+    setSending(true);
+    try {
+      const r = await fetch("/api/send-contact.php", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      const data = (await r.json().catch(() => ({}))) as { ok?: boolean; error?: string };
+      if (!r.ok || !data.ok) {
+        throw new Error(data.error || "Could not send. Please try again.");
+      }
+      setSubmitted(true);
+    } catch (err) {
+      setSendError(err instanceof Error ? err.message : "Network error");
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -394,9 +413,13 @@ function ContactPage() {
                   </div>
                 </div>
 
+                {sendError && (
+                  <p className="text-sm font-medium text-red-600">{sendError}</p>
+                )}
                 <button
                   type="submit"
-                  className="group inline-flex w-full items-center justify-center gap-2 rounded-lg px-6 py-3.5 text-white transition-opacity hover:opacity-90 md:w-auto"
+                  disabled={sending}
+                  className="group inline-flex w-full items-center justify-center gap-2 rounded-lg px-6 py-3.5 text-white transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-60 md:w-auto"
                   style={{
                     backgroundColor: ACCENT,
                     fontFamily: "Poppins, sans-serif",
@@ -405,7 +428,7 @@ function ContactPage() {
                   }}
                 >
                   <Send className="h-4 w-4" />
-                  Send Message
+                  {sending ? "Sending…" : "Send Message"}
                   <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </button>
               </form>

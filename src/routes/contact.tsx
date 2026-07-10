@@ -413,9 +413,13 @@ function ContactPage() {
                   </div>
                 </div>
 
+                {sendError && (
+                  <p className="text-sm font-medium text-red-600">{sendError}</p>
+                )}
                 <button
                   type="submit"
-                  className="group inline-flex w-full items-center justify-center gap-2 rounded-lg px-6 py-3.5 text-white transition-opacity hover:opacity-90 md:w-auto"
+                  disabled={sending}
+                  className="group inline-flex w-full items-center justify-center gap-2 rounded-lg px-6 py-3.5 text-white transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-60 md:w-auto"
                   style={{
                     backgroundColor: ACCENT,
                     fontFamily: "Poppins, sans-serif",
@@ -424,7 +428,7 @@ function ContactPage() {
                   }}
                 >
                   <Send className="h-4 w-4" />
-                  Send Message
+                  {sending ? "Sending…" : "Send Message"}
                   <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </button>
               </form>

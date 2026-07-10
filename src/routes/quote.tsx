@@ -489,12 +489,16 @@ function QuotePage() {
                 </a>
                 . We never share your details.
               </p>
+              {sendError && (
+                <p className="text-sm font-medium text-red-600">{sendError}</p>
+              )}
               <button
                 type="submit"
-                className="inline-flex items-center justify-center gap-2 rounded-md bg-[#009AAA] px-7 py-3.5 text-base font-bold text-white shadow-[0_10px_30px_-10px_rgba(0,154,170,0.7)] transition-transform hover:-translate-y-0.5 hover:opacity-95"
+                disabled={sending}
+                className="inline-flex items-center justify-center gap-2 rounded-md bg-[#009AAA] px-7 py-3.5 text-base font-bold text-white shadow-[0_10px_30px_-10px_rgba(0,154,170,0.7)] transition-transform hover:-translate-y-0.5 hover:opacity-95 disabled:cursor-not-allowed disabled:opacity-60"
                 style={{ fontFamily: '"Montserrat", sans-serif', letterSpacing: "0.04em" }}
               >
-                Send quote request <ArrowRight className="h-5 w-5" />
+                {sending ? "Sending…" : "Send quote request"} <ArrowRight className="h-5 w-5" />
               </button>
             </div>
           </form>

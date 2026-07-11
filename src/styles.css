@@ -248,7 +248,9 @@
   transform: translateY(24px);
   transition:
     opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
-    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+    scale 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+    translate 0.8s cubic-bezier(0.22, 1, 0.36, 1);
   will-change: opacity, transform;
 }
 .reveal.reveal-in {
@@ -413,36 +415,45 @@ button:not([data-no-hover]):not(.btn-animate):hover {
   a::after { transition: none !important; }
 }
 
-/* Smooth image hover animations (zoom/scale) — covers Tailwind's transform + scale properties */
-img,
-.group img,
-a img,
-figure img,
-[class*="group-hover:scale"],
-[class*="hover:scale"],
-[class*="scale-105"],
-[class*="scale-110"],
-[class*="scale-["] {
-  transition-property: transform, scale, rotate, translate, opacity !important;
-  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1) !important;
-  transition-duration: 1300ms !important;
-  will-change: transform;
+/* Smooth image hover animations (zoom/scale) — covers Tailwind v4's transform + scale/translate/rotate properties.
+   Boosted specificity via :where() so !important isn't needed and utility overrides still work. */
+:where(img),
+:where(.group img),
+:where(a img),
+:where(figure img),
+:where([class*="group-hover:scale"]),
+:where([class*="hover:scale"]),
+:where([class*="hover:-translate"]),
+:where([class*="hover:translate"]) {
+  transition-property: transform, scale, rotate, translate, opacity, box-shadow, background-color, border-color, color;
+  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  transition-duration: 900ms;
+  will-change: transform, scale, translate;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
 }
 
+/* Hard override: any element with a hover scale/translate utility must animate smoothly */
+[class*="hover:scale"],
+[class*="group-hover:scale"],
+[class*="hover:-translate"],
+[class*="hover:translate"],
+.group img,
+section img {
+  transition-property: transform, scale, rotate, translate, opacity, box-shadow, background-color, border-color, color !important;
+  transition-duration: 900ms !important;
+  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
 @media (prefers-reduced-motion: reduce) {
-  img,
-  .group img,
-  a img,
-  figure img,
-  [class*="group-hover:scale"],
+  :where(img),
   [class*="hover:scale"],
-  [class*="scale-105"],
-  [class*="scale-110"],
-  [class*="scale-["] {
+  [class*="group-hover:scale"],
+  [class*="hover:-translate"],
+  [class*="hover:translate"] {
     transition: none !important;
     transform: none !important;
     scale: 1 !important;
+    translate: 0 0 !important;
   }
 }

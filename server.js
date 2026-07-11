@@ -1,18 +1,10 @@
-// Minimal Node.js production server for Hostinger Node.js app hosting.
+// Node.js production server for Hostinger Node.js Web App hosting.
 // Serves the built static SPA from `dist/` with SPA fallback + gzip.
 //
-// Hostinger Node.js setup:
-//   Application root:     (your uploaded project folder)
-//   Application URL:      your domain
-//   Application startup file: server.js
-//   Node.js version:      18.x or newer
-//
-// Before starting the app on Hostinger:
-//   1) Run `npm install` (via hPanel "Run NPM Install")
-//   2) Run `npm run build`  (via hPanel "Run NPM Script" -> build)
-//   3) Start the app.
-//
-// Port is provided by Hostinger via process.env.PORT.
+// Hostinger passes the listen target via process.env.PORT. On some plans
+// this is a numeric TCP port; on others it is a Unix socket path. This
+// server handles both. It also binds to 0.0.0.0 so Hostinger's reverse
+// proxy can reach it (binding to 127.0.0.1 only can cause a 403).
 
 import express from "express";
 import compression from "compression";
@@ -45,7 +37,7 @@ app.use(
 );
 app.use(
   express.static(distDir, {
-    index: false,
+    index: "index.html",
     setHeaders: (res, filePath) => {
       if (filePath.endsWith(".html")) {
         res.setHeader("Cache-Control", "no-cache");
@@ -54,14 +46,48 @@ app.use(
   }),
 );
 
-// SPA fallback — send index.html for any non-file route
-app.get(/.*/, (_req, res) => {
+// SPA fallback — Express 5 safe (regex route, no `*` string).
+app.use((_req, res) => {
   res.setHeader("Cache-Control", "no-cache");
   res.sendFile(indexHtml);
 });
 
-const port = Number(process.env.PORT) || 3000;
+// Resolve listen target. Hostinger may pass:
+//   - a numeric TCP port as string, e.g. "31234"
+//   - a Unix socket path, e.g. "/home/u123/.../app.sock"
+//   - nothing (local dev)
+const rawPort = process.env.PORT;
 const host = process.env.HOST || "0.0.0.0";
-app.listen(port, host, () => {
-  console.log(`[server] listening on http://${host}:${port}`);
-});
+
+function listen() {
+  if (rawPort && /^\d+$/.test(rawPort)) {
+    const port = Number(rawPort);
+    app.listen(port, host, () => {
+      console.log(`[server] listening on http://${host}:${port}`);
+    });
+  } else if (rawPort && rawPort.length > 0) {
+    // Treat as Unix socket path. Remove stale socket file if present.
+    try {
+      if (fs.existsSync(rawPort)) fs.unlinkSync(rawPort);
+    } catch (e) {
+      console.warn("[server] could not remove stale socket:", e);
+    }
+    const server = app.listen(rawPort, () => {
+      try {
+        fs.chmodSync(rawPort, 0o777);
+      } catch {}
+      console.log(`[server] listening on unix socket ${rawPort}`);
+    });
+    server.on("error", (err) => {
+      console.error("[server] listen error:", err);
+      process.exit(1);
+    });
+  } else {
+    const port = 3000;
+    app.listen(port, host, () => {
+      console.log(`[server] listening on http://${host}:${port}`);
+    });
+  }
+}
+
+listen();

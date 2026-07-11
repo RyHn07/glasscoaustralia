@@ -9,8 +9,8 @@ Site ekhon **pure static SPA** — Hostinger shared hosting-e direct chalanor jo
 ## 1. Frontend build kora (apnar local machine e)
 
 ```bash
-bun install
-bun run build
+npm install
+npm run build
 ```
 
 Build shesh hole `dist/` folder toiri hobe. `dist/` folder-er **contents** upload korbo Hostinger-e.
@@ -152,8 +152,8 @@ Kono step e atke gele screenshot pathan — thik kore dibo.
 ## Update / Redeploy
 
 Onno kono change korle:
-1. `bun run build` local-e run korun
-2. `dist/client/` folder er nutun contents upload korun `public_html/` te (overwrite)
+1. `npm run build` local-e run korun
+2. `dist/` folder er nutun contents upload korun `public_html/` te (overwrite)
 3. `.htaccess` ar `api/` untouched thakbe
 
 ---

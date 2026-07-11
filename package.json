@@ -3,11 +3,16 @@
   "private": true,
   "sideEffects": false,
   "type": "module",
+  "main": "server.js",
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "scripts": {
     "dev": "vite dev",
     "build": "vite build",
     "build:dev": "vite build --mode development",
     "preview": "vite preview",
+    "start": "node server.js",
     "lint": "eslint .",
     "format": "prettier --write ."
   },

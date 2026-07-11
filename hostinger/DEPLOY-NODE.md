@@ -11,7 +11,7 @@ Ei guide-e Hostinger-er **Node.js hosting** (Premium/Business/Cloud plan) use ko
 - `server.js` — Express server ja `dist/` folder theke static SPA serve kore (SPA fallback + gzip shoho).
 - `package.json`:
   - `"main": "server.js"`
-  - `"engines": { "node": ">=18.0.0" }`
+  - `"engines": { "node": ">=20.0.0" }`
   - Script: `npm start` → `node server.js`
 - Port automatically `process.env.PORT` theke ashbe (Hostinger provide kore).
 
@@ -57,7 +57,7 @@ Alternative (faster): local a `npm run build` kore shudhu `dist/`, `server.js`, 
 
 hPanel → **Advanced → Node.js** → **Create Application**
 
-- **Node.js version:** 18.x ba upore
+- **Node.js version:** 20.x
 - **Application mode:** Production
 - **Application root:** upload korar folder path
 - **Application URL:** apnar domain (e.g. glasscoaustralia.com.au)
@@ -98,6 +98,14 @@ Apnar domain browse korle site load hobe.
 **"Cannot find module 'express'"** → NPM Install run kora hoy nai. hPanel Node.js panel theke **Run NPM Install** click korun.
 
 **"dist/index.html not found"** → Build run kora hoy nai. **Run NPM Script → build** click korun.
+
+**403 Forbidden** → hPanel → Node.js app → **Settings & Redeploy** check korun:
+- **Framework:** Express.js ba Other (Vite na, jodi `server.js` use koren)
+- **Entry file:** `server.js`
+- **Build command:** `npm run build`
+- **Output directory:** `dist`
+- **Node version:** `20.x`
+- Redeploy dile Hostinger `public_html/.htaccess` regenerate kore Node app-er dike route korbe.
 
 **Port error / EADDRINUSE** → `server.js` already `process.env.PORT` use kore — manually port set korte hobe na.
 

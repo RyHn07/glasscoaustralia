@@ -160,6 +160,24 @@ Onno kono change korle:
 
 ## Troubleshooting
 
+**Hostinger build log e jodi ei line na dekhen:**
+```
+[glassco-hostinger] STATIC-SPA DEPLOY CONFIG v2026-07-12
+```
+Tahole Hostinger wrong branch/old commit build korche. hPanel → Git deployment settings e branch `main`/latest branch select korun, cache/node_modules clear korun, then redeploy.
+
+**Build log e jodi `@tanstack/react-start`, `@lovable.dev/vite-tanstack-config`, `wrangler`, `miniflare`, `vite v7`, ba `dist/server` dekhen:**
+- Eta current code na — old SSR project build hocche.
+- GitHub repo te latest `package.json` e project name `glassco-australia-static-spa` ache kina check korun.
+- Hostinger e fresh redeploy korun: delete app cache / clear `node_modules` / reconnect Git repo if needed.
+
+**Correct build log e thakbe:**
+```
+[glassco-hostinger] Verified: no TanStack Start/Cloudflare SSR dependencies; Vite static SPA build only.
+vite v6.x building for production...
+dist/index.html
+```
+
 **Form submit korle "Server not configured" ashe:**
 - `api/config.local.php` file toiri hoy nai ba wrong location e ache
 

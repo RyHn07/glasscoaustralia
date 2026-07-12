@@ -1,4 +1,5 @@
 # SPA fallback for Vite static deployment on Hostinger (Apache)
+DirectoryIndex index.html
 RewriteEngine On
 
 # Force HTTPS

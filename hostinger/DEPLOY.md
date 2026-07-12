@@ -1,5 +1,8 @@
 # Hostinger Deployment Guide — GlassCo Australia
 
+<!-- Redeploy trigger: 2026-07-12 -->
+
+
 Ei guide-e apni jante parben kivabe ei site Hostinger-er **Web Hosting (Unlimited)** plan-e host korben ar contact/quote form-er mail apnar inbox-e ashbe.
 
 Site ekhon **pure static SPA** — Hostinger shared hosting-e direct chalanor jonno perfect.

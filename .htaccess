@@ -1,0 +1,24 @@
+# Hostinger fallback when the repository root is served instead of the Vite build output.
+DirectoryIndex dist/index.html index.html
+RewriteEngine On
+
+# Force HTTPS
+RewriteCond %{HTTPS} !=on
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# If Hostinger points the document root at the repo root, serve the built SPA.
+RewriteCond %{DOCUMENT_ROOT}/dist/index.html -f
+RewriteCond %{REQUEST_URI} !^/dist/
+RewriteCond %{REQUEST_URI} !^/api/
+RewriteRule ^$ /dist/index.html [L]
+
+RewriteCond %{DOCUMENT_ROOT}/dist/index.html -f
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} !^/api/
+RewriteRule . /dist/index.html [L]
+
+# Block sensitive project/config files if the repo root is exposed.
+<FilesMatch "^(package(-lock)?\.json|bun\.lock|vite\.config\.ts|tsconfig\.json|server\.js|\.env|composer\.(json|lock))$">
+  Require all denied
+</FilesMatch>

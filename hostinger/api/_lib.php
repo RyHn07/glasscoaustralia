@@ -12,13 +12,15 @@ function gc_config(): array {
     static $cfg = null;
     if ($cfg !== null) return $cfg;
     $local = __DIR__ . '/config.local.php';
-    if (!file_exists($local)) {
+    $default = __DIR__ . '/config.php';
+    $configFile = file_exists($local) ? $local : $default;
+    if (!file_exists($configFile)) {
         http_response_code(500);
         header('Content-Type: application/json');
-        echo json_encode(['ok' => false, 'error' => 'Server not configured (missing config.local.php)']);
+        echo json_encode(['ok' => false, 'error' => 'Server not configured (missing mail configuration)']);
         exit;
     }
-    $cfg = require $local;
+    $cfg = require $configFile;
     return $cfg;
 }
 

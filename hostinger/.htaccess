@@ -22,7 +22,7 @@ RewriteCond %{REQUEST_URI} !^/api/
 RewriteRule . /index.html [L]
 
 # --- Block sensitive files ---
-<FilesMatch "^(config\.local\.php|\.env|composer\.(json|lock))$">
+<FilesMatch "^(config(\.local)?\.php|\.env|composer\.(json|lock))$">
   Require all denied
 </FilesMatch>
 

@@ -7,6 +7,9 @@ const fallbackDirs = [path.join(distDir, "client"), path.join(distDir, "public")
 const indexHtml = path.join(distDir, "index.html");
 const publicHtaccess = path.join(root, "public", ".htaccess");
 const distHtaccess = path.join(distDir, ".htaccess");
+const hostingerHtaccess = path.join(root, "hostinger", ".htaccess");
+const hostingerApi = path.join(root, "hostinger", "api");
+const distApi = path.join(distDir, "api");
 
 try {
   await fs.access(indexHtml);
@@ -16,11 +19,22 @@ try {
 }
 
 try {
-  await fs.access(publicHtaccess);
-  await fs.copyFile(publicHtaccess, distHtaccess);
+  await fs.copyFile(hostingerHtaccess, distHtaccess);
 } catch {
-  // Hostinger can still serve the root index.html without .htaccess on its
-  // managed Vite frontend mode. The copy is only needed for Apache/static mode.
+  try {
+    await fs.access(publicHtaccess);
+    await fs.copyFile(publicHtaccess, distHtaccess);
+  } catch {
+    // Hostinger can serve the root index.html without .htaccess in managed
+    // Vite mode. Apache/static mode needs the file for SPA fallback.
+  }
+}
+
+try {
+  await fs.cp(hostingerApi, distApi, { recursive: true });
+} catch (error) {
+  console.error("[hostinger] could not include PHP form endpoints in dist/api", error);
+  process.exit(1);
 }
 
 for (const fallbackDir of fallbackDirs) {
@@ -42,4 +56,4 @@ await Promise.all(
   ),
 );
 
-console.log("[hostinger] static build ready in dist/, dist/client/, and dist/public/");
+console.log("[hostinger] static build + PHP form endpoints ready in dist/");

@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { Check, Layers, Plus, Sparkles, Sun, Home, Building2, Store, GraduationCap, Hotel, Leaf } from "lucide-react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import heroImage from "@/assets/product-energy.jpg";
+import heroImage from "@/assets/hero-glass-3.jpg";
 
 const ACCENT = "#009AAA";
 const HEAD_FONT = "Montserrat, sans-serif";

@@ -35,11 +35,11 @@ function CommercialPage() {
       tagline="Professional Glass for Modern Business Spaces"
       description="We supply high-performance glass products for offices, retail spaces, hospitality venues, and commercial developments. Combining functionality with contemporary design, our solutions help create bright, welcoming environments."
       applications={[
-        { name: "Shopfronts", image: shopfrontsImg.url },
-        { name: "Office Partitions", image: officePartitionImg.url },
-        { name: "Facades & Curtain Walls", image: facadesImg.url },
-        { name: "Internal Glazing", image: glazingImg.url },
-        { name: "Display Glass", image: displayGlassImg.url },
+        { name: "Shopfronts", image: shopfrontsImg.url, galleryCategory: "shopfronts" },
+        { name: "Office Partitions", image: officePartitionImg.url, galleryCategory: "office-partitions" },
+        { name: "Facades & Curtain Walls", image: facadesImg.url, galleryCategory: "facades" },
+        { name: "Internal Glazing", image: glazingImg.url, galleryCategory: "facades" },
+        { name: "Display Glass", image: displayGlassImg.url, galleryCategory: "display-glass" },
         { name: "Security & Safety Glass", image: securityImg.url },
       ]}
       heroImage={heroImage}

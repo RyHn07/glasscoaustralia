@@ -10,18 +10,22 @@ import curvedImg from "@/assets/project-curved.jpg";
 import heritageImg from "@/assets/project-heritage.jpg";
 import officeImg from "@/assets/project-office.jpg";
 import retailImg from "@/assets/project-retail.jpg";
+import displayGlassAsset from "@/assets/commercial/display-glass.jpg.asset.json";
+import shopfrontsAsset from "@/assets/commercial/shopfronts.jpg.asset.json";
+import showerScreenAsset from "@/assets/residential/shower-screen.jpg.asset.json";
+import splashbackAsset from "@/assets/residential/splashback.jpg.asset.json";
 
 
 export const Route = createFileRoute("/gallery")({
   head: () => ({
     meta: [
-      { title: "Gallery — GlassCo" },
+      { title: "Gallery ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â GlassCo" },
       {
         name: "description",
         content:
           "Explore GlassCo's portfolio of premium glass products, projects and in-house manufacturing capabilities.",
       },
-      { property: "og:title", content: "Gallery — GlassCo" },
+      { property: "og:title", content: "Gallery ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â GlassCo" },
       {
         property: "og:description",
         content:
@@ -39,7 +43,12 @@ type Tab =
   | "facades"
   | "mirrors"
   | "office-partitions"
-  | "pool-fencing";
+  | "pool-fencing"
+  | "display-glass"
+  | "shopfronts"
+  | "shower-screens"
+  | "splashbacks"
+  | "security-safety-glass";
 
 
 type GalleryImage = { src: string; alt: string; category: Tab };
@@ -49,15 +58,28 @@ const categoryAssets = import.meta.glob<{ default: { url: string } }>(
   "../assets/gallery/*/*.asset.json",
   { eager: true },
 );
+const localCategoryAssets = import.meta.glob<{ default: string }>(
+  "../assets/gallery/*/*.jpg",
+  { eager: true },
+);
 
 function buildCategoryImages(folder: string, altPrefix: string, category: Tab): GalleryImage[] {
-  return Object.entries(categoryAssets)
-    .filter(([path]) => path.includes(`/gallery/${folder}/`))
-    .map(([path, mod]) => {
-      const m = path.match(/-(\d+)\.jpg\.asset\.json$/);
+  const remoteImages = Object.entries(categoryAssets).map(([path, mod]) => ({
+    path,
+    src: mod.default.url,
+  }));
+  const localImages = Object.entries(localCategoryAssets).map(([path, mod]) => ({
+    path,
+    src: mod.default,
+  }));
+
+  return [...remoteImages, ...localImages]
+    .filter(({ path }) => path.includes(`/gallery/${folder}/`))
+    .map(({ path, src }) => {
+      const m = path.match(/-(\d+)\.jpg(?:\.asset\.json)?$/);
       const n = m ? parseInt(m[1], 10) : 0;
       return {
-        src: mod.default.url,
+        src,
         alt: `${altPrefix} ${n}`,
         category,
         _n: n,
@@ -83,12 +105,45 @@ const allImages: GalleryImage[] = [
   ...buildCategoryImages("mirrors", "Mirror installation", "mirrors"),
   ...buildCategoryImages("office-partitions", "Office partition", "office-partitions"),
   ...buildCategoryImages("pool-fencing", "Pool fencing", "pool-fencing"),
+  ...buildCategoryImages("splashbacks", "Kitchen glass splashback", "splashbacks"),
+  ...buildCategoryImages(
+    "security-safety-glass",
+    "Security & Safety Glass",
+    "security-safety-glass",
+  ),
+  ...buildCategoryImages("shower-screens", "Frameless shower screen", "shower-screens"),
+  { src: displayGlassAsset.url, alt: "Display glass installation", category: "display-glass" },
+  ...buildCategoryImages("shopfronts", "Commercial shopfront glazing", "shopfronts"),
+  { src: shopfrontsAsset.url, alt: "Commercial shopfront glazing", category: "shopfronts" },
+  { src: showerScreenAsset.url, alt: "Frameless shower screen", category: "shower-screens" },
+  { src: splashbackAsset.url, alt: "Kitchen glass splashback", category: "splashbacks" },
 ];
 
 
+const galleryTabs: { id: Tab; label: string }[] = [
+  { id: "projects", label: "Projects" },
+  { id: "display-glass", label: "Display Glass" },
+  { id: "shopfronts", label: "Shopfronts" },
+  { id: "doors", label: "Windows & Doors" },
+  { id: "shower-screens", label: "Shower Screens" },
+  { id: "splashbacks", label: "Splashbacks" },
+  { id: "security-safety-glass", label: "Security & Safety Glass" },
+  { id: "balustrade", label: "Balustrade" },
+  { id: "facades", label: "Facades & Curtain Walls" },
+  { id: "mirrors", label: "Mirrors" },
+  { id: "office-partitions", label: "Office Partitions" },
+  { id: "pool-fencing", label: "Pool Fencing" },
+];
+
 function GalleryPage() {
-  const [tab, setTab] = useState<Tab>("projects");
+  const [tab, setTab] = useState<Tab>(() => {
+    const category = new URLSearchParams(window.location.search).get("category");
+    return category && galleryTabs.some((item) => item.id === category)
+      ? (category as Tab)
+      : "projects";
+  });
   const images = useMemo(() => allImages.filter((i) => i.category === tab), [tab]);
+  const tabLabel = galleryTabs.find((item) => item.id === tab)?.label ?? "Gallery";
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const isOpen = activeIndex !== null;
 
@@ -168,6 +223,11 @@ function GalleryPage() {
                 {tab === "mirrors" && (<><span style={{ color: "#009AAA" }}>Mirrors</span></>)}
                 {tab === "office-partitions" && (<>Office <span style={{ color: "#009AAA" }}>Partitions</span></>)}
                 {tab === "pool-fencing" && (<>Pool <span style={{ color: "#009AAA" }}>Fencing</span></>)}
+                {tab === "display-glass" && (<>Display <span style={{ color: "#009AAA" }}>Glass</span></>)}
+                {tab === "shopfronts" && (<>Commercial <span style={{ color: "#009AAA" }}>Shopfronts</span></>)}
+                {tab === "shower-screens" && (<>Shower <span style={{ color: "#009AAA" }}>Screens</span></>)}
+                {tab === "splashbacks" && (<>Kitchen <span style={{ color: "#009AAA" }}>Splashbacks</span></>)}
+                {tab === "security-safety-glass" && (<>Security & <span style={{ color: "#009AAA" }}>Safety Glass</span></>)}
               </h1>
             </div>
             <p
@@ -180,16 +240,7 @@ function GalleryPage() {
 
           {/* Tab switcher */}
           <div className="mt-10 flex flex-wrap gap-2 overflow-x-auto">
-            {([
-              { id: "projects" as Tab, label: "Projects" },
-              
-              { id: "balustrade" as Tab, label: "Balustrade" },
-              { id: "doors" as Tab, label: "Doors" },
-              { id: "facades" as Tab, label: "Facades & Curtain Walls" },
-              { id: "mirrors" as Tab, label: "Mirrors" },
-              { id: "office-partitions" as Tab, label: "Office Partitions" },
-              { id: "pool-fencing" as Tab, label: "Pool Fencing" },
-            ]).map((t) => (
+            {galleryTabs.map((t) => (
               <button
                 key={t.id}
                 type="button"

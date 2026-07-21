@@ -4,12 +4,11 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import heroImg from "@/assets/about-hero.jpg";
 import manufacturingAsset from "@/assets/gallery/facades/facades-1.jpg.asset.json";
-import companyAsset from "@/assets/gallery/office-partitions/office-partitions-1.jpg.asset.json";
+import companyImg from "@/assets/about-panel-discussion.png";
 import printingAsset from "@/assets/gallery/facades/facades-3.jpg.asset.json";
 import environmentImg from "@/assets/about-environment.jpg";
 
 const manufacturingImg = manufacturingAsset.url;
-const companyImg = companyAsset.url;
 const printingImg = printingAsset.url;
 
 
@@ -121,7 +120,7 @@ function AboutPage() {
       <SplitSection
         eyebrow="OUR COMPANY"
         image={companyImg}
-        imageAlt="GlassCo facility and operations"
+        imageAlt="GlassCo team panel discussion in a modern glass setting"
         heading={
           <>
             Trusted Glass <span style={{ color: ACCENT }}>Partner</span>

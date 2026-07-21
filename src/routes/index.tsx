@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
@@ -25,13 +26,29 @@ export const Route = createFileRoute("/")({
 });
 
 function Index() {
+  const [imagesReady, setImagesReady] = useState(false);
+
   return (
     <main className="flex min-h-screen flex-col bg-white">
+      {!imagesReady && (
+        <div
+          className="fixed inset-0 z-[100] flex flex-col items-center justify-center gap-5 bg-white"
+          role="status"
+          aria-live="polite"
+          aria-label="Loading GlassCo Australia"
+        >
+          <p className="text-3xl font-bold tracking-tight text-neutral-950" style={{ fontFamily: "Montserrat, sans-serif" }}>
+            GlassCo <span className="text-[#009AAA]">Australia</span>
+          </p>
+          <span className="h-10 w-10 animate-spin rounded-full border-4 border-neutral-200 border-t-[#009AAA]" aria-hidden />
+          <span className="text-sm text-neutral-600">Loading your glass solutions...</span>
+        </div>
+      )}
       <Header />
       <div className="flex h-[calc(100dvh-120px)] min-h-[400px] flex-col">
         <div className="flex-1 min-h-0 px-1.5 pb-1.5">
           <div className="h-full w-full overflow-hidden rounded-lg">
-            <Hero />
+            <Hero onImagesReady={() => setImagesReady(true)} />
           </div>
         </div>
       </div>

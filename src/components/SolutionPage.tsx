@@ -7,7 +7,7 @@ const ACCENT = "#009AAA";
 const HEAD_FONT = "Montserrat, sans-serif";
 const BODY_FONT = "Poppins, sans-serif";
 
-export type Application = string | { name: string; image?: string };
+export type Application = string | { name: string; image?: string; galleryCategory?: string };
 
 export type SolutionPageProps = {
   eyebrow: string;
@@ -90,10 +90,15 @@ export function SolutionPage({ eyebrow, title, tagline, description, application
               {applications.map((app) => {
                 const name = typeof app === "string" ? app : app.name;
                 const image = typeof app === "string" ? undefined : app.image;
+                const galleryCategory = typeof app === "string" ? undefined : app.galleryCategory;
                 return (
                   <li
                     key={name}
-                    className="overflow-hidden rounded-lg bg-white shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md"
+                    onClick={() => { if (galleryCategory) window.location.href = `/gallery?category=${galleryCategory}`; }}
+                    onKeyDown={(event) => { if (galleryCategory && (event.key === "Enter" || event.key === " ")) { event.preventDefault(); window.location.href = `/gallery?category=${galleryCategory}`; } }}
+                    tabIndex={galleryCategory ? 0 : undefined}
+                    role={galleryCategory ? "link" : undefined}
+                    className={`overflow-hidden rounded-lg bg-white shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md ${galleryCategory ? "cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#009AAA] focus:ring-offset-2" : ""}`}
                   >
                     {image && (
                       <img src={image} alt={name} className="h-32 w-full object-cover" />
@@ -107,6 +112,11 @@ export function SolutionPage({ eyebrow, title, tagline, description, application
                       </span>
                       <span className="text-sm font-medium text-neutral-800" style={{ fontFamily: BODY_FONT }}>
                         {name}
+                        {galleryCategory ? (
+                          <span className="mt-1 block text-xs font-semibold" style={{ color: ACCENT }}>
+                            View gallery ?
+                          </span>
+                        ) : null}
                       </span>
                     </div>
                   </li>

@@ -5,11 +5,11 @@ import { Star } from "lucide-react";
 
 import productAcoustic from "@/assets/product-acoustic.jpg";
 import productDecorative from "@/assets/product-decorative.jpg";
-import productEnergy from "@/assets/product-energy.jpg";
+import productEnergy from "@/assets/hero-glass-3.jpg";
 import productAutomotive from "@/assets/product-automotive.jpg";
 import productSecurity from "@/assets/product-security.jpg";
 import rangeFloat from "@/assets/range-float.jpg";
-import rangeLowE from "@/assets/range-lowe.jpg";
+import rangeLowE from "@/assets/product-low-iron.png";
 import rangeLaminated from "@/assets/range-laminated.jpg";
 import productsHero from "@/assets/hero-glass-2.jpg";
 

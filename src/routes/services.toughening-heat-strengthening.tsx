@@ -121,14 +121,16 @@ function ToughingHeatStrengtheningPage() {
                 className="absolute -left-4 -top-4 h-16 w-16 rounded-tl-lg border-l-2 border-t-2"
                 style={{ borderColor: ACCENT }}
               />
-              <img
-                src={furnaceImage}
-                alt="NorthGlass horizontal toughening furnace at GlassCo Australia"
-                loading="lazy"
-                width={1280}
-                height={896}
-                className="h-auto w-full rounded-lg object-cover shadow-lg transition-transform duration-700 ease-out hover:scale-105"
-              />
+              <div className="relative aspect-[16/10] overflow-hidden rounded-lg shadow-lg">
+                <img
+                  src={furnaceImage}
+                  alt="NorthGlass horizontal toughening furnace at GlassCo Australia"
+                  loading="lazy"
+                  width={1280}
+                  height={896}
+                  className="absolute inset-0 h-full w-full scale-[1.4] rotate-90 object-cover transition-transform duration-700 ease-out hover:scale-[1.48]"
+                />
+              </div>
               <div
                 className="absolute -bottom-6 -right-6 rounded-lg px-8 py-5 text-center text-white shadow-xl"
                 style={{ backgroundColor: ACCENT, fontFamily: HEAD_FONT }}

@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ProductPageLayout } from "@/components/ProductPageLayout";
-import heroImage from "@/assets/range-lowe.jpg";
+import heroImage from "@/assets/product-low-iron.png";
 
 export const Route = createFileRoute("/products/low-iron-glass")({
   head: () => ({

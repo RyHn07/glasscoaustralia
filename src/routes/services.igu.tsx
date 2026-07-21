@@ -15,20 +15,7 @@ import {
 } from "lucide-react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import heroImage from "@/assets/service-igu.jpg";
-import lisecLine from "@/assets/lisec-igu-line.png";
-import imgWashingAsset from "@/assets/igu/washer.jpg.asset.json";
-import imgSpacerAsset from "@/assets/igu/spacer.jpg.asset.json";
-import imgDesiccantAsset from "@/assets/igu/desiccant.jpg.asset.json";
-import imgButylAsset from "@/assets/igu/butyl.jpg.asset.json";
-import imgInspectingAsset from "@/assets/igu/inspection.jpg.asset.json";
-import imgSealingAsset from "@/assets/igu/sealing.jpg.asset.json";
-const imgWashing = imgWashingAsset.url;
-const imgSpacer = imgSpacerAsset.url;
-const imgDesiccant = imgDesiccantAsset.url;
-const imgFrame = imgButylAsset.url;
-const imgInspecting = imgInspectingAsset.url;
-const imgGasPress = imgSealingAsset.url;
+import heroImage from "@/assets/machinery/lisec-toughening-line.png";
 
 const ACCENT = "#009AAA";
 const HEAD_FONT = "Montserrat, sans-serif";
@@ -71,37 +58,31 @@ const technicalData: { label: string; value: string }[] = [
 const components = [
   {
     icon: Droplets,
-    image: imgWashing,
     label: "Washing Machine",
     body: "Vertical glass washing line removes dust, fingerprints and residue. Brushes and de-ionised water deliver a contaminant-free surface — essential before sealing.",
   },
   {
     icon: Move3d,
-    image: imgSpacer,
     label: "Spacer Bending Machine",
     body: "Automated bending of aluminium or warm-edge spacer bars to the exact unit geometry — including rectangular, shaped and stepped IGUs.",
   },
   {
     icon: FlaskConical,
-    image: imgDesiccant,
     label: "Desiccant Filling Machine",
     body: "Precisely fills bent spacer frames with molecular-sieve desiccant to absorb residual moisture inside the cavity, preventing internal fogging over the unit's life.",
   },
   {
     icon: Wrench,
-    image: imgFrame,
     label: "Butyl Machine",
     body: "Spacer frame is butyl-coated to be accurately positioned on the first glass lite — locking in the cavity depth and a primary moisture seal.",
   },
   {
     icon: Search,
-    image: imgInspecting,
     label: "Inspecting & Frame Mounting Station",
     body: "Combined station where high-intensity backlight inspection catches scratches, edge chips and coating defects, and the butyl-coated spacer frame is precisely mounted onto the first glass lite.",
   },
   {
     icon: Wind,
-    image: imgGasPress,
     label: "Gas-Filling Press & Automatic Sealing Machine",
     body: "Argon (or Krypton) gas is injected as the lites are pressed together inside the LISEC press, then two-component structural silicone is robotically extruded around the perimeter to form the secondary seal.",
   },
@@ -192,13 +173,12 @@ function IGUPage() {
                 style={{ borderColor: ACCENT }}
               />
               <img
-                src={lisecLine}
-                alt="LISEC fully automated IGU manufacturing line"
+                src={heroImage}
+                alt="LISEC glass production line at GlassCo Australia"
                 loading="lazy"
-                width={1280}
-                height={896}
-                className="h-auto w-full rounded-lg object-contain shadow-lg transition-transform duration-700 ease-out hover:scale-105"
-                style={{ background: "#f5f5f5" }}
+                width={1600}
+                height={900}
+                className="h-full min-h-[320px] w-full rounded-lg object-cover shadow-lg"
               />
               <div
                 className="absolute -bottom-6 -right-6 rounded-lg px-8 py-5 text-center text-white shadow-xl"
@@ -311,21 +291,11 @@ function IGUPage() {
             machine has a specific role in producing a hermetically sealed, gas-filled unit.
           </p>
           <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {components.map(({ icon: Icon, image, label, body }, idx) => (
+            {components.map(({ icon: Icon, label, body }, idx) => (
               <div
                 key={label}
                 className="group relative flex flex-col overflow-hidden rounded-xl border border-neutral-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-neutral-300 hover:shadow-lg"
               >
-                <div className="relative h-44 w-full overflow-hidden bg-neutral-100">
-                  <img
-                    src={image}
-                    alt={label}
-                    loading="lazy"
-                    width={800}
-                    height={512}
-                    className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-                </div>
                 <div className="relative flex flex-1 flex-col p-6">
                   <span
                     className="absolute right-5 top-5 text-xs font-bold tracking-wider text-neutral-300"

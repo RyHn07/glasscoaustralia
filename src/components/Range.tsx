@@ -2,7 +2,7 @@ import { Star } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import rangeFloat from "@/assets/range-float.jpg";
 import rangeLaminated from "@/assets/range-laminated.jpg";
-import rangeLowE from "@/assets/range-lowe.jpg";
+import energyGlassImage from "@/assets/hero-glass-3.jpg";
 import productSecurity from "@/assets/product-security.jpg";
 import productAcoustic from "@/assets/product-acoustic.jpg";
 import productDecorative from "@/assets/product-decorative.jpg";
@@ -25,11 +25,12 @@ const items = [
     topSeller: true,
   },
   {
-    image: rangeLowE,
-    alt: "Low iron ultra clear glass",
-    name: "Low Iron Glass",
-    description: "Ultra clear glass with reduced green tint for true colour rendering.",
-    to: "/products/low-iron-glass" as const,
+    image: energyGlassImage,
+    alt: "Energy efficient glass facade",
+    name: "Energy Efficient Glass",
+    description: "High-performance glass for improved thermal comfort, solar control and energy savings.",
+    to: "/products/energy-efficient-glass" as const,
+    topSeller: true,
   },
   {
     image: productSecurity,

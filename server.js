@@ -11,6 +11,7 @@ import compression from "compression";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import fs from "node:fs";
+import { createContactRouter, createQuoteRouter } from "./server/mail.js";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const distDir = path.join(__dirname, "dist");
@@ -26,6 +27,9 @@ if (!fs.existsSync(indexHtml)) {
 const app = express();
 app.disable("x-powered-by");
 app.use(compression());
+app.use(express.json({ limit: "1mb" }));
+app.use("/api/send-contact.php", createContactRouter());
+app.use("/api/send-quote.php", createQuoteRouter());
 
 // Long cache for hashed assets, no-cache for html
 app.use(

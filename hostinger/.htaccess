@@ -6,6 +6,12 @@
 # --- Enable rewrite engine ---
 RewriteEngine On
 
+# Ensure Hostinger LiteSpeed executes PHP form handlers instead of serving
+# the PHP source as a static file.
+<IfModule LiteSpeed>
+  AddHandler application/x-httpd-lsphp .php
+</IfModule>
+
 # --- Force HTTPS ---
 RewriteCond %{HTTPS} !=on
 RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]

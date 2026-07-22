@@ -21,6 +21,7 @@ import { toast } from "sonner";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import heroBg from "@/assets/hero-quote.jpg";
+import { useSiteImage } from "@/lib/site-images";
 
 export const Route = createFileRoute("/quote")({
   head: () => ({
@@ -77,6 +78,7 @@ function formatBytes(n: number) {
 }
 
 function QuotePage() {
+  const pageHero = useSiteImage("quote-hero", heroBg);
   const [files, setFiles] = useState<File[]>([]);
   const [fileError, setFileError] = useState<string>("");
   const fileInputRef = useRef<HTMLInputElement>(null);

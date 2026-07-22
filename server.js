@@ -12,6 +12,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import fs from "node:fs";
 import { createContactRouter, createQuoteRouter } from "./server/mail.js";
+import { createAdminRouter } from "./server/admin.js";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const distDir = path.join(__dirname, "dist");
@@ -30,6 +31,7 @@ app.use(compression());
 app.use(express.json({ limit: "1mb" }));
 app.use("/api/send-contact.php", createContactRouter());
 app.use("/api/send-quote.php", createQuoteRouter());
+app.use("/api", createAdminRouter());
 
 // Long cache for hashed assets, no-cache for html
 app.use(

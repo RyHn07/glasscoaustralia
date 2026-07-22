@@ -6,14 +6,14 @@ import logo from "@/assets/logo.svg";
 const socials: { label: string; href: string; icon: ReactNode }[] = [
   {
     label: "Facebook",
-    href: "#",
+    href: "https://www.facebook.com/share/1GuhKRwnRL/?mibextid=wwXIfr",
     icon: (
       <path d="M22 12C22 6.48 17.52 2 12 2C6.48 2 2 6.48 2 12C2 16.84 5.44 20.87 10 21.8V15H8V12H10V9.5C10 7.57 11.57 6 13.5 6H16V9H14C13.45 9 13 9.45 13 10V12H16V15H13V21.95C18.05 21.45 22 17.19 22 12Z" />
     ),
   },
   {
     label: "Instagram",
-    href: "#",
+    href: "https://www.instagram.com/glasscoaustralia/",
     icon: (
       <path
         fillRule="evenodd"
@@ -77,6 +77,8 @@ export function Footer() {
                   key={s.label}
                   href={s.href}
                   aria-label={s.label}
+                  target="_blank"
+                  rel="noreferrer"
                   className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white/80 transition-all hover:-translate-y-0.5 hover:bg-[#009AAA] hover:text-white"
                 >
                   <svg

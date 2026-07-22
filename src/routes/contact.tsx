@@ -17,12 +17,14 @@ import { toast } from "sonner";
 const socialIcons = [
   {
     label: "Facebook",
+    href: "https://www.facebook.com/share/1GuhKRwnRL/?mibextid=wwXIfr",
     icon: (
       <path d="M22 12C22 6.48 17.52 2 12 2C6.48 2 2 6.48 2 12C2 16.84 5.44 20.87 10 21.8V15H8V12H10V9.5C10 7.57 11.57 6 13.5 6H16V9H14C13.45 9 13 9.45 13 10V12H16V15H13V21.95C18.05 21.45 22 17.19 22 12Z" />
     ),
   },
   {
     label: "Instagram",
+    href: "https://www.instagram.com/glasscoaustralia/",
     icon: (
       <path
         fillRule="evenodd"
@@ -33,6 +35,7 @@ const socialIcons = [
   },
   {
     label: "LinkedIn",
+    href: "#",
     icon: (
       <path d="M19 3C19.5304 3 20.0391 3.21071 20.4142 3.58579C20.7893 3.96086 21 4.46957 21 5V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H19ZM18.5 18.5V13.2C18.5 12.3354 18.1565 11.5062 17.5452 10.8948C16.9338 10.2835 16.1046 9.94 15.24 9.94C14.39 9.94 13.4 10.46 12.92 11.24V10.13H10.13V18.5H12.92V13.57C12.92 12.8 13.54 12.17 14.31 12.17C14.6813 12.17 15.0374 12.3175 15.2999 12.5801C15.5625 12.8426 15.71 13.1987 15.71 13.57V18.5H18.5ZM6.88 8.56C7.32556 8.56 7.75288 8.383 8.06794 8.06794C8.383 7.75288 8.56 7.32556 8.56 6.88C8.56 5.95 7.81 5.19 6.88 5.19C6.43178 5.19 6.00193 5.36805 5.68499 5.68499C5.36805 6.00193 5.19 6.43178 5.19 6.88C5.19 7.81 5.95 8.56 6.88 8.56ZM8.27 18.5V10.13H5.5V18.5H8.27Z" />
     ),
@@ -42,6 +45,7 @@ import { z } from "zod";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import heroBg from "@/assets/hero-contact.jpg";
+import { useSiteImage } from "@/lib/site-images";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -86,6 +90,7 @@ const subjects = [
 ];
 
 function ContactPage() {
+  const pageHero = useSiteImage("contact-hero", heroBg);
   const [form, setForm] = useState<FormState>({
     name: "",
     email: "",
@@ -147,9 +152,9 @@ function ContactPage() {
       <Header />
 
       {/* HERO */}
-      <section className="relative flex h-[52vh] min-h-[380px] items-center overflow-hidden border-b border-neutral-200 bg-[#0b1f24] text-white">
+      <section className="relative flex h-[42vh] min-h-[320px] items-center overflow-hidden border-b border-neutral-200 bg-[#0b1f24] text-white">
         <img
-          src={heroBg}
+          src={pageHero}
           alt=""
           aria-hidden="true"
           className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-40"
@@ -556,8 +561,10 @@ function ContactPage() {
                 {socialIcons.map((s) => (
                   <a
                     key={s.label}
-                    href="#"
+                    href={s.href}
                     aria-label={s.label}
+                    target="_blank"
+                    rel="noreferrer"
                     className="flex h-10 w-10 items-center justify-center rounded-lg border border-white/30 bg-white/10 text-white transition-colors hover:bg-white hover:text-[#009AAA]"
                   >
                     <svg className="h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">

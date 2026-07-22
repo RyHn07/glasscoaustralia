@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Flame, Layers, Cog, Printer, ArrowRight } from "lucide-react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { SiteImage, useSiteImage } from "@/lib/site-images";
 import toughHero from "@/assets/service-toughening.jpg";
 import iguHero from "@/assets/service-igu.jpg";
 import processingHero from "@/assets/service-glass-processing.jpg";
@@ -50,6 +51,7 @@ const services: ServiceCard[] = [
   {
     to: "/services/toughening-heat-strengthening",
     image: toughHero,
+    slot: "services-index-card-toughening",
     eyebrow: "PROCESSING",
     title: "Toughening &",
     highlight: "Heat Strengthening",
@@ -60,6 +62,7 @@ const services: ServiceCard[] = [
   {
     to: "/services/igu",
     image: iguHero,
+    slot: "services-index-card-igu",
     eyebrow: "INSULATION",
     title: "Insulating",
     highlight: "Glass Units (IGU)",
@@ -70,6 +73,7 @@ const services: ServiceCard[] = [
   {
     to: "/services/glass-processing",
     image: processingHero,
+    slot: "services-index-card-glass-processing",
     eyebrow: "PROCESSING",
     title: "Glass",
     highlight: "Processing",
@@ -80,6 +84,7 @@ const services: ServiceCard[] = [
   {
     to: "/services/digital-glass-printing",
     image: printingHero,
+    slot: "services-index-card-digital-glass-printing",
     eyebrow: "PRINTING",
     title: "Digital Glass",
     highlight: "Printing",
@@ -90,6 +95,8 @@ const services: ServiceCard[] = [
 ];
 
 function ServicesIndexPage() {
+  const pageHero = useSiteImage("hero-services", processingHero);
+
   return (
     <main className="flex min-h-screen flex-col bg-white" style={{ fontFamily: BODY_FONT }}>
       <Header />
@@ -98,7 +105,7 @@ function ServicesIndexPage() {
       <section className="relative w-full overflow-hidden bg-neutral-950 py-24 sm:py-32">
         <div className="absolute inset-0 opacity-30">
           <img
-            src={processingHero}
+            src={pageHero}
             alt=""
             className="h-full w-full object-cover"
             aria-hidden
@@ -144,15 +151,16 @@ function ServicesIndexPage() {
       <section className="w-full bg-white py-24">
         <div className="mx-auto max-w-[1280px] px-6">
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
-            {services.map(({ to, image, eyebrow, title, highlight, body, bullets, icon: Icon }) => (
+            {services.map(({ to, image, slot, eyebrow, title, highlight, body, bullets, icon: Icon }) => (
               <Link
                 key={to}
                 to={to}
                 className="group relative flex flex-col overflow-hidden rounded-2xl border border-neutral-200 bg-white shadow-sm transition-all duration-500 hover:-translate-y-1 hover:border-neutral-300 hover:shadow-2xl"
               >
                 <div className="relative h-56 w-full overflow-hidden bg-neutral-100">
-                  <img
-                    src={image}
+                  <SiteImage
+                    slot={slot}
+                    fallback={image}
                     alt={`${title} ${highlight}`}
                     loading="lazy"
                     className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"

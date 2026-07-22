@@ -1,5 +1,6 @@
 import { ArrowUpRight } from "lucide-react";
 import { Link } from "@tanstack/react-router";
+import { SiteImage } from "@/lib/site-images";
 import officeImg from "@/assets/project-office.jpg";
 import coastalImg from "@/assets/project-coastal.jpg";
 import retailImg from "@/assets/project-retail.jpg";
@@ -8,12 +9,12 @@ import atriumImg from "@/assets/project-atrium.jpg";
 import curvedImg from "@/assets/project-curved.jpg";
 
 const images = [
-  { src: officeImg, alt: "Modern angular glass facade at dusk", area: "a" },
-  { src: retailImg, alt: "Commercial glazing project under construction", area: "b" },
-  { src: coastalImg, alt: "Glass facade reflecting cloudy sky", area: "c" },
-  { src: atriumImg, alt: "Outdoor patio with sliding glass doors", area: "d" },
-  { src: curvedImg, alt: "Reflective blue glass facade", area: "e" },
-  { src: heritageImg, alt: "Residential home with large glazed windows", area: "f" },
+  { src: officeImg, slot: "home-project-office", alt: "Modern angular glass facade at dusk", area: "a" },
+  { src: retailImg, slot: "home-project-retail", alt: "Commercial glazing project under construction", area: "b" },
+  { src: coastalImg, slot: "home-project-coastal", alt: "Glass facade reflecting cloudy sky", area: "c" },
+  { src: atriumImg, slot: "home-project-atrium", alt: "Outdoor patio with sliding glass doors", area: "d" },
+  { src: curvedImg, slot: "home-project-curved", alt: "Reflective blue glass facade", area: "e" },
+  { src: heritageImg, slot: "home-project-heritage", alt: "Residential home with large glazed windows", area: "f" },
 ];
 
 export function Projects() {
@@ -76,8 +77,9 @@ export function Projects() {
               className="group relative overflow-hidden rounded-xl bg-neutral-100 max-lg:aspect-[4/3]"
               style={{ gridArea: img.area }}
             >
-              <img
-                src={img.src}
+              <SiteImage
+                slot={img.slot}
+                fallback={img.src}
                 alt={img.alt}
                 loading="lazy"
                 className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"

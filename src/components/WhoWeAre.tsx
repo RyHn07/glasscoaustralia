@@ -1,5 +1,6 @@
 import { Calendar, Users, Award, MapPin } from "lucide-react";
 import buildingAsset from "@/assets/about-building-new.jpg.asset.json";
+import { SiteImage } from "@/lib/site-images";
 const buildingImg = buildingAsset.url;
 
 const stats = [
@@ -22,8 +23,9 @@ export function WhoWeAre() {
               style={{ borderColor: "#009AAA" }}
             />
             <div className="overflow-hidden rounded-lg shadow-lg transition-shadow duration-500 group-hover:shadow-2xl">
-              <img
-                src={buildingImg}
+              <SiteImage
+                slot="home-who-we-are-facility"
+                fallback={buildingImg}
                 alt="GlassCo Australia facility"
                 loading="lazy"
                 width={1280}

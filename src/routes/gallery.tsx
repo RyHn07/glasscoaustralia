@@ -3,6 +3,7 @@ import { useEffect, useMemo, useState } from "react";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { SiteImage } from "@/lib/site-images";
 
 import atriumImg from "@/assets/project-atrium.jpg";
 import coastalImg from "@/assets/project-coastal.jpg";
@@ -51,7 +52,7 @@ type Tab =
   | "security-safety-glass";
 
 
-type GalleryImage = { src: string; alt: string; category: Tab };
+type GalleryImage = { src: string; alt: string; category: Tab; slot?: string };
 
 // Load all uploaded category assets via Vite's glob import
 const categoryAssets = import.meta.glob<{ default: { url: string } }>(
@@ -91,12 +92,12 @@ function buildCategoryImages(folder: string, altPrefix: string, category: Tab): 
 
 const allImages: GalleryImage[] = [
   // Projects
-  { src: atriumImg, alt: "Glass atrium ceiling installation", category: "projects" },
-  { src: coastalImg, alt: "Coastal residence with large glass facade", category: "projects" },
-  { src: curvedImg, alt: "Curved glass facade", category: "projects" },
-  { src: heritageImg, alt: "Heritage building glass restoration", category: "projects" },
-  { src: officeImg, alt: "Modern office glass partitions", category: "projects" },
-  { src: retailImg, alt: "Retail storefront glazing", category: "projects" },
+  { src: atriumImg, slot: "gallery-project-atrium", alt: "Glass atrium ceiling installation", category: "projects" },
+  { src: coastalImg, slot: "gallery-project-coastal", alt: "Coastal residence with large glass facade", category: "projects" },
+  { src: curvedImg, slot: "gallery-project-curved", alt: "Curved glass facade", category: "projects" },
+  { src: heritageImg, slot: "gallery-project-heritage", alt: "Heritage building glass restoration", category: "projects" },
+  { src: officeImg, slot: "gallery-project-office", alt: "Modern office glass partitions", category: "projects" },
+  { src: retailImg, slot: "gallery-project-retail", alt: "Retail storefront glazing", category: "projects" },
   // Uploaded category photos
 
   ...buildCategoryImages("balustrade", "Balustrade installation", "balustrade"),
@@ -112,11 +113,11 @@ const allImages: GalleryImage[] = [
     "security-safety-glass",
   ),
   ...buildCategoryImages("shower-screens", "Frameless shower screen", "shower-screens"),
-  { src: displayGlassAsset.url, alt: "Display glass installation", category: "display-glass" },
+  { src: displayGlassAsset.url, slot: "gallery-display-glass-1", alt: "Display glass installation", category: "display-glass" },
   ...buildCategoryImages("shopfronts", "Commercial shopfront glazing", "shopfronts"),
-  { src: shopfrontsAsset.url, alt: "Commercial shopfront glazing", category: "shopfronts" },
-  { src: showerScreenAsset.url, alt: "Frameless shower screen", category: "shower-screens" },
-  { src: splashbackAsset.url, alt: "Kitchen glass splashback", category: "splashbacks" },
+  { src: shopfrontsAsset.url, slot: "gallery-shopfronts-featured", alt: "Commercial shopfront glazing", category: "shopfronts" },
+  { src: showerScreenAsset.url, slot: "gallery-shower-screens-featured", alt: "Frameless shower screen", category: "shower-screens" },
+  { src: splashbackAsset.url, slot: "gallery-splashbacks-featured", alt: "Kitchen glass splashback", category: "splashbacks" },
 ];
 
 
@@ -271,8 +272,9 @@ function GalleryPage() {
                   className={`group relative h-[380px] overflow-hidden rounded-xl bg-neutral-200 ${span} cursor-zoom-in focus:outline-none focus:ring-2 focus:ring-[#009AAA] focus:ring-offset-2`}
                   aria-label={`View ${it.alt}`}
                 >
-                  <img
-                    src={it.src}
+                  <SiteImage
+                    slot={it.slot ?? `gallery-${it.category}-${i + 1}`}
+                    fallback={it.src}
                     alt={it.alt}
                     loading="lazy"
                     width={1024}
@@ -338,9 +340,10 @@ function GalleryPage() {
           </button>
 
           {/* Image */}
-          <img
+          <SiteImage
             key={activeIndex}
-            src={images[activeIndex].src}
+            slot={images[activeIndex].slot ?? `gallery-${images[activeIndex].category}-${activeIndex + 1}`}
+            fallback={images[activeIndex].src}
             alt={images[activeIndex].alt}
             onClick={(e) => e.stopPropagation()}
             className="max-h-[88vh] max-w-[92vw] object-contain animate-scale-in"

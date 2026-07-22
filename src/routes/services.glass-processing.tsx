@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { SiteImage, useSiteImage } from "@/lib/site-images";
 import heroImage from "@/assets/service-glass-processing.jpg";
 import cncAsset from "@/assets/machinery/skill.jpg.asset.json";
 import waterjetImage from "@/assets/machinery/techni-waterjet.png";
@@ -132,6 +133,12 @@ const bimatechFeatures = [
 ];
 
 function GlassProcessingPage() {
+  const pageHero = useSiteImage("hero-services-glass-processing", heroImage);
+  const cncLineImage = useSiteImage("services-glass-processing-cnc-line", cncImage);
+  const waterjetLineImage = useSiteImage("services-glass-processing-waterjet", waterjetImage);
+  const bimatechLineImage = useSiteImage("services-glass-processing-bimatech", bimatechImage);
+  const floatLineImage = useSiteImage("services-glass-processing-float-cutting", floatCuttingImage);
+  const laminateLineImage = useSiteImage("services-glass-processing-laminate-cutting", laminateCuttingImage);
   // Smooth-scroll to hash target when arriving from menu
   const hash = useRouterState({ select: (s) => s.location.hash });
   useEffect(() => {
@@ -152,7 +159,7 @@ function GlassProcessingPage() {
       {/* HERO */}
       <section className="relative h-[52vh] min-h-[380px] w-full overflow-hidden">
         <img
-          src={heroImage}
+          src={pageHero}
           alt="GlassCo Australia glass processing facility"
           width={1600}
           height={900}
@@ -294,7 +301,7 @@ function GlassProcessingPage() {
                 style={{ borderColor: ACCENT }}
               />
               <img
-                src={cncImage}
+                src={cncLineImage}
                 alt="SKILL E-D vertical CNC machining centre"
                 loading="lazy"
                 width={1280}
@@ -464,7 +471,7 @@ function GlassProcessingPage() {
                 style={{ borderColor: ACCENT }}
               />
               <img
-                src={waterjetImage}
+                src={waterjetLineImage}
                 alt="TECHNI Waterjet cutting glass"
                 loading="lazy"
                 width={1280}
@@ -616,7 +623,7 @@ function GlassProcessingPage() {
                 style={{ borderColor: ACCENT }}
               />
               <img
-                src={bimatechImage}
+                src={bimatechLineImage}
                 alt="Bimatech Techno Edge CNC glass processing machine"
                 loading="lazy"
                 width={1280}
@@ -741,7 +748,7 @@ function GlassProcessingPage() {
           <div className="grid grid-cols-1 gap-14 lg:grid-cols-2 lg:items-center">
             <div className="relative h-[420px] w-full overflow-hidden rounded-xl bg-neutral-100 shadow-lg">
               <img
-                src={floatCuttingImage}
+                src={floatLineImage}
                 alt="Automated float glass cutting line"
                 loading="lazy"
                 width={1024}
@@ -816,7 +823,7 @@ function GlassProcessingPage() {
             </div>
             <div className="relative order-1 h-[420px] w-full overflow-hidden rounded-xl bg-neutral-100 shadow-lg lg:order-2">
               <img
-                src={laminateCuttingImage}
+                src={laminateLineImage}
                 alt="Laminated glass cutting line with PVB interlayer"
                 loading="lazy"
                 width={1024}

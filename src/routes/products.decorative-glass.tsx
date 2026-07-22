@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ProductPageLayout } from "@/components/ProductPageLayout";
+import { SiteImage } from "@/lib/site-images";
 import heroImage from "@/assets/product-decorative.jpg";
 import pAqualite from "@/assets/patterns/aqualite.png.asset.json";
 import pChinchilla from "@/assets/patterns/chinchilla.png.asset.json";
@@ -44,22 +45,23 @@ type Pattern = {
   image: string;
   thickness: string[];
   size: string;
+  slot: string;
 };
 
 const PATTERNS: Pattern[] = [
-  { name: "Aqualite / Cathedral", image: pAqualite.url, thickness: ["4mm", "5mm"], size: "2440 × 1830" },
-  { name: "Chinchilla", image: pChinchilla.url, thickness: ["5mm"], size: "2440 × 1830" },
-  { name: "Diamond", image: pDiamond.url, thickness: ["5mm"], size: "2440 × 1830" },
-  { name: "Africana / Flame", image: pAfricana.url, thickness: ["5mm"], size: "2440 × 1830" },
-  { name: "Flor", image: pFlor.url, thickness: ["5mm"], size: "2440 × 1830" },
-  { name: "Kasumi", image: pKasumi.url, thickness: ["5mm"], size: "2440 × 1830" },
-  { name: "Millennium", image: pMillennium.url, thickness: ["5mm"], size: "2440 × 1830" },
-  { name: "Narrow Reed / Moru", image: pNarrowReed.url, thickness: ["5mm", "6mm"], size: "2440 × 2100" },
-  { name: "Rain / Seadrift", image: pRain.url, thickness: ["5mm"], size: "2440 × 1830" },
-  { name: "Reticulate", image: pReticulate.url, thickness: ["5mm"], size: "2440 × 1830" },
-  { name: "Drop", image: pDrop.url, thickness: ["5mm"], size: "2440 × 1830" },
-  { name: "Satinlite", image: pSatinlite.url, thickness: ["4mm", "5mm"], size: "2440 × 1830" },
-  { name: "Spotswood", image: pSpotswood.url, thickness: ["5mm"], size: "2440 × 1830" },
+  { name: "Aqualite / Cathedral", image: pAqualite.url, slot: "decorative-pattern-aqualite-cathedral", thickness: ["4mm", "5mm"], size: "2440 × 1830" },
+  { name: "Chinchilla", image: pChinchilla.url, slot: "decorative-pattern-chinchilla", thickness: ["5mm"], size: "2440 × 1830" },
+  { name: "Diamond", image: pDiamond.url, slot: "decorative-pattern-diamond", thickness: ["5mm"], size: "2440 × 1830" },
+  { name: "Africana / Flame", image: pAfricana.url, slot: "decorative-pattern-africana-flame", thickness: ["5mm"], size: "2440 × 1830" },
+  { name: "Flor", image: pFlor.url, slot: "decorative-pattern-flor", thickness: ["5mm"], size: "2440 × 1830" },
+  { name: "Kasumi", image: pKasumi.url, slot: "decorative-pattern-kasumi", thickness: ["5mm"], size: "2440 × 1830" },
+  { name: "Millennium", image: pMillennium.url, slot: "decorative-pattern-millennium", thickness: ["5mm"], size: "2440 × 1830" },
+  { name: "Narrow Reed / Moru", image: pNarrowReed.url, slot: "decorative-pattern-narrow-reed-moru", thickness: ["5mm", "6mm"], size: "2440 × 2100" },
+  { name: "Rain / Seadrift", image: pRain.url, slot: "decorative-pattern-rain-seadrift", thickness: ["5mm"], size: "2440 × 1830" },
+  { name: "Reticulate", image: pReticulate.url, slot: "decorative-pattern-reticulate", thickness: ["5mm"], size: "2440 × 1830" },
+  { name: "Drop", image: pDrop.url, slot: "decorative-pattern-drop", thickness: ["5mm"], size: "2440 × 1830" },
+  { name: "Satinlite", image: pSatinlite.url, slot: "decorative-pattern-satinlite", thickness: ["4mm", "5mm"], size: "2440 × 1830" },
+  { name: "Spotswood", image: pSpotswood.url, slot: "decorative-pattern-spotswood", thickness: ["5mm"], size: "2440 × 1830" },
 ];
 
 
@@ -110,8 +112,9 @@ function PatternsCatalogue() {
               className="group overflow-hidden rounded-lg border border-neutral-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
             >
               <div className="aspect-square w-full overflow-hidden bg-neutral-100">
-                <img
-                  src={p.image}
+                <SiteImage
+                  slot={p.slot}
+                  fallback={p.image}
                   alt={p.name}
                   loading="lazy"
                   width={768}

@@ -1,5 +1,6 @@
 import { Star } from "lucide-react";
 import { Link } from "@tanstack/react-router";
+import { SiteImage } from "@/lib/site-images";
 import rangeFloat from "@/assets/range-float.jpg";
 import rangeLaminated from "@/assets/range-laminated.jpg";
 import energyGlassImage from "@/assets/hero-glass-3.jpg";
@@ -10,6 +11,7 @@ import productDecorative from "@/assets/product-decorative.jpg";
 const items = [
   {
     image: rangeFloat,
+    slot: "home-range-clear-float-glass",
     alt: "Clear float glass sheets",
     name: "Clear Float Glass",
     description: "Premium architectural float glass — flat, clear and ready for processing.",
@@ -18,6 +20,7 @@ const items = [
   },
   {
     image: rangeLaminated,
+    slot: "home-range-clear-laminated-glass",
     alt: "Clear laminated safety glass",
     name: "Clear Laminated Glass",
     description: "Safety glass with PVB interlayer for impact, UV and acoustic performance.",
@@ -26,6 +29,7 @@ const items = [
   },
   {
     image: energyGlassImage,
+    slot: "home-range-energy-efficient-glass",
     alt: "Energy efficient glass facade",
     name: "Energy Efficient Glass",
     description: "High-performance glass for improved thermal comfort, solar control and energy savings.",
@@ -34,6 +38,7 @@ const items = [
   },
   {
     image: productSecurity,
+    slot: "home-range-security-glass",
     alt: "Security assault shield glass",
     name: "Security Glass — Assault Shield 14.25 SGP",
     description: "Laminated SGP security glass engineered for forced-entry resistance.",
@@ -41,6 +46,7 @@ const items = [
   },
   {
     image: productAcoustic,
+    slot: "home-range-acoustic-glass",
     alt: "Acoustic laminated glass",
     name: "Acoustic Glass",
     description: "Noise-reducing laminated glass for quieter interiors.",
@@ -48,6 +54,7 @@ const items = [
   },
   {
     image: productDecorative,
+    slot: "home-range-decorative-glass",
     alt: "Decorative patterned glass",
     name: "Decorative Glass",
     description: "Patterned, printed, mirror and ultra clear decorative ranges.",
@@ -110,8 +117,9 @@ export function Range() {
               className="group flex flex-col overflow-hidden rounded-2xl border border-neutral-200 bg-white transition-[translate,border-color,box-shadow] duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-1 hover:border-[#009AAA]/40 hover:shadow-[0_20px_50px_-20px_rgba(0,154,170,0.35)]"
             >
               <div className="relative aspect-[4/3] overflow-hidden bg-neutral-100">
-                <img
-                  src={p.image}
+                <SiteImage
+                  slot={p.slot}
+                  fallback={p.image}
                   alt={p.alt}
                   loading="lazy"
                   width={1600}

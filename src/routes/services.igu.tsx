@@ -15,6 +15,7 @@ import {
 } from "lucide-react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { useSiteImage } from "@/lib/site-images";
 import heroImage from "@/assets/machinery/lisec-toughening-line.png";
 
 const ACCENT = "#009AAA";
@@ -112,6 +113,9 @@ const benefits = [
 ];
 
 function IGUPage() {
+  const pageHero = useSiteImage("hero-services-igu", heroImage);
+  const overviewImage = useSiteImage("services-igu-overview-line", heroImage);
+
   return (
     <main className="flex min-h-screen flex-col bg-white" style={{ fontFamily: BODY_FONT }}>
       <Header />
@@ -119,7 +123,7 @@ function IGUPage() {
       {/* HERO */}
       <section className="relative h-[52vh] min-h-[380px] w-full overflow-hidden">
         <img
-          src={heroImage}
+          src={pageHero}
           alt="LISEC insulating glass unit production line"
           width={1600}
           height={900}
@@ -173,7 +177,7 @@ function IGUPage() {
                 style={{ borderColor: ACCENT }}
               />
               <img
-                src={heroImage}
+                src={overviewImage}
                 alt="LISEC glass production line at GlassCo Australia"
                 loading="lazy"
                 width={1600}

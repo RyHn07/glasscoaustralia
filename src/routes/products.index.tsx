@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Star } from "lucide-react";
+import { SiteImage, useSiteImage } from "@/lib/site-images";
 
 import productAcoustic from "@/assets/product-acoustic.jpg";
 import productDecorative from "@/assets/product-decorative.jpg";
@@ -34,6 +35,7 @@ const products: ProductCard[] = [
     name: "Clear Float Glass",
     description: "Premium architectural float glass — flat, clear and ready for processing.",
     image: rangeFloat,
+    slot: "products-index-card-clear-float-glass",
     to: "/products/clear-float-glass",
     topSeller: true,
   },
@@ -41,6 +43,7 @@ const products: ProductCard[] = [
     name: "Clear Laminated Glass",
     description: "Safety glass with PVB interlayer for impact, UV and acoustic performance.",
     image: rangeLaminated,
+    slot: "products-index-card-clear-laminated-glass",
     to: "/products/clear-laminated-glass",
     topSeller: true,
   },
@@ -48,36 +51,42 @@ const products: ProductCard[] = [
     name: "Low Iron Glass",
     description: "Ultra clear glass with reduced green tint for true colour rendering.",
     image: rangeLowE,
+    slot: "products-index-card-low-iron-glass",
     to: "/products/low-iron-glass",
   },
   {
     name: "Security Glass — Assault Shield 14.25 SGP",
     description: "Laminated SGP security glass engineered for forced-entry resistance.",
     image: productSecurity,
+    slot: "products-index-card-security-glass",
     to: "/products/security-glass-assault-shield",
   },
   {
     name: "Acoustic Glass",
     description: "Noise-reducing laminated glass for quieter interiors.",
     image: productAcoustic,
+    slot: "products-index-card-acoustic-glass",
     to: "/products/acoustic-glass",
   },
   {
     name: "Decorative Glass",
     description: "Patterned, printed, mirror and ultra clear decorative ranges.",
     image: productDecorative,
+    slot: "products-index-card-decorative-glass",
     to: "/products/decorative-glass",
   },
   {
     name: "Energy Efficient Glass",
     description: "Low-E, IGUs and solar control glazing for thermal performance.",
     image: productEnergy,
+    slot: "products-index-card-energy-efficient-glass",
     to: "/products/energy-efficient-glass",
   },
   {
     name: "Automotive Glass",
     description: "Laminated safety glass and toughened printed glass for vehicles.",
     image: productAutomotive,
+    slot: "products-index-card-automotive-glass",
     to: "/products/automotive-glass",
   },
 ];
@@ -103,6 +112,8 @@ export const Route = createFileRoute("/products/")({
 });
 
 function AllProductsPage() {
+  const pageHero = useSiteImage("hero-products", productsHero);
+
   return (
     <main className="flex min-h-screen flex-col bg-white" style={{ fontFamily: '"Geist", sans-serif' }}>
       <Header />
@@ -110,7 +121,7 @@ function AllProductsPage() {
       {/* Hero */}
       <section className="relative overflow-hidden border-b border-neutral-100">
         <img
-          src={productsHero}
+          src={pageHero}
           alt=""
           aria-hidden="true"
           className="absolute inset-0 h-full w-full object-cover"
@@ -145,8 +156,9 @@ function AllProductsPage() {
               className="group flex flex-col overflow-hidden rounded-2xl border border-neutral-200 bg-white transition-[translate,border-color,box-shadow] duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-1 hover:border-[#009AAA]/40 hover:shadow-[0_20px_50px_-20px_rgba(0,154,170,0.35)]"
             >
               <div className="relative aspect-[4/3] overflow-hidden bg-neutral-100">
-                <img
-                  src={p.image}
+                <SiteImage
+                  slot={p.slot}
+                  fallback={p.image}
                   alt={p.name}
                   loading="lazy"
                   width={1600}

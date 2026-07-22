@@ -1,9 +1,9 @@
-﻿import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import { ShieldCheck, BadgeCheck, FlaskConical, Quote } from "lucide-react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import heroImg from "@/assets/about-hero.jpg";
-import { useSiteImage } from "@/lib/site-images";
+import { SiteImage, useSiteImage } from "@/lib/site-images";
 import manufacturingAsset from "@/assets/gallery/facades/facades-1.jpg.asset.json";
 import companyImg from "@/assets/about-panel-discussion.png";
 import printingAsset from "@/assets/gallery/facades/facades-3.jpg.asset.json";
@@ -16,7 +16,7 @@ const printingImg = printingAsset.url;
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About GlassCo Australia â€” Company Profile" },
+      { title: "About GlassCo Australia — Company Profile" },
       {
         name: "description",
         content:
@@ -112,7 +112,7 @@ function AboutPage() {
             style={{ fontFamily: BODY_FONT }}
           >
             Trusted supplier of glass and value-added glass products based in
-            Melbourne, Victoria â€” servicing residential, commercial and architectural
+            Melbourne, Victoria — servicing residential, commercial and architectural
             projects across Australia.
           </p>
         </div>
@@ -122,6 +122,7 @@ function AboutPage() {
       <SplitSection
         eyebrow="OUR COMPANY"
         image={companyImg}
+        imageSlot="about-company-panel"
         imageAlt="GlassCo team panel discussion in a modern glass setting"
         heading={
           <>
@@ -156,6 +157,7 @@ function AboutPage() {
       <SplitSection
         eyebrow="CERAMIC PRINTING"
         image={printingImg}
+        imageSlot="about-digital-ceramic-printing"
         imageAlt="Detailed ceramic printed glass"
         reverse
         heading={
@@ -220,8 +222,9 @@ function AboutPage() {
               className="absolute -left-4 -top-4 h-16 w-16 rounded-tl-lg border-l-2 border-t-2"
               style={{ borderColor: ACCENT }}
             />
-            <img
-              src={manufacturingImg}
+            <SiteImage
+              slot="about-manufacturing-capability"
+              fallback={manufacturingImg}
               alt="Advanced glass manufacturing facility"
               width={1280}
               height={896}
@@ -453,8 +456,9 @@ function AboutPage() {
                 className="absolute -left-4 -top-4 h-16 w-16 rounded-tl-lg border-l-2 border-t-2"
                 style={{ borderColor: ACCENT }}
               />
-              <img
-                src={environmentImg}
+              <SiteImage
+                slot="about-environmental-policy"
+                fallback={environmentImg}
                 alt="Lush Australian forest"
                 width={1280}
                 height={896}
@@ -558,6 +562,7 @@ function SplitSection({
   heading,
   image,
   imageAlt,
+  imageSlot,
   children,
   reverse,
 }: {
@@ -565,6 +570,7 @@ function SplitSection({
   heading: React.ReactNode;
   image: string;
   imageAlt: string;
+  imageSlot?: string;
   children: React.ReactNode;
   reverse?: boolean;
 }) {
@@ -581,8 +587,9 @@ function SplitSection({
               className="absolute -left-4 -top-4 h-16 w-16 rounded-tl-lg border-l-2 border-t-2"
               style={{ borderColor: ACCENT }}
             />
-            <img
-              src={image}
+            <SiteImage
+              slot={imageSlot ?? imageAlt}
+              fallback={image}
               alt={imageAlt}
               width={1280}
               height={896}

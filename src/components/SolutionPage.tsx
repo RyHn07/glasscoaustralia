@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { Check, ArrowRight } from "lucide-react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { SiteImage, imageSlot } from "@/lib/site-images";
 
 const ACCENT = "#009AAA";
 const HEAD_FONT = "Montserrat, sans-serif";
@@ -19,6 +20,8 @@ export type SolutionPageProps = {
 };
 
 export function SolutionPage({ eyebrow, title, tagline, description, applications, heroImage }: SolutionPageProps) {
+  const pageSlot = typeof window === "undefined" ? imageSlot(title) : window.location.pathname.slice(1).replace(/\//g, "-");
+
   return (
     <main className="flex min-h-screen flex-col bg-white">
       <Header />
@@ -101,7 +104,7 @@ export function SolutionPage({ eyebrow, title, tagline, description, application
                     className={`overflow-hidden rounded-lg bg-white shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md ${galleryCategory ? "cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#009AAA] focus:ring-offset-2" : ""}`}
                   >
                     {image && (
-                      <img src={image} alt={name} className="h-32 w-full object-cover" />
+                      <SiteImage slot={`${pageSlot}-application-${imageSlot(name)}`} fallback={image} alt={name} className="h-32 w-full object-cover" />
                     )}
                     <div className="flex items-start gap-3 p-3">
                       <span

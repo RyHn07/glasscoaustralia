@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Check, Building2, Droplets, Sofa, Cpu, Fence, ShieldCheck } from "lucide-react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { useSiteImage } from "@/lib/site-images";
 import heroImage from "@/assets/service-toughening.jpg";
 import furnaceAsset from "@/assets/machinery/northglass.jpg.asset.json";
 const furnaceImage = furnaceAsset.url;
@@ -52,6 +53,9 @@ const keyFeatures = [
 ];
 
 function ToughingHeatStrengtheningPage() {
+  const pageHero = useSiteImage("hero-services-toughening-heat-strengthening", heroImage);
+  const furnaceSectionImage = useSiteImage("services-toughening-northglass-furnace", furnaceImage);
+
   return (
     <main className="flex min-h-screen flex-col bg-white" style={{ fontFamily: BODY_FONT }}>
       <Header />
@@ -59,7 +63,7 @@ function ToughingHeatStrengtheningPage() {
       {/* HERO */}
       <section className="relative h-[52vh] min-h-[380px] w-full overflow-hidden">
         <img
-          src={heroImage}
+          src={pageHero}
           alt="NorthGlass horizontal glass toughening furnace"
           width={1600}
           height={900}
@@ -123,7 +127,7 @@ function ToughingHeatStrengtheningPage() {
               />
               <div className="relative aspect-[16/10] overflow-hidden rounded-lg shadow-lg">
                 <img
-                  src={furnaceImage}
+                  src={furnaceSectionImage}
                   alt="NorthGlass horizontal toughening furnace at GlassCo Australia"
                   loading="lazy"
                   width={1280}

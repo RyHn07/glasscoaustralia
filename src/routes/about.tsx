@@ -1,8 +1,9 @@
-import { createFileRoute } from "@tanstack/react-router";
+﻿import { createFileRoute } from "@tanstack/react-router";
 import { ShieldCheck, BadgeCheck, FlaskConical, Quote } from "lucide-react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import heroImg from "@/assets/about-hero.jpg";
+import { useSiteImage } from "@/lib/site-images";
 import manufacturingAsset from "@/assets/gallery/facades/facades-1.jpg.asset.json";
 import companyImg from "@/assets/about-panel-discussion.png";
 import printingAsset from "@/assets/gallery/facades/facades-3.jpg.asset.json";
@@ -15,7 +16,7 @@ const printingImg = printingAsset.url;
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About GlassCo Australia — Company Profile" },
+      { title: "About GlassCo Australia â€” Company Profile" },
       {
         name: "description",
         content:
@@ -76,6 +77,7 @@ const environmental = [
 ];
 
 function AboutPage() {
+  const pageHero = useSiteImage("hero-about", heroImg);
   return (
     <main className="flex min-h-screen flex-col bg-white" style={{ fontFamily: BODY_FONT }}>
       <Header />
@@ -83,7 +85,7 @@ function AboutPage() {
       {/* HERO */}
       <section className="relative h-[52vh] min-h-[380px] w-full overflow-hidden">
         <img
-          src={heroImg}
+          src={pageHero}
           alt="Modern architectural glass facade"
           width={1600}
           height={900}
@@ -110,7 +112,7 @@ function AboutPage() {
             style={{ fontFamily: BODY_FONT }}
           >
             Trusted supplier of glass and value-added glass products based in
-            Melbourne, Victoria — servicing residential, commercial and architectural
+            Melbourne, Victoria â€” servicing residential, commercial and architectural
             projects across Australia.
           </p>
         </div>
@@ -603,3 +605,4 @@ function SplitSection({
     </section>
   );
 }
+

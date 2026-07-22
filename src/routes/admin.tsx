@@ -5,6 +5,17 @@ import quoteHero from "@/assets/hero-quote.jpg";
 import residentialHero from "@/assets/solution-residential.jpg";
 import commercialHero from "@/assets/solution-commercial.jpg";
 import industrialHero from "@/assets/solution-industrial.jpg";
+import clearFloatHero from "@/assets/range-float.jpg";
+import laminatedHero from "@/assets/range-laminated.jpg";
+import lowIronHero from "@/assets/product-low-iron.png";
+import acousticHero from "@/assets/product-acoustic.jpg";
+import decorativeHero from "@/assets/product-decorative.jpg";
+import automotiveHero from "@/assets/product-automotive.jpg";
+import securityHero from "@/assets/product-security.jpg";
+import printingHero from "@/assets/product-printing.jpg";
+import aboutHero from "@/assets/about-hero.jpg";
+import certificationsHero from "@/assets/hero-certifications.jpg";
+import resourcesHero from "@/assets/resources-hero.jpg";
 
 type PageImage = {
   slot: string;
@@ -19,10 +30,20 @@ const pages: PageImage[] = [
   { slot: "solution-residential-hero", label: "Residential solutions", path: "/solutions/residential", fallback: residentialHero },
   { slot: "solution-commercial-hero", label: "Commercial solutions", path: "/solutions/commercial", fallback: commercialHero },
   { slot: "solution-industrial-hero", label: "Industrial & automotive", path: "/solutions/industrial-automotive", fallback: industrialHero },
+  { slot: "hero-products-clear-float-glass", label: "Clear float glass", path: "/products/clear-float-glass", fallback: clearFloatHero },
+  { slot: "hero-products-clear-laminated-glass", label: "Clear laminated glass", path: "/products/clear-laminated-glass", fallback: laminatedHero },
+  { slot: "hero-products-low-iron-glass", label: "Low iron glass", path: "/products/low-iron-glass", fallback: lowIronHero },
+  { slot: "hero-products-acoustic-glass", label: "Acoustic glass", path: "/products/acoustic-glass", fallback: acousticHero },
+  { slot: "hero-products-decorative-glass", label: "Decorative glass", path: "/products/decorative-glass", fallback: decorativeHero },
+  { slot: "hero-products-automotive-glass", label: "Automotive glass", path: "/products/automotive-glass", fallback: automotiveHero },
+  { slot: "hero-products-security-glass-assault-shield", label: "Security glass", path: "/products/security-glass-assault-shield", fallback: securityHero },
+  { slot: "hero-services-digital-glass-printing", label: "Digital glass printing", path: "/services/digital-glass-printing", fallback: printingHero },
+  { slot: "hero-about", label: "About", path: "/about", fallback: aboutHero },
+  { slot: "hero-certifications", label: "Certifications", path: "/certifications", fallback: certificationsHero },
+  { slot: "hero-resources", label: "Resources", path: "/resources", fallback: resourcesHero },
 ];
 
 export const Route = createFileRoute("/admin")({ component: AdminPage });
-
 function AdminPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -82,3 +103,6 @@ function AdminPage() {
 
   return <main className="min-h-screen bg-slate-100 text-slate-900"><div className="mx-auto flex min-h-screen max-w-7xl flex-col md:flex-row"><aside className="w-full shrink-0 bg-slate-950 p-6 text-white md:min-h-screen md:w-72"><p className="text-xs font-bold tracking-[0.2em] text-cyan-400">GLASSCO ADMIN</p><h1 className="mt-2 text-2xl font-bold">Page images</h1><p className="mt-3 text-sm leading-6 text-slate-400">Choose a page to preview and replace its hero image.</p><nav className="mt-8 space-y-2" aria-label="Pages">{pages.map((page) => <button key={page.slot} type="button" onClick={() => choosePage(page.slot)} className={`w-full rounded-lg px-4 py-3 text-left text-sm transition ${page.slot === activePage.slot ? "bg-cyan-600 font-bold text-white" : "text-slate-300 hover:bg-slate-800 hover:text-white"}`}><span className="block">{page.label}</span><span className="mt-1 block text-xs font-normal text-slate-400">{page.path}</span></button>)}</nav></aside><section className="flex-1 p-6 md:p-10"><p className="text-sm font-bold tracking-widest text-cyan-700">IMAGE MANAGER</p><h2 className="mt-2 text-3xl font-bold">{activePage.label}</h2><p className="mt-2 text-slate-600">The preview shows the current image. Select a replacement to preview it before saving.</p><div className="mt-8 overflow-hidden rounded-2xl bg-white shadow-sm"><img src={currentImage} alt={`${activePage.label} image preview`} className="aspect-[16/8] w-full object-cover" /><div className="border-t p-6"><p className="text-sm font-semibold text-slate-700">Current hero image preview</p><label className="mt-4 flex cursor-pointer items-center justify-center rounded-lg border-2 border-dashed border-cyan-300 bg-cyan-50 px-4 py-5 text-center text-sm font-semibold text-cyan-800 hover:bg-cyan-100"><span>Choose replacement image</span><input className="sr-only" type="file" accept="image/jpeg,image/png,image/webp,image/gif" onChange={(event) => { const file = event.target.files?.[0]; if (file) setPreview(URL.createObjectURL(file)); }} /></label><div className="mt-4 flex flex-wrap gap-3"><button type="button" onClick={() => upload((document.querySelector('input[type=file]') as HTMLInputElement | null)?.files?.[0])} className="rounded-lg bg-cyan-700 px-5 py-3 text-sm font-bold text-white hover:bg-cyan-800">Save image</button>{preview && <button type="button" onClick={() => setPreview(undefined)} className="rounded-lg border border-slate-300 px-5 py-3 text-sm font-semibold text-slate-700 hover:bg-slate-50">Discard preview</button>}<a href={activePage.path} target="_blank" rel="noreferrer" className="rounded-lg border border-slate-300 px-5 py-3 text-sm font-semibold text-slate-700 hover:bg-slate-50">View public page</a></div>{message && <p className="mt-4 rounded-lg bg-slate-100 p-3 text-sm text-slate-700">{message}</p>}</div></div></section></div></main>;
 }
+
+
+

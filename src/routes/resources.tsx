@@ -1,19 +1,20 @@
-import { createFileRoute } from "@tanstack/react-router";
+﻿import { createFileRoute } from "@tanstack/react-router";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { GlassTypes } from "@/components/GlassTypes";
 import resourcesHero from "@/assets/resources-hero.jpg";
+import { useSiteImage } from "@/lib/site-images";
 
 export const Route = createFileRoute("/resources")({
   head: () => ({
     meta: [
-      { title: "Resources — Glass Types & Technical Reference | GlassCo Australia" },
+      { title: "Resources â€” Glass Types & Technical Reference | GlassCo Australia" },
       {
         name: "description",
         content:
-          "Technical reference for our standard glass range — U-values, SHGC, VLT, UV block and thickness data. Download the full PDF spec sheet.",
+          "Technical reference for our standard glass range â€” U-values, SHGC, VLT, UV block and thickness data. Download the full PDF spec sheet.",
       },
-      { property: "og:title", content: "Resources — Glass Types & Technical Reference" },
+      { property: "og:title", content: "Resources â€” Glass Types & Technical Reference" },
       {
         property: "og:description",
         content:
@@ -25,12 +26,13 @@ export const Route = createFileRoute("/resources")({
 });
 
 function ResourcesPage() {
+  const pageHero = useSiteImage("hero-resources", resourcesHero);
   return (
     <main className="flex min-h-screen flex-col bg-white">
       <Header />
       <section className="relative overflow-hidden border-b border-neutral-100">
         <img
-          src={resourcesHero}
+          src={pageHero}
           alt=""
           width={1920}
           height={800}
@@ -58,7 +60,7 @@ function ResourcesPage() {
           </h1>
           <p className="mt-5 max-w-2xl text-base leading-relaxed text-neutral-700 md:text-lg">
             Performance data, specification sheets and reference material for our complete glass
-            range — built for architects, builders and specifiers.
+            range â€” built for architects, builders and specifiers.
           </p>
         </div>
       </section>
@@ -67,3 +69,4 @@ function ResourcesPage() {
     </main>
   );
 }
+

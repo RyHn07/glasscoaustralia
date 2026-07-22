@@ -1,6 +1,7 @@
-import { Link } from "@tanstack/react-router";
+﻿import { Link } from "@tanstack/react-router";
 import { Check, Plus } from "lucide-react";
 import { useState } from "react";
+import { useSiteImage } from "@/lib/site-images";
 
 function FAQItem({ q, a, defaultOpen }: { q: string; a: string; defaultOpen?: boolean }) {
   const [open, setOpen] = useState(!!defaultOpen);
@@ -93,6 +94,8 @@ export function ProductPageLayout(props: ProductPageProps & { children?: React.R
     ctaBody = "Get tailored advice on the right glass solution for your project.",
     children,
   } = props;
+  const imageSlot = `hero-${typeof window === "undefined" ? "product" : window.location.pathname.slice(1).replace(/\//g, "-")}`;
+  const pageHero = useSiteImage(imageSlot, heroImage);
 
   return (
     <main className="flex min-h-screen flex-col bg-white" style={{ fontFamily: BODY_FONT }}>
@@ -101,7 +104,7 @@ export function ProductPageLayout(props: ProductPageProps & { children?: React.R
       {/* HERO */}
       <section className="relative h-[52vh] min-h-[380px] w-full overflow-hidden">
         <img
-          src={heroImage}
+          src={pageHero}
           alt={title}
           width={1600}
           height={900}
@@ -184,7 +187,7 @@ export function ProductPageLayout(props: ProductPageProps & { children?: React.R
         </div>
       </section>
 
-      {/* INTRO — quote-style centered overview */}
+      {/* INTRO â€” quote-style centered overview */}
       <section className="w-full bg-white py-24">
         <div className="mx-auto max-w-[1280px] px-6">
           <div>
@@ -202,7 +205,7 @@ export function ProductPageLayout(props: ProductPageProps & { children?: React.R
                 className="text-white"
                 style={{ fontFamily: HEAD_FONT, fontWeight: 700, fontSize: "18px" }}
               >
-                ✦
+                âœ¦
               </span>
             </div>
             <div
@@ -223,7 +226,7 @@ export function ProductPageLayout(props: ProductPageProps & { children?: React.R
         </div>
       </section>
 
-      {/* CONTENT SECTIONS — image-rich varied layouts */}
+      {/* CONTENT SECTIONS â€” image-rich varied layouts */}
       {sections.map((s, idx) => {
         const bg = idx % 2 === 0 ? "bg-neutral-50" : "bg-white";
         const cardBg = idx % 2 === 0 ? "bg-white" : "bg-neutral-50";
@@ -234,7 +237,7 @@ export function ProductPageLayout(props: ProductPageProps & { children?: React.R
           <section key={s.heading} className={`w-full py-24 ${bg}`}>
             <div className="mx-auto max-w-[1280px] px-6">
 
-              {/* VARIANT 0 — image left, content right (with corner bracket) */}
+              {/* VARIANT 0 â€” image left, content right (with corner bracket) */}
               {variant === 0 && (
                 <>
                   <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
@@ -289,7 +292,7 @@ export function ProductPageLayout(props: ProductPageProps & { children?: React.R
                 </>
               )}
 
-              {/* VARIANT 1 — content left, image right (reversed) */}
+              {/* VARIANT 1 â€” content left, image right (reversed) */}
               {variant === 1 && (
                 <>
                   <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
@@ -336,7 +339,7 @@ export function ProductPageLayout(props: ProductPageProps & { children?: React.R
                 </>
               )}
 
-              {/* VARIANT 2 — full-width hero image with overlay heading + content card */}
+              {/* VARIANT 2 â€” full-width hero image with overlay heading + content card */}
               {variant === 2 && (
                 <>
                   <div className="relative h-[380px] w-full overflow-hidden rounded-lg shadow-lg">

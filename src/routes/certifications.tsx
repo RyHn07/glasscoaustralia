@@ -1,20 +1,21 @@
-import { createFileRoute } from "@tanstack/react-router";
+﻿import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Award, ShieldCheck, FileCheck2, Download, ExternalLink, X, Filter } from "lucide-react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import heroBg from "@/assets/hero-certifications.jpg";
+import { useSiteImage } from "@/lib/site-images";
 
 export const Route = createFileRoute("/certifications")({
   head: () => ({
     meta: [
-      { title: "Our Certifications — GlassCo Australia" },
+      { title: "Our Certifications â€” GlassCo Australia" },
       {
         name: "description",
         content:
           "GlassCo Australia is certified to ISO 9001, ISO 14001, ISO 45001 and Australian Standards AS 2208, AS 2080 and AS 4666 for quality, safety and environmental compliance.",
       },
-      { property: "og:title", content: "Our Certifications — GlassCo Australia" },
+      { property: "og:title", content: "Our Certifications â€” GlassCo Australia" },
       {
         property: "og:description",
         content:
@@ -49,7 +50,7 @@ const certificates: Certificate[] = [
     category: "ISO",
     issuer: "Equal Assurance (JAS-ANZ Accredited)",
     scope:
-      "Supply of glass and manufacturing of value-added glass products — IGUs, laminated, toughened, mirrors, balustrades and more.",
+      "Supply of glass and manufacturing of value-added glass products â€” IGUs, laminated, toughened, mirrors, balustrades and more.",
     issued: "9 January 2026",
     expiry: "17 October 2028",
     number: "GCAQ01-CCCQ04",
@@ -89,12 +90,12 @@ const certificates: Certificate[] = [
     title: "Safety Glazing Materials in Buildings",
     standard: "AS 2208:2023",
     category: "Product Compliance",
-    issuer: "CSi — Certification Solutions International",
+    issuer: "CSi â€” Certification Solutions International",
     scope:
-      "Certificate of Conformance — Grade A toughened safety glazing manufactured under the PAS-Mark Scheme.",
+      "Certificate of Conformance â€” Grade A toughened safety glazing manufactured under the PAS-Mark Scheme.",
     issued: "13 September 2024",
     expiry: "19 July 2028",
-    number: "CSi Lic No. 7171 – 2024 – 09 – C1-R0",
+    number: "CSi Lic No. 7171 â€“ 2024 â€“ 09 â€“ C1-R0",
     thumb: "/certificates/thumbs/as-2208-conformance.jpg",
     pdf: "/certificates/as-2208-conformance.pdf",
   },
@@ -103,12 +104,12 @@ const certificates: Certificate[] = [
     title: "Safety Glazing for Land Vehicles",
     standard: "AS 2080:2019",
     category: "Product Compliance",
-    issuer: "CSi — Certification Solutions International",
+    issuer: "CSi â€” Certification Solutions International",
     scope:
-      "Certificate of Conformance — heat-treated toughened safety glazing for side and rear windows in land vehicles.",
+      "Certificate of Conformance â€” heat-treated toughened safety glazing for side and rear windows in land vehicles.",
     issued: "13 September 2024",
     expiry: "19 July 2028",
-    number: "CSi Lic No. 7171 – 2024 – 09 – C2-R0",
+    number: "CSi Lic No. 7171 â€“ 2024 â€“ 09 â€“ C2-R0",
     thumb: "/certificates/thumbs/as-2080-conformance.jpg",
     pdf: "/certificates/as-2080-conformance.pdf",
   },
@@ -117,54 +118,54 @@ const certificates: Certificate[] = [
     title: "Insulating Glass Units (IGU)",
     standard: "AS 4666:2012",
     category: "Product Compliance",
-    issuer: "CSi — Certification Solutions International",
+    issuer: "CSi â€” Certification Solutions International",
     scope:
-      "Certificate of Conformance — IGUs manufactured under the PAS-Mark Scheme (incl. Amendment No.1:2018).",
+      "Certificate of Conformance â€” IGUs manufactured under the PAS-Mark Scheme (incl. Amendment No.1:2018).",
     issued: "13 September 2024",
     expiry: "19 July 2028",
-    number: "CSi Lic No. 7171 – 2024 – 09 – C3-R0",
+    number: "CSi Lic No. 7171 â€“ 2024 â€“ 09 â€“ C3-R0",
     thumb: "/certificates/thumbs/as-4666-conformance.jpg",
     pdf: "/certificates/as-4666-conformance.pdf",
   },
   {
     id: "as-2208-sched",
-    title: "AS 2208 — Product Compliance Schedule",
+    title: "AS 2208 â€” Product Compliance Schedule",
     standard: "AS 2208:2023",
     category: "Compliance Schedule",
-    issuer: "CSi — Certification Solutions International",
+    issuer: "CSi â€” Certification Solutions International",
     scope:
-      "Detailed scope of certification — plain float & patterned toughened safety glazing, 4–19 mm, Grade A.",
+      "Detailed scope of certification â€” plain float & patterned toughened safety glazing, 4â€“19 mm, Grade A.",
     issued: "13 September 2024",
     expiry: "19 July 2028",
-    number: "CSi Lic No. 7171 – 2024 – 09 – S1-R0",
+    number: "CSi Lic No. 7171 â€“ 2024 â€“ 09 â€“ S1-R0",
     thumb: "/certificates/thumbs/as-2208-schedule.jpg",
     pdf: "/certificates/as-2208-schedule.pdf",
   },
   {
     id: "as-2080-sched",
-    title: "AS 2080 — Product Compliance Schedule",
+    title: "AS 2080 â€” Product Compliance Schedule",
     standard: "AS 2080:2019",
     category: "Compliance Schedule",
-    issuer: "CSi — Certification Solutions International",
+    issuer: "CSi â€” Certification Solutions International",
     scope:
-      "Scope schedule — Type T toughened safety glazing, 4–12 mm float, up to 2400 × 4200 mm furnace size.",
+      "Scope schedule â€” Type T toughened safety glazing, 4â€“12 mm float, up to 2400 Ã— 4200 mm furnace size.",
     issued: "13 September 2024",
     expiry: "19 July 2028",
-    number: "CSi Lic No. 7171 – 2024 – 09 – S2-R0",
+    number: "CSi Lic No. 7171 â€“ 2024 â€“ 09 â€“ S2-R0",
     thumb: "/certificates/thumbs/as-2080-schedule.jpg",
     pdf: "/certificates/as-2080-schedule.pdf",
   },
   {
     id: "as-4666-sched",
-    title: "AS 4666 — Product Compliance Schedule",
+    title: "AS 4666 â€” Product Compliance Schedule",
     standard: "AS 4666:2012",
     category: "Compliance Schedule",
-    issuer: "CSi — Certification Solutions International",
+    issuer: "CSi â€” Certification Solutions International",
     scope:
-      "IGU schedule — substrates, sealants, spacer bars (5.5–19.5 mm), desiccant and fabrication details.",
+      "IGU schedule â€” substrates, sealants, spacer bars (5.5â€“19.5 mm), desiccant and fabrication details.",
     issued: "13 September 2024",
     expiry: "19 July 2028",
-    number: "CSi Lic No. 7171 – 2024 – 09 – S3-R0",
+    number: "CSi Lic No. 7171 â€“ 2024 â€“ 09 â€“ S3-R0",
     thumb: "/certificates/thumbs/as-4666-schedule.jpg",
     pdf: "/certificates/as-4666-schedule.pdf",
   },
@@ -175,6 +176,7 @@ const filters: Array<"All" | Category> = ["All", "ISO", "Product Compliance", "C
 const ACCENT = "#009AAA";
 
 function CertificationsPage() {
+  const pageHero = useSiteImage("hero-certifications", heroBg);
   const [active, setActive] = useState<"All" | Category>("All");
   const [preview, setPreview] = useState<Certificate | null>(null);
 
@@ -199,7 +201,7 @@ function CertificationsPage() {
       {/* HERO */}
       <section className="relative flex h-[52vh] min-h-[380px] items-center overflow-hidden border-b border-neutral-200 bg-[#0b1f24] text-white">
         <img
-          src={heroBg}
+          src={pageHero}
           alt=""
           aria-hidden="true"
           className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-40"
@@ -239,7 +241,7 @@ function CertificationsPage() {
             className="mt-6 max-w-2xl text-white/75"
             style={{ fontFamily: "Poppins, sans-serif", fontSize: 16, lineHeight: 1.7 }}
           >
-            Every GlassCo Australia product is backed by accredited certification — covering
+            Every GlassCo Australia product is backed by accredited certification â€” covering
             quality, safety, environmental responsibility and full Australian Standards
             compliance for buildings, vehicles and insulated glass units.
           </p>
@@ -459,7 +461,7 @@ function CertificationsPage() {
               {
                 icon: Award,
                 title: "Accredited Bodies",
-                body: "Certified by Equal Assurance and Certification Solutions International — both JAS-ANZ accredited.",
+                body: "Certified by Equal Assurance and Certification Solutions International â€” both JAS-ANZ accredited.",
               },
               {
                 icon: ShieldCheck,
@@ -607,3 +609,4 @@ function Row({ label, value }: { label: string; value: string }) {
     </div>
   );
 }
+

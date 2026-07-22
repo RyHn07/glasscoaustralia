@@ -42,6 +42,7 @@ type Tab =
   | "balustrade"
   | "doors"
   | "facades"
+  | "infrastructure-projects"
   | "mirrors"
   | "office-partitions"
   | "pool-fencing"
@@ -103,6 +104,11 @@ const allImages: GalleryImage[] = [
   ...buildCategoryImages("balustrade", "Balustrade installation", "balustrade"),
   ...buildCategoryImages("doors", "Glass door", "doors"),
   ...buildCategoryImages("facades", "Facade & curtain wall", "facades"),
+  ...buildCategoryImages(
+    "infrastructure-projects",
+    "Infrastructure project",
+    "infrastructure-projects",
+  ),
   ...buildCategoryImages("mirrors", "Mirror installation", "mirrors"),
   ...buildCategoryImages("office-partitions", "Office partition", "office-partitions"),
   ...buildCategoryImages("pool-fencing", "Pool fencing", "pool-fencing"),
@@ -113,6 +119,7 @@ const allImages: GalleryImage[] = [
     "security-safety-glass",
   ),
   ...buildCategoryImages("shower-screens", "Frameless shower screen", "shower-screens"),
+  ...buildCategoryImages("display-glass", "Display glass installation", "display-glass"),
   { src: displayGlassAsset.url, slot: "gallery-display-glass-1", alt: "Display glass installation", category: "display-glass" },
   ...buildCategoryImages("shopfronts", "Commercial shopfront glazing", "shopfronts"),
   { src: shopfrontsAsset.url, slot: "gallery-shopfronts-featured", alt: "Commercial shopfront glazing", category: "shopfronts" },
@@ -131,6 +138,7 @@ const galleryTabs: { id: Tab; label: string }[] = [
   { id: "security-safety-glass", label: "Security & Safety Glass" },
   { id: "balustrade", label: "Balustrade" },
   { id: "facades", label: "Facades & Curtain Walls" },
+  { id: "infrastructure-projects", label: "Infrastructure Projects" },
   { id: "mirrors", label: "Mirrors" },
   { id: "office-partitions", label: "Office Partitions" },
   { id: "pool-fencing", label: "Pool Fencing" },
@@ -221,6 +229,7 @@ function GalleryPage() {
                 {tab === "balustrade" && (<><span style={{ color: "#009AAA" }}>Balustrade</span></>)}
                 {tab === "doors" && (<><span style={{ color: "#009AAA" }}>Doors</span></>)}
                 {tab === "facades" && (<><span style={{ color: "#009AAA" }}>Facades</span> & Curtain Walls</>)}
+                {tab === "infrastructure-projects" && (<>Infrastructure <span style={{ color: "#009AAA" }}>Projects</span></>)}
                 {tab === "mirrors" && (<><span style={{ color: "#009AAA" }}>Mirrors</span></>)}
                 {tab === "office-partitions" && (<>Office <span style={{ color: "#009AAA" }}>Partitions</span></>)}
                 {tab === "pool-fencing" && (<>Pool <span style={{ color: "#009AAA" }}>Fencing</span></>)}

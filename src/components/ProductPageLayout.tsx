@@ -94,8 +94,9 @@ export function ProductPageLayout(props: ProductPageProps & { children?: React.R
     ctaBody = "Get tailored advice on the right glass solution for your project.",
     children,
   } = props;
-  const imageSlot = `hero-${typeof window === "undefined" ? "product" : window.location.pathname.slice(1).replace(/\//g, "-")}`;
-  const pageHero = useSiteImage(imageSlot, heroImage);
+  const pageSlotPath = typeof window === "undefined" ? "product" : window.location.pathname.slice(1).replace(/\//g, "-");
+  const heroImageSlot = `hero-${pageSlotPath}`;
+  const pageHero = useSiteImage(heroImageSlot, heroImage);
 
   return (
     <main className="flex min-h-screen flex-col bg-white" style={{ fontFamily: BODY_FONT }}>

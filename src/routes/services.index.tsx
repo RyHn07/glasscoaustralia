@@ -7,6 +7,9 @@ import toughHero from "@/assets/service-toughening.jpg";
 import iguHero from "@/assets/service-igu.jpg";
 import processingHero from "@/assets/service-glass-processing.jpg";
 import printingHero from "@/assets/product-printing.jpg";
+import inspectionStationImage from "@/assets/igu-inspection-station-2.jpg";
+import tougheningGalleryImage from "@/assets/gallery/security-safety-glass/security-safety-glass-1.jpg";
+import processingMachineImage from "@/assets/machinery/techni-waterjet.png";
 
 const ACCENT = "#009AAA";
 const HEAD_FONT = "Montserrat, sans-serif";
@@ -39,6 +42,7 @@ type ServiceCard = {
     | "/services/glass-processing"
     | "/services/digital-glass-printing";
   image: string;
+  slot: string;
   eyebrow: string;
   title: string;
   highlight: string;
@@ -50,7 +54,7 @@ type ServiceCard = {
 const services: ServiceCard[] = [
   {
     to: "/services/toughening-heat-strengthening",
-    image: toughHero,
+    image: tougheningGalleryImage,
     slot: "services-index-card-toughening",
     eyebrow: "PROCESSING",
     title: "Toughening &",
@@ -61,7 +65,7 @@ const services: ServiceCard[] = [
   },
   {
     to: "/services/igu",
-    image: iguHero,
+    image: inspectionStationImage,
     slot: "services-index-card-igu",
     eyebrow: "INSULATION",
     title: "Insulating",
@@ -72,7 +76,7 @@ const services: ServiceCard[] = [
   },
   {
     to: "/services/glass-processing",
-    image: processingHero,
+    image: processingMachineImage,
     slot: "services-index-card-glass-processing",
     eyebrow: "PROCESSING",
     title: "Glass",

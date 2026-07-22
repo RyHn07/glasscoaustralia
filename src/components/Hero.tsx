@@ -2,12 +2,12 @@ import { useEffect, useRef, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { Home, Building2, Factory } from "lucide-react";
 import heroBusinessman from "@/assets/hero/hero-businessman.jpg.asset.json";
-import heroResidential from "@/assets/hero/hero-residential.jpg.asset.json";
-import heroCommercial from "@/assets/hero/hero-commercial.jpg.asset.json";
-import heroIndustrial from "@/assets/hero/hero-industrial.jpg.asset.json";
+import heroResidential from "@/assets/hero/hero-residential.jpeg";
+import heroCommercial from "@/assets/hero/hero-commercial.jpeg";
+import heroIndustrial from "@/assets/hero/hero-industrial.jpeg";
 
 // Keep the man-standing image as the first (initial) banner image.
-const heroSlides = [heroBusinessman.url, heroResidential.url, heroCommercial.url, heroIndustrial.url];
+const heroSlides = [heroBusinessman.url, heroResidential, heroCommercial, heroIndustrial];
 
 type Segment = {
   to: "/solutions/residential" | "/solutions/commercial" | "/solutions/industrial-automotive";
@@ -79,6 +79,17 @@ export function Hero({ onImagesReady }: HeroProps) {
       {/* Content */}
       <div className="relative z-10 mx-auto flex h-full max-w-[1280px] flex-col items-center justify-center px-6 pb-[140px] text-center">
         <div className="flex w-full max-w-3xl flex-col items-center">
+          {slideIndex === 3 && (
+            <div
+              className="pointer-events-none absolute h-[30rem] w-[min(100vw,60rem)] rounded-full"
+              style={{
+                background:
+                  "radial-gradient(ellipse at center, rgba(255,255,255,0.88) 0%, rgba(255,255,255,0.56) 46%, rgba(255,255,255,0) 76%)",
+                filter: "blur(10px)",
+              }}
+              aria-hidden
+            />
+          )}
 
           {/* Heading */}
           <h1

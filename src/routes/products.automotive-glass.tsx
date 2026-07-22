@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ProductPageLayout } from "@/components/ProductPageLayout";
 import heroImage from "@/assets/product-automotive.jpg";
+import automotiveSectionImage from "@/assets/industrial/automotive.jpg.asset.json";
 
 export const Route = createFileRoute("/products/automotive-glass")({
   head: () => ({
@@ -45,6 +46,7 @@ function AutomotiveGlassPage() {
       sections={[
         {
           heading: "6.76 Green Laminated Safety Glass",
+          image: automotiveSectionImage.url,
           paragraphs: [
             "We supply high-quality 6.76 green laminated glass suitable for automotive and architectural applications. This safety glass provides excellent UV protection, heat reduction, noise control and enhanced durability.",
           ],

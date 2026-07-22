@@ -160,9 +160,9 @@ function QuotePage() {
       Object.entries(form).forEach(([k, v]) => fd.append(k, String(v)));
       files.forEach((f) => fd.append("files[]", f, f.name));
       const r = await fetch("/api/send-quote.php", { method: "POST", body: fd });
-      const data = (await r.json().catch(() => ({}))) as { ok?: boolean; error?: string };
-      if (!r.ok || !data.ok) {
-        throw new Error(data.error || "Could not send. Please try again.");
+      const data = (await r.json().catch(() => ({}))) as { ok?: boolean; success?: boolean; error?: string; message?: string };
+      if (!r.ok || !(data.ok || data.success)) {
+        throw new Error(data.error || data.message || "Could not send. Please try again.");
       }
       toast.success("Quote request sent! We'll reply within 1 business day.", { id: tId });
       setSubmitted(true);

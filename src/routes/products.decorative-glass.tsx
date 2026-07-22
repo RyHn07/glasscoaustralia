@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { ProductPageLayout } from "@/components/ProductPageLayout";
 import { SiteImage } from "@/lib/site-images";
 import heroImage from "@/assets/product-decorative.jpg";
+import decorativeSplashbackImage from "@/assets/gallery/splashbacks/splashback-1.jpg";
 import pAqualite from "@/assets/patterns/aqualite.png.asset.json";
 import pChinchilla from "@/assets/patterns/chinchilla.png.asset.json";
 import pDiamond from "@/assets/patterns/diamond.png.asset.json";
@@ -189,6 +190,7 @@ function DecorativeGlassPage() {
       sections={[
         {
           heading: "What is decorative glass?",
+          image: decorativeSplashbackImage,
           paragraphs: [
             "Decorative glass is a broad category that includes glass selected for appearance as well as function. It may use texture, colour, pattern, ceramic printing, reflectivity or extra clarity to achieve a design goal.",
             "Unlike standard clear glass, decorative glass can shape how light moves through a space, how much privacy is achieved and how a surface contributes to the overall interior or facade design. Glass is not just a building material — it is also a design element.",

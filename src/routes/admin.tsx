@@ -73,6 +73,12 @@ import pReticulate from "@/assets/patterns/reticulate.png.asset.json";
 import pDrop from "@/assets/patterns/drop.png.asset.json";
 import pSatinlite from "@/assets/patterns/satinlite.png.asset.json";
 import pSpotswood from "@/assets/patterns/spotswood.png.asset.json";
+import clearFloatFeaturesImage from "@/assets/gallery/facades/facades-1.jpg.asset.json";
+import laminatedFeaturesImage from "@/assets/gallery/security-safety-glass/security-safety-glass-1.jpg";
+import lowIronFeaturesImage from "@/assets/gallery/balustrade/balustrade-1.jpg.asset.json";
+import securityFeaturesImage from "@/assets/gallery/security-safety-glass/security-safety-glass-5.jpg";
+import acousticOfficeImage from "@/assets/gallery/office-partitions/office-partitions-1.jpg.asset.json";
+import decorativeSplashbackImage from "@/assets/gallery/splashbacks/splashback-1.jpg";
 
 type PageImage = {
   slot: string;
@@ -139,20 +145,21 @@ const pages: PageImage[] = [
   { slot: "services-glass-processing-bimatech", label: "Glass processing section: Bimatech", path: "/services/glass-processing", fallback: bimatechImage },
   { slot: "services-glass-processing-float-cutting", label: "Glass processing section: Float cutting", path: "/services/glass-processing", fallback: floatCuttingImage },
   { slot: "services-glass-processing-laminate-cutting", label: "Glass processing section: Laminate cutting", path: "/services/glass-processing", fallback: laminateCuttingImage },
-  { slot: "products-clear-float-glass-section-1-key-features", label: "Clear Float section: Key features", path: "/products/clear-float-glass", fallback: sectionImg1 },
+  { slot: "products-clear-float-glass-section-1-key-features", label: "Clear Float section: Key features", path: "/products/clear-float-glass", fallback: clearFloatFeaturesImage.url },
   { slot: "products-clear-float-glass-section-2-applications", label: "Clear Float section: Applications", path: "/products/clear-float-glass", fallback: sectionImg2 },
-  { slot: "products-clear-laminated-glass-section-1-key-features", label: "Clear Laminated section: Key features", path: "/products/clear-laminated-glass", fallback: sectionImg1 },
+  { slot: "products-clear-laminated-glass-section-1-key-features", label: "Clear Laminated section: Key features", path: "/products/clear-laminated-glass", fallback: laminatedFeaturesImage },
   { slot: "products-clear-laminated-glass-section-2-applications", label: "Clear Laminated section: Applications", path: "/products/clear-laminated-glass", fallback: sectionImg2 },
-  { slot: "products-low-iron-glass-section-1-key-features", label: "Low Iron section: Key features", path: "/products/low-iron-glass", fallback: sectionImg1 },
+  { slot: "products-low-iron-glass-section-1-key-features", label: "Low Iron section: Key features", path: "/products/low-iron-glass", fallback: lowIronFeaturesImage.url },
   { slot: "products-low-iron-glass-section-2-applications", label: "Low Iron section: Applications", path: "/products/low-iron-glass", fallback: sectionImg2 },
-  { slot: "products-acoustic-glass-section-1-what-is-acoustic-glass", label: "Acoustic section: What is acoustic glass", path: "/products/acoustic-glass", fallback: sectionImg1 },
+  { slot: "products-acoustic-glass-section-1-what-is-acoustic-glass", label: "Acoustic section: What is acoustic glass", path: "/products/acoustic-glass", fallback: acousticOfficeImage.url },
   { slot: "products-acoustic-glass-section-2-why-noise-reduction-matters", label: "Acoustic section: Noise reduction", path: "/products/acoustic-glass", fallback: sectionImg2 },
   { slot: "products-acoustic-glass-section-3-how-acoustic-performance-works", label: "Acoustic section: Performance works", path: "/products/acoustic-glass", fallback: sectionImg3 },
-  { slot: "products-decorative-glass-section-1-what-is-decorative-glass", label: "Decorative section: What is decorative glass", path: "/products/decorative-glass", fallback: sectionImg1 },
+  { slot: "products-decorative-glass-section-1-what-is-decorative-glass", label: "Decorative section: What is decorative glass", path: "/products/decorative-glass", fallback: decorativeSplashbackImage },
   { slot: "products-decorative-glass-section-2-patterned-and-privacy-glass", label: "Decorative section: Patterned privacy", path: "/products/decorative-glass", fallback: sectionImg2 },
-  { slot: "products-security-glass-assault-shield-section-1-key-features", label: "Security section: Key features", path: "/products/security-glass-assault-shield", fallback: sectionImg1 },
+  { slot: "products-security-glass-assault-shield-section-1-key-features", label: "Security section: Key features", path: "/products/security-glass-assault-shield", fallback: securityFeaturesImage },
   { slot: "products-security-glass-assault-shield-section-2-applications", label: "Security section: Applications", path: "/products/security-glass-assault-shield", fallback: sectionImg2 },
   { slot: "products-security-glass-assault-shield-section-3-performance", label: "Security section: Performance", path: "/products/security-glass-assault-shield", fallback: sectionImg3 },
+  { slot: "products-automotive-glass-section-1-676-green-laminated-safety-glass", label: "Automotive section: 6.76 Green Laminated Safety Glass", path: "/products/automotive-glass", fallback: industrialAutomotiveAsset.url },
   { slot: "services-digital-glass-printing-section-1-about-the-machine", label: "Digital printing section: About machine", path: "/services/digital-glass-printing", fallback: sectionImg1 },
   { slot: "services-digital-glass-printing-section-2-premium-digital-ceramic-printing", label: "Digital printing section: Premium printing", path: "/services/digital-glass-printing", fallback: sectionImg2 },
   { slot: "services-digital-glass-printing-section-3-advanced-production-environment", label: "Digital printing section: Production", path: "/services/digital-glass-printing", fallback: sectionImg3 },

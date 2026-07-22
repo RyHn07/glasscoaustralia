@@ -1,13 +1,13 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { Home, Building2, Factory } from "lucide-react";
 import heroBusinessman from "@/assets/hero/hero-businessman.jpg.asset.json";
-import heroResidential from "@/assets/hero/hero-residential.jpg.asset.json";
-import heroCommercial from "@/assets/hero/hero-commercial.jpg.asset.json";
-import heroIndustrial from "@/assets/hero/hero-industrial.jpg.asset.json";
+import heroResidential from "@/assets/hero/hero-residential.jpeg";
+import heroCommercial from "@/assets/hero/hero-commercial.jpeg";
+import heroIndustrial from "@/assets/hero/hero-industrial.jpeg";
 
 // Keep the man-standing image as the first (initial) banner image.
-const heroSlides = [heroBusinessman.url, heroResidential.url, heroCommercial.url, heroIndustrial.url];
+const heroSlides = [heroBusinessman.url, heroResidential, heroCommercial, heroIndustrial];
 
 type Segment = {
   to: "/solutions/residential" | "/solutions/commercial" | "/solutions/industrial-automotive";
@@ -29,36 +29,44 @@ type HeroProps = {
 
 export function Hero({ onImagesReady }: HeroProps) {
   const [slideIndex, setSlideIndex] = useState(0);
-  const loadedSlides = useRef(new Set<string>());
+  const [isHoveringSegments, setIsHoveringSegments] = useState(false);
+  const [isInitialImageReady, setIsInitialImageReady] = useState(false);
+  const hasReportedInitialImage = useRef(false);
 
-  const markSlideLoaded = (src: string) => {
-    if (loadedSlides.current.has(src)) return;
+  // Start with the businessman banner, then rotate through the solution banners.
+  // Pausing while a solution is hovered keeps the selected image visible.
+  useEffect(() => {
+    if (!isInitialImageReady || isHoveringSegments) return;
 
-    loadedSlides.current.add(src);
-    if (loadedSlides.current.size === heroSlides.length) {
-      onImagesReady?.();
-    }
+    const intervalId = window.setInterval(() => {
+      setSlideIndex((currentIndex) => (currentIndex + 1) % heroSlides.length);
+    }, 5000);
+
+    return () => window.clearInterval(intervalId);
+  }, [isHoveringSegments, isInitialImageReady]);
+
+  const markInitialImageReady = () => {
+    if (hasReportedInitialImage.current) return;
+    hasReportedInitialImage.current = true;
+    setIsInitialImageReady(true);
+    onImagesReady?.();
   };
+
 
   return (
     <section className="relative h-full w-full overflow-hidden bg-background">
-      {/* Images load together, while the man-standing banner remains the initial image. */}
+      {/* A single image is rendered so later slides can never cover the initial banner. */}
       <div className="absolute inset-0">
-        {heroSlides.map((src, i) => (
-          <img
-            key={src}
-            src={src}
-            loading="eager"
-            fetchPriority={i === 0 ? "high" : "low"}
-            alt=""
-            onLoad={() => markSlideLoaded(src)}
-            onError={() => markSlideLoaded(src)}
-            aria-hidden={i !== slideIndex}
-            className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-500 ease-in-out ${
-              i === slideIndex ? "opacity-100 hero-zoom" : "opacity-0"
-            }`}
-          />
-        ))}
+        <img
+          key={heroSlides[slideIndex]}
+          src={heroSlides[slideIndex]}
+          loading="eager"
+          fetchPriority="high"
+          alt=""
+          onLoad={markInitialImageReady}
+          onError={markInitialImageReady}
+          className="absolute inset-0 h-full w-full object-cover hero-zoom"
+        />
         <style>{`
           @keyframes heroKenBurns {
             0% { transform: scale(1.05); }
@@ -66,20 +74,22 @@ export function Hero({ onImagesReady }: HeroProps) {
           }
           .hero-zoom { animation: heroKenBurns 7s ease-out forwards; }
         `}</style>
-        {/* Readability overlay to blend text with any background image */}
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "linear-gradient(180deg, rgba(255,255,255,0.85) 0%, rgba(255,255,255,0.65) 45%, rgba(255,255,255,0.35) 75%, rgba(255,255,255,0.15) 100%)",
-          }}
-          aria-hidden
-        />
       </div>
 
       {/* Content */}
       <div className="relative z-10 mx-auto flex h-full max-w-[1280px] flex-col items-center justify-center px-6 pb-[140px] text-center">
         <div className="flex w-full max-w-3xl flex-col items-center">
+          {slideIndex === 3 && (
+            <div
+              className="pointer-events-none absolute h-[30rem] w-[min(100vw,60rem)] rounded-full"
+              style={{
+                background:
+                  "radial-gradient(ellipse at center, rgba(255,255,255,0.88) 0%, rgba(255,255,255,0.56) 46%, rgba(255,255,255,0) 76%)",
+                filter: "blur(10px)",
+              }}
+              aria-hidden
+            />
+          )}
 
           {/* Heading */}
           <h1
@@ -146,7 +156,11 @@ export function Hero({ onImagesReady }: HeroProps) {
       </div>
 
       {/* Bottom segment menu — full width, aligned with hero image */}
-      <div className="absolute inset-x-0 bottom-0 z-10 px-4 pb-4 sm:px-6 sm:pb-6">
+      <div
+        className="absolute inset-x-0 bottom-0 z-10 px-4 pb-4 sm:px-6 sm:pb-6"
+        onMouseEnter={() => setIsHoveringSegments(true)}
+        onMouseLeave={() => setIsHoveringSegments(false)}
+      >
         <div className="grid w-full grid-cols-1 gap-3 sm:grid-cols-3">
           {segments.map(({ to, title, subtitle, Icon, color }, idx) => (
             <Link

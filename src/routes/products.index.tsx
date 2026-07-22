@@ -48,11 +48,11 @@ const products: ProductCard[] = [
     topSeller: true,
   },
   {
-    name: "Low Iron Glass",
-    description: "Ultra clear glass with reduced green tint for true colour rendering.",
-    image: rangeLowE,
-    slot: "products-index-card-low-iron-glass",
-    to: "/products/low-iron-glass",
+    name: "Energy Efficient Glass",
+    description: "Low-E, IGUs and solar control glazing for thermal performance.",
+    image: productEnergy,
+    slot: "products-index-card-energy-efficient-glass",
+    to: "/products/energy-efficient-glass",
   },
   {
     name: "Security Glass — Assault Shield 14.25 SGP",
@@ -76,11 +76,11 @@ const products: ProductCard[] = [
     to: "/products/decorative-glass",
   },
   {
-    name: "Energy Efficient Glass",
-    description: "Low-E, IGUs and solar control glazing for thermal performance.",
-    image: productEnergy,
-    slot: "products-index-card-energy-efficient-glass",
-    to: "/products/energy-efficient-glass",
+    name: "Low Iron Glass",
+    description: "Ultra clear glass with reduced green tint for true colour rendering.",
+    image: rangeLowE,
+    slot: "products-index-card-low-iron-glass",
+    to: "/products/low-iron-glass",
   },
   {
     name: "Automotive Glass",

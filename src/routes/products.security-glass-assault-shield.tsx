@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ProductPageLayout } from "@/components/ProductPageLayout";
+import securityGlassImage from "@/assets/gallery/security-safety-glass/security-safety-glass-5.jpg";
 import heroImage from "@/assets/product-security.jpg";
 
 export const Route = createFileRoute("/products/security-glass-assault-shield")({
@@ -45,6 +46,7 @@ function SecurityGlassPage() {
       sections={[
         {
           heading: "Key features",
+          image: securityGlassImage,
           bullets: [
             "Heavy 14.25mm SGP-laminated make-up",
             "Exceptional post-breakage stiffness",

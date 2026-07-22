@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ProductPageLayout } from "@/components/ProductPageLayout";
+import laminatedSafetyImage from "@/assets/gallery/security-safety-glass/security-safety-glass-1.jpg";
 import heroImage from "@/assets/range-laminated.jpg";
 
 export const Route = createFileRoute("/products/clear-laminated-glass")({
@@ -45,6 +46,7 @@ function ClearLaminatedGlassPage() {
       sections={[
         {
           heading: "Key features",
+          image: laminatedSafetyImage,
           bullets: [
             "Grade A safety glass",
             "PVB interlayer for impact resistance",

@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ProductPageLayout } from "@/components/ProductPageLayout";
+import acousticOfficeImage from "@/assets/gallery/office-partitions/office-partitions-1.jpg.asset.json";
 import heroImage from "@/assets/product-acoustic.jpg";
 
 export const Route = createFileRoute("/products/acoustic-glass")({
@@ -42,6 +43,7 @@ function AcousticGlassPage() {
       sections={[
         {
           heading: "What is acoustic glass?",
+          image: acousticOfficeImage.url,
           paragraphs: [
             "Acoustic glass is a type of laminated glass designed to reduce sound transmission. It generally uses a special interlayer between two or more glass sheets. This interlayer helps dampen vibration and reduces the amount of sound that passes through the glass.",
             "Standard glass can reduce some noise simply by being a barrier, but acoustic laminated glass is designed to perform better across a wider range of frequencies. It is particularly useful for reducing traffic noise, voices, aircraft noise and other common urban sound sources.",

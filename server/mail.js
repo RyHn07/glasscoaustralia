@@ -18,8 +18,12 @@ function escapeHtml(value) {
     .replace(/'/g, "&#39;");
 }
 
-function required(name) {
-  const value = clean(process.env[name], 500);
+function configuredValue(...names) {
+  return names.map((name) => clean(process.env[name], 500)).find(Boolean) || "";
+}
+
+function required(...names) {
+  const value = configuredValue(...names);
   if (!value || /YOUR_.*PASSWORD|CHANGE_ME|PLACEHOLDER/i.test(value)) {
     const error = new Error("Email service is not configured yet.");
     error.status = 503;
@@ -51,7 +55,7 @@ function originGuard(req, res, next) {
 }
 
 function transport() {
-  const port = Number(required("MAIL_PORT"));
+  const port = Number(required("SMTP_PORT", "MAIL_PORT"));
   if (!Number.isInteger(port) || port < 1 || port > 65535) {
     const error = new Error("Email service port is invalid.");
     error.status = 503;
@@ -59,15 +63,21 @@ function transport() {
   }
 
   return nodemailer.createTransport({
-    host: required("MAIL_HOST"),
+    host: required("SMTP_HOST", "MAIL_HOST"),
     port,
-    secure: clean(process.env.MAIL_SECURE).toLowerCase() === "true" || port === 465,
-    auth: { user: required("MAIL_USER"), pass: required("MAIL_PASS") },
+    secure: configuredValue("SMTP_SECURE", "MAIL_SECURE").toLowerCase() === "true" || port === 465,
+    auth: {
+      user: required("SMTP_USER", "MAIL_USER"),
+      pass: required("SMTP_PASS", "MAIL_PASS"),
+    },
+    connectionTimeout: 15_000,
+    greetingTimeout: 15_000,
+    socketTimeout: 20_000,
   });
 }
 
 async function send(subject, fields, replyTo, attachments = []) {
-  const from = required("MAIL_FROM");
+  const from = required("MAIL_FROM", "SMTP_FROM", "SMTP_USER", "MAIL_USER");
   const fromName = clean(process.env.MAIL_FROM_NAME || "GlassCo Website", 100);
   const to = required("MAIL_TO");
   const toName = clean(process.env.MAIL_TO_NAME, 100);
@@ -90,10 +100,8 @@ async function send(subject, fields, replyTo, attachments = []) {
 
 function mailError(error, res) {
   console.error("[mail]", error.message);
-  res.status(error.status || 500).json({
-    success: false,
-    message: error.status ? error.message : "Unable to send your message right now. Please try again later.",
-  });
+  const message = error.status ? error.message : "Unable to send your message right now. Please try again later.";
+  res.status(error.status || 500).json({ ok: false, success: false, error: message, message });
 }
 
 export function createContactRouter() {
@@ -113,7 +121,7 @@ export function createContactRouter() {
         { Name: name, Email: email, Phone: clean(req.body?.phone, 80), Service: clean(req.body?.service, 160), Message: message },
         { name, email },
       );
-      res.json({ success: true, message: "Thank you. Your message has been sent." });
+      res.json({ ok: true, success: true, message: "Thank you. Your message has been sent." });
     } catch (error) {
       mailError(error, res);
     }
@@ -146,7 +154,7 @@ export function createQuoteRouter() {
         contentType: file.mimetype,
       }));
       await send("New website quote request", fields, { name, email }, attachments);
-      res.json({ success: true, message: "Thank you. Your quote request has been sent." });
+      res.json({ ok: true, success: true, message: "Thank you. Your quote request has been sent." });
     } catch (error) {
       mailError(error, res);
     }

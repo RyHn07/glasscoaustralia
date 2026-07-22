@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ProductPageLayout } from "@/components/ProductPageLayout";
+import lowIronBalustradeImage from "@/assets/gallery/balustrade/balustrade-1.jpg.asset.json";
 import heroImage from "@/assets/product-low-iron.png";
 
 export const Route = createFileRoute("/products/low-iron-glass")({
@@ -45,6 +46,7 @@ function LowIronGlassPage() {
       sections={[
         {
           heading: "Key features",
+          image: lowIronBalustradeImage.url,
           bullets: [
             "Ultra-low iron formulation",
             "High light transmission (>91% typical)",

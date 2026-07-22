@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ProductPageLayout } from "@/components/ProductPageLayout";
+import facadeImage from "@/assets/gallery/facades/facades-1.jpg.asset.json";
 import heroImage from "@/assets/range-float.jpg";
 
 export const Route = createFileRoute("/products/clear-float-glass")({
@@ -45,6 +46,7 @@ function ClearFloatGlassPage() {
       sections={[
         {
           heading: "Key features",
+          image: facadeImage.url,
           bullets: [
             "High light transmission",
             "Uniform thickness tolerance",

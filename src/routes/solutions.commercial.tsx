@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SolutionPage } from "@/components/SolutionPage";
 import heroImage from "@/assets/solution-commercial.jpg";
+import { useSiteImage } from "@/lib/site-images";
 import shopfrontsImg from "@/assets/commercial/shopfronts.jpg.asset.json";
 import officePartitionImg from "@/assets/commercial/office-partition.jpg.asset.json";
 import facadesImg from "@/assets/commercial/facades.jpg.asset.json";
@@ -28,6 +29,7 @@ export const Route = createFileRoute("/solutions/commercial")({
 });
 
 function CommercialPage() {
+  const pageHero = useSiteImage("solution-commercial-hero", heroImage);
   return (
     <SolutionPage
       eyebrow="Commercial"
@@ -42,7 +44,7 @@ function CommercialPage() {
         { name: "Display Glass", image: displayGlassImg.url, galleryCategory: "display-glass" },
         { name: "Security & Safety Glass", image: securityImg.url },
       ]}
-      heroImage={heroImage}
+      heroImage={pageHero}
     />
   );
 }

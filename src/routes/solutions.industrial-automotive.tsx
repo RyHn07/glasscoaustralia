@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SolutionPage } from "@/components/SolutionPage";
 import heroImage from "@/assets/solution-industrial.jpg";
+import { useSiteImage } from "@/lib/site-images";
 import automotiveImg from "@/assets/industrial/automotive.jpg.asset.json";
 import transportImg from "@/assets/industrial/transport.jpg.asset.json";
 import manufacturingImg from "@/assets/industrial/manufacturing.jpg.asset.json";
@@ -28,6 +29,7 @@ export const Route = createFileRoute("/solutions/industrial-automotive")({
 });
 
 function IndustrialPage() {
+  const pageHero = useSiteImage("solution-industrial-hero", heroImage);
   return (
     <SolutionPage
       eyebrow="Industrial & Automotive"
@@ -42,7 +44,7 @@ function IndustrialPage() {
         { name: "Infrastructure Projects", image: infrastructureImg.url },
         { name: "Safety & Protective Glazing", image: safetyImg.url },
       ]}
-      heroImage={heroImage}
+      heroImage={pageHero}
     />
   );
 }

@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SolutionPage } from "@/components/SolutionPage";
 import heroImage from "@/assets/solution-residential.jpg";
+import { useSiteImage } from "@/lib/site-images";
 import doorsImg from "@/assets/gallery/doors/doors-1.jpg.asset.json";
 import mirrorsImg from "@/assets/gallery/mirrors/mirrors-1.jpg.asset.json";
 import balustradeImg from "@/assets/gallery/balustrade/balustrade-1.jpg.asset.json";
@@ -28,6 +29,7 @@ export const Route = createFileRoute("/solutions/residential")({
 });
 
 function ResidentialPage() {
+  const pageHero = useSiteImage("solution-residential-hero", heroImage);
   return (
     <SolutionPage
       eyebrow="Residential"
@@ -42,7 +44,7 @@ function ResidentialPage() {
         { name: "Balustrades", image: balustradeImg.url, galleryCategory: "balustrade" },
         { name: "Pool Fencing", image: poolFencingImg.url, galleryCategory: "pool-fencing" },
       ]}
-      heroImage={heroImage}
+      heroImage={pageHero}
     />
   );
 }
